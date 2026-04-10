@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://e5uj1uvlt6aq"]
+
+[resource]
+Coordinates/base_type = &"RichTextLabel"
+Coordinates/constants/outline_size = 5
+Coordinates/constants/shadow_offset_y = 8
+Coordinates/font_sizes/normal_font_size = 24

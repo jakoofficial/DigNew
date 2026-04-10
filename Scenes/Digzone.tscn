@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3vmir75ttdeq" path="res://Scripts/World.gd" id="1_t7ebr"]
 [ext_resource type="PackedScene" uid="uid://oj08mfo7lltx" path="res://Nodes/player.tscn" id="2_1q57l"]
+[ext_resource type="PackedScene" uid="uid://3gfommtla8f7" path="res://Nodes/UI/on_dig_ui.tscn" id="2_rlhdw"]
 [ext_resource type="PackedScene" uid="uid://xoab3q0ojcsw" path="res://Nodes/dig_spot.tscn" id="3_rlhdw"]
 [ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Grass-dirt.png" id="4_t7ebr"]
 [ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_84lli"]
@@ -15,6 +16,8 @@ size = Vector2(150, 250)
 [node name="Digzone" type="Node2D" unique_id=292587727 node_paths=PackedStringArray("digSpot")]
 script = ExtResource("1_t7ebr")
 digSpot = NodePath("DigSpot")
+
+[node name="OnDigUI" parent="." unique_id=1420127650 instance=ExtResource("2_rlhdw")]
 
 [node name="Player" parent="." unique_id=1600123372 instance=ExtResource("2_1q57l")]
 position = Vector2(576, 64)

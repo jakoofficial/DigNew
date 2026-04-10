@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://3gfommtla8f7"]
+
+[ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/on_dig_ui.gd" id="1_huv6s"]
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
+
+[node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
+script = ExtResource("1_huv6s")
+
+[node name="Control" type="Control" parent="." unique_id=1845288664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nss3e")
+
+[node name="DepthLevel" type="RichTextLabel" parent="Control" unique_id=1725157303]
+clip_contents = false
+layout_mode = 0
+offset_left = 8.0
+offset_right = 256.0
+offset_bottom = 64.0
+theme_type_variation = &"Coordinates"
+bbcode_enabled = true
+text = "depth: 0"
+scroll_active = false
+autowrap_mode = 0

@@ -1,6 +1,8 @@
 extends Node
 
 var curScene
+var curUI
+
 var maxX: int 
 var maxY: int
 

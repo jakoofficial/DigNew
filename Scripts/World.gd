@@ -27,7 +27,8 @@ func _ready() -> void:
 	maxSpotX = GM.maxX+2
 	spots.global_position = Vector2((startGenX-64.0)+offset, startGenY)
 	camera.limit_right = get_viewport_rect().size.x
-	is_ready = Generated()
+	is_ready = await Generated()
+	GM.curUI.set_depth_max_label()
 
 func ResetScene() -> void:
 	if canReset:
