@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://h4w2kl33kbnr"]
 
-[ext_resource type="Script" uid="uid://d3vmir75ttdeq" path="res://Scripts/World.gd" id="1_0p4ud"]
-[ext_resource type="PackedScene" uid="uid://oj08mfo7lltx" path="res://player.tscn" id="2_7tqes"]
-[ext_resource type="PackedScene" uid="uid://xoab3q0ojcsw" path="res://dig_spot.tscn" id="3_2hr0a"]
-[ext_resource type="Texture2D" uid="uid://edq0wdrwnrhq" path="res://icon.svg" id="4_7tqes"]
-[ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_2hr0a"]
+[ext_resource type="Script" uid="uid://d3vmir75ttdeq" path="res://Scripts/World.gd" id="1_t7ebr"]
+[ext_resource type="PackedScene" uid="uid://oj08mfo7lltx" path="res://Nodes/player.tscn" id="2_1q57l"]
+[ext_resource type="PackedScene" uid="uid://xoab3q0ojcsw" path="res://Nodes/dig_spot.tscn" id="3_rlhdw"]
+[ext_resource type="Texture2D" uid="uid://edq0wdrwnrhq" path="res://Sprites/icon.svg" id="4_avedf"]
+[ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_84lli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hr0a"]
 size = Vector2(64, 64)
@@ -13,10 +13,10 @@ size = Vector2(64, 64)
 size = Vector2(150, 250)
 
 [node name="Digzone" type="Node2D" unique_id=292587727 node_paths=PackedStringArray("digSpot")]
-script = ExtResource("1_0p4ud")
+script = ExtResource("1_t7ebr")
 digSpot = NodePath("DigSpot")
 
-[node name="Player" parent="." unique_id=1600123372 instance=ExtResource("2_7tqes")]
+[node name="Player" parent="." unique_id=1600123372 instance=ExtResource("2_1q57l")]
 position = Vector2(576, 64)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1364335732]
@@ -27,7 +27,7 @@ position_smoothing_enabled = true
 
 [node name="Spots" type="Node2D" parent="." unique_id=739184984]
 
-[node name="DigSpot" parent="." unique_id=1824871557 instance=ExtResource("3_2hr0a")]
+[node name="DigSpot" parent="." unique_id=1824871557 instance=ExtResource("3_rlhdw")]
 position = Vector2(-400, 80)
 
 [node name="Fence" type="StaticBody2D" parent="." unique_id=1613654153]
@@ -35,7 +35,7 @@ position = Vector2(-216, 72)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fence" unique_id=1842804492]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_7tqes")
+texture = ExtResource("4_avedf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fence" unique_id=1346113983]
 shape = SubResource("RectangleShape2D_2hr0a")
@@ -47,7 +47,7 @@ visible = false
 z_index = -1
 position = Vector2(576, 319.91998)
 scale = Vector2(30.960003, 15.622857)
-texture = ExtResource("5_2hr0a")
+texture = ExtResource("5_84lli")
 offset = Vector2(0, 3.8146973e-06)
 hframes = 3
 vframes = 3

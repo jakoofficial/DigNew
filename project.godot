@@ -13,11 +13,20 @@ config_version=5
 config/name="Digdig"
 run/main_scene="uid://h4w2kl33kbnr"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Nodes/": "yellow",
+"res://Scenes/": "green",
+"res://Scripts/": "red",
+"res://Sprites/": "orange"
+}
 
 [input]
 
