@@ -11,40 +11,52 @@ extends Node2D
 @export var maxSpotY: int
 @export var maxSpotX: int
 
-var maxX: int 
-var maxY: int
+var startPlayerPos: Vector2
+
 var offset: float = 32.0
+var is_ready: bool = false
+var canReset: bool = false
 func _ready() -> void:
+	GM.curScene = self
+	back.show()
 	randomize()
 	
-	back.show()
-	
-	maxX = (get_viewport_rect().size.x / 64)
-	maxY = (get_viewport_rect().size.y / 64)
-	maxSpotY = maxY+1
-	maxSpotX = maxX+2
-	print("%s %s", [maxSpotX, maxSpotY])
+	GM.maxX = (get_viewport_rect().size.x / 64)
+	GM.maxY = (get_viewport_rect().size.y / 64)
+	maxSpotY = GM.maxY+1
+	maxSpotX = GM.maxX+2
 	spots.global_position = Vector2((startGenX-64.0)+offset, startGenY)
 	camera.limit_right = get_viewport_rect().size.x
+	is_ready = Generated()
+
+func ResetScene() -> void:
+	if canReset:
+		canReset = false
+		$Player.global_position = startPlayerPos
+		Generated()
+
+func Generated() -> bool:
+	if spots.get_child_count() > 0:
+		for i in spots.get_children():
+			i.queue_free()
 	
-	Generated()
-
-
-func Generated() -> void:
 	for y in range(maxSpotY):
 		for x in range(maxSpotX):
 			#Fence
-			if (x == 1 or x == maxX) and y==0:
+			if (x == 1 or x == GM.maxX) and y==0:
 				var nFence = fence.duplicate()
 				spots.add_child(nFence)
 				nFence.position = Vector2(x*64, y-64) 
+				if x == GM.maxX: nFence.scale.x = -nFence.scale.x
 			#Spots
 			var spot = digSpot.duplicate()
 			spot.xIDX = x
-			spot.maxXIDX = maxX
+			spot.yIDX = y
+			spot.maxXIDX = GM.maxX
 			if y == 0: spot.type = 0 #Grass
-			elif y == maxY: spot.type = 2; spot.type = 3; spot.canDestroy = false # Unbreakable
-			elif x==0 or x==maxX+1: spot.type = 2; spot.canDestroy = false 
+			elif y == GM.maxY: spot.type = 2; spot.type = 3; spot.canDestroy = false # Unbreakable
+			elif x==0 or x==GM.maxX+1: spot.type = 2; spot.canDestroy = false 
 			else: spot.type = 1 #Dirt
 			spots.add_child(spot)
 			spot.position = Vector2(x*64, y*64)
+	return true

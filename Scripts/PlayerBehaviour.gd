@@ -7,6 +7,9 @@ var grav: float = 980.0
 var speed: float = 200.0
 var direction
 
+func _ready() -> void:
+	get_parent().startPlayerPos = global_position
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		ray.enabled = true

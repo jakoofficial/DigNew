@@ -15,6 +15,10 @@ run/main_scene="uid://h4w2kl33kbnr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+GM="*uid://copcewp32pk8d"
+
 [display]
 
 window/stretch/mode="viewport"

@@ -6,6 +6,7 @@ extends Area2D
 @onready var oreSpr: Sprite2D = $Ore
 
 var xIDX: int
+var yIDX: int
 var maxXIDX: int
 var ore
 var canDestroy: bool = true
@@ -38,6 +39,10 @@ func _set_types() -> void:
 signal dug
 func removeSpot() -> void:
 	if canDestroy:
+		if yIDX >= GM.maxY/2:
+			print(str("Y %s" % yIDX))
+			GM.curScene.canReset = true
+		
 		call_deferred("queue_free")
 	
 var rng = RandomNumberGenerator.new()

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3vmir75ttdeq" path="res://Scripts/World.gd" id="1_t7ebr"]
 [ext_resource type="PackedScene" uid="uid://oj08mfo7lltx" path="res://Nodes/player.tscn" id="2_1q57l"]
 [ext_resource type="PackedScene" uid="uid://xoab3q0ojcsw" path="res://Nodes/dig_spot.tscn" id="3_rlhdw"]
-[ext_resource type="Texture2D" uid="uid://edq0wdrwnrhq" path="res://Sprites/icon.svg" id="4_avedf"]
+[ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Grass-dirt.png" id="4_t7ebr"]
 [ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_84lli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hr0a"]
@@ -34,8 +34,10 @@ position = Vector2(-400, 80)
 position = Vector2(-216, 72)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fence" unique_id=1842804492]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_avedf")
+texture = ExtResource("4_t7ebr")
+hframes = 3
+vframes = 3
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fence" unique_id=1346113983]
 shape = SubResource("RectangleShape2D_2hr0a")
