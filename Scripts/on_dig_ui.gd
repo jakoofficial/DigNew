@@ -8,7 +8,6 @@ func _ready() -> void:
 	GM.curUI = self
 
 func _backpack(toggled: bool) -> void:
-	toggled = !toggled
 	if toggled:
 		backpack.global_position.x = 0
 
