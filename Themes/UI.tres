@@ -1,6 +1,33 @@
 [gd_resource type="Theme" format=3 uid="uid://e5uj1uvlt6aq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug1e5"]
+bg_color = Color(0.27058825, 0.16078432, 0.078431375, 0.7411765)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0whwl"]
+bg_color = Color(0.39967686, 0.23339394, 0.1469453, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19121301, 0.11991721, 0.03839218, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
 [resource]
+Backpack/base_type = &"Panel"
+Backpack/styles/panel = SubResource("StyleBoxFlat_ug1e5")
+Backpack_Item/base_type = &"Panel"
+Backpack_Item/styles/panel = SubResource("StyleBoxFlat_0whwl")
 Coordinates/base_type = &"RichTextLabel"
 Coordinates/constants/outline_size = 5
 Coordinates/constants/shadow_offset_y = 8

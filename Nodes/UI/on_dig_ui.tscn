@@ -13,16 +13,111 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_nss3e")
 
 [node name="DepthLevel" type="RichTextLabel" parent="Control" unique_id=1725157303]
 clip_contents = false
 layout_mode = 0
 offset_left = 8.0
-offset_right = 256.0
-offset_bottom = 64.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 72.0
 theme_type_variation = &"Coordinates"
 bbcode_enabled = true
 text = "depth: 0"
 scroll_active = false
 autowrap_mode = 0
+
+[node name="Backpack" type="Panel" parent="Control" unique_id=929151952]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_bottom = 250.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"Backpack"
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/Backpack" unique_id=1328835352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1767118211]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel2" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1992323781]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel3" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1649731176]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel4" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=403044921]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel5" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=582253071]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel6" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1247738491]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel7" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1755728963]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel8" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1156817827]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel9" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1433496842]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="Panel10" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1194873931]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_type_variation = &"Backpack_Item"
+
+[node name="BackpackCollapser" type="Button" parent="Control/Backpack" unique_id=312700030]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -56.0
+offset_right = 2.0
+offset_bottom = 56.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"Backpack"
+toggle_mode = true
+text = "asdadad"
+
+[connection signal="toggled" from="Control/Backpack/BackpackCollapser" to="." method="_backpack"]
