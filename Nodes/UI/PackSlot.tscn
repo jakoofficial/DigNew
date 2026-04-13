@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6pd0saki0y7d"]
 
-[ext_resource type="Script" uid="uid://dngu1h523y4o6" path="res://Scripts/backpack_slot.gd" id="1_avv8u"]
+[ext_resource type="Script" uid="uid://dngu1h523y4o6" path="res://Scripts/Inventory/backpack_slot.gd" id="1_avv8u"]
 [ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Grass-dirt.png" id="2_avv8u"]
 
 [node name="PackSlot" type="Panel" unique_id=553719020]

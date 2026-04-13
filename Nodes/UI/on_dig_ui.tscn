@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://3gfommtla8f7"]
 
-[ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/on_dig_ui.gd" id="1_huv6s"]
+[ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/DigZone/on_dig_ui.gd" id="1_huv6s"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
-[ext_resource type="Script" uid="uid://c5r4m661lpmbb" path="res://Scripts/backpack.gd" id="3_q1hm0"]
+[ext_resource type="Script" uid="uid://c5r4m661lpmbb" path="res://Scripts/Inventory/backpack.gd" id="3_q1hm0"]
 
 [node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
 script = ExtResource("1_huv6s")

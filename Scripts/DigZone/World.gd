@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func ResetScene() -> void:
 	if canReset:
+		PS.add_to_global_inv(GM.curUI.backpack.inventory)
 		canReset = false
 		$Player.global_position = startPlayerPos
 		Generated()

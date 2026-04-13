@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h4w2kl33kbnr"]
 
-[ext_resource type="Script" uid="uid://d3vmir75ttdeq" path="res://Scripts/World.gd" id="1_t7ebr"]
+[ext_resource type="Script" uid="uid://d3vmir75ttdeq" path="res://Scripts/DigZone/World.gd" id="1_t7ebr"]
 [ext_resource type="PackedScene" uid="uid://oj08mfo7lltx" path="res://Nodes/player.tscn" id="2_1q57l"]
 [ext_resource type="PackedScene" uid="uid://3gfommtla8f7" path="res://Nodes/UI/on_dig_ui.tscn" id="2_rlhdw"]
 [ext_resource type="PackedScene" uid="uid://xoab3q0ojcsw" path="res://Nodes/dig_spot.tscn" id="3_rlhdw"]

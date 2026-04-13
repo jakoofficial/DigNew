@@ -8,8 +8,8 @@ var item_frame: int = 2
 var amount: int = 0
 
 func _ready() -> void:
-    updateSlot()
+	updateSlot()
 
 func updateSlot() -> void:
-    itemImg.frame = item_frame
-    amount_label.text = str("x%s" % amount)
+	itemImg.frame = item_frame
+	amount_label.text = str("x%s" % amount)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xoab3q0ojcsw"]
 
-[ext_resource type="Script" uid="uid://ck2d5yytwd81h" path="res://Scripts/dig_spot.gd" id="1_h2fs8"]
+[ext_resource type="Script" uid="uid://ck2d5yytwd81h" path="res://Scripts/DigZone/dig_spot.gd" id="1_h2fs8"]
 [ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Grass-dirt.png" id="2_h2fs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o38sr"]
