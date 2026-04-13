@@ -37,8 +37,8 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		
+		velocity.x = 0
+	
 	if !is_on_floor():
 		velocity.y = grav * delta * 20
 	
