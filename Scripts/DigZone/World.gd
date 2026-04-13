@@ -38,6 +38,7 @@ func _ready() -> void:
 	GM.curUI.set_stamina(0)
 
 func use_stamina() -> void:
+	print(currStamina)
 	if currStamina > 0:
 		currStamina -= perc
 		GM.curUI.set_stamina(perc)
@@ -47,9 +48,10 @@ func ResetScene() -> void:
 		await PS.add_to_global_inv(GM.curUI.backpack.inventory)
 		canReset = false
 		$Player.global_position = startPlayerPos
+		currStamina = PS.Stamina
 		GM.curUI.backpack.clear_backpack()
 		GM.curUI.set_stamina(0)
-		GM.curUI.Check_GameOver()
+		GM.curUI.ResetUI()
 		Generated()
 
 func Generated() -> bool:

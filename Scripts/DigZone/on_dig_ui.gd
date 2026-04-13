@@ -23,6 +23,9 @@ func Check_GameOver() -> void:
 	else:
 		game_over_panel.hide()
 
+func ResetUI() -> void:
+	set_stamina(0)
+
 func set_gameover_text(reason: String):
 	game_over.text = str("%s\n%s" % [reason, str("[font_size=16]Reset dig 'R' or Go back 'ESC'[/font_size]")])
 
@@ -38,6 +41,9 @@ func set_stamina(perc: float = 0) -> void:
 
 func _process(_delta: float) -> void:
 	Check_GameOver()
+	if GM.curScene.canReset and digsleft > 0: $Control/ResetAllowed.show()
+	else: $Control/ResetAllowed.hide()
+	
 	if FK.JustPressed(AM.action("Backpack")):
 		_backpack()
 
