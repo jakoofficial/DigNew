@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/on_dig_ui.gd" id="1_huv6s"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
+[ext_resource type="PackedScene" uid="uid://c6pd0saki0y7d" path="res://Nodes/UI/PackSlot.tscn" id="3_q1hm0"]
 
 [node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
 script = ExtResource("1_huv6s")
@@ -55,52 +56,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1767118211]
-custom_minimum_size = Vector2(75, 75)
+[node name="PackSlot" parent="Control/Backpack/FlowContainer" unique_id=553719020 instance=ExtResource("3_q1hm0")]
 layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel2" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1992323781]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel3" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1649731176]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel4" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=403044921]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel5" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=582253071]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel6" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1247738491]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel7" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1755728963]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel8" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1156817827]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel9" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1433496842]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
-
-[node name="Panel10" type="Panel" parent="Control/Backpack/FlowContainer" unique_id=1194873931]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-theme_type_variation = &"Backpack_Item"
