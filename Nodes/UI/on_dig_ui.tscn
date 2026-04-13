@@ -19,16 +19,16 @@ theme = ExtResource("1_nss3e")
 
 [node name="DepthLevel" type="RichTextLabel" parent="Control" unique_id=1725157303]
 clip_contents = false
-layout_mode = 0
+layout_mode = 1
 offset_left = 8.0
-offset_top = 8.0
 offset_right = 192.0
-offset_bottom = 72.0
+offset_bottom = 64.0
 theme_type_variation = &"Coordinates"
 bbcode_enabled = true
 text = "depth: 0"
 scroll_active = false
 autowrap_mode = 0
+vertical_alignment = 1
 
 [node name="Backpack" type="Panel" parent="Control" unique_id=929151952]
 layout_mode = 1
@@ -56,3 +56,19 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Stamina" type="ProgressBar" parent="Control" unique_id=1000985941]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -48.0
+offset_right = -128.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"stamina"
+value = 100.0
+show_percentage = false

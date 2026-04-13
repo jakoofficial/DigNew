@@ -70,6 +70,7 @@ vframes = 3
 frame = 7
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1361645006]
+position = Vector2(-296, -40)
 texture = ExtResource("4_t7ebr")
 hframes = 3
 vframes = 3
