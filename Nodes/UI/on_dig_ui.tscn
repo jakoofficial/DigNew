@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/on_dig_ui.gd" id="1_huv6s"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
-[ext_resource type="Texture2D" uid="uid://edq0wdrwnrhq" path="res://Sprites/icon.svg" id="3_q1hm0"]
 
 [node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
 script = ExtResource("1_huv6s")
@@ -105,32 +104,3 @@ theme_type_variation = &"Backpack_Item"
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme_type_variation = &"Backpack_Item"
-
-[node name="BackpackCollapser" type="Button" parent="Control/Backpack" unique_id=312700030]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -38.0
-offset_top = -56.0
-offset_right = 2.0
-offset_bottom = 56.0
-grow_vertical = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_type_variation = &"Backpack"
-toggle_mode = true
-flat = true
-
-[node name="TextureRect" type="TextureRect" parent="Control/Backpack/BackpackCollapser" unique_id=24692572]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_q1hm0")
-expand_mode = 1
-stretch_mode = 6
-
-[connection signal="toggled" from="Control/Backpack/BackpackCollapser" to="." method="_backpack"]

@@ -10,24 +10,25 @@ var direction
 func _ready() -> void:
 	get_parent().startPlayerPos = global_position
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
+func custom_input() -> void:
 		ray.enabled = true
-		if event.is_pressed() and event.keycode == KEY_SPACE:
+		if FK.JustPressed(AM.action("Dig")):
 			if ray.is_colliding():
 				var spot = ray.get_collider()
 				if spot != null:
 					spot.emit_signal("dug")
-		if event.is_pressed() and (event.keycode == KEY_A or event.keycode == KEY_LEFT):
+		if FK.Pressed(AM.action("Left")):
 			dir = "left"
-		if event.is_pressed() and (event.keycode == KEY_D or event.keycode == KEY_RIGHT):
+		if FK.Pressed(AM.action("Right")):
 			dir = "right"
-		if event.is_pressed() and (event.keycode == KEY_S or event.keycode == KEY_DOWN):
+		if FK.Pressed(AM.action("Down")):
 			dir = "down"
 		_setRayDir()
 
 func _physics_process(delta: float) -> void:
-	direction = Input.get_axis("left", "right")
+	custom_input()
+	
+	direction = FK.Axis(AM.action("Right"), AM.action("Left"))
 	if direction:
 		velocity.x = direction * speed
 	else:
