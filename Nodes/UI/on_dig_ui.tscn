@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/on_dig_ui.gd" id="1_huv6s"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
-[ext_resource type="PackedScene" uid="uid://c6pd0saki0y7d" path="res://Nodes/UI/PackSlot.tscn" id="3_q1hm0"]
+[ext_resource type="Script" uid="uid://c5r4m661lpmbb" path="res://Scripts/backpack.gd" id="3_q1hm0"]
 
 [node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
 script = ExtResource("1_huv6s")
@@ -43,8 +43,9 @@ offset_bottom = 250.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_type_variation = &"Backpack"
+script = ExtResource("3_q1hm0")
 
-[node name="FlowContainer" type="FlowContainer" parent="Control/Backpack" unique_id=1328835352]
+[node name="Inventory" type="FlowContainer" parent="Control/Backpack" unique_id=1328835352]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +56,3 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="PackSlot" parent="Control/Backpack/FlowContainer" unique_id=553719020 instance=ExtResource("3_q1hm0")]
-layout_mode = 2

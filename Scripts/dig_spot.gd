@@ -43,6 +43,8 @@ func removeSpot() -> void:
 			print(str("Y %s" % yIDX))
 			GM.curScene.canReset = true
 		
+		if ore != "None":
+			GM.curUI.backpack.add_item(ItemSlot.new(ore, oreSpr.frame))
 		call_deferred("queue_free")
 	
 var rng = RandomNumberGenerator.new()
