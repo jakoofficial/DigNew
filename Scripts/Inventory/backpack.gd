@@ -29,3 +29,8 @@ func _add_to_inv(item: ItemSlot, amount: int, new: bool) -> void:
 				i.amount = amount
 				i.updateSlot()
 				return
+
+func clear_backpack() -> void:
+	for b in inventory_container.get_children():
+		b.call_deferred("queue_free")
+	inventory.clear()

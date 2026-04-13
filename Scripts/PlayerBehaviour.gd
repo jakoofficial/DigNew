@@ -15,10 +15,11 @@ func custom_input() -> void:
 		if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().canDestroy:
 			GM.curScene.cursor.show()
 			GM.curScene.cursor.global_position = ray.get_collider().global_position
-			if FK.JustPressed(AM.action("Dig")):
-					var spot = ray.get_collider()
-					if spot != null:
-						spot.emit_signal("dug")
+			if GM.curUI.digsleft > 0 and FK.JustPressed(AM.action("Dig")):
+				var spot = ray.get_collider()
+				if spot != null:
+					spot.emit_signal("dug")
+
 		else: GM.curScene.cursor.hide()
 		
 		if FK.Pressed(AM.action("Left")):

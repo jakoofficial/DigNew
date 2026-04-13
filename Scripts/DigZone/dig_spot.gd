@@ -40,11 +40,11 @@ signal dug
 func removeSpot() -> void:
 	if canDestroy:
 		if yIDX >= GM.maxY/2:
-			print(str("Y %s" % yIDX))
 			GM.curScene.canReset = true
 		
 		if ore != "None":
 			GM.curUI.backpack.add_item(ItemSlot.new(ore, oreSpr.frame))
+		GM.curScene.use_stamina()
 		call_deferred("queue_free")
 	
 var rng = RandomNumberGenerator.new()

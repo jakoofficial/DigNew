@@ -1,6 +1,7 @@
 extends Node
 
 @export var Stamina: float = 100
+@export var MaxDigs: int = 4
 @export var Balance: float = 0
 @export var Global_Inventory: Dictionary
 
@@ -11,7 +12,7 @@ func add_to_global_inv(digInv: Dictionary) -> void:
 		var exists: bool = false
 		for gi in Global_Inventory.keys():
 			if i.ItemName == gi.ItemName:
-				Global_Inventory[i] += Global_Inventory.get(gi)
+				Global_Inventory[gi] += digInv.get(i)
 				exists = true
 				break
 		if !exists:

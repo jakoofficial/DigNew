@@ -17,6 +17,11 @@ var startPlayerPos: Vector2
 var offset: float = 32.0
 var is_ready: bool = false
 var canReset: bool = false
+
+# Playerstats
+var currStamina: float = PS.Stamina
+var perc: float = currStamina / PS.MaxDigs
+
 func _ready() -> void:
 	GM.curScene = self
 	back.show()
@@ -30,12 +35,21 @@ func _ready() -> void:
 	camera.limit_right = get_viewport_rect().size.x
 	is_ready = await Generated()
 	GM.curUI.set_depth_max_label()
+	GM.curUI.set_stamina(0)
+
+func use_stamina() -> void:
+	if currStamina > 0:
+		currStamina -= perc
+		GM.curUI.set_stamina(perc)
 
 func ResetScene() -> void:
 	if canReset:
-		PS.add_to_global_inv(GM.curUI.backpack.inventory)
+		await PS.add_to_global_inv(GM.curUI.backpack.inventory)
 		canReset = false
 		$Player.global_position = startPlayerPos
+		GM.curUI.backpack.clear_backpack()
+		GM.curUI.set_stamina(0)
+		GM.curUI.Check_GameOver()
 		Generated()
 
 func Generated() -> bool:

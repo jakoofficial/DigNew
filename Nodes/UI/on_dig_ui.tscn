@@ -17,6 +17,38 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_nss3e")
 
+[node name="GameOverPanel" type="Panel" parent="Control" unique_id=1053706863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -66.0
+offset_right = 192.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GameOverPanel"
+
+[node name="GameOver" type="RichTextLabel" parent="Control/GameOverPanel" unique_id=40004977]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GameOverText"
+bbcode_enabled = true
+text = "No Digs left
+"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DepthLevel" type="RichTextLabel" parent="Control" unique_id=1725157303]
 clip_contents = false
 layout_mode = 1
@@ -70,5 +102,25 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_type_variation = &"stamina"
-value = 100.0
 show_percentage = false
+
+[node name="DigsLeft" type="RichTextLabel" parent="Control/Stamina" unique_id=2070277496]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -20.0
+offset_right = 96.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Stamina"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
