@@ -29,12 +29,6 @@ func _ready() -> void:
 	camera.limit_right = get_viewport_rect().size.x
 	is_ready = await Generated()
 	GM.curUI.set_depth_max_label()
-	
-	# Keys
-	AM.initAction("Left", FKS.NewKey(KEY_A), FKS.NewKey(KEY_LEFT))
-	AM.initAction("Right", FKS.NewKey(KEY_D), FKS.NewKey(KEY_RIGHT))
-	AM.initAction("Down", FKS.NewKey(KEY_S), FKS.NewKey(KEY_DOWN))
-	AM.initAction("Dig", FKS.NewKey(KEY_SPACE))
 
 func ResetScene() -> void:
 	if canReset:
