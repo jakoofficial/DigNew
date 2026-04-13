@@ -5,6 +5,7 @@ extends Node2D
 @onready var fence: StaticBody2D = $Fence
 @onready var camera: Camera2D = $Player/Camera2D
 @onready var back: Node2D = $Back
+@onready var cursor: Sprite2D = $Cursor
 
 @export var startGenY: float = 128.0
 @export var startGenX: float = 0.0
