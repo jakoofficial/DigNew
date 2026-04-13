@@ -38,7 +38,6 @@ func _ready() -> void:
 	GM.curUI.set_stamina(0)
 
 func use_stamina() -> void:
-	print(currStamina)
 	if currStamina > 0:
 		currStamina -= perc
 		GM.curUI.set_stamina(perc)

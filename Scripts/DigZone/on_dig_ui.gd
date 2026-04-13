@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var digs_left: RichTextLabel = $Control/Stamina/DigsLeft
 @onready var game_over: RichTextLabel = $Control/GameOverPanel/GameOver
 @onready var game_over_panel: Panel = $Control/GameOverPanel
+@onready var shortcut_backpack: RichTextLabel = $Control/Backpackicon/ShortcutBackpack
 
 var digsleft: int
 var curPackPos: Vector2
@@ -14,6 +15,8 @@ func _ready() -> void:
 	curPackPos = backpack.position
 	_backpack()
 	game_over_panel.hide()
+	
+	shortcut_backpack.text = str(OS.get_keycode_string((AM.action("Backpack")[0] as FancyKeyObj).btn))
 
 func Check_GameOver() -> void:
 	if digsleft <= 0:

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/DigZone/on_dig_ui.gd" id="1_huv6s"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
 [ext_resource type="Script" uid="uid://c5r4m661lpmbb" path="res://Scripts/Inventory/backpack.gd" id="3_q1hm0"]
+[ext_resource type="Texture2D" uid="uid://dum8xkc7xq1kl" path="res://Sprites/Icons/Backpack.svg" id="4_u3a3k"]
 
 [node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
 script = ExtResource("1_huv6s")
@@ -145,3 +146,36 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Backpackicon" type="TextureRect" parent="Control" unique_id=2063282843]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 64.0
+grow_horizontal = 0
+texture = ExtResource("4_u3a3k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ShortcutBackpack" type="RichTextLabel" parent="Control/Backpackicon" unique_id=1845917391]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -34.0
+offset_right = 38.0
+offset_bottom = 6.0
+grow_vertical = 0
+theme_type_variation = &"Coordinates"
+text = "B"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 2
