@@ -1,7 +1,7 @@
 extends Node
 
 @export var Stamina: float = 100
-@export var MaxDigs: int = 40
+@export var MaxDigs: int = 4
 @export var Balance: float = 0
 @export var Global_Inventory: Dictionary
 

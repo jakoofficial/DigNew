@@ -25,7 +25,8 @@ PS="*uid://1dljftj53mpr"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [file_customization]
 
@@ -35,6 +36,13 @@ folder_colors={
 "res://Scripts/": "red",
 "res://Sprites/": "orange"
 }
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+theme/default_font_multichannel_signed_distance_field=true
+theme/lcd_subpixel_layout=0
+theme/custom_font="uid://b166dqji8afx3"
 
 [input]
 

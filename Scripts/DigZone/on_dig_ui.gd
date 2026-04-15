@@ -30,7 +30,7 @@ func ResetUI() -> void:
 	set_stamina(0)
 
 func set_gameover_text(reason: String):
-	game_over.text = str("%s\n%s" % [reason, str("[font_size=16]Reset dig 'R' or Go back 'ESC'[/font_size]")])
+	game_over.text = str("%s\n%s" % [reason, str("[font_size=12]Reset dig 'R' or Go back 'ESC'[/font_size]")])
 
 func set_stamina(perc: float = 0) -> void:
 	if perc == 0:
