@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://57tg5ldwjdvx"]
+
+[ext_resource type="Script" uid="uid://cjjawysq3sa7f" path="res://Scripts/MainMenu/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=443126776]
+script = ExtResource("1_1ehe0")
+
+[node name="Control" type="Control" parent="." unique_id=1581943142]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_28flt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1944542950]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_type_variation = &"MenuTitle"
+bbcode_enabled = true
+text = "Dig Dig"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1968257748]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -132.0
+offset_right = 128.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1ehe0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel" unique_id=1920922756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/NinePatchRect" unique_id=2131904834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NewGameBtn" type="Button" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=1021429887]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "New Game"
+
+[node name="ContinueBtn" type="Button" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=1695105708]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "Continue "
+
+[node name="ExitGameBtn" type="Button" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=354730574]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "Exit game"
