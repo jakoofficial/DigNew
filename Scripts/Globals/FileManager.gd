@@ -10,8 +10,8 @@ func SaveData():
 		"Balance": PS.Balance,
 		"MaxDigs": PS.MaxDigs,
 		"Global_Inventory": PS.Global_Inventory,
-		"MaxX": GM.maxX,
-		"MaxY": GM.maxY
+		"MaxDigX": PS.MaxDigX,
+		"MaxDigY": PS.MaxDigY
 	}
 	return dict
 

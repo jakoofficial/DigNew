@@ -27,10 +27,9 @@ func _ready() -> void:
 	back.show()
 	randomize()
 	
-	GM.maxX = (get_viewport_rect().size.x / 64)
-	GM.maxY = PS.MaxDigY
-	maxSpotY = GM.maxY+1
-	maxSpotX = GM.maxX+2
+	#GM.maxX = (get_viewport_rect().size.x / 64)
+	maxSpotY = PS.MaxDigY+1
+	maxSpotX = PS.MaxDigX+2
 	spots.global_position = Vector2((startGenX-64.0)+offset, startGenY)
 	camera.limit_right = get_viewport_rect().size.x
 	is_ready = await Generated()
@@ -64,19 +63,19 @@ func Generated() -> bool:
 	for y in range(maxSpotY):
 		for x in range(maxSpotX):
 			#Fence
-			if (x == 1 or x == GM.maxX) and y==0:
+			if (x == 1 or x == PS.MaxDigX) and y==0:
 				var nFence = fence.duplicate()
 				spots.add_child(nFence)
 				nFence.position = Vector2(x*64, y-64) 
-				if x == GM.maxX: nFence.scale.x = -nFence.scale.x
+				if x == PS.MaxDigX: nFence.scale.x = -nFence.scale.x
 			#Spots
 			var spot = digSpot.duplicate()
 			spot.xIDX = x
 			spot.yIDX = y
-			spot.maxXIDX = GM.maxX
+			spot.maxXIDX = PS.MaxDigX
 			if y == 0: spot.type = 0 #Grass
-			elif y == GM.maxY: spot.type = 2; spot.type = 3; spot.canDestroy = false # Unbreakable
-			elif x==0 or x==GM.maxX+1: spot.type = 2; spot.canDestroy = false 
+			elif y == PS.MaxDigY: spot.type = 2; spot.type = 3; spot.canDestroy = false # Unbreakable
+			elif x==0 or x==PS.MaxDigX+1: spot.type = 2; spot.canDestroy = false 
 			else: spot.type = 1 #Dirt
 			spots.add_child(spot)
 			spot.position = Vector2(x*64, y*64)

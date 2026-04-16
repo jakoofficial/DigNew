@@ -14,7 +14,7 @@ func _NewGame() -> void:
 	pass
 
 func _ContinueGame() -> void:
-	print(FM.LoadGame())
+	PS.SetValues(FM.LoadGame())
 	pass
 
 func _ExitGame() -> void:

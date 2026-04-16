@@ -57,4 +57,4 @@ func _backpack() -> void:
 	else: backpack.hide()
 
 func set_depth_max_label() -> void:
-	depth_level.text = str("Max Depth: %s" % GM.maxY)
+	depth_level.text = str("Max Depth: %s" % PS.MaxDigY)

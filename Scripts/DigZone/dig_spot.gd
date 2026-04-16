@@ -39,7 +39,7 @@ func _set_types() -> void:
 signal dug
 func removeSpot() -> void:
 	if canDestroy:
-		if yIDX >= GM.maxY/2:
+		if yIDX >= PS.MaxDigY/2:
 			GM.curScene.canReset = true
 		
 		if ore != "None":
