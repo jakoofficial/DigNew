@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://cleoidq2xt2a4"]
 
+[ext_resource type="Script" uid="uid://chvwwst0qmot8" path="res://Scripts/town/town.gd" id="1_kswdu"]
+
 [node name="Town" type="Node2D" unique_id=1274485126]
+script = ExtResource("1_kswdu")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjjawysq3sa7f" path="res://Scripts/MainMenu/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://nr5sl0y8dfxn" path="res://Sprites/MainMenuBG.png" id="3_ce3w2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
 
@@ -17,6 +18,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_28flt")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=805995155]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ce3w2")
+stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1944542950]
 clip_contents = false

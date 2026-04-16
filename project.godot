@@ -23,11 +23,16 @@ AM="*uid://b7pwtxar4vb2c"
 FM="*uid://fk865j8d8cev"
 GM="*uid://copcewp32pk8d"
 PS="*uid://1dljftj53mpr"
+SceneManager="*uid://byv4kvn38ec7g"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 
 [file_customization]
 

@@ -27,7 +27,6 @@ func _ready() -> void:
 	back.show()
 	randomize()
 	
-	#GM.maxX = (get_viewport_rect().size.x / 64)
 	maxSpotY = PS.MaxDigY+1
 	maxSpotX = PS.MaxDigX+2
 	spots.global_position = Vector2((startGenX-64.0)+offset, startGenY)
@@ -36,8 +35,6 @@ func _ready() -> void:
 	GM.curUI.set_depth_max_label()
 	GM.curUI.set_stamina(0)
 	
-	#FM.SaveGame()
-	#FM.LoadGame()
 
 func use_stamina() -> void:
 	if currStamina > 0:
