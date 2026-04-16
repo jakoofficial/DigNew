@@ -13,6 +13,7 @@ func _ready() -> void:
 	AM.initAction("ResetDig", FKS.NewKey(KEY_R))
 	AM.initAction("Back", FKS.NewKey(KEY_ESCAPE))
 
+
 func _process(_delta: float) -> void:
 	# When a dig is over
 	if curScene != null and curScene.canReset:
