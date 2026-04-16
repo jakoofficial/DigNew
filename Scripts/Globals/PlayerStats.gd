@@ -21,6 +21,10 @@ func add_to_global_inv(digInv: Dictionary) -> void:
 			Global_Inventory[i] = digInv.get(i)
 
 func SetValues(data: Dictionary) -> void:
-	for d in data.keys():
-		print(d)
+	Stamina = data["Stamina"]
+	MaxDigs = data["MaxDigs"]
+	Balance = data["Balance"]
+	Global_Inventory = data["Global_Inventory"]
+	MaxDigX = data["MaxDigX"]
+	MaxDigY = data["MaxDigY"]
 	pass
