@@ -6,6 +6,7 @@ extends CanvasLayer
 var canReset = false
 func _ready() -> void:
 	GM.curScene = self
+	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn", LoadingScreen.Type.DEFAULT)
 	
 	new_game_btn.connect("pressed", _NewGame)
 	continue_btn.connect("pressed", _ContinueGame)
@@ -14,13 +15,12 @@ func _ready() -> void:
 
 func _NewGame() -> void:
 	FM.NewGameFile()
-	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn")
 	SceneManager.change_scene_to_file("res://Scenes/Digzone.tscn", {}, 1.0)
 	pass
 
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
-	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn")
+	#SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn")
 	SceneManager.change_scene_to_file("res://Scenes/Digzone.tscn", {}, 1.0)
 	pass
 
