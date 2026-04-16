@@ -14,11 +14,13 @@ func _ready() -> void:
 
 func _NewGame() -> void:
 	FM.NewGameFile()
+	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn")
 	SceneManager.change_scene_to_file("res://Scenes/Digzone.tscn", {}, 1.0)
 	pass
 
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
+	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn")
 	SceneManager.change_scene_to_file("res://Scenes/Digzone.tscn", {}, 1.0)
 	pass
 
