@@ -20,4 +20,7 @@ func _process(_delta: float) -> void:
 			curScene.ResetScene()
 		if FK.JustReleased(AM.action("Back")):
 			await PS.add_to_global_inv(GM.curUI.backpack.inventory)
-			SceneManager.change_scene_to_file("res://Scenes/town.tscn", {}, 1.0)
+			_load_scene("res://Scenes/town.tscn")
+
+func _load_scene(path: String) -> void:
+	SceneManager.change_scene_to_file(path, {}, 1.0)
