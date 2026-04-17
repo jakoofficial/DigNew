@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var game_over: RichTextLabel = $Control/GameOverPanel/GameOver
 @onready var game_over_panel: Panel = $Control/GameOverPanel
 @onready var shortcut_backpack: RichTextLabel = $Control/Backpackicon/ShortcutBackpack
+@onready var reset_allowed: RichTextLabel = $Control/ResetAllowed
 
 var digsleft: int
 var curPackPos: Vector2
@@ -15,7 +16,7 @@ func _ready() -> void:
 	curPackPos = backpack.position
 	_backpack()
 	game_over_panel.hide()
-	
+	reset_allowed.hide()
 	shortcut_backpack.text = str(OS.get_keycode_string((AM.action("Backpack")[0] as FancyKeyObj).btn))
 
 func Check_GameOver() -> void:

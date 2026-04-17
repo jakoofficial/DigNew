@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Digdig"
-run/main_scene="uid://h4w2kl33kbnr"
+run/main_scene="uid://57tg5ldwjdvx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 

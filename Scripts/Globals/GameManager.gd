@@ -3,6 +3,12 @@ extends Node
 var curScene
 var curUI
 
+enum Scenes {
+	MainMenu,
+	Town,
+	DigZone
+}
+
 func _ready() -> void:
 	# Keys
 	AM.initAction("Left", FKS.NewKey(KEY_A), FKS.NewKey(KEY_LEFT))
@@ -12,7 +18,7 @@ func _ready() -> void:
 	AM.initAction("Backpack", FKS.NewKey(KEY_B))
 	AM.initAction("ResetDig", FKS.NewKey(KEY_R))
 	AM.initAction("Back", FKS.NewKey(KEY_ESCAPE))
-
+	AM.initAction("Select", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
 
 func _process(_delta: float) -> void:
 	# When a dig is over
@@ -21,7 +27,14 @@ func _process(_delta: float) -> void:
 			curScene.ResetScene()
 		if FK.JustReleased(AM.action("Back")):
 			await PS.add_to_global_inv(GM.curUI.backpack.inventory)
-			_load_scene("res://Scenes/town.tscn")
+			_load_scene(Scenes.Town)
 
-func _load_scene(path: String) -> void:
+func _load_scene(scene: Scenes) -> void:
+	var path = "res://Scenes/main_menu.tscn"
+	
+	match scene:
+		0: path = "res://Scenes/main_menu.tscn"
+		1: path = "res://Scenes/town.tscn"
+		2: path = "res://Scenes/Digzone.tscn"
+	
 	SceneManager.change_scene_to_file(path, {}, 1.0)

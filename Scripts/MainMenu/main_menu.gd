@@ -15,12 +15,12 @@ func _ready() -> void:
 
 func _NewGame() -> void:
 	FM.NewGameFile()
-	GM._load_scene("res://Scenes/Digzone.tscn")
+	GM._load_scene(GM.Scenes.Town)
 	pass
 
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
-	GM._load_scene("res://Scenes/Digzone.tscn")
+	GM._load_scene(GM.Scenes.Town)
 	pass
 
 func _ExitGame() -> void:

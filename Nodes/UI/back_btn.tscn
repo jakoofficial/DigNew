@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dtc57kb1m62gq"]
+
+[ext_resource type="Script" uid="uid://dbo0cg3nhvrbd" path="res://Scripts/MainMenu/back_btn.gd" id="1_ag7hi"]
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_tisws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag7hi"]
+size = Vector2(120, 56)
+
+[node name="BackBtn" type="Area2D" unique_id=729406048]
+script = ExtResource("1_ag7hi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847617576]
+scale = Vector2(2, 2)
+texture = ExtResource("1_tisws")
+region_enabled = true
+region_rect = Rect2(65, 0, 62, 47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=859344104]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_ag7hi")
