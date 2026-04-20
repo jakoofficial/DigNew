@@ -43,3 +43,4 @@ func _load_scene(scene: Scenes) -> void:
 		4: path = "res://Scenes/market.tscn"; SceneEntering = "Market"
 	
 	SceneManager.change_scene_to_file(path, {}, 1.0)
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
