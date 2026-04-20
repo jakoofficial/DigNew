@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bgd3c5ycfl82l"]
+
+[ext_resource type="Script" uid="uid://caof5jntrffis" path="res://Scripts/Town/upgrade_station.gd" id="1_22nsb"]
+[ext_resource type="Texture2D" uid="uid://deod2oc13i1qo" path="res://Sprites/Buildings.png" id="1_45vw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45vw3"]
+size = Vector2(64, 48)
+
+[node name="UpgradeStation" type="Area2D" unique_id=496775419]
+script = ExtResource("1_22nsb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1202071359]
+texture = ExtResource("1_45vw3")
+region_enabled = true
+region_rect = Rect2(2, 210, 74, 46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=179415705]
+shape = SubResource("RectangleShape2D_45vw3")

@@ -6,7 +6,8 @@ var curUI
 enum Scenes {
 	MainMenu,
 	Town,
-	DigZone
+	DigZone,
+	UpgradeArea
 }
 
 func _ready() -> void:
@@ -36,5 +37,6 @@ func _load_scene(scene: Scenes) -> void:
 		0: path = "res://Scenes/main_menu.tscn"
 		1: path = "res://Scenes/town.tscn"
 		2: path = "res://Scenes/Digzone.tscn"
+		3: path = "res://Scenes/Upgrade_Area.tscn"
 	
 	SceneManager.change_scene_to_file(path, {}, 1.0)

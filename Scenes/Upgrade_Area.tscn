@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dxwcyj2v568ax"]
+
+[ext_resource type="Script" uid="uid://06vhxipscxf8" path="res://Scripts/Town/back_button.gd" id="1_c4mb6"]
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_ltlum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4mb6"]
+size = Vector2(64, 32)
+
+[node name="UpgradeArea" type="Node2D" unique_id=309530222]
+
+[node name="BackButton" type="Area2D" parent="." unique_id=1026248790]
+position = Vector2(80, 47)
+scale = Vector2(2, 2)
+script = ExtResource("1_c4mb6")
+SceneBefore = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="BackButton" unique_id=1104612920]
+texture = ExtResource("1_ltlum")
+region_enabled = true
+region_rect = Rect2(64, 2, 62, 47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackButton" unique_id=1046036044]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_c4mb6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014922850]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=797090851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

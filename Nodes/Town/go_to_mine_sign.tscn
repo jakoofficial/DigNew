@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c3430sjtjjkhl"]
+
+[ext_resource type="Script" uid="uid://cyms08yl6vgox" path="res://Scripts/Town/go_to_mine_sign.gd" id="1_g4a5a"]
+[ext_resource type="Texture2D" uid="uid://deod2oc13i1qo" path="res://Sprites/Buildings.png" id="2_g4a5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqxe5"]
+size = Vector2(48, 40)
+
+[node name="GoToMineSign" type="Area2D" unique_id=570067253]
+script = ExtResource("1_g4a5a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=816147859]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_g4a5a")
+region_enabled = true
+region_rect = Rect2(149, 169, 106, 86)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1870255269]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_aqxe5")

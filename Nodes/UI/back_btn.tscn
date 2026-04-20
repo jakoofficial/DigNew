@@ -13,8 +13,8 @@ script = ExtResource("1_ag7hi")
 scale = Vector2(2, 2)
 texture = ExtResource("1_tisws")
 region_enabled = true
-region_rect = Rect2(65, 0, 62, 47)
+region_rect = Rect2(64, 2, 62, 47)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=859344104]
-position = Vector2(0, 17)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_ag7hi")
