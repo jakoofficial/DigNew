@@ -1,9 +1,256 @@
 [gd_scene format=3 uid="uid://00nuwyl7g28s"]
 
 [ext_resource type="PackedScene" uid="uid://dtc57kb1m62gq" path="res://Nodes/UI/back_btn.tscn" id="1_rfcd5"]
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="2_3csk5"]
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="3_4rre6"]
+[ext_resource type="PackedScene" uid="uid://c6pd0saki0y7d" path="res://Nodes/UI/PackSlot.tscn" id="4_yn57m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rre6"]
 
 [node name="Market" type="Node2D" unique_id=720307893]
 
 [node name="BackBtn" parent="." unique_id=729406048 instance=ExtResource("1_rfcd5")]
 position = Vector2(80, 47)
 SceneBefore = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=432240562]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1860728044]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_3csk5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1328454820]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = 88.0
+offset_right = 384.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=1889809913]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=914615516]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Backpack"
+
+[node name="PlayerInv" type="NinePatchRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel" unique_id=1649267332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4rre6")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Inv" type="FlowContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv" unique_id=657548282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+
+[node name="PackSlot" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv/Inv" unique_id=553719020 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot2" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv/Inv" unique_id=1903125486 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot3" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv/Inv" unique_id=849983610 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot4" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv/Inv" unique_id=489580433 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot5" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv/Inv" unique_id=587218398 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot6" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerInv/Inv" unique_id=1148426297 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PlayerBalance" type="NinePatchRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel" unique_id=1266928060]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02116402
+anchor_top = -0.04797048
+anchor_right = 0.42328042
+anchor_bottom = 0.040590405
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4rre6")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel/PlayerBalance" unique_id=1904316896]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.3492126
+offset_top = 6.0
+offset_right = -8.015869
+offset_bottom = 2.8413277
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "100000000000000"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CancelBtn" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel" unique_id=928601765]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = 9.0
+offset_bottom = 46.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ShopBtn"
+text = "Cancel"
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=2017377738]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4rre6")
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1443522721]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_type_variation = &"Backpack"
+
+[node name="ShopInv" type="NinePatchRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2" unique_id=309569897]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4rre6")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Inv" type="FlowContainer" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv" unique_id=1723312481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+
+[node name="PackSlot" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv/Inv" unique_id=937265311 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot2" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv/Inv" unique_id=2018371128 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot3" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv/Inv" unique_id=1098662075 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot4" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv/Inv" unique_id=1174852523 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot5" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv/Inv" unique_id=482721599 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="PackSlot6" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopInv/Inv" unique_id=1870542303 instance=ExtResource("4_yn57m")]
+layout_mode = 2
+
+[node name="ShopNamePlate" type="NinePatchRect" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2" unique_id=1845633504]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029023746
+anchor_top = -0.04797048
+anchor_right = 0.43271768
+anchor_bottom = 0.040590405
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4rre6")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2/ShopNamePlate" unique_id=1181247889]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.2928467
+offset_top = 6.0
+offset_right = -9.072235
+offset_bottom = 2.8413277
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Shop"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SellBtn" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer/Panel2" unique_id=1174460956]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = 9.0
+offset_right = 78.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ShopBtn"
+text = "Sell"
