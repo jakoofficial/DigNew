@@ -1,27 +1,12 @@
 [gd_scene format=3 uid="uid://dxwcyj2v568ax"]
 
-[ext_resource type="Script" uid="uid://06vhxipscxf8" path="res://Scripts/Town/back_button.gd" id="1_c4mb6"]
-[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_ltlum"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4mb6"]
-size = Vector2(64, 32)
+[ext_resource type="PackedScene" uid="uid://dtc57kb1m62gq" path="res://Nodes/UI/back_btn.tscn" id="1_ltlum"]
 
 [node name="UpgradeArea" type="Node2D" unique_id=309530222]
 
-[node name="BackButton" type="Area2D" parent="." unique_id=1026248790]
-position = Vector2(80, 47)
-scale = Vector2(2, 2)
-script = ExtResource("1_c4mb6")
+[node name="BackBtn" parent="." unique_id=729406048 instance=ExtResource("1_ltlum")]
+position = Vector2(72, 47)
 SceneBefore = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="BackButton" unique_id=1104612920]
-texture = ExtResource("1_ltlum")
-region_enabled = true
-region_rect = Rect2(64, 2, 62, 47)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BackButton" unique_id=1046036044]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_c4mb6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014922850]
 

@@ -7,7 +7,8 @@ enum Scenes {
 	MainMenu,
 	Town,
 	DigZone,
-	UpgradeArea
+	UpgradeArea,
+	Market
 }
 
 func _ready() -> void:
@@ -30,13 +31,15 @@ func _process(_delta: float) -> void:
 			await PS.add_to_global_inv(GM.curUI.backpack.inventory)
 			_load_scene(Scenes.Town)
 
+var SceneEntering: String = "asd"
 func _load_scene(scene: Scenes) -> void:
 	var path = "res://Scenes/main_menu.tscn"
 	
 	match scene:
-		0: path = "res://Scenes/main_menu.tscn"
-		1: path = "res://Scenes/town.tscn"
-		2: path = "res://Scenes/Digzone.tscn"
-		3: path = "res://Scenes/Upgrade_Area.tscn"
+		0: path = "res://Scenes/main_menu.tscn"; SceneEntering = "Main Menu"
+		1: path = "res://Scenes/town.tscn"; SceneEntering = "Town"
+		2: path = "res://Scenes/Digzone.tscn"; SceneEntering = "Dig Zone"
+		3: path = "res://Scenes/Upgrade_Area.tscn"; SceneEntering = "Upgrade Area"
+		4: path = "res://Scenes/market.tscn"; SceneEntering = "Market"
 	
 	SceneManager.change_scene_to_file(path, {}, 1.0)
