@@ -15,6 +15,8 @@ func _ready() -> void:
 	new_game_btn.grab_focus()
 	
 	continue_btn.disabled = !FM.CheckSaveGame()
+	if !FM.CheckSaveGame():
+		continue_btn.focus_mode = Control.FOCUS_NONE
 
 func _NewGame() -> void:
 	FM.NewGameFile()
