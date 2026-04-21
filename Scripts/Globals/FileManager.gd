@@ -32,8 +32,12 @@ func NewGameFile() -> void:
 	else:
 		SaveGame()
 
+func CheckSaveGame() -> bool:
+	if not FileAccess.file_exists("user://DigDigSave.save"): return false
+	else: return true
+
 func LoadGame():
-	if not FileAccess.file_exists("user://DigDigSave.save"): return
+	if !CheckSaveGame(): return null
 	
 	var file = FileAccess.open(path, FileAccess.READ)
 	var json_text: String = FileAccess.get_file_as_string(path)

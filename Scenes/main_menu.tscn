@@ -7,6 +7,18 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(128, 0, 116, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(128, 35, 116, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(128, 73, 116, 33)
+
 [node name="MainMenu" type="CanvasLayer" unique_id=443126776]
 script = ExtResource("1_1ehe0")
 
@@ -82,29 +94,86 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="NewGameBtn" type="Button" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=1021429887]
+[node name="NewGameBtn" type="TextureButton" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=1482289628]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../ExitGameBtn")
 focus_neighbor_bottom = NodePath("../ContinueBtn")
 mouse_default_cursor_shape = 2
-text = "New Game"
+texture_normal = SubResource("AtlasTexture_ce3w2")
+texture_hover = SubResource("AtlasTexture_n45e2")
+texture_disabled = SubResource("AtlasTexture_opfnp")
+texture_focused = SubResource("AtlasTexture_n45e2")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="ContinueBtn" type="Button" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=1695105708]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/NinePatchRect/VBoxContainer/NewGameBtn" unique_id=1283138957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "New Game"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueBtn" type="TextureButton" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=408644448]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../NewGameBtn")
 focus_neighbor_bottom = NodePath("../ExitGameBtn")
 mouse_default_cursor_shape = 2
-text = "Continue "
+texture_normal = SubResource("AtlasTexture_ce3w2")
+texture_hover = SubResource("AtlasTexture_n45e2")
+texture_disabled = SubResource("AtlasTexture_opfnp")
+texture_focused = SubResource("AtlasTexture_n45e2")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="ExitGameBtn" type="Button" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=354730574]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Panel/NinePatchRect/VBoxContainer/ContinueBtn" unique_id=1812491541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Continue"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitGameBtn" type="TextureButton" parent="Control/Panel/NinePatchRect/VBoxContainer" unique_id=669964213]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../ContinueBtn")
 focus_neighbor_bottom = NodePath("../NewGameBtn")
 mouse_default_cursor_shape = 2
-text = "Exit game"
+texture_normal = SubResource("AtlasTexture_ce3w2")
+texture_hover = SubResource("AtlasTexture_n45e2")
+texture_disabled = SubResource("AtlasTexture_opfnp")
+texture_focused = SubResource("AtlasTexture_n45e2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/Panel/NinePatchRect/VBoxContainer/ExitGameBtn" unique_id=642265156]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Exit Game"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,7 +1,7 @@
 extends CanvasLayer
-@onready var new_game_btn: Button = $Control/Panel/NinePatchRect/VBoxContainer/NewGameBtn
-@onready var continue_btn: Button = $Control/Panel/NinePatchRect/VBoxContainer/ContinueBtn
-@onready var exit_game_btn: Button = $Control/Panel/NinePatchRect/VBoxContainer/ExitGameBtn
+@onready var new_game_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/NewGameBtn
+@onready var continue_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/ContinueBtn
+@onready var exit_game_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/ExitGameBtn
 
 var canReset = false
 func _ready() -> void:
@@ -13,6 +13,8 @@ func _ready() -> void:
 	exit_game_btn.connect("pressed", _ExitGame)
 	
 	new_game_btn.grab_focus()
+	
+	continue_btn.disabled = !FM.CheckSaveGame()
 
 func _NewGame() -> void:
 	FM.NewGameFile()
