@@ -2,6 +2,7 @@ extends Node
 
 var curScene
 var curUI
+var paused: bool = false
 
 var Player: CharacterBody2D
 var playerPosBuilding: Vector2 = Vector2.ZERO
@@ -27,6 +28,7 @@ func _ready() -> void:
 	AM.initAction("Select", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
 	AM.initAction("Interact", FKS.NewKey(KEY_SPACE))
 	AM.initAction("FlyMode_Dev", FKS.NewKey(KEY_P))
+	AM.initAction("Pause", FKS.NewKey(KEY_ESCAPE))
 
 func _process(_delta: float) -> void:
 	# When a dig is over
