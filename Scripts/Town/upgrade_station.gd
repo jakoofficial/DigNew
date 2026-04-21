@@ -16,7 +16,9 @@ func _process(_delta: float) -> void:
 func _hovered(is_hovered: bool) -> void:
 	if is_hovered:
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+		GM.curUI.emit_signal("setOverlay", "Upgrades", true)
 	else:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+		GM.curUI.emit_signal("setOverlay", "Upgrades", false)
 	
 	canClick = true if is_hovered else false

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdkbos7ccqist"]
 
-[ext_resource type="Script" uid="uid://cgjutvuurltl" path="res://Scripts/Town/house.gd" id="1_i6dup"]
+[ext_resource type="Script" uid="uid://cgjutvuurltl" path="res://Scripts/Town/market.gd" id="1_i6dup"]
 [ext_resource type="Texture2D" uid="uid://hlvifv3fm68b" path="res://Sprites/MarketStall.png" id="2_i6dup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrl8u"]
