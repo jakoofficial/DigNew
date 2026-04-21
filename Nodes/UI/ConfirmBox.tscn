@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bk46exhp8wagj"]
+
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_0mkpp"]
+[ext_resource type="Texture2D" uid="uid://b4n5jr12li31" path="res://Sprites/Colour palette/Taile Gamougg 96.png" id="1_1ckjn"]
+[ext_resource type="Script" uid="uid://goeoiqiq3rkv" path="res://Scripts/UI/confirm_box.gd" id="1_6g8y7"]
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_m7jqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g8y7"]
+atlas = ExtResource("1_1ckjn")
+region = Rect2(1, 21, 6, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ckjn"]
+atlas = ExtResource("1_0mkpp")
+region = Rect2(128, 0, 116, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7jqb"]
+atlas = ExtResource("1_0mkpp")
+region = Rect2(128, 35, 116, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilpk6"]
+atlas = ExtResource("1_0mkpp")
+region = Rect2(128, 73, 116, 33)
+
+[node name="ConfirmBox" type="Control" unique_id=1259830081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m7jqb")
+script = ExtResource("1_6g8y7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=284995289]
+self_modulate = Color(1, 1, 1, 0.40392157)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_6g8y7")
+expand_mode = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=510804460]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0mkpp")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect" unique_id=69781273]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -58.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Cancel" type="TextureButton" parent="NinePatchRect/HBoxContainer" unique_id=728719747]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../Confirm")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../Confirm")
+focus_neighbor_bottom = NodePath("../Confirm")
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_1ckjn")
+texture_hover = SubResource("AtlasTexture_m7jqb")
+texture_disabled = SubResource("AtlasTexture_ilpk6")
+texture_focused = SubResource("AtlasTexture_m7jqb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/Cancel" unique_id=1451932556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Cancel"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="TextureButton" parent="NinePatchRect/HBoxContainer" unique_id=2109629196]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../Cancel")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../Cancel")
+focus_neighbor_bottom = NodePath("../Cancel")
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_1ckjn")
+texture_hover = SubResource("AtlasTexture_m7jqb")
+texture_disabled = SubResource("AtlasTexture_ilpk6")
+texture_focused = SubResource("AtlasTexture_m7jqb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer/Confirm" unique_id=670860209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Confirm"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBox" type="RichTextLabel" parent="NinePatchRect" unique_id=298189352]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "asdadadasadaasda dadadada"
+scroll_active = false

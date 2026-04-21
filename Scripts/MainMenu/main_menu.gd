@@ -2,6 +2,7 @@ extends CanvasLayer
 @onready var new_game_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/NewGameBtn
 @onready var continue_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/ContinueBtn
 @onready var exit_game_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/ExitGameBtn
+@onready var confirm_box: Control = $ConfirmBox
 
 var canReset = false
 func _ready() -> void:
@@ -19,6 +20,13 @@ func _ready() -> void:
 		continue_btn.focus_mode = Control.FOCUS_NONE
 
 func _NewGame() -> void:
+	var canMakeNew = true
+	if FM.CheckSaveGame():
+		confirm_box.show()
+		confirm_box.prev_btn = new_game_btn
+		confirm_box._setText("This will permanently delete the already existing savefile.")
+		canMakeNew = await confirm_box.confirmResult
+	if !canMakeNew: return
 	FM.NewGameFile()
 	GM.playerPosBuilding = Vector2(32, 304)
 

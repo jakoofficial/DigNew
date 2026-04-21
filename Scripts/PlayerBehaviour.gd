@@ -6,11 +6,13 @@ extends CharacterBody2D
 var grav: float = 980.0
 var speed: float = 200.0
 var direction
+var camera: Camera2D
 
 var in_town: bool = false
 
 func _ready() -> void:
 	GM.Player = self
+	camera = $Camera2D
 	if get_parent().name == "Town":
 		in_town = true
 	else:
@@ -37,7 +39,27 @@ func custom_input() -> void:
 		dir = "down"
 	_setRayDir()
 
+var dir_x
+var dir_y
+var fly: bool = false
+func flymode() -> void:
+	dir_x = FK.Axis(AM.action("Right"), AM.action("Left"))
+	dir_y = FK.Axis(AM.action("Down"), AM.action("Up"))
+	if dir_x:
+		velocity.x = dir_x * (speed * 2)
+	else:
+		velocity.x = 0
+	if dir_y:
+		velocity.y = dir_y * (speed * 2)
+	else: velocity.y = 0
+	
+	move_and_slide()
+
 func _physics_process(delta: float) -> void:
+	if FK.JustReleased(AM.action("FlyMode_Dev")):
+		fly = !fly
+	
+	if fly: flymode(); return
 	custom_input()
 	
 	direction = FK.Axis(AM.action("Right"), AM.action("Left"))

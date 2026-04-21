@@ -4,8 +4,13 @@
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_48xlc"]
 [ext_resource type="Texture2D" uid="uid://nr5sl0y8dfxn" path="res://Sprites/MainMenuBG.png" id="3_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="5_n45e2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp0ys"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(1, 82, 114, 78)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
 atlas = ExtResource("2_48xlc")
@@ -29,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_28flt")
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=805995155]
@@ -43,11 +49,18 @@ stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1944542950]
 clip_contents = false
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-offset_bottom = 128.0
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -212.0
+offset_right = 3.0
+offset_bottom = -112.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_type_variation = &"MenuTitle"
 bbcode_enabled = true
 text = "Dig Dig"
@@ -69,6 +82,7 @@ offset_right = 128.0
 offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1ehe0")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel" unique_id=1920922756]
@@ -84,6 +98,21 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/NinePatchRect" unique_id=1200139408]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -2.0
+offset_right = -30.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cp0ys")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/NinePatchRect" unique_id=2131904834]
 layout_mode = 1
@@ -115,6 +144,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "New Game"
 scroll_active = false
@@ -143,6 +173,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "Continue"
 scroll_active = false
@@ -171,9 +202,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "Exit Game"
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ConfirmBox" parent="." unique_id=1259830081 instance=ExtResource("5_n45e2")]
+visible = false

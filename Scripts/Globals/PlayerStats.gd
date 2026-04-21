@@ -4,7 +4,7 @@ extends Node
 @export var MaxDigs: int = 4
 @export var Balance: float = 0
 @export var Global_Inventory: Dictionary
-@export var MaxDigX: int = 18
+@export var MaxDigX: int = 22
 @export var MaxDigY: int = 10
 
 func add_to_global_inv(digInv: Dictionary) -> void:

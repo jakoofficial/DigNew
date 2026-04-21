@@ -22,19 +22,13 @@ digSpot = NodePath("DigSpot")
 [node name="Player" parent="." unique_id=1600123372 instance=ExtResource("2_1q57l")]
 position = Vector2(576, 64)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1364335732]
-process_callback = 0
-limit_left = 0
-limit_top = 0
-position_smoothing_enabled = true
-
 [node name="Spots" type="Node2D" parent="." unique_id=739184984]
 
 [node name="DigSpot" parent="." unique_id=1824871557 instance=ExtResource("3_rlhdw")]
-position = Vector2(-400, 80)
+position = Vector2(648, -488)
 
 [node name="Fence" type="StaticBody2D" parent="." unique_id=1613654153]
-position = Vector2(-216, 72)
+position = Vector2(832, -496)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fence" unique_id=1842804492]
 texture = ExtResource("4_t7ebr")
@@ -70,8 +64,22 @@ vframes = 3
 frame = 7
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1361645006]
-position = Vector2(-296, -40)
+position = Vector2(752, -608)
 texture = ExtResource("4_t7ebr")
 hframes = 3
 vframes = 3
 frame = 8
+
+[node name="FakeSpot" type="Sprite2D" parent="." unique_id=2007821964]
+position = Vector2(440, -472)
+texture = ExtResource("4_t7ebr")
+hframes = 3
+vframes = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="FakeSpot" unique_id=941577729]
+position = Vector2(64, -64)
+texture = ExtResource("4_t7ebr")
+flip_h = true
+hframes = 3
+vframes = 3
+frame = 7

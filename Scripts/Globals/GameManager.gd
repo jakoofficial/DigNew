@@ -19,12 +19,14 @@ func _ready() -> void:
 	AM.initAction("Left", FKS.NewKey(KEY_A), FKS.NewKey(KEY_LEFT))
 	AM.initAction("Right", FKS.NewKey(KEY_D), FKS.NewKey(KEY_RIGHT))
 	AM.initAction("Down", FKS.NewKey(KEY_S), FKS.NewKey(KEY_DOWN))
+	AM.initAction("Up", FKS.NewKey(KEY_W), FKS.NewKey(KEY_UP))
 	AM.initAction("Dig", FKS.NewKey(KEY_SPACE))
 	AM.initAction("Backpack", FKS.NewKey(KEY_B))
 	AM.initAction("ResetDig", FKS.NewKey(KEY_R))
 	AM.initAction("Back", FKS.NewKey(KEY_ESCAPE))
 	AM.initAction("Select", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
 	AM.initAction("Interact", FKS.NewKey(KEY_SPACE))
+	AM.initAction("FlyMode_Dev", FKS.NewKey(KEY_P))
 
 func _process(_delta: float) -> void:
 	# When a dig is over

@@ -6,6 +6,7 @@ extends Node2D
 @onready var camera: Camera2D = $Player/Camera2D
 @onready var back: Node2D = $Back
 @onready var cursor: Sprite2D = $Cursor
+@onready var fake_spot: Sprite2D = $FakeSpot
 
 @export var startGenY: float = 128.0
 @export var startGenX: float = 0.0
@@ -30,11 +31,9 @@ func _ready() -> void:
 	maxSpotY = PS.MaxDigY+1
 	maxSpotX = PS.MaxDigX+2
 	spots.global_position = Vector2((startGenX-64.0)+offset, startGenY)
-	camera.limit_right = get_viewport_rect().size.x
 	is_ready = await Generated()
 	GM.curUI.set_depth_max_label()
 	GM.curUI.set_stamina(0)
-	
 
 func use_stamina() -> void:
 	if currStamina > 0:
@@ -76,4 +75,10 @@ func Generated() -> bool:
 			else: spot.type = 1 #Dirt
 			spots.add_child(spot)
 			spot.position = Vector2(x*64, y*64)
+	
+	for x in range(16):
+		var fake: Sprite2D = fake_spot.duplicate()
+		spots.add_child(fake)
+		var y = 0
+		fake.position = Vector2((PS.MaxDigX+x)*64, (y))
 	return true
