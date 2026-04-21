@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://deod2oc13i1qo" path="res://Sprites/Buildings.png" id="2_g4a5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqxe5"]
-size = Vector2(96, 88)
+size = Vector2(104, 112)
 
 [node name="GoToMineSign" type="Area2D" unique_id=570067253]
 script = ExtResource("1_g4a5a")
@@ -15,5 +15,5 @@ region_enabled = true
 region_rect = Rect2(149, 169, 106, 86)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1870255269]
-position = Vector2(0, -4)
+position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_aqxe5")

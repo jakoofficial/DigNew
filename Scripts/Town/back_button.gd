@@ -9,7 +9,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if canClick and FK.JustReleased(AM.action("Select")):
-			# Opens the upgrade menu
 			GM._load_scene(SceneBefore)
 			pass
 

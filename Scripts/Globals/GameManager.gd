@@ -21,6 +21,7 @@ func _ready() -> void:
 	AM.initAction("ResetDig", FKS.NewKey(KEY_R))
 	AM.initAction("Back", FKS.NewKey(KEY_ESCAPE))
 	AM.initAction("Select", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
+	AM.initAction("Interact", FKS.NewKey(KEY_SPACE))
 
 func _process(_delta: float) -> void:
 	# When a dig is over
@@ -38,7 +39,7 @@ func _load_scene(scene: Scenes) -> void:
 	match scene:
 		0: path = "res://Scenes/main_menu.tscn"; SceneEntering = "Main Menu"
 		1: path = "res://Scenes/town.tscn"; SceneEntering = "Town"
-		2: path = "res://Scenes/Digzone.tscn"; SceneEntering = "Dig Zone"
+		2: path = "res://Scenes/Digzone.tscn"; SceneEntering = "Mine"
 		3: path = "res://Scenes/Upgrade_Area.tscn"; SceneEntering = "Upgrade Area"
 		4: path = "res://Scenes/market.tscn"; SceneEntering = "Market"
 	

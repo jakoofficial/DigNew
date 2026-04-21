@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hlvifv3fm68b" path="res://Sprites/MarketStall.png" id="2_i6dup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrl8u"]
-size = Vector2(128, 112)
+size = Vector2(128, 128)
 
 [node name="Stall" type="Area2D" unique_id=919382894]
 script = ExtResource("1_i6dup")
@@ -15,4 +15,5 @@ region_enabled = true
 region_rect = Rect2(24, 1, 106, 93)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=133436856]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_lrl8u")

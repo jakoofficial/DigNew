@@ -75,6 +75,7 @@ GameOverText/font_sizes/normal_font_size = 20
 MenuTitle/base_type = &"RichTextLabel"
 MenuTitle/constants/outline_size = 8
 MenuTitle/font_sizes/normal_font_size = 36
+RichTextLabel/constants/outline_size = 8
 RichTextLabel/font_sizes/normal_font_size = 10
 ShopBtn/base_type = &"Button"
 ShopBtn/font_sizes/font_size = 10

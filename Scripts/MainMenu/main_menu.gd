@@ -11,17 +11,16 @@ func _ready() -> void:
 	new_game_btn.connect("pressed", _NewGame)
 	continue_btn.connect("pressed", _ContinueGame)
 	exit_game_btn.connect("pressed", _ExitGame)
-	pass
+	
+	new_game_btn.grab_focus()
 
 func _NewGame() -> void:
 	FM.NewGameFile()
 	GM._load_scene(GM.Scenes.Town)
-	pass
 
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
 	GM._load_scene(GM.Scenes.Town)
-	pass
 
 func _ExitGame() -> void:
 	get_tree().quit()
