@@ -1,5 +1,6 @@
 extends Area2D
 @export var OverlayName: String = "Upgrades"
+@onready var player_pos: Marker2D = $PlayerPos
 
 var canClick: bool = false
 var canInteract: bool = false
@@ -12,6 +13,7 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	if (canClick and FK.JustReleased(AM.action("Select"))) or (canInteract and FK.JustReleased(AM.action("Interact"))):
+		GM.playerPosBuilding = player_pos.global_position
 		GM._load_scene(GM.Scenes.UpgradeArea)
 
 func _hovered(is_hovered: bool) -> void:

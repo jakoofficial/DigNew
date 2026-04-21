@@ -10,6 +10,7 @@ var direction
 var in_town: bool = false
 
 func _ready() -> void:
+	GM.Player = self
 	if get_parent().name == "Town":
 		in_town = true
 	else:

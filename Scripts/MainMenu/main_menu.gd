@@ -16,10 +16,14 @@ func _ready() -> void:
 
 func _NewGame() -> void:
 	FM.NewGameFile()
+	GM.playerPosBuilding = Vector2(32, 304)
+
 	GM._load_scene(GM.Scenes.Town)
 
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
+	GM.playerPosBuilding = Vector2(32, 304)
+	
 	GM._load_scene(GM.Scenes.Town)
 
 func _ExitGame() -> void:

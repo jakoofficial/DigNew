@@ -8,7 +8,7 @@ func _ready() -> void:
 	mouse_exited.connect(_hovered.bind(false))
 
 func _process(_delta: float) -> void:
-	if canClick and FK.JustReleased(AM.action("Select")):
+	if (canClick and FK.JustReleased(AM.action("Select"))) or FK.JustReleased(AM.action("Back")):
 			GM._load_scene(SceneBefore)
 			pass
 

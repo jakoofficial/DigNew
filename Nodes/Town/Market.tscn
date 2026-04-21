@@ -17,3 +17,6 @@ region_rect = Rect2(24, 1, 106, 93)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=133436856]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_lrl8u")
+
+[node name="PlayerPos" type="Marker2D" parent="." unique_id=1174644857]
+position = Vector2(0, 56)

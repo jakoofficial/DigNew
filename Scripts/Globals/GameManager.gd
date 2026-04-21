@@ -3,6 +3,9 @@ extends Node
 var curScene
 var curUI
 
+var Player: CharacterBody2D
+var playerPosBuilding: Vector2 = Vector2.ZERO
+
 enum Scenes {
 	MainMenu,
 	Town,
@@ -40,7 +43,7 @@ func _load_scene(scene: Scenes) -> void:
 		0: path = "res://Scenes/main_menu.tscn"; SceneEntering = "Main Menu"
 		1: path = "res://Scenes/town.tscn"; SceneEntering = "Town"
 		2: path = "res://Scenes/Digzone.tscn"; SceneEntering = "Mine"
-		3: path = "res://Scenes/Upgrade_Area.tscn"; SceneEntering = "Upgrade Area"
+		3: path = "res://Scenes/Upgrade_Area.tscn"; SceneEntering = "Upgrade Station"
 		4: path = "res://Scenes/market.tscn"; SceneEntering = "Market"
 	
 	SceneManager.change_scene_to_file(path, {}, 1.0)
