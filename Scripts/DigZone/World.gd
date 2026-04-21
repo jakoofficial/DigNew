@@ -76,9 +76,12 @@ func Generated() -> bool:
 			spots.add_child(spot)
 			spot.position = Vector2(x*64, y*64)
 	
-	for x in range(16):
-		var fake: Sprite2D = fake_spot.duplicate()
-		spots.add_child(fake)
-		var y = 0
-		fake.position = Vector2((PS.MaxDigX+x)*64, (y))
+	for y in range(maxSpotY):
+		if y > 0: fake_spot.get_child(0).hide()
+		for x in range(10):
+			var fake: Sprite2D = fake_spot.duplicate()
+			if y == 0: fake.frame = 0
+			else: fake.frame = 3
+			spots.add_child(fake)
+			fake.position = Vector2(((PS.MaxDigX+1)+x)*64, (y*64))
 	return true
