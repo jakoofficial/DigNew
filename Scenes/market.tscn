@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://00nuwyl7g28s"]
 
+[ext_resource type="Script" uid="uid://fpiryprymabk" path="res://Scripts/Town/market_building.gd" id="1_0s0jk"]
 [ext_resource type="PackedScene" uid="uid://dtc57kb1m62gq" path="res://Nodes/UI/back_btn.tscn" id="1_rfcd5"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="2_3csk5"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="3_4rre6"]
@@ -20,6 +21,7 @@ region = Rect2(128, 73, 116, 33)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rre6"]
 
 [node name="Market" type="Node2D" unique_id=720307893]
+script = ExtResource("1_0s0jk")
 
 [node name="BackBtn" parent="." unique_id=729406048 instance=ExtResource("1_rfcd5")]
 position = Vector2(80, 47)

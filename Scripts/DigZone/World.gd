@@ -22,6 +22,7 @@ var canReset: bool = false
 # Playerstats
 var currStamina: float = PS.Stamina
 var perc: float = currStamina / PS.MaxDigs
+var canPause: bool = true
 
 func _ready() -> void:
 	GM.curScene = self

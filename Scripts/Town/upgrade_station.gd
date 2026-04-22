@@ -24,6 +24,7 @@ func _hovered(is_hovered: bool) -> void:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		GM.curUI.emit_signal("setOverlay", OverlayName, false)
 	
+	if GM.afterPauseNotDone: return
 	canClick = true if is_hovered else false
 
 func _player_collide(body: Node2D) -> void:

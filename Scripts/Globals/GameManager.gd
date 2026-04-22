@@ -15,7 +15,11 @@ enum Scenes {
 	Market
 }
 
+var afterPauseNotDone: bool = true
+
 func _ready() -> void:
+	process_mode = ProcessMode.PROCESS_MODE_ALWAYS
+	
 	# Keys
 	AM.initAction("Left", FKS.NewKey(KEY_A), FKS.NewKey(KEY_LEFT))
 	AM.initAction("Right", FKS.NewKey(KEY_D), FKS.NewKey(KEY_RIGHT))
@@ -38,6 +42,11 @@ func _process(_delta: float) -> void:
 		if FK.JustReleased(AM.action("Back")):
 			await PS.add_to_global_inv(GM.curUI.backpack.inventory)
 			_load_scene(Scenes.Town)
+	if curScene != null:
+		if curScene.canPause and FK.JustReleased(AM.action("Pause")):
+			GM.afterPauseNotDone = true
+			paused = !paused
+	get_tree().paused = paused
 
 var SceneEntering: String = "asd"
 func _load_scene(scene: Scenes) -> void:

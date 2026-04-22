@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://c5r4m661lpmbb" path="res://Scripts/Inventory/backpack.gd" id="3_q1hm0"]
 [ext_resource type="Texture2D" uid="uid://dum8xkc7xq1kl" path="res://Sprites/Icons/Backpack.svg" id="4_u3a3k"]
 [ext_resource type="PackedScene" uid="uid://cqx0h4cptvvkd" path="res://Nodes/UI/pause_menu.tscn" id="6_l6xf4"]
-[ext_resource type="Script" uid="uid://kufkxbiyf15x" path="res://Scripts/UI/pause_menu.gd" id="7_f5wqb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pv1gv"]
 load_path = "res://.godot/imported/Gui.png-1a32feaf877fae0b886aa14805d86631.ctex"
@@ -214,4 +213,3 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="PauseMenu" parent="." unique_id=844130493 instance=ExtResource("6_l6xf4")]
-script = ExtResource("7_f5wqb")

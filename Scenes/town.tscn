@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="8_2rtke"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="9_8t1t8"]
 [ext_resource type="Script" uid="uid://dxgifp33kyky4" path="res://Scripts/Town/TownUI.gd" id="9_kl8ok"]
+[ext_resource type="PackedScene" uid="uid://cqx0h4cptvvkd" path="res://Nodes/UI/pause_menu.tscn" id="11_6knsj"]
 [ext_resource type="PackedScene" uid="uid://oj08mfo7lltx" path="res://Nodes/player.tscn" id="11_emwlo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckvn4"]
@@ -133,6 +134,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_poxg2")
 
 [node name="Town" type="Node2D" unique_id=1274485126]
+process_mode = 1
 script = ExtResource("1_kswdu")
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1800128584]
@@ -181,7 +183,6 @@ script = ExtResource("9_kl8ok")
 metadata/_edit_lock_ = true
 
 [node name="OverlayText" type="Panel" parent="CanvasLayer/Control" unique_id=415236213]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -221,6 +222,9 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=844130493 instance=ExtResource("11_6knsj")]
+visible = false
 
 [node name="Player" parent="." unique_id=1600123372 instance=ExtResource("11_emwlo")]
 position = Vector2(32, 304)

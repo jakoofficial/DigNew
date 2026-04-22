@@ -7,6 +7,9 @@ var StateResetTime: float = .10
 enum InputType {Keyboard, Mouse, ControllerButton, ControllerJoy}
 var CurrKeyStates: Dictionary[String, Dictionary] = {}
 
+func _ready() -> void:
+	process_mode = ProcessMode.PROCESS_MODE_ALWAYS
+
 func _process(delta):
 	for val in CurrKeyStates.values():
 		if val["Has_Been_Checked"] or (val["Time_Till_Reset"] != -999 and val["Time_Till_Reset"] <= 0):

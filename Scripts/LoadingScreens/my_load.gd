@@ -2,6 +2,8 @@ extends LoadingScreen
 
 @onready var entering: RichTextLabel = $Entering
 
+var canPause: bool = false
+
 func _ready() -> void:
 	entering.text = str("[font_size=12]Now Entering\n%s" % GM.SceneEntering)
 

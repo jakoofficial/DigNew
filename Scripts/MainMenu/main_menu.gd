@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var exit_game_btn: TextureButton = $Control/Panel/NinePatchRect/VBoxContainer/ExitGameBtn
 @onready var confirm_box: Control = $ConfirmBox
 
+var canPause: bool = false
+
 var canReset = false
 func _ready() -> void:
 	GM.curScene = self

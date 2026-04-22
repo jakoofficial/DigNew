@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://kufkxbiyf15x" path="res://Scripts/UI/pause_menu.gd" id="2_bajgw"]
 [ext_resource type="Texture2D" uid="uid://b4n5jr12li31" path="res://Sprites/Colour palette/Taile Gamougg 96.png" id="2_eddy3"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="3_bajgw"]
+[ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="5_bajgw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5wqb"]
 atlas = ExtResource("2_eddy3")
@@ -22,13 +23,13 @@ atlas = ExtResource("3_bajgw")
 region = Rect2(128, 73, 116, 33)
 
 [node name="PauseMenu" type="Control" unique_id=844130493]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme = ExtResource("1_d8m8v")
 script = ExtResource("2_bajgw")
 
@@ -57,6 +58,7 @@ offset_right = 78.0
 offset_bottom = 110.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 texture = ExtResource("3_bajgw")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 16
@@ -83,6 +85,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 focus_neighbor_top = NodePath("../Town")
 focus_neighbor_bottom = NodePath("../Options")
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_l6xf4")
 texture_hover = SubResource("AtlasTexture_4k7hf")
@@ -98,7 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "Resume"
 scroll_active = false
@@ -112,6 +115,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 focus_neighbor_top = NodePath("../Resume")
 focus_neighbor_bottom = NodePath("../Town")
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_l6xf4")
 texture_hover = SubResource("AtlasTexture_4k7hf")
@@ -127,7 +131,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "Options"
 scroll_active = false
@@ -141,6 +145,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 focus_neighbor_top = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Resume")
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_l6xf4")
 texture_hover = SubResource("AtlasTexture_4k7hf")
@@ -156,7 +161,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "To town"
 scroll_active = false
@@ -177,6 +182,7 @@ offset_right = 9.0
 offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 texture = ExtResource("3_bajgw")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 16
@@ -192,7 +198,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ConfirmBox" parent="." unique_id=1259830081 instance=ExtResource("5_bajgw")]
+visible = false
+layout_mode = 1
