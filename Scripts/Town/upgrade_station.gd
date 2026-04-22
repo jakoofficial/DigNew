@@ -12,6 +12,7 @@ func _ready() -> void:
 	body_exited.connect(_player_leave)
 	
 func _process(_delta: float) -> void:
+	if GM.paused: return
 	if (canClick and FK.JustReleased(AM.action("Select"))) or (canInteract and FK.JustReleased(AM.action("Interact"))):
 		GM.playerPosBuilding = player_pos.global_position
 		GM._load_scene(GM.Scenes.UpgradeArea)

@@ -24,6 +24,7 @@ region = Rect2(128, 73, 116, 33)
 
 [node name="PauseMenu" type="Control" unique_id=844130493]
 process_mode = 3
+process_priority = -2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = SubResource("AtlasTexture_f5wqb")
 expand_mode = 1
 

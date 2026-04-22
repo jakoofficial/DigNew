@@ -6,6 +6,7 @@ extends Control
 @onready var confirm_box: Control = $ConfirmBox
 
 func _ready() -> void:
+	GM.PauseMenu = self
 	resume.connect("button_up", ResumeBtn)
 	options.connect("pressed", OptionsBtn)
 	town.connect("button_up", TownBtn)

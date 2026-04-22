@@ -6,6 +6,7 @@ var paused: bool = false
 
 var Player: CharacterBody2D
 var playerPosBuilding: Vector2 = Vector2.ZERO
+var PauseMenu: Control
 
 enum Scenes {
 	MainMenu,
@@ -35,6 +36,12 @@ func _ready() -> void:
 	AM.initAction("Pause", FKS.NewKey(KEY_ESCAPE))
 
 func _process(_delta: float) -> void:
+	if curScene != null:
+		if curScene.canPause and FK.JustReleased(AM.action("Pause")):
+			GM.afterPauseNotDone = true
+			paused = !paused
+			if paused: PauseMenu.resume.grab_focus()
+	get_tree().paused = paused
 	# When a dig is over
 	if curScene != null and curScene.canReset:
 		if FK.JustReleased(AM.action("ResetDig")):
@@ -42,14 +49,10 @@ func _process(_delta: float) -> void:
 		if FK.JustReleased(AM.action("Back")):
 			await PS.add_to_global_inv(GM.curUI.backpack.inventory)
 			_load_scene(Scenes.Town)
-	if curScene != null:
-		if curScene.canPause and FK.JustReleased(AM.action("Pause")):
-			GM.afterPauseNotDone = true
-			paused = !paused
-	get_tree().paused = paused
 
 var SceneEntering: String = "asd"
 func _load_scene(scene: Scenes) -> void:
+	if paused: return
 	var path = "res://Scenes/main_menu.tscn"
 	
 	match scene:

@@ -12,11 +12,13 @@ func _ready() -> void:
 	body_exited.connect(_player_leave)
 	
 func _process(_delta: float) -> void:
+	if GM.paused: return
 	if (canClick and FK.JustReleased(AM.action("Select"))) or (canInteract and FK.JustReleased(AM.action("Interact"))):
 		GM.playerPosBuilding = player_pos.global_position
 		GM._load_scene(GM.Scenes.Market)
 
 func _hovered(is_hovered: bool) -> void:
+	if GM.paused: return
 	if is_hovered:
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 		GM.curUI.emit_signal("setOverlay", OverlayName, true)
@@ -27,6 +29,7 @@ func _hovered(is_hovered: bool) -> void:
 	canClick = true if is_hovered else false
 
 func _player_collide(body: Node2D) -> void:
+	if GM.paused: return
 	if body.is_in_group("Player"):
 		GM.curUI.emit_signal("setOverlay", OverlayName, true)
 		canInteract = true
