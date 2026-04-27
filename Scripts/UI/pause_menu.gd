@@ -35,7 +35,4 @@ func TownBtn() -> void:
 	if !canMakeNew: return
 	
 	await PS.add_to_global_inv(GM.curUI.backpack.inventory)
-	GM.playerPosBuilding = Vector2(32, 304)
-
-	GM._load_scene(GM.Scenes.Town)
 	pass

@@ -3,12 +3,7 @@
 [ext_resource type="Script" uid="uid://dmjsseupt6bbl" path="res://Scripts/DigZone/on_dig_ui.gd" id="1_huv6s"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_nss3e"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="3_pv1gv"]
-[ext_resource type="Script" uid="uid://c5r4m661lpmbb" path="res://Scripts/Inventory/backpack.gd" id="3_q1hm0"]
-[ext_resource type="Texture2D" uid="uid://dum8xkc7xq1kl" path="res://Sprites/Icons/Backpack.svg" id="4_u3a3k"]
 [ext_resource type="PackedScene" uid="uid://cqx0h4cptvvkd" path="res://Nodes/UI/pause_menu.tscn" id="6_l6xf4"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pv1gv"]
-load_path = "res://.godot/imported/Gui.png-1a32feaf877fae0b886aa14805d86631.ctex"
 
 [node name="OnDigUI" type="CanvasLayer" unique_id=1420127650]
 script = ExtResource("1_huv6s")
@@ -69,83 +64,6 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DepthLevel" type="RichTextLabel" parent="Control" unique_id=1725157303]
-clip_contents = false
-layout_mode = 1
-offset_left = 8.0
-offset_right = 192.0
-offset_bottom = 64.0
-theme_type_variation = &"Coordinates"
-bbcode_enabled = true
-text = "depth: 0"
-scroll_active = false
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="Backpack" type="Panel" parent="Control" unique_id=929151952]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -250.0
-offset_bottom = 250.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_type_variation = &"Backpack"
-script = ExtResource("3_q1hm0")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Control/Backpack" unique_id=911084355]
-self_modulate = Color(1, 1, 1, 0.7882353)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CompressedTexture2D_pv1gv")
-region_rect = Rect2(0, 0, 28, 32)
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 12
-patch_margin_bottom = 16
-
-[node name="Inventory" type="FlowContainer" parent="Control/Backpack" unique_id=1328835352]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 14.0
-offset_bottom = -14.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="ResetAllowed" type="RichTextLabel" parent="Control" unique_id=161231453]
-clip_contents = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = 235.0
-offset_right = 96.0
-offset_bottom = 275.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"Stamina_label"
-bbcode_enabled = true
-text = "Reset dig 'R' or go to town 'ESC'"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Stamina" type="ProgressBar" parent="Control" unique_id=1000985941]
 layout_mode = 1
 anchors_preset = 12
@@ -183,33 +101,5 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Backpackicon" type="TextureRect" parent="Control" unique_id=2063282843]
-texture_filter = 2
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -72.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 64.0
-grow_horizontal = 0
-texture = ExtResource("4_u3a3k")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ShortcutBackpack" type="RichTextLabel" parent="Control/Backpackicon" unique_id=1845917391]
-clip_contents = false
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -34.0
-offset_right = 24.0
-grow_vertical = 0
-theme_type_variation = &"Coordinates"
-text = "B"
-scroll_active = false
-autowrap_mode = 0
-
 [node name="PauseMenu" parent="." unique_id=844130493 instance=ExtResource("6_l6xf4")]
+visible = false
