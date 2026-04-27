@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2wrlwh7qtyvo"]
+
+[ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Grass-dirt.png" id="1_3n5sd"]
+[ext_resource type="Script" uid="uid://bjurjeh8k5ata" path="res://Scripts/Digs/dig_spot.gd" id="1_qtc7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtc7q"]
+size = Vector2(64, 64)
+
+[node name="DigSpot" type="Area2D" unique_id=1749549655]
+script = ExtResource("1_qtc7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1552252811]
+texture = ExtResource("1_3n5sd")
+hframes = 3
+vframes = 3
+frame = 3
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715798592]
+shape = SubResource("RectangleShape2D_qtc7q")

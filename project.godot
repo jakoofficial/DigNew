@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Digdig"
+config/name="DigMouse"
 run/main_scene="uid://57tg5ldwjdvx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
@@ -21,8 +21,8 @@ VB="*uid://xb6r3ytly3wj"
 FK="*uid://pe5phaycggxu"
 AM="*uid://b7pwtxar4vb2c"
 FM="*uid://fk865j8d8cev"
-GM="*uid://copcewp32pk8d"
-PS="*uid://1dljftj53mpr"
+GM="*uid://o360nvlowxew"
+PS="*uid://dxlctg1e44rbf"
 SceneManager="*uid://byv4kvn38ec7g"
 
 [display]
