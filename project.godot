@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DigMouse"
-run/main_scene="uid://57tg5ldwjdvx"
+run/main_scene="uid://dbokj2h8jckne"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
