@@ -19,7 +19,8 @@ func _process(delta: float) -> void:
 	else: cursor.hide()
 
 signal setCursor
-func setCursorPos(pos) -> void:
+func setCursorPos(pos = Vector2.ZERO) -> void:
+	if pos == Vector2.ZERO: pos = Vector2(-500, -500)
 	cursor.global_position = pos
 
 #func _draw() -> void:
