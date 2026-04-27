@@ -10,3 +10,5 @@ var is_hovered: bool = false
 func Destroy() -> void
 @abstract
 func GiveOre() -> void
+@abstract
+func Spawn() -> void

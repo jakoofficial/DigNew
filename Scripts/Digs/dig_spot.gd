@@ -9,7 +9,14 @@ func Destroy() -> void:
 
 func GiveOre() -> void:
 	print("give ore")
-	pass
+
+var tween: Tween
+func Spawn() -> void:
+	if tween: tween.kill()
+	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_BOUNCE)
+	$Sprite2D.scale = Vector2(0, 0)
+	tween.tween_property($Sprite2D, "scale", Vector2(1.5,1.5), 0.2)
+	tween.tween_property($Sprite2D, "scale", Vector2(1.0,1.0), 0.5)
 
 var hovered: bool = false
 func _ready() -> void:
@@ -27,6 +34,7 @@ func _on_mouse_exited() -> void:
 
 
 func _process(delta: float) -> void:
+	if !GM.digReady: return #Fix Timing
 	if hovered:
 		if FK.JustPressed(AM.action("L_Click")):
 			Destroy()

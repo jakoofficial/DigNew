@@ -28,6 +28,7 @@ func setCursorPos(pos = Vector2.ZERO) -> void:
 	#draw_line(Vector2(0,vSize.y/2), Vector2(vSize.x, vSize.y/2), Color.WHITE, 1)
 
 func Generate() -> void:
+	GM.digReady = false
 	var spacing = 2       # Spacing between spots
 	var spotSize = 64     # Size of each spot (64x64)
 	var pivot_offset = spotSize / 2 # Offset of the size of the spot
@@ -45,7 +46,16 @@ func Generate() -> void:
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
 			spots.add_child(spot)
+			spot.hide()
 
 			# Position each spot with spacing
 			spot.global_position.x = spawnStartX + (x * (spotSize + spacing))+pivot_offset
 			spot.global_position.y = spawnStartY + (y * (spotSize + spacing))+pivot_offset
+	
+	var time: float = 1.0
+	for c in spots.get_children():
+		c.show()
+		c.Spawn()
+		await get_tree().create_timer(time/(GM.xSpots*GM.ySpots)).timeout
+		
+	GM.digReady = true
