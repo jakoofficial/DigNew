@@ -17,6 +17,7 @@ func _process(_delta: float) -> void:
 		GM.playerPosBuilding = player_pos.global_position
 		GM._load_scene(GM.Scenes.DigZone)
 
+var hovered: bool = false
 func _hovered(is_hovered: bool) -> void:
 	if GM.paused: return
 	if is_hovered:
