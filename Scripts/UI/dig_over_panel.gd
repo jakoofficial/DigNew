@@ -4,6 +4,7 @@ extends NinePatchRect
 @onready var dig_again_btn: TextureButton = $VBoxContainer2/HBoxContainer/DigAgainBtn
 @onready var collection: VBoxContainer = $VBoxContainer2/VBoxContainer/Collection
 @onready var collected_item: HBoxContainer = $"../../CollectedItem"
+@onready var total_balance: RichTextLabel = $VBoxContainer2/TotalBalance
 
 func _ready() -> void:
 	return_btn.connect("pressed", GM.load_scene.bind(GM.Scenes.SKILLTREE))
@@ -21,7 +22,7 @@ func _setItems()-> void:
 		item.Set_Values(i)
 		collection.add_child(item)
 		PS._PBalance += item.Get_Value()
-	print(PS._PBalance)
+	total_balance.text = str("Total: %s" % PS._PBalance)
 
 func _ReDig() -> void:
 	HidePanel()
