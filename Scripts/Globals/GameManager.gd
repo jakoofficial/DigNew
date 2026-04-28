@@ -23,7 +23,7 @@ enum Scenes {
 }
 
 func load_scene(scene: Scenes) -> void:
-	SceneManager.change_scene_to_file(_select_scene(scene), {}, 0.5)
+	SceneManager.change_scene_to_file(_select_scene(scene), {}, 1.0)
 	pass
 
 func _select_scene(scene: Scenes) -> String:

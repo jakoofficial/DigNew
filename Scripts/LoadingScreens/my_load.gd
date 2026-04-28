@@ -1,12 +1,19 @@
 extends LoadingScreen
+@onready var pickaxe: TextureRect = $Pickaxe
 
-@onready var entering: RichTextLabel = $Entering
 
 var canPause: bool = false
 
+var tween: Tween
 func _ready() -> void:
-	pass
-	#entering.text = str("[font_size=12]Now Entering\n%s" % GM.SceneEntering)
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween().bind_node(pickaxe).set_loops(0).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(pickaxe, "rotation_degrees", -10.0, 0.75)
+	tween.chain().tween_property(pickaxe, "rotation_degrees", 45.0, 0.1)
+
+func _exit_tree() -> void:
+	tween.kill()
 
 func _get_range_object() -> Object:
 	return get_node("ProgressBar")
