@@ -6,17 +6,30 @@ extends Node2D
 
 var vSize: Vector2
 
+var inventory: Dictionary[DigSpot, int]
+
 func _ready() -> void:
+	GM.currDigArea = self
 	setCursor.connect(setCursorPos)
-	
 	vSize = get_viewport_rect().size
-	
 	Generate()
 	pass
 
 func _process(delta: float) -> void:
 	if GM.digspotHover: cursor.show()
 	else: cursor.hide()
+
+func addToInv(collected: DigSpot) -> void:
+	for i in inventory.keys():
+		if i._Name == collected._Name:
+			inventory[i] += 1
+			print(inventory)
+			return
+	var newitem: DigSpot
+	newitem = collected.duplicate()
+	inventory[newitem] = 1
+	collected = null
+	print(inventory)
 
 signal setCursor
 func setCursorPos(pos = Vector2.ZERO) -> void:
@@ -46,6 +59,7 @@ func Generate() -> void:
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
 			spots.add_child(spot)
+			spot.digZone = self
 			spot.hide()
 
 			# Position each spot with spacing

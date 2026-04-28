@@ -8,7 +8,7 @@ var digReady = false
 
 var digDone: bool = false
 var currUI: CanvasLayer
-
+var currDigArea: Node2D
 
 func _ready() -> void:
 	AM.initAction("L_Click", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))

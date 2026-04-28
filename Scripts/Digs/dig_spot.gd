@@ -1,14 +1,16 @@
 extends DigSpot
 
 var area: Node2D
+var digZone: Node2D
 
 func Destroy() -> void:
-	GiveOre()
+	GiveValue()
 	area.setCursorPos()
-	queue_free()
+	call_deferred("queue_free")
 
-func GiveOre() -> void:
-	print("give ore")
+func GiveValue() -> void:
+	digZone.addToInv(self)
+	#print(str("Name: %s Value: %s" % [_Name, _Value]))
 
 var tween: Tween
 func Spawn() -> void:
@@ -46,7 +48,6 @@ func _process(delta: float) -> void:
 			PS._PStaminaCurr -= 1
 			GM.currUI.UpdateUI()
 			_Health -= PS._PStrength
-			
 			if _Health <= 0: Destroy()
 			else: _shake()
 	

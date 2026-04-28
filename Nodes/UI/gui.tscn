@@ -104,15 +104,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="CollectedItem" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer/Collection" unique_id=344203900 instance=ExtResource("4_ih22j")]
-layout_mode = 2
-
-[node name="ItemName" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer/Collection/CollectedItem" index="1" unique_id=556516935]
-text = "Item Name"
-
-[node name="Value" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer/Collection/CollectedItem" index="2" unique_id=681942932]
-text = "000"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/DigOverPanel/VBoxContainer2" unique_id=976360613]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
@@ -184,4 +175,8 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[editable path="Control/DigOverPanel/VBoxContainer2/VBoxContainer/Collection/CollectedItem"]
+[node name="CollectedItem" parent="." unique_id=344203900 instance=ExtResource("4_ih22j")]
+offset_left = -384.0
+offset_top = -448.0
+offset_right = -34.0
+offset_bottom = -398.0

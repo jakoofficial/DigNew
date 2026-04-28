@@ -2,6 +2,8 @@ extends NinePatchRect
 
 @onready var return_btn: TextureButton = $VBoxContainer2/HBoxContainer/ReturnBtn
 @onready var dig_again_btn: TextureButton = $VBoxContainer2/HBoxContainer/DigAgainBtn
+@onready var collection: VBoxContainer = $VBoxContainer2/VBoxContainer/Collection
+@onready var collected_item: HBoxContainer = $"../../CollectedItem"
 
 func _ready() -> void:
 	return_btn.connect("pressed", GM.load_scene.bind(GM.Scenes.SKILLTREE))
@@ -10,6 +12,14 @@ func ShowPanel() -> void:
 	show()
 	scale = Vector2(0,0)
 	_scale_tween()
+	_setItems()
+
+func _setItems()-> void:
+	for i:DigSpot in GM.currDigArea.inventory.keys():
+		var item = collected_item.duplicate()
+		item.Set_Values(i)
+		collection.add_child(item)
+	
 
 func HidePanel() -> void:
 	scale = Vector2(1.0,1.0)
