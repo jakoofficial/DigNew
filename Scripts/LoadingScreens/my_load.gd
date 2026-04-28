@@ -5,7 +5,8 @@ extends LoadingScreen
 var canPause: bool = false
 
 func _ready() -> void:
-	entering.text = str("[font_size=12]Now Entering\n%s" % GM.SceneEntering)
+	pass
+	#entering.text = str("[font_size=12]Now Entering\n%s" % GM.SceneEntering)
 
 func _get_range_object() -> Object:
 	return get_node("ProgressBar")
