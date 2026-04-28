@@ -20,6 +20,5 @@ var tween: Tween
 func _scale_tween(endSize: Vector2 = Vector2(1.0,1.0), time:float = 0.5) -> void:
 	if tween: tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_BACK)
-	#tween.tween_property(self, "scale", Vector2(0.0, 0.0), 0.0)
 	tween.chain().tween_property(self, "scale", endSize, time)
 	pass
