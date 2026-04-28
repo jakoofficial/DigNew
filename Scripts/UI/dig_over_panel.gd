@@ -7,6 +7,7 @@ extends NinePatchRect
 
 func _ready() -> void:
 	return_btn.connect("pressed", GM.load_scene.bind(GM.Scenes.SKILLTREE))
+	dig_again_btn.connect("pressed", _ReDig)
 
 func ShowPanel() -> void:
 	show()
@@ -19,7 +20,15 @@ func _setItems()-> void:
 		var item = collected_item.duplicate()
 		item.Set_Values(i)
 		collection.add_child(item)
-	
+		PS._PBalance += item.Get_Value()
+	print(PS._PBalance)
+
+func _ReDig() -> void:
+	HidePanel()
+	GM.currDigArea.reset_dig()
+	if collection.get_child_count() > 0:
+		for i in collection.get_children():
+			i.call_deferred("queue_free")
 
 func HidePanel() -> void:
 	scale = Vector2(1.0,1.0)

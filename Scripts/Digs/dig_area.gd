@@ -3,6 +3,7 @@ extends Node2D
 @onready var spots: Node2D = $Spots
 @onready var dig_spot: Area2D = $DigSpot
 @onready var cursor: Sprite2D = $Cursor
+@onready var gui: CanvasLayer = $GUI
 
 var vSize: Vector2
 
@@ -29,7 +30,6 @@ func addToInv(collected: DigSpot) -> void:
 	newitem = collected.duplicate()
 	inventory[newitem] = 1
 	collected = null
-	print(inventory)
 
 signal setCursor
 func setCursorPos(pos = Vector2.ZERO) -> void:
@@ -39,6 +39,19 @@ func setCursorPos(pos = Vector2.ZERO) -> void:
 #func _draw() -> void:
 	#draw_line(Vector2(vSize.x/2,0), Vector2(vSize.x/2, vSize.y), Color.WHITE, 1)
 	#draw_line(Vector2(0,vSize.y/2), Vector2(vSize.x, vSize.y/2), Color.WHITE, 1)
+
+func reset_dig() -> void:
+	GM.digDone = false
+	PS._PStaminaCurr = PS._PStaminaMax
+	inventory.clear()
+	gui.ResetUI()
+	
+	if spots.get_child_count() > 0:
+		for c in spots.get_children():
+			c.reparent(get_tree().root)
+			c.call_deferred("queue_free")
+	Generate()
+	pass
 
 func Generate() -> void:
 	GM.digReady = false
@@ -67,9 +80,10 @@ func Generate() -> void:
 			spot.global_position.y = spawnStartY + (y * (spotSize + spacing))+pivot_offset
 	
 	var time: float = 1.0
-	for c in spots.get_children():
-		c.show()
-		c.Spawn()
-		await get_tree().create_timer(time/(GM.xSpots*GM.ySpots)).timeout
+	if spots.get_child_count() > 0:
+		for c in spots.get_children():
+			c.show()
+			c.Spawn()
+			await get_tree().create_timer(time/(GM.xSpots*GM.ySpots)).timeout
 		
 	GM.digReady = true

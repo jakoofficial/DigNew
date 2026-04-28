@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 	if PS._PStaminaCurr <= 0 and digDone == false:
 		digDone = true
 
+
 enum Scenes {
 	SKILLTREE,
 	DIGAREA
