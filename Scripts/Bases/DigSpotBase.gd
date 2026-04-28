@@ -3,6 +3,8 @@ extends Area2D
 
 @export var _Name: String = ""
 @export var _SpriteFrame: int = 3
+
+var _Health: int = 2
 var _Ore
 var is_hovered: bool = false
 

@@ -5,7 +5,7 @@ var area: Node2D
 func Destroy() -> void:
 	GiveOre()
 	area.setCursorPos()
-	call_deferred("queue_free")
+	queue_free()
 
 func GiveOre() -> void:
 	print("give ore")
@@ -32,12 +32,23 @@ func _on_mouse_exited() -> void:
 	GM.digspotHover = false
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
+func _shake() -> void:
+	if tween: tween.kill()
+	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property($Sprite2D, "scale", Vector2(0.9, 0.9), 0.1)
+	tween.chain().tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.1)
+	pass
 
 func _process(delta: float) -> void:
-	if !GM.digReady: return #Fix Timing
+	if !GM.digReady: return
 	if hovered:
-		if FK.JustPressed(AM.action("L_Click")):
-			Destroy()
+		if PS._PStaminaCurr > 0 and FK.JustPressed(AM.action("L_Click")):
+			PS._PStaminaCurr -= 1
+			GM.currUI.UpdateUI()
+			_Health -= PS._PStrength
+			
+			if _Health <= 0: Destroy()
+			else: _shake()
 	
 	if hovered and Input.get_current_cursor_shape() != Input.CURSOR_POINTING_HAND:
 		GM.digspotHover = true

@@ -1,34 +1,11 @@
 [gd_resource type="Theme" format=3 uid="uid://e5uj1uvlt6aq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug1e5"]
-draw_center = false
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0whwl"]
-bg_color = Color(0.39967686, 0.23339394, 0.1469453, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.19121301, 0.11991721, 0.03839218, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 1
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asoq0"]
-draw_center = false
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-shadow_size = 3
+bg_color = Color(0.5568628, 0.31764707, 0.21568628, 0.77254903)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2klf8"]
 bg_color = Color(0.14509805, 0.14509805, 0.14509805, 0.39215687)
@@ -56,32 +33,12 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [resource]
-Backpack/base_type = &"Panel"
-Backpack/styles/panel = SubResource("StyleBoxFlat_ug1e5")
-Backpack_Item/base_type = &"Panel"
-Backpack_Item/styles/panel = SubResource("StyleBoxFlat_0whwl")
-Backpack_item_label/base_type = &"RichTextLabel"
-Backpack_item_label/constants/outline_size = 8
-Backpack_item_label/font_sizes/normal_font_size = 10
-Coordinates/base_type = &"RichTextLabel"
-Coordinates/constants/outline_size = 8
-Coordinates/constants/shadow_offset_y = 8
-Coordinates/font_sizes/normal_font_size = 14
-GameOverPanel/base_type = &"Panel"
-GameOverPanel/styles/panel = SubResource("StyleBoxFlat_asoq0")
-GameOverText/base_type = &"RichTextLabel"
-GameOverText/constants/outline_size = 8
-GameOverText/font_sizes/normal_font_size = 20
-MenuTitle/base_type = &"RichTextLabel"
-MenuTitle/constants/outline_size = 8
-MenuTitle/font_sizes/normal_font_size = 36
+Line/base_type = &"Panel"
+Line/styles/panel = SubResource("StyleBoxFlat_ug1e5")
 RichTextLabel/constants/outline_size = 8
 RichTextLabel/font_sizes/normal_font_size = 10
-ShopBtn/base_type = &"Button"
-ShopBtn/font_sizes/font_size = 10
-Stamina_label/base_type = &"RichTextLabel"
-Stamina_label/constants/outline_size = 8
-Stamina_label/font_sizes/normal_font_size = 10
+Title/base_type = &"RichTextLabel"
+Title/font_sizes/normal_font_size = 16
 stamina/base_type = &"ProgressBar"
 stamina/styles/background = SubResource("StyleBoxFlat_2klf8")
 stamina/styles/fill = SubResource("StyleBoxFlat_f40ue")
