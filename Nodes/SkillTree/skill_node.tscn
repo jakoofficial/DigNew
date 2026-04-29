@@ -11,6 +11,14 @@ size = Vector2(80, 80)
 
 [node name="SkillNode" type="Area2D" unique_id=436947380]
 script = ExtResource("1_el3if")
+is_unlocked = null
+_Name = null
+_Cost = null
+_Description = null
+_LevelCurr = null
+_LevelMaxAmount = null
+_UnlockRequirementAmount = null
+_Finished = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=221408155]
 scale = Vector2(0.625, 0.625)
@@ -20,6 +28,7 @@ texture = ExtResource("1_qebxp")
 shape = SubResource("RectangleShape2D_el3if")
 
 [node name="HoverInfo" type="Control" parent="." unique_id=1682460507]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -192.0

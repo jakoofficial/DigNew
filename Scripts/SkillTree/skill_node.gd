@@ -1,11 +1,16 @@
-extends SkillBase
+extends Area2D
 @onready var hover_info: Control = $HoverInfo
+@export var Skill_Name: String = ""
+
+var skill_res: SkillRes
 
 var hovered: bool = false
+
 func _ready() -> void:
 	hide()
 	connect("mouse_entered", _on_mouse_entered)
 	connect("mouse_exited", _on_mouse_exited)
+	skill_res = (SkillTreeInfo as STI).GetSkill(Skill_Name)
 
 func _on_mouse_entered() -> void:
 	hovered = true
@@ -17,26 +22,28 @@ func _on_mouse_exited() -> void:
 	hover_info.hide()
 
 func _Activate() -> void:
-	if _LevelCurr == _LevelMaxAmount: return
+	if skill_res._LevelCurr == skill_res._LevelMaxAmount: return
 	
-	if PS._PBalance >= _Cost:
-		PS._PBalance -= _Cost
-		_LevelCurr += 1
+	if PS._PBalance >= skill_res._Cost:
+		PS._PBalance -= skill_res._Cost
+		skill_res._LevelCurr += 1
 		hover_info._setInfo()
-		if _LevelCurr >= _LevelMaxAmount and !_Finished:
-			$Sprite2D.modulate = Color.BLACK
-			_Finished = true
-		PS.AddSkill(self.duplicate())
+		PS.Apply_Upgrade(skill_res._UpgradeType, skill_res._UpgradeAmount)
+		if skill_res._LevelCurr >= skill_res._LevelMaxAmount and !skill_res._Finished:
+			skill_res._Finished = true
 	pass
 
 func _process(delta: float) -> void:
-	if !is_unlocked: hide(); return
+	if !skill_res.is_unlocked: hide(); return
 	else: show()
 	
-	if _UnlockRequirementAmount <= _LevelCurr:
-		if _Unlocks.size() > 0:
-			for i in _Unlocks:
-				i.is_unlocked = true
+	if skill_res._Finished: 
+		$Sprite2D.modulate = Color.BLACK
+	
+	if skill_res._UnlockRequirementAmount <= skill_res._LevelCurr:
+		if skill_res._Unlocks.size() > 0:
+			for i in skill_res._Unlocks:
+				(SkillTreeInfo as STI).GetSkill(i).is_unlocked = true
 	
 	if hovered and Input.get_current_cursor_shape() != Input.CURSOR_POINTING_HAND:
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)

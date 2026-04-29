@@ -7,7 +7,8 @@ var _PStaminaMax: int = 4
 
 var _PBalance: int = 0
 
-var SkillsBought: Dictionary[String, SkillBase]
-
-func AddSkill(skill:SkillBase) -> void:
-	SkillsBought[skill._Name] = skill
+func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: int) -> void:
+	match upgrade:
+		SkillRes.TYPE.Stamina: _PStaminaMax += amount
+		SkillRes.TYPE.Strength: _PStrength += amount
+	pass

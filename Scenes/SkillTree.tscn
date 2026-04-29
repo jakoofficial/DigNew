@@ -75,14 +75,10 @@ vertical_alignment = 1
 
 [node name="Skills" type="Node2D" parent="." unique_id=1100842298]
 
-[node name="SkillNode" parent="Skills" unique_id=495638960 node_paths=PackedStringArray("_Unlocks") instance=ExtResource("4_p2c2s")]
+[node name="SkillNode" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
 position = Vector2(408, 320)
-is_unlocked = true
-_LevelMaxAmount = 2
-_Unlocks = [NodePath("../SkillNode2")]
-_UnlockRequirementAmount = 2
+Skill_Name = "S_first"
 
 [node name="SkillNode2" parent="Skills" unique_id=436947380 instance=ExtResource("4_p2c2s")]
 position = Vector2(696, 192)
-_Name = "Second"
-_Cost = 2
+Skill_Name = "S_second"

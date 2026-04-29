@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dexi6r3o4cb7n"]
+
+[ext_resource type="Script" uid="uid://bo4lo8h5nnynw" path="res://Scripts/Globals/skill_tree_info.gd" id="1_5xx86"]
+[ext_resource type="Script" uid="uid://d4hkstn8p728s" path="res://Resources/SkillRes.gd" id="2_lqdd7"]
+
+[sub_resource type="Resource" id="Resource_t88sh"]
+script = ExtResource("2_lqdd7")
+is_unlocked = true
+_Name = "S_first"
+_Unlocks = Array[String](["S_second"])
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="Resource" id="Resource_lqdd7"]
+script = ExtResource("2_lqdd7")
+_Name = "S_second"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
+script = ExtResource("1_5xx86")
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7")])
