@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://3d1ldlg0qltf"]
+
+[ext_resource type="Script" uid="uid://brbovvpl56uof" path="res://Scripts/SkillTree/skill_node.gd" id="1_el3if"]
+[ext_resource type="Texture2D" uid="uid://edq0wdrwnrhq" path="res://Sprites/icon.svg" id="1_qebxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el3if"]
+size = Vector2(80, 80)
+
+[node name="SkillNode" type="Area2D" unique_id=436947380]
+script = ExtResource("1_el3if")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=221408155]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_qebxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091383155]
+shape = SubResource("RectangleShape2D_el3if")

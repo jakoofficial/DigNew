@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_o3ipy"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_t13jq"]
 [ext_resource type="Script" uid="uid://f1no33sjw0a8" path="res://Scripts/SkillTree/skill_tree.gd" id="2_3mp7v"]
+[ext_resource type="PackedScene" uid="uid://3d1ldlg0qltf" path="res://Nodes/SkillTree/skill_node.tscn" id="4_p2c2s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3ipy"]
 atlas = ExtResource("1_t13jq")
@@ -16,17 +17,20 @@ region = Rect2(128, 35, 116, 37)
 atlas = ExtResource("1_t13jq")
 region = Rect2(128, 73, 116, 33)
 
-[node name="Skilltree" type="Control" unique_id=692403424]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=639356402]
+script = ExtResource("2_3mp7v")
+
+[node name="Skilltree" type="Control" parent="." unique_id=692403424]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_o3ipy")
-script = ExtResource("2_3mp7v")
 
-[node name="GoDigBtn" type="TextureButton" parent="." unique_id=777619085]
+[node name="GoDigBtn" type="TextureButton" parent="Skilltree" unique_id=777619085]
 custom_minimum_size = Vector2(125, 50)
 layout_mode = 1
 anchors_preset = 7
@@ -53,7 +57,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_group_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GoDigBtn" unique_id=1537364336]
+[node name="RichTextLabel" type="RichTextLabel" parent="Skilltree/GoDigBtn" unique_id=1537364336]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,3 +72,8 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Skills" type="Node2D" parent="." unique_id=1100842298]
+
+[node name="SkillNode" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
+position = Vector2(408, 320)

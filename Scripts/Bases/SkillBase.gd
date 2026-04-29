@@ -1,0 +1,13 @@
+@abstract class_name SkillBase
+extends Area2D
+
+@export var _Icon: Texture
+@export var _Name: String = "Skill"
+@export_multiline() var _Description: String = ""
+@export var _LevelCurr: int = 0
+@export var _LevelMaxAmount: int = 1
+@export var _Unlocks: Array[SkillBase]
+@export var _UnlockRequirementAmount: int = 1
+
+@abstract
+func _Activate() -> void
