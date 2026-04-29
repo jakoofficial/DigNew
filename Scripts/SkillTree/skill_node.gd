@@ -23,6 +23,10 @@ func _Activate() -> void:
 		PS._PBalance -= _Cost
 		_LevelCurr += 1
 		hover_info._setInfo()
+		if _LevelCurr >= _LevelMaxAmount and !_Finished:
+			$Sprite2D.modulate = Color.BLACK
+			_Finished = true
+		PS.AddSkill(self.duplicate())
 	pass
 
 func _process(delta: float) -> void:
@@ -40,5 +44,4 @@ func _process(delta: float) -> void:
 		hover_info._setInfo()
 		
 	if hovered and FK.JustReleased(AM.action("L_Click")): 
-		print("asd")
 		_Activate()

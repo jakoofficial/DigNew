@@ -10,6 +10,7 @@ extends Area2D
 @export var _LevelMaxAmount: int = 1
 @export var _Unlocks: Array[SkillBase]
 @export var _UnlockRequirementAmount: int = 1
+@export var _Finished: bool = false
 
 @abstract
 func _Activate() -> void

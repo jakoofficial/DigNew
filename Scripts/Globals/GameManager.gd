@@ -24,6 +24,7 @@ enum Scenes {
 }
 
 func load_scene(scene: Scenes) -> void:
+	print(PS.SkillsBought)
 	SceneManager.change_scene_to_file(_select_scene(scene), {}, 1.0)
 	pass
 
