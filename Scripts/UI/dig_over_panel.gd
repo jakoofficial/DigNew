@@ -24,6 +24,9 @@ func _setItems()-> void:
 		PS._PBalance += item.Get_Value()
 	total_balance.text = str("Total: %s" % PS._PBalance)
 
+func _GoToSkills() -> void:
+	GM.load_scene.bind(GM.Scenes.SKILLTREE)
+
 func _ReDig() -> void:
 	HidePanel()
 	GM.currDigArea.reset_dig()

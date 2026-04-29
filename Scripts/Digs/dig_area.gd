@@ -11,6 +11,10 @@ var inventory: Dictionary[DigSpot, int]
 
 func _ready() -> void:
 	GM.currDigArea = self
+	GM.digDone = false
+	PS._PStaminaCurr = PS._PStaminaMax
+	gui.ResetUI()
+	inventory.clear()
 	setCursor.connect(setCursorPos)
 	vSize = get_viewport_rect().size
 	Generate()
@@ -51,7 +55,6 @@ func reset_dig() -> void:
 			c.reparent(get_tree().root)
 			c.call_deferred("queue_free")
 	Generate()
-	pass
 
 func Generate() -> void:
 	GM.digReady = false

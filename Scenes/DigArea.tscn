@@ -14,6 +14,7 @@ position = Vector2(-240, -152)
 [node name="Spots" type="Node2D" parent="." unique_id=1879881292]
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1900241066]
+position = Vector2(-416, -128)
 texture = ExtResource("3_b1k6l")
 region_enabled = true
 region_rect = Rect2(128, 128, 64, 64)

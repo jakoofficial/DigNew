@@ -1,9 +1,70 @@
 [gd_scene format=3 uid="uid://ca5dr1rl2t1tw"]
 
-[node name="Control" type="Control" unique_id=692403424]
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_o3ipy"]
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_t13jq"]
+[ext_resource type="Script" uid="uid://f1no33sjw0a8" path="res://Scripts/SkillTree/skill_tree.gd" id="2_3mp7v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3ipy"]
+atlas = ExtResource("1_t13jq")
+region = Rect2(128, 0, 116, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mp7v"]
+atlas = ExtResource("1_t13jq")
+region = Rect2(128, 35, 116, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2c2s"]
+atlas = ExtResource("1_t13jq")
+region = Rect2(128, 73, 116, 33)
+
+[node name="Skilltree" type="Control" unique_id=692403424]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_o3ipy")
+script = ExtResource("2_3mp7v")
+
+[node name="GoDigBtn" type="TextureButton" parent="." unique_id=777619085]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -94.0
+offset_right = 88.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Resume")
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_o3ipy")
+texture_hover = SubResource("AtlasTexture_3mp7v")
+texture_disabled = SubResource("AtlasTexture_p2c2s")
+texture_focused = SubResource("AtlasTexture_3mp7v")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GoDigBtn" unique_id=1537364336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Go dig"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
