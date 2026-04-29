@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/DigOverPanel/VBoxContainer2" unique_id=58026063]
-custom_minimum_size = Vector2(0, 290)
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer" unique_id=1610114669]
@@ -99,7 +99,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Line"
 
-[node name="Collection" type="VBoxContainer" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer" unique_id=1332478508]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer" unique_id=1163360662]
+custom_minimum_size = Vector2(355, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Collection" type="VBoxContainer" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer/ScrollContainer" unique_id=1332478508]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -111,13 +119,14 @@ size_flags_horizontal = 4
 theme_type_variation = &"Line"
 
 [node name="TotalBalance" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2" unique_id=487647153]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 8
 text = "asdasda"
 scroll_active = false
 autowrap_trim_flags = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/DigOverPanel/VBoxContainer2" unique_id=976360613]
 custom_minimum_size = Vector2(350, 0)
