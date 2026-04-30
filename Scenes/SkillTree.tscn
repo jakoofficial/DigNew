@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_t13jq"]
 [ext_resource type="Script" uid="uid://f1no33sjw0a8" path="res://Scripts/SkillTree/skill_tree.gd" id="2_3mp7v"]
 [ext_resource type="PackedScene" uid="uid://3d1ldlg0qltf" path="res://Nodes/SkillTree/skill_node.tscn" id="4_p2c2s"]
+[ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="5_oxtxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3ipy"]
 atlas = ExtResource("1_t13jq")
@@ -17,6 +18,10 @@ region = Rect2(128, 35, 116, 37)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2c2s"]
 atlas = ExtResource("1_t13jq")
 region = Rect2(128, 73, 116, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n648w"]
+atlas = ExtResource("5_oxtxa")
+region = Rect2(2, 8, 28, 22)
 
 [node name="Tree" type="Node2D" unique_id=1122928265]
 script = ExtResource("1_alcsc")
@@ -79,18 +84,44 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Skilltree" unique_id=338692522]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 8.0
+offset_bottom = 48.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="PlayerBalance" type="RichTextLabel" parent="CanvasLayer/Skilltree/HBoxContainer" unique_id=863670007]
+clip_contents = false
+layout_mode = 2
+bbcode_enabled = true
+text = "dadsadad"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Skilltree/HBoxContainer" unique_id=278324212]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("AtlasTexture_n648w")
+stretch_mode = 5
+
 [node name="Skills" type="Node2D" parent="." unique_id=1100842298]
 
 [node name="SkillNode" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
-position = Vector2(408, 320)
+position = Vector2(576, 448)
 Skill_Name = "Stamina+"
 
 [node name="SkillNode2" parent="Skills" unique_id=436947380 instance=ExtResource("4_p2c2s")]
-position = Vector2(696, 192)
+position = Vector2(480, 352)
 Skill_Name = "Damage+"
 
 [node name="SkillNode3" parent="Skills" unique_id=2044594790 instance=ExtResource("4_p2c2s")]
-position = Vector2(864, 288)
+position = Vector2(672, 352)
 Skill_Name = "Value+"
 
 [node name="TreeCam" type="Camera2D" parent="." unique_id=936225933]

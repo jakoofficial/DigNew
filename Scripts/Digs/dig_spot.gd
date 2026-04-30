@@ -40,17 +40,19 @@ func _shake() -> void:
 	tween.chain().tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.1)
 	pass
 
+var canPress: bool = true
 func _process(delta: float) -> void:
 	if !GM.digReady: return
 	if hovered:
-		if PS._PStaminaCurr > 0 and FK.JustPressed(AM.action("L_Click")):
+		if FK.JustReleased(AM.action("L_Click")): canPress = true
+		if canPress and PS._PStaminaCurr > 0 and FK.JustPressed(AM.action("L_Click")):
+			canPress = false
 			PS._PStaminaCurr -= 1
-			print(PS._PStrength)
 			GM.currUI.UpdateUI()
 			_Health -= PS._PStrength
 			if _Health <= 0: Destroy()
 			else: _shake()
-	
+		
 	if hovered and Input.get_current_cursor_shape() != Input.CURSOR_POINTING_HAND:
 		GM.digspotHover = true
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
