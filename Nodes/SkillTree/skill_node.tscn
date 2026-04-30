@@ -20,7 +20,7 @@ script = ExtResource("1_el3if")
 scale = Vector2(1.2499999, 1.2499999)
 texture = ExtResource("2_qnjwq")
 hframes = 2
-vframes = 2
+vframes = 3
 frame = 1
 
 [node name="SkillIcon" type="Sprite2D" parent="." unique_id=585495671]
@@ -30,7 +30,6 @@ scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_el3if")
 
 [node name="HoverInfo" type="Control" parent="." unique_id=1682460507]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -192.0

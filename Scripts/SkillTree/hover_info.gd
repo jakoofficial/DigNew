@@ -11,7 +11,19 @@ func _ready() -> void:
 	#_setInfo()
 
 func _setInfo() -> void:
-	upgrade_name.text = str("%s (%s/%s)" % [skill_node.skill_res._Name, skill_node.skill_res._LevelCurr, skill_node.skill_res._LevelMaxAmount])
-	upgrade_cost.text = str(skill_node.skill_res._Cost)
-	upgrade_desc.text = str(skill_node.skill_res._Description)
-	#upgrade_change.text = str(skill_node.)
+	var res: SkillRes = skill_node.skill_res
+	var typeValueCurr: int
+	var typeValueNew: int
+	upgrade_name.text = str("%s (%s/%s)" % [res._Name, res._LevelCurr, res._LevelMaxAmount])
+	upgrade_cost.text = str(res._Cost)
+	upgrade_desc.text = str(res._Description)
+	
+	match res._UpgradeType:
+		res.TYPE.Stamina:
+			typeValueCurr = PS._PStaminaMax
+			typeValueNew = (PS._PStaminaMax + res._UpgradeAmount)
+		res.TYPE.Strength:
+			typeValueCurr = PS._PStrength
+			typeValueNew = (PS._PStrength + res._UpgradeAmount)
+			
+	upgrade_change.text = str("%s > %s" % [typeValueCurr, typeValueNew])
