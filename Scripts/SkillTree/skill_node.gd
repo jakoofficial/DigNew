@@ -19,6 +19,7 @@ func _on_mouse_exited() -> void:
 	hovered = false
 	GM.digspotHover = false
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	$Sprite2D.frame = 1
 	hover_info.hide()
 
 func _Activate() -> void:
@@ -38,7 +39,7 @@ func _process(delta: float) -> void:
 	else: show()
 	
 	if skill_res._Finished: 
-		$Sprite2D.modulate = Color.BLACK
+		$Sprite2D.frame = 2
 	
 	if skill_res._UnlockRequirementAmount <= skill_res._LevelCurr:
 		if skill_res._Unlocks.size() > 0:
@@ -47,6 +48,8 @@ func _process(delta: float) -> void:
 	
 	if hovered and Input.get_current_cursor_shape() != Input.CURSOR_POINTING_HAND:
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+		if !skill_res._Finished:
+			$Sprite2D.frame = 3
 		hover_info.show()
 		hover_info._setInfo()
 		

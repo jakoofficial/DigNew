@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://edq0wdrwnrhq" path="res://Sprites/icon.svg" id="1_x52wk"]
 [ext_resource type="Script" uid="uid://cm2q3rexbqult" path="res://Scripts/Digs/collected_item.gd" id="1_xiyc5"]
-[ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Grass-dirt.png" id="2_ywsga"]
+[ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="3_xiyc5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xiyc5"]
-atlas = ExtResource("2_ywsga")
-region = Rect2(173, 115, 9, 10)
+atlas = ExtResource("3_xiyc5")
+region = Rect2(2, 8, 28, 22)
 
 [node name="CollectedItem" type="HBoxContainer" unique_id=344203900]
 custom_minimum_size = Vector2(350, 50)
