@@ -5,20 +5,45 @@ extends Node
 
 var StateResetTime: float = .10
 enum InputType {Keyboard, Mouse, ControllerButton, ControllerJoy}
+
+var MouseButtonWheelKeys: Array[MouseButton] = [
+	MouseButton.MOUSE_BUTTON_WHEEL_DOWN,
+	MouseButton.MOUSE_BUTTON_WHEEL_LEFT,
+	MouseButton.MOUSE_BUTTON_WHEEL_UP,
+	MouseButton.MOUSE_BUTTON_WHEEL_RIGHT
+]
+
 var CurrKeyStates: Dictionary[String, Dictionary] = {}
 
 func _ready() -> void:
 	process_mode = ProcessMode.PROCESS_MODE_ALWAYS
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and MouseButtonWheelKeys.has(event.button_index):
+		var eventToUse: InputEventMouseButton = event
+		for key in CurrKeyStates.values().filter(func (e): return e["Key"].type == InputType.Mouse):
+			var fancyKeyObject = (key["Key"] as FancyKeyObj)
+			if eventToUse.button_index == fancyKeyObject.btn and eventToUse.pressed and key["Pressed"] != true:
+				_SetPressed(fancyKeyObject.keycode)
+
 func _process(delta):
 	for val in CurrKeyStates.values():
-		if val["Has_Been_Checked"] or (val["Time_Till_Reset"] != -999 and val["Time_Till_Reset"] <= 0):
-			if val["Just_Pressed"]: val["Just_Pressed"] = false
-			if val["Just_Released"]: val["Just_Released"] = false
-			val["Has_Been_Checked"] = false
-			val["Time_Till_Reset"] = -999
-		elif val["Time_Till_Reset"] != -999:
-			val["Time_Till_Reset"] -= delta
+		if (val["Key"] as FancyKeyObj).type == InputType.Mouse and MouseButtonWheelKeys.has((val["Key"] as FancyKeyObj).btn):
+			if val["Has_Been_Checked"] or (val["Time_Till_Reset"] != -999 and val["Time_Till_Reset"] <= 0):
+				if val["Just_Pressed"] and !val["Just_Set"]: val["Just_Pressed"] = false
+				if val["Just_Released"]: val["Just_Released"] = false
+				val["Has_Been_Checked"] = false
+				val["Time_Till_Reset"] = -999
+			elif val["Time_Till_Reset"] != -999:
+				val["Time_Till_Reset"] -= delta
+		else:
+			if val["Has_Been_Checked"] or (val["Time_Till_Reset"] != -999 and val["Time_Till_Reset"] <= 0):
+				if val["Just_Pressed"]: val["Just_Pressed"] = false
+				if val["Just_Released"]: val["Just_Released"] = false
+				val["Has_Been_Checked"] = false
+				val["Time_Till_Reset"] = -999
+			elif val["Time_Till_Reset"] != -999:
+				val["Time_Till_Reset"] -= delta
 	
 	for key in CurrKeyStates.keys():
 		_KeyLogic(key)
@@ -28,6 +53,7 @@ func _ValidateKey(key: FancyKeyObj):
 		CurrKeyStates[key.keycode] = {
 			"Key": key,
 			"Pressed": false,
+			"Just_Set": false,
 			"Just_Pressed": false,
 			"Just_Released": false,
 			"Has_Been_Checked": false,
@@ -43,11 +69,18 @@ func _KeyLogic(keycode: String):
 				_SetPressed(keycode)
 			elif CurrKey["Pressed"] == true:
 				_SetReleased(keycode)
-		InputType.Mouse:
-			if Input.is_mouse_button_pressed(KeyObj["btn"]):
-				_SetPressed(keycode)
-			elif CurrKey["Pressed"]:
-				_SetReleased(keycode)
+		InputType.Mouse: #TODO ADD EXCEPTION FOR MOUSE WHEEL
+			if MouseButtonWheelKeys.has(CurrKey["Key"]["btn"]):
+				if CurrKey["Pressed"]:
+					if !CurrKey["Just_Set"]:
+						_SetReleased(keycode)
+					else:
+						CurrKey["Just_Set"] = false
+			else:
+				if Input.is_mouse_button_pressed(KeyObj["btn"]):
+					_SetPressed(keycode)
+				elif CurrKey["Pressed"] == true:
+					_SetReleased(keycode)
 		InputType.ControllerButton:
 			if Input.is_joy_button_pressed(KeyObj["deviceIdx"], KeyObj["btn"]):
 				_SetPressed(keycode)
@@ -59,6 +92,7 @@ func _SetPressed(keycode: String):
 	if !CurrKey["Pressed"]:
 		CurrKey["Just_Pressed"] = true
 	CurrKey["Pressed"] = true
+	CurrKey["Just_Set"] = true
 	CurrKey["Just_Released"] = false
 	CurrKey["Time_Till_Reset"] = StateResetTime
 
@@ -67,6 +101,7 @@ func _SetReleased(keycode: String):
 	if CurrKey["Pressed"]:
 		CurrKey["Just_Released"] = true
 	CurrKey["Pressed"] = false
+	CurrKey["Just_Set"] = false
 	CurrKey["Just_Pressed"] = false
 	CurrKey["Time_Till_Reset"] = StateResetTime
 

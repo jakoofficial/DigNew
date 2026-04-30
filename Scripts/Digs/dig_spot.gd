@@ -45,6 +45,7 @@ func _process(delta: float) -> void:
 	if hovered:
 		if PS._PStaminaCurr > 0 and FK.JustPressed(AM.action("L_Click")):
 			PS._PStaminaCurr -= 1
+			print(PS._PStrength)
 			GM.currUI.UpdateUI()
 			_Health -= PS._PStrength
 			if _Health <= 0: Destroy()
