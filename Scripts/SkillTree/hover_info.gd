@@ -18,12 +18,15 @@ func _setInfo() -> void:
 	upgrade_cost.text = str(res._Cost)
 	upgrade_desc.text = str(res._Description)
 	
-	match res._UpgradeType:
-		res.TYPE.Stamina:
-			typeValueCurr = PS._PStaminaMax
-			typeValueNew = (PS._PStaminaMax + res._UpgradeAmount)
-		res.TYPE.Strength:
-			typeValueCurr = PS._PStrength
-			typeValueNew = (PS._PStrength + res._UpgradeAmount)
-			
-	upgrade_change.text = str("%s > %s" % [typeValueCurr, typeValueNew])
+	if !res._LevelCurr >= res._LevelMaxAmount:
+		match res._UpgradeType:
+			res.TYPE.Stamina:
+				typeValueCurr = PS._PStaminaMax
+				typeValueNew = (PS._PStaminaMax + res._UpgradeAmount)
+			res.TYPE.Strength:
+				typeValueCurr = PS._PStrength
+				typeValueNew = (PS._PStrength + res._UpgradeAmount)
+		upgrade_change.text = str("%s > %s" % [typeValueCurr, typeValueNew])
+	else: 
+		upgrade_change.text = str("Maxed")
+		
