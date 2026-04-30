@@ -26,6 +26,9 @@ func _setInfo() -> void:
 			res.TYPE.Strength:
 				typeValueCurr = PS._PStrength
 				typeValueNew = (PS._PStrength + res._UpgradeAmount)
+			res.TYPE.ValueBonus:
+				typeValueCurr = PS._PValueBonus
+				typeValueNew = (PS._PValueBonus + res._UpgradeAmount)
 		upgrade_change.text = str("%s > %s" % [typeValueCurr, typeValueNew])
 	else: 
 		upgrade_change.text = str("Maxed")

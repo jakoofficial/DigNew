@@ -89,6 +89,10 @@ Skill_Name = "Stamina+"
 position = Vector2(696, 192)
 Skill_Name = "Damage+"
 
+[node name="SkillNode3" parent="Skills" unique_id=2044594790 instance=ExtResource("4_p2c2s")]
+position = Vector2(864, 288)
+Skill_Name = "Value+"
+
 [node name="TreeCam" type="Camera2D" parent="." unique_id=936225933]
 anchor_mode = 0
 process_callback = 0

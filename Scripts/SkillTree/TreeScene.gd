@@ -24,6 +24,7 @@ func _input(event: InputEvent) -> void:
 	if FK.Pressed(AM.action("R_Click")) and event is InputEventMouseMotion:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 		tree_cam.global_position -= (event as InputEventMouseMotion).relative
+		print("oressed")
 	else:
 		lastPos = Vector2.ZERO
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

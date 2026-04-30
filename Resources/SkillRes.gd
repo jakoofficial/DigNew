@@ -16,5 +16,6 @@ extends Resource
 
 enum TYPE {
 	Stamina,
-	Strength
+	Strength,
+	ValueBonus
 }

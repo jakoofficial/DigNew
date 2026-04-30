@@ -15,7 +15,7 @@ is_unlocked = true
 _Name = "Stamina+"
 _Description = "Increases stamina by 1"
 _LevelMaxAmount = 2
-_Unlocks = Array[String](["Damage+"])
+_Unlocks = Array[String](["Damage+", "Value+"])
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t88sh"]
@@ -31,6 +31,18 @@ _Description = "Increses damage pr. dig by 1"
 _UpgradeType = 1
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd215"]
+atlas = ExtResource("3_t88sh")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_d4r5k"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_dd215")
+_Name = "Value+"
+_Description = "Adds +1 to all item values"
+_UpgradeType = 2
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k")])
