@@ -77,8 +77,8 @@ vertical_alignment = 1
 
 [node name="SkillNode" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
 position = Vector2(408, 320)
-Skill_Name = "S_first"
+Skill_Name = "Stamina+"
 
 [node name="SkillNode2" parent="Skills" unique_id=436947380 instance=ExtResource("4_p2c2s")]
 position = Vector2(696, 192)
-Skill_Name = "S_second"
+Skill_Name = "Damage+"

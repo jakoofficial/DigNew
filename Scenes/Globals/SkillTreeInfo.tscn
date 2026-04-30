@@ -2,17 +2,32 @@
 
 [ext_resource type="Script" uid="uid://bo4lo8h5nnynw" path="res://Scripts/Globals/skill_tree_info.gd" id="1_5xx86"]
 [ext_resource type="Script" uid="uid://d4hkstn8p728s" path="res://Resources/SkillRes.gd" id="2_lqdd7"]
+[ext_resource type="Texture2D" uid="uid://bwxinb84t45a" path="res://Sprites/Icons/Skill_Icons.png" id="3_t88sh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0sfq"]
+atlas = ExtResource("3_t88sh")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Resource" id="Resource_t88sh"]
 script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_x0sfq")
 is_unlocked = true
-_Name = "S_first"
-_Unlocks = Array[String](["S_second"])
+_Name = "Stamina+"
+_Description = "Increases stamina by 1"
+_Unlocks = Array[String](["Damage+"])
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t88sh"]
+atlas = ExtResource("3_t88sh")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="Resource" id="Resource_lqdd7"]
 script = ExtResource("2_lqdd7")
-_Name = "S_second"
+_Icon = SubResource("AtlasTexture_t88sh")
+_Name = "Damage+"
+_Cost = 2
+_Description = "Increses damage pr. dig by 1"
+_UpgradeType = 1
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]

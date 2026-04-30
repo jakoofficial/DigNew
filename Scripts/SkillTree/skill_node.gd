@@ -1,6 +1,7 @@
 extends Area2D
 @onready var hover_info: Control = $HoverInfo
 @export var Skill_Name: String = ""
+@onready var skill_icon: Sprite2D = $SkillIcon
 
 var skill_res: SkillRes
 
@@ -11,6 +12,7 @@ func _ready() -> void:
 	connect("mouse_entered", _on_mouse_entered)
 	connect("mouse_exited", _on_mouse_exited)
 	skill_res = (SkillTreeInfo as STI).GetSkill(Skill_Name)
+	skill_icon.texture = skill_res._Icon
 
 func _on_mouse_entered() -> void:
 	hovered = true
@@ -40,6 +42,7 @@ func _process(delta: float) -> void:
 	
 	if skill_res._Finished: 
 		$Sprite2D.frame = 2
+		skill_icon.self_modulate.a = 0.5
 	
 	if skill_res._UnlockRequirementAmount <= skill_res._LevelCurr:
 		if skill_res._Unlocks.size() > 0:
