@@ -26,7 +26,6 @@ func NewGameFile() -> void:
 	var file = FileAccess.file_exists(path)
 	if file:
 		DirAccess.remove_absolute(path)
-		print("hel")
 		SaveGame()
 		return
 	else:

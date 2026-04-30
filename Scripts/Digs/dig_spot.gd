@@ -10,7 +10,6 @@ func Destroy() -> void:
 
 func GiveValue() -> void:
 	digZone.addToInv(self)
-	#print(str("Name: %s Value: %s" % [_Name, _Value]))
 
 var tween: Tween
 func Spawn() -> void:

@@ -28,7 +28,6 @@ func addToInv(collected: DigSpot) -> void:
 	for i in inventory.keys():
 		if i._Name == collected._Name:
 			inventory[i] += 1
-			print(inventory)
 			return
 	var newitem: DigSpot
 	newitem = collected.duplicate()
@@ -74,10 +73,10 @@ func Generate() -> void:
 		for x in range(GM.xSpots):
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
+			spot._Value += PS._PValueBonus
 			spots.add_child(spot)
 			spot.digZone = self
 			spot.hide()
-
 			# Position each spot with spacing
 			spot.global_position.x = spawnStartX + (x * (spotSize + spacing))+pivot_offset
 			spot.global_position.y = spawnStartY + (y * (spotSize + spacing))+pivot_offset

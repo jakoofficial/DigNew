@@ -20,6 +20,7 @@ func _setItems()-> void:
 	for i:DigSpot in GM.currDigArea.inventory.keys():
 		var item = collected_item.duplicate()
 		item.Set_Values(i)
+		print(i._Value)
 		collection.add_child(item)
 		PS._PBalance += item.Get_Value()
 	total_balance.text = str("Total: %s" % PS._PBalance)
