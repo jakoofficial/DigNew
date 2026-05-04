@@ -14,7 +14,9 @@ func _setInfo() -> void:
 	var res: SkillRes = skill_node.skill_res
 	var typeValueCurr: int
 	var typeValueNew: int
-	upgrade_name.text = str("%s (%s/%s)" % [res._Name, res._LevelCurr, res._LevelMaxAmount])
+	var textToWrite: String = ""
+	
+	upgrade_name.text = str("%s (%s/%s)" % [res._Name.replace("_", " "), res._LevelCurr, res._LevelMaxAmount])
 	upgrade_cost.text = str(res._Cost)
 	upgrade_desc.text = str(res._Description)
 	
@@ -23,13 +25,18 @@ func _setInfo() -> void:
 			res.TYPE.Stamina:
 				typeValueCurr = PS._PStaminaMax
 				typeValueNew = (PS._PStaminaMax + res._UpgradeAmount)
+				textToWrite = str("%s > %s" % [typeValueCurr, typeValueNew])
 			res.TYPE.Strength:
 				typeValueCurr = PS._PStrength
 				typeValueNew = (PS._PStrength + res._UpgradeAmount)
+				textToWrite = str("%s > %s" % [typeValueCurr, typeValueNew])
 			res.TYPE.ValueBonus:
 				typeValueCurr = PS._PValueBonus
 				typeValueNew = (PS._PValueBonus + res._UpgradeAmount)
-		upgrade_change.text = str("%s > %s" % [typeValueCurr, typeValueNew])
+				textToWrite = str("%s > %s" % [typeValueCurr, typeValueNew])
+			res.TYPE.LevelType:
+				textToWrite = ""
+		upgrade_change.text = textToWrite
 	else: 
 		upgrade_change.text = str("Maxed")
 		

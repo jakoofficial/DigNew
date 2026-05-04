@@ -44,8 +44,13 @@ _Unlocks = Array[String](["Unlock_Stone"])
 _UpgradeType = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4r5k"]
+atlas = ExtResource("3_t88sh")
+region = Rect2(64, 64, 64, 64)
+
 [sub_resource type="Resource" id="Resource_x0sfq"]
 script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_d4r5k")
 _Name = "Unlock_Stone"
 _UpgradeType = 3
 _LevelTypeUnlock = "Stone"
