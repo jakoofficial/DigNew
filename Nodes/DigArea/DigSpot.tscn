@@ -6,6 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtc7q"]
 size = Vector2(64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtc7q"]
+atlas = ExtResource("1_3n5sd")
+region = Rect2(48, 32, 8, 8)
+
+[sub_resource type="Curve" id="Curve_g4ylu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3256785, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_agjjr"]
+offsets = PackedFloat32Array(0.45033112, 0.88520974)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
 [node name="DigSpot" type="Area2D" unique_id=1749549655]
 script = ExtResource("1_qtc7q")
 
@@ -18,3 +30,19 @@ region_rect = Rect2(0, 64, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715798592]
 shape = SubResource("RectangleShape2D_qtc7q")
+
+[node name="HitParticle" type="CPUParticles2D" parent="." unique_id=1333446890]
+emitting = false
+amount = 4
+texture = SubResource("AtlasTexture_qtc7q")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.45
+emission_shape = 3
+emission_rect_extents = Vector2(24, 24)
+direction = Vector2(0, -10)
+initial_velocity_min = 81.3
+initial_velocity_max = 256.1
+scale_amount_curve = SubResource("Curve_g4ylu")
+color_ramp = SubResource("Gradient_agjjr")

@@ -8,16 +8,8 @@ extends Node2D
 
 func _ready() -> void:
 	tree_cam.zoom = Vector2(1.0,1.0)
+	FM.SaveGame()
 
-#var scrollIndex: int = 0
-#func _unhandled_input(event):
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.is_pressed():
-			#scrollIndex = 0
-		#elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.is_pressed():
-			#scrollIndex = 1
-		#if !event.is_pressed():
-			#scrollIndex = -1
 
 var lastPos: Vector2
 func _input(event: InputEvent) -> void:

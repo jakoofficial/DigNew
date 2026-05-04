@@ -22,6 +22,7 @@ func _EndDigPressed() -> void:
 
 func ResetUI() -> void:
 	stamina.value = PS._PStaminaMax
+	end_dig_btn.show()
 
 func UpdateUI() -> void:
 	stamina.value = PS._PStaminaCurr

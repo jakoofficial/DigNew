@@ -40,6 +40,7 @@ func _Activate() -> void:
 		if skill_res._LevelCurr >= skill_res._LevelMaxAmount and !skill_res._Finished:
 			skill_res._Finished = true
 		hover_info._setInfo()
+		FM.SaveGame()
 	pass
 
 func _process(delta: float) -> void:

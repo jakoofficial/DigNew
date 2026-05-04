@@ -6,7 +6,6 @@ extends Control
 
 func _ready() -> void:
 	FM.LoadGame()
-	print(FM.CurrSaveFile)
 	v_box_container.show()
 	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn", LoadingScreen.Type.DEFAULT)
 	start_game.connect("pressed", _NewGame)
@@ -18,7 +17,6 @@ func _NewGame() -> void:
 	if FM.CheckSaveGame():
 		v_box_container.hide()
 		confirm_box.show()
-		#confirm_box.prev_btn = start_game
 		confirm_box._setText("This will permanently delete the already existing savefile.")
 		canMakeNew = await confirm_box.confirmResult
 	if !canMakeNew: v_box_container.show(); return

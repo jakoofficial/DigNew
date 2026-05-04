@@ -20,7 +20,6 @@ func _setItems()-> void:
 	for i:DigSpot in GM.currDigArea.inventory.keys():
 		var item = collected_item.duplicate()
 		item.Set_Values(i)
-		print(i._Value)
 		collection.add_child(item)
 		PS._PBalance += item.Get_Value()
 	total_balance.text = str("Total: %s" % PS._PBalance)
@@ -30,6 +29,7 @@ func _GoToSkills() -> void:
 
 func _ReDig() -> void:
 	HidePanel()
+	FM.SaveGame()
 	GM.currDigArea.reset_dig()
 	if collection.get_child_count() > 0:
 		for i in collection.get_children():

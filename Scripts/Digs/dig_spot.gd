@@ -1,4 +1,5 @@
 extends DigSpot
+@onready var hit_particle: CPUParticles2D = $HitParticle
 
 var area: Node2D
 var digZone: Node2D
@@ -6,6 +7,8 @@ var digZone: Node2D
 func Destroy() -> void:
 	GiveValue()
 	area.setCursorPos()
+	hit_particle.finished.connect(hit_particle.queue_free)
+	hit_particle.reparent(get_parent(), true)
 	call_deferred("queue_free")
 
 func GiveValue() -> void:
@@ -50,6 +53,7 @@ func _process(delta: float) -> void:
 			PS._PStaminaCurr -= 1
 			GM.currUI.UpdateUI()
 			_Health -= PS._PStrength
+			hit_particle.emitting = true
 			if _Health <= 0: Destroy()
 			else: _shake()
 		
