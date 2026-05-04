@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 		player_balance.text = str(PS._PBalance)
 
 func _GoDig() -> void:
-	GM.load_scene(GM.Scenes.DIGAREA)
+	FM.SaveGame()
+	GM.load_scene(GM.Scenes.LEVELSELECT)

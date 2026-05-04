@@ -40,9 +40,17 @@ script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_dd215")
 _Name = "Value+"
 _Description = "Adds +1 to all item values"
+_Unlocks = Array[String](["Unlock_Stone"])
 _UpgradeType = 2
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="Resource" id="Resource_x0sfq"]
+script = ExtResource("2_lqdd7")
+_Name = "Unlock_Stone"
+_UpgradeType = 3
+_LevelTypeUnlock = "Stone"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq")])

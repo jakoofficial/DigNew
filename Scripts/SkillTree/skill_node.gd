@@ -32,11 +32,10 @@ func _draw() -> void:
 
 func _Activate() -> void:
 	if skill_res._LevelCurr == skill_res._LevelMaxAmount: return
-	
 	if PS._PBalance >= skill_res._Cost:
 		PS._PBalance -= skill_res._Cost
 		skill_res._LevelCurr += 1
-		PS.Apply_Upgrade(skill_res._UpgradeType, skill_res._UpgradeAmount)
+		PS.Apply_Upgrade(skill_res._UpgradeType, skill_res._UpgradeAmount, skill_res._LevelTypeUnlock)
 		if skill_res._LevelCurr >= skill_res._LevelMaxAmount and !skill_res._Finished:
 			skill_res._Finished = true
 		hover_info._setInfo()
@@ -67,6 +66,8 @@ func _process(delta: float) -> void:
 			$Sprite2D.frame = 3
 		hover_info.show()
 		hover_info._setInfo()
-		
-	if hovered and FK.JustReleased(AM.action("L_Click")): 
+	
+	FK.JustPressed(AM.action("L_Click")) #Remove when fixed
+	if hovered and FK.JustPressed(AM.action("L_Click")):
+		print("aksdjnh")
 		_Activate()

@@ -20,8 +20,11 @@ func _process(delta: float) -> void:
 	if PS._PStaminaCurr <= 0 and digDone == false:
 		digDone = true
 
+var LevelSelectDict: Dictionary[String, bool]
+
 enum Scenes {
 	SKILLTREE,
+	LEVELSELECT,
 	DIGAREA
 }
 
@@ -33,6 +36,8 @@ func _select_scene(scene: Scenes) -> String:
 	match scene:
 		Scenes.SKILLTREE:
 			return "res://Scenes/SkillTree.tscn"
+		Scenes.LEVELSELECT:
+			return "res://Scenes/Level_Select.tscn"
 		Scenes.DIGAREA:
 			return "res://Scenes/DigArea.tscn"
 	return "No scene found!"

@@ -12,7 +12,8 @@ func SaveData():
 		"ValueBonus": PS._PValueBonus,
 		"MaxSpotsX": GM.xSpots,
 		"MaxSpotsY": GM.ySpots,
-		"Skills": SkillTreeInfo.Skills
+		"Skills": SkillTreeInfo.Skills,
+		"LevelSelection": GM.LevelSelectDict
 	}
 	return dict
 

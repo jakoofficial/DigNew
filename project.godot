@@ -39,6 +39,7 @@ enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 
 folder_colors={
 "res://Nodes/": "yellow",
+"res://Resources/": "purple",
 "res://Scenes/": "green",
 "res://Scripts/": "red",
 "res://Sprites/": "orange"

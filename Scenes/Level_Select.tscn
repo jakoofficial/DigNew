@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bkbmb4cvb2gci"]
+
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_efp1w"]
+[ext_resource type="Script" uid="uid://375pdwyeccty" path="res://Scripts/LevelSelect/level_select.gd" id="2_6283k"]
+[ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="3_6283k"]
+[ext_resource type="PackedScene" uid="uid://8gqbhf0ko0sn" path="res://Nodes/LevelSelect/level.tscn" id="3_ojto8"]
+[ext_resource type="Texture2D" uid="uid://nr5sl0y8dfxn" path="res://Sprites/MainMenuBG.png" id="4_yee8s"]
+[ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_11r63"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojto8"]
+atlas = ExtResource("3_6283k")
+region = Rect2(128, 0, 116, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yee8s"]
+atlas = ExtResource("3_6283k")
+region = Rect2(128, 35, 116, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11r63"]
+atlas = ExtResource("3_6283k")
+region = Rect2(128, 73, 116, 33)
+
+[node name="LevelSelect" type="Control" unique_id=700572385]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_efp1w")
+script = ExtResource("2_6283k")
+
+[node name="Back" type="TextureButton" parent="." unique_id=996719745]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 0
+offset_left = 16.0
+offset_right = 141.0
+offset_bottom = 50.0
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../Confirm")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../Confirm")
+focus_neighbor_bottom = NodePath("../Confirm")
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_ojto8")
+texture_hover = SubResource("AtlasTexture_yee8s")
+texture_disabled = SubResource("AtlasTexture_11r63")
+texture_focused = SubResource("AtlasTexture_yee8s")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Back" unique_id=1690170588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Back"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelContainer" type="FlowContainer" parent="." unique_id=132329948]
+custom_minimum_size = Vector2(1152, 250)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 192.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Level" parent="LevelContainer" unique_id=645813811 instance=ExtResource("3_ojto8")]
+layout_mode = 2
+LevelName = "Dirt"
+GoToLevel = 2
+LevelTexture = ExtResource("4_yee8s")
+Locked = false
+
+[node name="Level2" parent="LevelContainer" unique_id=581851783 instance=ExtResource("3_ojto8")]
+layout_mode = 2
+LevelName = "Stone"
+GoToLevel = 1
+LevelTexture = ExtResource("5_11r63")
+
+[node name="Level3" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
+layout_mode = 2
+LevelName = "null"
+GoToLevel = 1
+LevelTexture = ExtResource("5_11r63")
+
+[node name="Level4" parent="LevelContainer" unique_id=1026202293 instance=ExtResource("3_ojto8")]
+layout_mode = 2
+LevelName = "null"
+GoToLevel = 1
+LevelTexture = ExtResource("5_11r63")
+
+[node name="Level5" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
+layout_mode = 2
+LevelName = "null"
+GoToLevel = 1
+LevelTexture = ExtResource("5_11r63")
+
+[node name="Level6" parent="LevelContainer" unique_id=354505411 instance=ExtResource("3_ojto8")]
+layout_mode = 2
+LevelName = "null"
+GoToLevel = 1
+LevelTexture = ExtResource("5_11r63")

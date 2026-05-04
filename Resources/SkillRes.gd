@@ -13,9 +13,12 @@ extends Resource
 @export var _Finished: bool = false
 @export var _UpgradeType:TYPE = 0
 @export var _UpgradeAmount: int = 1
+## Only used if Upgrade Type is set to LevelType
+@export var _LevelTypeUnlock: String = ""
 
 enum TYPE {
 	Stamina,
 	Strength,
-	ValueBonus
+	ValueBonus,
+	LevelType
 }
