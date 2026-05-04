@@ -17,7 +17,15 @@ func AddSkillNodeRef(skillName: String, node: Area2D) -> void:
 	SkillNodesDict[skillName] = node
 
 func _ready() -> void:
+	_Generate()
+
+func _Generate() -> void:
 	var i = 0;
+	SkillDict.clear()
 	for s in Skills:
 		SkillDict[s._Name] = i
 		i += 1
+
+func Load(savedSkills: Array) -> void:
+	Skills = savedSkills
+	_Generate()

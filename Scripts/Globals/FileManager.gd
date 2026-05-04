@@ -1,22 +1,24 @@
 extends Node
 
-var path: String = "user://DigDigSave.save"
+var path: String = "user://DigSave.save"
 var CurrSaveFile = null
 
 func SaveData():
 	var dict = {
-		"filename": "DigDigSave.save",
+		"filename": "DigSave.save",
 		"Stamina": PS.Stamina,
-		"Balance": PS.Balance,
-		"MaxDigs": PS.MaxDigs,
-		"Global_Inventory": PS.Global_Inventory,
-		"MaxDigX": PS.MaxDigX,
-		"MaxDigY": PS.MaxDigY
+		"StaminaMax": PS._PStaminaMax,
+		"Balance": PS._PBalance,
+		"Strength": PS._PStrength,
+		"ValueBonus": PS._PValueBonus,
+		"MaxSpotsX": GM.xSpots,
+		"MaxSpotsY": GM.ySpots,
+		"Skills": SkillTreeInfo.Skills
 	}
 	return dict
 
 func SaveGame() -> void:
-	var file = FileAccess.open("user://DigDigSave.save", FileAccess.WRITE)
+	var file = FileAccess.open(path, FileAccess.WRITE)
 	
 	var json_string = JSON.stringify(SaveData())
 	file.store_line(json_string)
@@ -32,7 +34,7 @@ func NewGameFile() -> void:
 		SaveGame()
 
 func CheckSaveGame() -> bool:
-	if not FileAccess.file_exists("user://DigDigSave.save"): return false
+	if not FileAccess.file_exists(path): return false
 	else: return true
 
 func LoadGame():
