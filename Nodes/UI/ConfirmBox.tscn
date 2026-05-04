@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_0mkpp"]
 [ext_resource type="Texture2D" uid="uid://b4n5jr12li31" path="res://Sprites/Colour palette/Taile Gamougg 96.png" id="1_1ckjn"]
-[ext_resource type="Script" uid="uid://goeoiqiq3rkv" path="res://Scripts/UI/confirm_box.gd" id="1_6g8y7"]
+[ext_resource type="Script" uid="uid://dudtor05usj0h" path="res://Scripts/UI/confirm_box.gd" id="1_6g8y7"]
 [ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_m7jqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6g8y7"]
@@ -40,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = SubResource("AtlasTexture_6g8y7")
 expand_mode = 1
 
@@ -56,6 +57,7 @@ offset_right = 150.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("1_0mkpp")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 16

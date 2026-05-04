@@ -6,7 +6,6 @@ var CurrSaveFile = null
 func SaveData():
 	var dict = {
 		"filename": "DigSave.save",
-		"Stamina": PS.Stamina,
 		"StaminaMax": PS._PStaminaMax,
 		"Balance": PS._PBalance,
 		"Strength": PS._PStrength,
@@ -20,7 +19,7 @@ func SaveData():
 func SaveGame() -> void:
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	
-	var json_string = JSON.stringify(SaveData())
+	var json_string = JSON.stringify(JSON.from_native(SaveData(), true))
 	file.store_line(json_string)
 	file.close()
 
@@ -42,7 +41,7 @@ func LoadGame():
 	
 	var file = FileAccess.open(path, FileAccess.READ)
 	var json_text: String = FileAccess.get_file_as_string(path)
-	CurrSaveFile = JSON.parse_string(json_text)
+	CurrSaveFile = JSON.to_native(JSON.parse_string(json_text), true)
 	if !CurrSaveFile == null:
 		file.close()
 		return CurrSaveFile 

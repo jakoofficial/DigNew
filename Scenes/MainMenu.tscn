@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw7lspqemkh8u" path="res://Scripts/UI/main_menu.gd" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_853f1"]
+[ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="3_8saeu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
 atlas = ExtResource("2_853f1")
@@ -24,8 +25,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tt5f1")
 
-[node name="StartGame" type="TextureButton" parent="." unique_id=1015994404]
-custom_minimum_size = Vector2(125, 50)
+[node name="ConfirmBox" parent="." unique_id=1259830081 instance=ExtResource("3_8saeu")]
+visible = false
+z_index = 3
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2129218173]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,12 +38,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -62.5
-offset_top = -25.0
+offset_top = -52.0
 offset_right = 62.5
-offset_bottom = 25.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
+
+[node name="StartGame" type="TextureButton" parent="VBoxContainer" unique_id=1015994404]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
 focus_neighbor_top = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Resume")
 mouse_filter = 1
@@ -50,7 +58,7 @@ texture_focused = SubResource("AtlasTexture_ghw46")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StartGame" unique_id=861757673]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StartGame" unique_id=861757673]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,6 +68,35 @@ grow_vertical = 2
 mouse_filter = 1
 bbcode_enabled = true
 text = "Start"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueGame" type="TextureButton" parent="VBoxContainer" unique_id=643484627]
+custom_minimum_size = Vector2(155, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Resume")
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_8saeu")
+texture_hover = SubResource("AtlasTexture_ghw46")
+texture_disabled = SubResource("AtlasTexture_df05h")
+texture_focused = SubResource("AtlasTexture_ghw46")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ContinueGame" unique_id=973697882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Continue"
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1

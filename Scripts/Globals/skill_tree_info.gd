@@ -26,6 +26,6 @@ func _Generate() -> void:
 		SkillDict[s._Name] = i
 		i += 1
 
-func Load(savedSkills: Array) -> void:
+func Load(savedSkills: Array[SkillRes]) -> void:
 	Skills = savedSkills
 	_Generate()
