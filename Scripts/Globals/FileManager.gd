@@ -20,7 +20,7 @@ func SaveData():
 func SaveGame() -> void:
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	
-	var json_string = JSON.stringify(JSON.from_native(SaveData(), true))
+	var json_string = JSON.stringify(JSON.from_native(SaveData(), true), " ")
 	file.store_line(json_string)
 	file.close()
 
