@@ -1,6 +1,7 @@
 extends Control
 @onready var start_game: TextureButton = $VBoxContainer/StartGame
 @onready var continue_game: TextureButton = $VBoxContainer/ContinueGame
+@onready var quit_game: TextureButton = $VBoxContainer/QuitGame
 @onready var confirm_box: Control = $ConfirmBox
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 
@@ -11,6 +12,7 @@ func _ready() -> void:
 	start_game.connect("pressed", _NewGame)
 	continue_game.connect("pressed", _ContinueGame)
 	continue_game.disabled = !FM.CheckSaveGame()
+	quit_game.connect("pressed", _QuitGame)
 
 func _NewGame() -> void:
 	var canMakeNew = true
@@ -27,3 +29,12 @@ func _NewGame() -> void:
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
 	GM.load_scene(GM.Scenes.SKILLTREE)
+
+func _QuitGame() -> void:
+	var quit = true
+	v_box_container.hide()
+	confirm_box.show()
+	confirm_box._setText("Any unsaved data will be lost!\nQuit anyway?")
+	quit = await confirm_box.confirmResult
+	if !quit: v_box_container.show(); return
+	get_tree().quit()
