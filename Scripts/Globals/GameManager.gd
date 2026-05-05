@@ -18,7 +18,8 @@ var digspotTypes: Dictionary = {
 	"Iron":["Iron", 3, 20, 8],
 }
 var digSounds: Dictionary = {
-	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_02.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_03.wav"]
+	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_02.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_03.wav"],
+	"Cave":["res://Sounds/Cave/TomWinandySFX - FS_concrete_land_01.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_land_03.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_land_04.wav"],
 }
 
 func _ready() -> void:
@@ -37,7 +38,8 @@ var LevelSelectDict: Dictionary[String, bool]
 enum Scenes {
 	SKILLTREE,
 	LEVELSELECT,
-	DIGAREA
+	DIGAREA,
+	MAINMENU
 }
 
 func load_scene(scene: Scenes) -> void:
@@ -46,6 +48,8 @@ func load_scene(scene: Scenes) -> void:
 
 func _select_scene(scene: Scenes) -> String:
 	match scene:
+		Scenes.MAINMENU:
+			return "res://Scenes/MainMenu.tscn"
 		Scenes.SKILLTREE:
 			return "res://Scenes/SkillTree.tscn"
 		Scenes.LEVELSELECT:

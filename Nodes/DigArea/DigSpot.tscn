@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://daqm0njbumli0" path="res://Sprites/Blocks.png" id="1_3n5sd"]
 [ext_resource type="Script" uid="uid://bjurjeh8k5ata" path="res://Scripts/Digs/dig_spot.gd" id="1_qtc7q"]
+[ext_resource type="AudioStream" uid="uid://bwjts2lp8vy7n" path="res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_01.wav" id="3_g4ylu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtc7q"]
 size = Vector2(64, 64)
@@ -47,4 +48,6 @@ scale_amount_curve = SubResource("Curve_g4ylu")
 color_ramp = SubResource("Gradient_agjjr")
 
 [node name="SoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=1104716628]
+stream = ExtResource("3_g4ylu")
+pitch_scale = 0.5
 bus = &"Sounds"

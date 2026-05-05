@@ -52,6 +52,7 @@ func _play_sound() -> void:
 	
 	var audio = load(_Sounds[randi_range(0, _Sounds.size()-1)])
 	sound_effect.stream = audio
+	sound_effect.pitch_scale = randf_range(0.5, 1)
 	
 	sound_effect.play()
 
