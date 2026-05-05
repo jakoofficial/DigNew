@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nr5sl0y8dfxn"
-path="res://.godot/imported/MainMenuBG.png-17f13d9d254c64f92ab48c6235473a76.ctex"
+uid="uid://brtbswukp41il"
+path="res://.godot/imported/StoneLevel.png-2af4d0a50752076f24512a2a3ed3cd10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MainMenuBG.png"
-dest_files=["res://.godot/imported/MainMenuBG.png-17f13d9d254c64f92ab48c6235473a76.ctex"]
+source_file="res://Sprites/LevelSelect/StoneLevel.png"
+dest_files=["res://.godot/imported/StoneLevel.png-2af4d0a50752076f24512a2a3ed3cd10.ctex"]
 
 [params]
 

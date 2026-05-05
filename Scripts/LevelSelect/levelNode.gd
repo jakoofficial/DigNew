@@ -2,6 +2,7 @@ extends VBoxContainer
 @onready var level_img: TextureRect = $LevelImg
 @onready var level_name: RichTextLabel = $LevelImg/LevelName
 @onready var go_dig_btn: TextureButton = $GoDigBtn
+@onready var locked: Node2D = $Locked
 
 @export var LevelName: String = "Level"
 @export var GoToLevel: GM.Scenes
@@ -17,9 +18,11 @@ func _ready() -> void:
 		GM.LevelSelectDict[LevelName] = Locked
 	if !GM.LevelSelectDict[LevelName]:
 		level_img.modulate.a = 1
+		locked.hide()
 		go_dig_btn.disabled = false
 	else:
 		level_img.modulate.a = 0.5
+		locked.show()
 		go_dig_btn.disabled = true
 
 
