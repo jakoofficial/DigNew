@@ -10,6 +10,14 @@ var digDone: bool = false
 var currUI: CanvasLayer
 var currDigArea: Node2D
 
+var currDigType: String = "Dirt"
+var digspotTypes: Dictionary = {
+	"Dirt":["Dirt", 0, 2, 1],
+	"Stone":["Stone", 1, 4, 2],
+	"Sandstone":["Sandstone", 2, 12, 4],
+	"Iron":["Iron", 3, 20, 8],
+}
+
 func _ready() -> void:
 	AM.initAction("L_Click", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
 	AM.initAction("R_Click", FKS.NewKey(MOUSE_BUTTON_RIGHT, FKS.InputType.Mouse))
@@ -18,6 +26,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if PS._PStaminaCurr <= 0 and digDone == false:
+		currUI.dig_over_panel.digdoneText = "No stamina left"
 		digDone = true
 
 var LevelSelectDict: Dictionary[String, bool]

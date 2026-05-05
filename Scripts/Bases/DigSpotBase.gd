@@ -2,9 +2,9 @@
 extends Area2D
 
 @export var _Name: String = "Block"
-@export var _SpriteFrame: int = 3
+@export var _SpriteFrame: int = 0
 
-var _Health: int = 2
+@export var _Health: int = 2
 @export var _Value: int = 1
 var is_hovered: bool = false
 

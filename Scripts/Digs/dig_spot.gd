@@ -24,6 +24,7 @@ func Spawn() -> void:
 
 var hovered: bool = false
 func _ready() -> void:
+	$Sprite2D.frame = _SpriteFrame
 	connect("mouse_entered", _on_mouse_entered)
 	connect("mouse_exited", _on_mouse_exited)
 

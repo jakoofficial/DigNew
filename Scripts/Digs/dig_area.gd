@@ -17,8 +17,15 @@ func _ready() -> void:
 	inventory.clear()
 	setCursor.connect(setCursorPos)
 	vSize = get_viewport_rect().size
+	
+	#Setting the dig type
+	if GM.digspotTypes.has(GM.currDigType):
+		var temp = GM.digspotTypes.get(GM.currDigType)
+		dig_spot._Name = temp[0]
+		dig_spot._SpriteFrame = temp[1]
+		dig_spot._Health = temp[2]
+		dig_spot._Value = temp[3]
 	Generate()
-	pass
 
 func _process(delta: float) -> void:
 	if GM.digspotHover: cursor.show()
@@ -38,10 +45,6 @@ signal setCursor
 func setCursorPos(pos = Vector2.ZERO) -> void:
 	if pos == Vector2.ZERO: pos = Vector2(-500, -500)
 	cursor.global_position = pos
-
-#func _draw() -> void:
-	#draw_line(Vector2(vSize.x/2,0), Vector2(vSize.x/2, vSize.y), Color.WHITE, 1)
-	#draw_line(Vector2(0,vSize.y/2), Vector2(vSize.x, vSize.y/2), Color.WHITE, 1)
 
 func reset_dig() -> void:
 	GM.digDone = false

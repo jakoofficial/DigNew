@@ -5,12 +5,16 @@ extends NinePatchRect
 @onready var collection: VBoxContainer = $VBoxContainer2/VBoxContainer/ScrollContainer/Collection
 @onready var collected_item: HBoxContainer = $"../../CollectedItem"
 @onready var total_balance: RichTextLabel = $VBoxContainer2/BalanceContainer/TotalBalance
+@onready var dig_over_text: RichTextLabel = $VBoxContainer2/VBoxContainer/DigOverText
+
+var digdoneText: String
 
 func _ready() -> void:
 	return_btn.connect("pressed", GM.load_scene.bind(GM.Scenes.SKILLTREE))
 	dig_again_btn.connect("pressed", _ReDig)
 
 func ShowPanel() -> void:
+	dig_over_text.text = str("[wave freq=5 amp=15]%s" % digdoneText)
 	show()
 	scale = Vector2(0,0)
 	_scale_tween()

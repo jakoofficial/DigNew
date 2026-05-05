@@ -18,7 +18,9 @@ func _process(delta: float) -> void:
 		dig_over_panel.ShowPanel()
 
 func _EndDigPressed() -> void:
-	GM.load_scene(GM.Scenes.SKILLTREE)
+	dig_over_panel.digdoneText = "Dig ended"
+	GM.digDone = true
+	#GM.load_scene(GM.Scenes.SKILLTREE)
 
 func ResetUI() -> void:
 	stamina.value = PS._PStaminaMax

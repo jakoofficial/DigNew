@@ -25,4 +25,5 @@ func _ready() -> void:
 
 func _levelPressed() -> void:
 	if !GM.LevelSelectDict[LevelName]:
+		GM.currDigType = LevelName
 		GM.load_scene(GoToLevel)

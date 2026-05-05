@@ -88,7 +88,7 @@ grow_vertical = 2
 custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer" unique_id=1610114669]
+[node name="DigOverText" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2/VBoxContainer" unique_id=1610114669]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_type_variation = &"Title"
