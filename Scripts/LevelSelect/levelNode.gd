@@ -11,7 +11,7 @@ extends VBoxContainer
 
 func _ready() -> void:
 	level_img.texture = LevelTexture
-	level_name.text = LevelName
+	level_name.text = LevelName.replace("_", " ")
 	go_dig_btn.connect("pressed", _levelPressed)
 	
 	if !GM.LevelSelectDict.has(LevelName):

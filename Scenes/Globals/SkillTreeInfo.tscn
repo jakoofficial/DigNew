@@ -41,7 +41,7 @@ script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_dd215")
 _Name = "Value+"
 _Description = "Adds +1 to all item values"
-_Unlocks = Array[String](["Unlock_Stone"])
+_Unlocks = Array[String](["Unlock_Permit_Cave", "Unlock_Permit_Sand_dune"])
 _UpgradeType = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
@@ -52,13 +52,22 @@ region = Rect2(64, 64, 64, 64)
 [sub_resource type="Resource" id="Resource_x0sfq"]
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_d4r5k")
-_Name = "Unlock_Stone"
+_Name = "Unlock_Permit_Cave"
 _Cost = 12
-_Description = "Unlocks stone as a dig type."
+_Description = "Gives a permit to dig at the cave"
 _UpgradeType = 3
-_LevelTypeUnlock = "Stone"
+_LevelTypeUnlock = "Cave"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="Resource" id="Resource_dd215"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_d4r5k")
+_Name = "Unlock_Permit_Sand_dune"
+_Description = "Gives a permit to dig at the sand dunes"
+_UpgradeType = 3
+_LevelTypeUnlock = "Sand_Dune"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq"), SubResource("Resource_dd215")])

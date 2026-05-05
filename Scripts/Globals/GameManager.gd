@@ -13,8 +13,8 @@ var currDigArea: Node2D
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
 	"Dirt":["Dirt", 0, 2, 1],
-	"Stone":["Stone", 1, 4, 2],
-	"Sandstone":["Sandstone", 2, 12, 4],
+	"Cave":["Cave", 1, 4, 2],
+	"Sand_Dune":["Sand_Dune", 2, 12, 4],
 	"Iron":["Iron", 3, 20, 8],
 }
 
