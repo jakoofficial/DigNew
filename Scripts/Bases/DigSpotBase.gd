@@ -6,6 +6,9 @@ extends Area2D
 
 @export var _Health: int = 2
 @export var _Value: int = 1
+
+@export var _Sounds: Array
+
 var is_hovered: bool = false
 
 @abstract

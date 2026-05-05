@@ -45,3 +45,6 @@ initial_velocity_min = 81.3
 initial_velocity_max = 256.1
 scale_amount_curve = SubResource("Curve_g4ylu")
 color_ramp = SubResource("Gradient_agjjr")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=1104716628]
+bus = &"Sounds"

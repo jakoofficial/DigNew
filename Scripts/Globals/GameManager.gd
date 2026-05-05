@@ -17,6 +17,9 @@ var digspotTypes: Dictionary = {
 	"Sand_Dune":["Sand_Dune", 2, 12, 4],
 	"Iron":["Iron", 3, 20, 8],
 }
+var digSounds: Dictionary = {
+	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_02.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_03.wav"]
+}
 
 func _ready() -> void:
 	AM.initAction("L_Click", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
