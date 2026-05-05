@@ -28,6 +28,7 @@ _Icon = SubResource("AtlasTexture_t88sh")
 _Name = "Damage+"
 _Cost = 2
 _Description = "Increses damage pr. dig by 1"
+_LevelMaxAmount = 2
 _UpgradeType = 1
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
@@ -52,6 +53,8 @@ region = Rect2(64, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_d4r5k")
 _Name = "Unlock_Stone"
+_Cost = 12
+_Description = "Unlocks stone as a dig type."
 _UpgradeType = 3
 _LevelTypeUnlock = "Stone"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"

@@ -99,7 +99,6 @@ layout_mode = 2
 LevelName = "Iron"
 GoToLevel = 2
 LevelTexture = ExtResource("5_11r63")
-Locked = false
 
 [node name="Level5" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
 layout_mode = 2
