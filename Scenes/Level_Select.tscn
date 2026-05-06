@@ -76,9 +76,9 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Level" parent="LevelContainer" unique_id=645813811 instance=ExtResource("3_ojto8")]
+[node name="Dirt Patch" parent="LevelContainer" unique_id=645813811 instance=ExtResource("3_ojto8")]
 layout_mode = 2
-LevelName = "Dirt"
+LevelName = "Dirt_Patch"
 GoToLevel = 2
 
 [node name="Level2" parent="LevelContainer" unique_id=581851783 instance=ExtResource("3_ojto8")]
@@ -86,6 +86,7 @@ layout_mode = 2
 LevelName = "Cave"
 GoToLevel = 2
 LevelTexture = ExtResource("6_ojto8")
+LevelSize = Vector2(4, 4)
 
 [node name="Level3" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
 layout_mode = 2

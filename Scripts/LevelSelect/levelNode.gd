@@ -8,6 +8,7 @@ extends VBoxContainer
 @export var GoToLevel: GM.Scenes
 @export var LevelTexture: Texture
 @export var Locked: bool = true
+@export var LevelSize: Vector2 = Vector2(3,3)
 
 func _ready() -> void:
 	level_img.texture = LevelTexture
@@ -29,4 +30,6 @@ func _ready() -> void:
 func _levelPressed() -> void:
 	if !GM.LevelSelectDict[LevelName]:
 		GM.currDigType = LevelName
+		GM.xSpots = LevelSize.x
+		GM.ySpots = LevelSize.y
 		GM.load_scene(GoToLevel)

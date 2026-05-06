@@ -5,7 +5,8 @@ extends Resource
 @export var is_unlocked: bool = false
 @export var _Name: String = "Skill"
 @export var _Cost: int = 0
-@export var _Multiplier: float = 1.15
+@export var _BaseCost: int = 2
+@export var _Multiplier: float = 1.55
 @export_multiline() var _Description: String = "Skill description"
 @export var _LevelCurr: int = 0
 @export var _LevelMaxAmount: int = 1

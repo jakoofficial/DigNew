@@ -12,14 +12,15 @@ var currDigArea: Node2D
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
-	"Dirt":["Dirt", 0, 2, 1],
+	"Dirt_Patch":["Dirt_Patch", 0, 2, 1],
 	"Cave":["Cave", 1, 4, 2],
 	"Sand_Dune":["Sand_Dune", 2, 12, 4],
 	"Iron":["Iron", 3, 20, 8],
 }
 var digSounds: Dictionary = {
-	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_02.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_walk_03.wav"],
-	"Cave":["res://Sounds/Cave/TomWinandySFX - FS_concrete_land_01.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_land_03.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_land_04.wav"],
+	"Dirt_Patch":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
+	"Cave":["res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_04.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_07.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_10.wav"],
+	"Sand_Dune": ["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"]
 }
 
 func _ready() -> void:

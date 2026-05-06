@@ -48,6 +48,7 @@ func _shake() -> void:
 	pass
 
 func _play_sound() -> void:
+	if _Sounds.size() <= 0: return
 	if sound_effect.playing: sound_effect.stop()
 	
 	var audio = load(_Sounds[randi_range(0, _Sounds.size()-1)])

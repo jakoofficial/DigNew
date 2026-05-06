@@ -25,7 +25,8 @@ func _ready() -> void:
 		dig_spot._SpriteFrame = temp[1]
 		dig_spot._Health = temp[2]
 		dig_spot._Value = temp[3]
-		dig_spot._Sounds = GM.digSounds[temp[0]]
+		if GM.digSounds[temp[0]] != null:
+			dig_spot._Sounds = GM.digSounds[temp[0]]
 	Generate()
 
 func _process(delta: float) -> void:

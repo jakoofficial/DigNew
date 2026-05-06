@@ -14,6 +14,7 @@ func _ready() -> void:
 	SkillTreeInfo.AddSkillNodeRef(Skill_Name, self)
 	skill_res = (SkillTreeInfo as STI).GetSkill(Skill_Name)
 	skill_icon.texture = skill_res._Icon
+	skill_res._Cost = skill_res._BaseCost
 
 func _on_mouse_entered() -> void:
 	hovered = true
@@ -30,11 +31,11 @@ func _Activate() -> void:
 	if PS._PBalance >= skill_res._Cost:
 		PS._PBalance -= skill_res._Cost
 		skill_res._LevelCurr += 1
-		skill_res._Cost = ceil(skill_res._Cost * skill_res._Multiplier)
 		PS.Apply_Upgrade(skill_res._UpgradeType, skill_res._UpgradeAmount, skill_res._LevelTypeUnlock)
 		if skill_res._LevelCurr >= skill_res._LevelMaxAmount and !skill_res._Finished:
 			skill_res._Finished = true
 		hover_info._setInfo()
+		skill_res._Cost = ceil(skill_res._BaseCost * pow(skill_res._Multiplier,skill_res._LevelCurr))
 		FM.SaveGame()
 	pass
 

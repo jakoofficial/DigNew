@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://go61cksx4rkn"
+path="res://.godot/imported/TomWinandySFX - FS_metal_jump_10.wav-f0912f7f1b8aa183fc96eeafdede7800.sample"
+
+[deps]
+
+source_file="res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"
+dest_files=["res://.godot/imported/TomWinandySFX - FS_metal_jump_10.wav-f0912f7f1b8aa183fc96eeafdede7800.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
