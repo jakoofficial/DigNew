@@ -3,6 +3,7 @@ extends VBoxContainer
 @onready var level_name: RichTextLabel = $LevelImg/LevelName
 @onready var go_dig_btn: TextureButton = $GoDigBtn
 @onready var locked: Node2D = $Locked
+@onready var level_artifacts: HBoxContainer = $Node2D/LevelArtifacts
 
 @export var LevelName: String = "Level"
 @export var GoToLevel: GM.Scenes
@@ -21,10 +22,14 @@ func _ready() -> void:
 		level_img.modulate.a = 1
 		locked.hide()
 		go_dig_btn.disabled = false
+		if GM.canFindArtifacts:
+			level_artifacts.show()
+		else: level_artifacts.hide()
 	else:
 		level_img.modulate.a = 0.5
 		locked.show()
 		go_dig_btn.disabled = true
+		level_artifacts.hide()
 
 
 func _levelPressed() -> void:

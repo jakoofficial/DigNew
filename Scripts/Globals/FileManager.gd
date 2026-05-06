@@ -12,6 +12,7 @@ func SaveData():
 		"ValueBonus": PS._PValueBonus,
 		"MaxSpotsX": GM.xSpots,
 		"MaxSpotsY": GM.ySpots,
+		"ArtifactPermit": GM.canFindArtifacts,
 		"Skills": SkillTreeInfo.skillsArrCopy,
 		"LevelSelection": GM.LevelSelectDict
 	}

@@ -17,13 +17,14 @@ func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: int, leveltypeunlock: String 
 	pass
 
 func BaseValues() -> void:
-	_PStrength 		= 1
-	_PStaminaCurr 	= 4
-	_PStaminaMax 	= 4
-	_PBalance 		= 210
-	_PValueBonus 	= 0
-	GM.xSpots 		= 3
-	GM.ySpots 		= 3
+	_PStrength 				= 1
+	_PStaminaCurr 			= 4
+	_PStaminaMax 			= 4
+	_PBalance 				= 210
+	_PValueBonus 			= 0
+	GM.xSpots 				= 3
+	GM.ySpots 				= 3
+	GM.canFindArtifacts 	= false
 	
 	for l in GM.LevelSelectDict.keys(): GM.LevelSelectDict[l] = true
 	
@@ -36,5 +37,6 @@ func SetValues(data: Dictionary) -> void:
 	_PValueBonus = data["ValueBonus"]
 	GM.xSpots = data["MaxSpotsX"]
 	GM.ySpots = data["MaxSpotsY"]
+	GM.canFindArtifacts = data["ArtifactPermit"]
 	SkillTreeInfo.Load((data["Skills"] as Array[SkillRes]))
 	GM.LevelSelectDict = data["LevelSelection"]
