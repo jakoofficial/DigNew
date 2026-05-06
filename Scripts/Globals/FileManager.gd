@@ -12,7 +12,7 @@ func SaveData():
 		"ValueBonus": PS._PValueBonus,
 		"MaxSpotsX": GM.xSpots,
 		"MaxSpotsY": GM.ySpots,
-		"Skills": SkillTreeInfo.Skills,
+		"Skills": SkillTreeInfo.skillsArrCopy,
 		"LevelSelection": GM.LevelSelectDict
 	}
 	return dict
@@ -25,6 +25,7 @@ func SaveGame() -> void:
 	file.close()
 
 func NewGameFile() -> void:
+	PS.BaseValues()
 	var file = FileAccess.file_exists(path)
 	if file:
 		DirAccess.remove_absolute(path)

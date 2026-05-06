@@ -4,6 +4,24 @@
 [ext_resource type="Script" uid="uid://d4hkstn8p728s" path="res://Resources/SkillRes.gd" id="2_lqdd7"]
 [ext_resource type="Texture2D" uid="uid://bwxinb84t45a" path="res://Sprites/Icons/Skill_Icons.png" id="3_t88sh"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t88sh"]
+load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agp1j"]
+atlas = SubResource("CompressedTexture2D_t88sh")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_qrwyg"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_agp1j")
+is_unlocked = true
+_Name = "Unlock_Permit_Dirt_Patch"
+_Description = "Grants the permit to dig at a dirt patch."
+_Unlocks = Array[String](["Stamina+"])
+_UpgradeType = 3
+_LevelTypeUnlock = "Dirt"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0sfq"]
 atlas = ExtResource("3_t88sh")
 region = Rect2(0, 0, 64, 64)
@@ -11,10 +29,10 @@ region = Rect2(0, 0, 64, 64)
 [sub_resource type="Resource" id="Resource_t88sh"]
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_x0sfq")
-is_unlocked = true
 _Name = "Stamina+"
+_Cost = 2
 _Description = "Increases stamina by 1"
-_LevelMaxAmount = 2
+_LevelMaxAmount = 4
 _Unlocks = Array[String](["Damage+", "Value+"])
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
@@ -26,7 +44,8 @@ region = Rect2(64, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_t88sh")
 _Name = "Damage+"
-_Cost = 2
+_Cost = 10
+_Multiplier = 1.5
 _Description = "Increses damage pr. dig by 1"
 _LevelMaxAmount = 2
 _UpgradeType = 1
@@ -40,8 +59,9 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_dd215")
 _Name = "Value+"
+_Cost = 25
 _Description = "Adds +1 to all item values"
-_Unlocks = Array[String](["Unlock_Permit_Cave", "Unlock_Permit_Sand_dune"])
+_Unlocks = Array[String](["Unlock_Permit_Cave", "Unlock_Permit_Sand_dune", "Damage+"])
 _UpgradeType = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
@@ -63,6 +83,7 @@ metadata/_custom_type_script = "uid://d4hkstn8p728s"
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_d4r5k")
 _Name = "Unlock_Permit_Sand_dune"
+_Cost = 100
 _Description = "Gives a permit to dig at the sand dunes"
 _UpgradeType = 3
 _LevelTypeUnlock = "Sand_Dune"
@@ -70,4 +91,4 @@ metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq"), SubResource("Resource_dd215")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq"), SubResource("Resource_dd215")])

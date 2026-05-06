@@ -3,11 +3,13 @@ extends Node2D
 
 @export var Skills: Array[SkillRes]
 
+var skillsArrCopy: Array[SkillRes]
+
 var SkillDict: Dictionary[String, int]
 var SkillNodesDict: Dictionary[String, Area2D]
 
 func GetSkill(skillName: String) -> SkillRes:
-	return Skills[SkillDict[skillName]]
+	return skillsArrCopy[SkillDict[skillName]]
 
 func GetSkillNode(skillName: String) -> Area2D:
 	if !SkillNodesDict.has(skillName): return null
@@ -20,12 +22,14 @@ func _ready() -> void:
 	_Generate()
 
 func _Generate() -> void:
+	skillsArrCopy = Skills.duplicate_deep()
+	
 	var i = 0;
 	SkillDict.clear()
-	for s in Skills:
+	for s in skillsArrCopy:
 		SkillDict[s._Name] = i
 		i += 1
 
 func Load(savedSkills: Array[SkillRes]) -> void:
-	Skills = savedSkills
 	_Generate()
+	skillsArrCopy = savedSkills

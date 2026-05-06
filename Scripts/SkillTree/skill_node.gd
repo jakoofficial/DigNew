@@ -25,16 +25,12 @@ func _on_mouse_exited() -> void:
 	$Sprite2D.frame = 1
 	hover_info.hide()
 
-func _draw() -> void:
-	if skill_res._LevelCurr >= skill_res._UnlockRequirementAmount:
-		for i in skill_res._Unlocks:
-			draw_line(Vector2.ZERO, SkillTreeInfo.GetSkillNode(i).global_position - global_position, Color.WHEAT, 2.0)
-
 func _Activate() -> void:
 	if skill_res._LevelCurr == skill_res._LevelMaxAmount: return
 	if PS._PBalance >= skill_res._Cost:
 		PS._PBalance -= skill_res._Cost
 		skill_res._LevelCurr += 1
+		skill_res._Cost = ceil(skill_res._Cost * skill_res._Multiplier)
 		PS.Apply_Upgrade(skill_res._UpgradeType, skill_res._UpgradeAmount, skill_res._LevelTypeUnlock)
 		if skill_res._LevelCurr >= skill_res._LevelMaxAmount and !skill_res._Finished:
 			skill_res._Finished = true
@@ -50,6 +46,8 @@ func _process(delta: float) -> void:
 	if skill_res._Finished: 
 		$Sprite2D.frame = 2
 		skill_icon.self_modulate.a = 0.5
+		$HoverInfo/HoverPanel/VBoxContainer/HBoxContainer/UpgradeCost.hide()
+		$HoverInfo/HoverPanel/VBoxContainer/HBoxContainer/TextureRect.hide()
 	
 	if !skill_res._Finished and !hovered:
 		if PS._PBalance < skill_res._Cost: $Sprite2D.frame = 5
@@ -69,5 +67,4 @@ func _process(delta: float) -> void:
 	
 	FK.JustPressed(AM.action("L_Click")) #Remove when fixed
 	if hovered and FK.JustPressed(AM.action("L_Click")):
-		print("aksdjnh")
 		_Activate()

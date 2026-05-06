@@ -80,21 +80,18 @@ alignment = 1
 layout_mode = 2
 LevelName = "Dirt"
 GoToLevel = 2
-Locked = false
 
 [node name="Level2" parent="LevelContainer" unique_id=581851783 instance=ExtResource("3_ojto8")]
 layout_mode = 2
 LevelName = "Cave"
 GoToLevel = 2
 LevelTexture = ExtResource("6_ojto8")
-Locked = false
 
 [node name="Level3" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
 layout_mode = 2
 LevelName = "Sand_Dune"
 GoToLevel = 2
 LevelTexture = ExtResource("6_yee8s")
-Locked = false
 
 [node name="Level4" parent="LevelContainer" unique_id=1026202293 instance=ExtResource("3_ojto8")]
 layout_mode = 2

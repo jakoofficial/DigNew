@@ -7,7 +7,7 @@ extends Node2D
 @export var zoomMin: Vector2 = Vector2(0.5, 0.5)
 
 func _ready() -> void:
-	tree_cam.zoom = Vector2(1.0,1.0)
+	tree_cam.zoom = Vector2(0.75,0.75)
 	FM.SaveGame()
 
 
