@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_11r63"]
 [ext_resource type="Texture2D" uid="uid://brtbswukp41il" path="res://Sprites/LevelSelect/StoneLevel.png" id="6_ojto8"]
 [ext_resource type="Texture2D" uid="uid://ccx3pej81wy7g" path="res://Sprites/LevelSelect/SandLevel.png" id="6_yee8s"]
+[ext_resource type="Texture2D" uid="uid://biv8id35iw67a" path="res://Sprites/LevelSelect/AbandonFactoryLevel.png" id="7_yee8s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojto8"]
 atlas = ExtResource("3_6283k")
@@ -81,25 +82,25 @@ layout_mode = 2
 LevelName = "Dirt_Patch"
 GoToLevel = 2
 
-[node name="Level2" parent="LevelContainer" unique_id=581851783 instance=ExtResource("3_ojto8")]
+[node name="Cave" parent="LevelContainer" unique_id=581851783 instance=ExtResource("3_ojto8")]
 layout_mode = 2
 LevelName = "Cave"
 GoToLevel = 2
 LevelTexture = ExtResource("6_ojto8")
 LevelSize = Vector2(4, 4)
 
-[node name="Level3" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
+[node name="SandDune" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
 layout_mode = 2
 LevelName = "Sand_Dune"
 GoToLevel = 2
 LevelTexture = ExtResource("6_yee8s")
 LevelSize = Vector2(4, 5)
 
-[node name="Level4" parent="LevelContainer" unique_id=1026202293 instance=ExtResource("3_ojto8")]
+[node name="Factory" parent="LevelContainer" unique_id=1026202293 instance=ExtResource("3_ojto8")]
 layout_mode = 2
-LevelName = "Iron"
+LevelName = "Factory"
 GoToLevel = 2
-LevelTexture = ExtResource("5_11r63")
+LevelTexture = ExtResource("7_yee8s")
 
 [node name="Level5" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
 layout_mode = 2

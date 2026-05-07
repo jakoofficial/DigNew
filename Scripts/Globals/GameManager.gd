@@ -17,12 +17,13 @@ var digspotTypes: Dictionary = {
 	"Dirt_Patch":["Dirt_Patch", 0, 2, 1],
 	"Cave":["Cave", 1, 4, 2],
 	"Sand_Dune":["Sand_Dune", 2, 12, 4],
-	"Iron":["Iron", 3, 20, 8],
+	"Factory":["Iron", 3, 20, 8],
 }
 var digSounds: Dictionary = {
 	"Dirt_Patch":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
 	"Cave":["res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_04.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_07.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_10.wav"],
-	"Sand_Dune": ["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"]
+	"Sand_Dune": ["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"],
+	"Iron": ["res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_03.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_06.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"]
 }
 
 func _ready() -> void:
