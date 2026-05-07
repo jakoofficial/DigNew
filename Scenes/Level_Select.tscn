@@ -93,6 +93,7 @@ layout_mode = 2
 LevelName = "Sand_Dune"
 GoToLevel = 2
 LevelTexture = ExtResource("6_yee8s")
+LevelSize = Vector2(4, 5)
 
 [node name="Level4" parent="LevelContainer" unique_id=1026202293 instance=ExtResource("3_ojto8")]
 layout_mode = 2

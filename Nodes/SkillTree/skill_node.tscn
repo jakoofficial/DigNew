@@ -31,6 +31,7 @@ scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_el3if")
 
 [node name="HoverInfo" type="Control" parent="." unique_id=1682460507]
+visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 0

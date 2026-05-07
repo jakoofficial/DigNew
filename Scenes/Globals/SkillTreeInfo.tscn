@@ -51,6 +51,7 @@ _BaseCost = 10
 _Multiplier = 1.5
 _Description = "Increses damage pr. dig by 1"
 _LevelMaxAmount = 2
+_Unlocks = Array[String](["Unlock_Permit_Sand_dune"])
 _UpgradeType = 1
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
@@ -65,7 +66,7 @@ _Name = "Value+"
 _Cost = 25
 _BaseCost = 25
 _Description = "Adds +1 to all item values"
-_Unlocks = Array[String](["Unlock_Permit_Cave", "Unlock_Permit_Sand_dune", "Damage+"])
+_Unlocks = Array[String](["Unlock_Permit_Cave", "Damage+"])
 _UpgradeType = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
@@ -80,6 +81,7 @@ _Name = "Unlock_Permit_Cave"
 _Cost = 12
 _BaseCost = 12
 _Description = "Gives a permit to dig at the cave"
+_Unlocks = Array[String](["Lucky_Finds"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Cave"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -91,10 +93,18 @@ _Name = "Unlock_Permit_Sand_dune"
 _Cost = 100
 _BaseCost = 100
 _Description = "Gives a permit to dig at the sand dunes"
+_Unlocks = Array[String]([""])
 _UpgradeType = 3
 _LevelTypeUnlock = "Sand_Dune"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
+[sub_resource type="Resource" id="Resource_agp1j"]
+script = ExtResource("2_lqdd7")
+_Name = "Lucky_Finds"
+_LevelMaxAmount = 5
+_UpgradeType = 4
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq"), SubResource("Resource_dd215")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_x0sfq"), SubResource("Resource_dd215"), SubResource("Resource_agp1j")])

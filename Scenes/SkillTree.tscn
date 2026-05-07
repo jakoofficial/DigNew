@@ -173,12 +173,16 @@ position = Vector2(672, 232)
 Skill_Name = "Value+"
 
 [node name="SkillNode4" parent="Skills" unique_id=1280238735 instance=ExtResource("4_p2c2s")]
-position = Vector2(768, 328)
+position = Vector2(768, 320)
 Skill_Name = "Unlock_Permit_Cave"
 
 [node name="SkillNode5" parent="Skills" unique_id=1447626037 instance=ExtResource("4_p2c2s")]
-position = Vector2(848, 232)
+position = Vector2(384, 320)
 Skill_Name = "Unlock_Permit_Sand_dune"
+
+[node name="SkillNode7" parent="Skills" unique_id=953171877 instance=ExtResource("4_p2c2s")]
+position = Vector2(768, 432)
+Skill_Name = "Lucky_Finds"
 
 [node name="TreeCam" type="Camera2D" parent="." unique_id=936225933]
 position = Vector2(-192, -128)

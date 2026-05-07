@@ -22,5 +22,6 @@ enum TYPE {
 	Stamina,
 	Strength,
 	ValueBonus,
-	LevelType
+	LevelType,
+	ArtifactChance
 }

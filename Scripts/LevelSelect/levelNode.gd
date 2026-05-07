@@ -22,7 +22,7 @@ func _ready() -> void:
 		level_img.modulate.a = 1
 		locked.hide()
 		go_dig_btn.disabled = false
-		if GM.canFindArtifacts:
+		if GM.canFindArtifacts and GM.artifactChance > 0:
 			level_artifacts.show()
 		else: level_artifacts.hide()
 	else:

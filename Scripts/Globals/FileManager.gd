@@ -13,6 +13,7 @@ func SaveData():
 		"MaxSpotsX": GM.xSpots,
 		"MaxSpotsY": GM.ySpots,
 		"ArtifactPermit": GM.canFindArtifacts,
+		"ArtifactChance": GM.artifactChance,
 		"Skills": SkillTreeInfo.skillsArrCopy,
 		"LevelSelection": GM.LevelSelectDict
 	}
