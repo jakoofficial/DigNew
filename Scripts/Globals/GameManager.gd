@@ -26,6 +26,10 @@ var digSounds: Dictionary = {
 	"Iron": ["res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_03.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_06.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"]
 }
 
+var Artifacts: Dictionary = {
+	"Dirt_Patch":["Spherical_shape", "Pretty_wrist_thing", "Electronic_rectangle"]
+}
+
 func _ready() -> void:
 	AM.initAction("L_Click", FKS.NewKey(MOUSE_BUTTON_LEFT, FKS.InputType.Mouse))
 	AM.initAction("R_Click", FKS.NewKey(MOUSE_BUTTON_RIGHT, FKS.InputType.Mouse))

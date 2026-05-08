@@ -31,7 +31,6 @@ func _ready() -> void:
 		go_dig_btn.disabled = true
 		level_artifacts.hide()
 
-
 func _levelPressed() -> void:
 	if !GM.LevelSelectDict[LevelName]:
 		GM.currDigType = LevelName

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dpesieycfjutt"]
+
+[ext_resource type="Script" uid="uid://c2dgt4fa8xr2w" path="res://Scripts/Artifacts/artifact_info.gd" id="1_hfmgq"]
+[ext_resource type="Script" uid="uid://r02rhjhfpipn" path="res://Resources/ArtifactRes.gd" id="2_so8hp"]
+
+[sub_resource type="Resource" id="Resource_plshh"]
+script = ExtResource("2_so8hp")
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[node name="ArtifactInfo" type="Node2D" unique_id=75459238]
+script = ExtResource("1_hfmgq")
+Artifacts = Array[ExtResource("2_so8hp")]([SubResource("Resource_plshh")])
