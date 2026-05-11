@@ -28,7 +28,8 @@ var digSounds: Dictionary = {
 
 var Artifacts: Dictionary = {
 	"Dirt_Patch":["Spherical_shape", "Pretty_wrist_thing", "Electronic_rectangle"],
-	"Cave":["Scribbled_parchment", "Non-protective_helmet", "Old_storage_device"]
+	"Cave":["Scribbled_parchment", "Non-protective_helmet", "Old_storage_device"],
+	"Sand_Dune":["Old_era_entertainment", "Liqiud_container", "Fossil"]
 }
 
 func _ready() -> void:

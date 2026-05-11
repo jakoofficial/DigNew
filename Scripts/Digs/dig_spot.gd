@@ -1,6 +1,7 @@
 extends DigSpot
 @onready var hit_particle: CPUParticles2D = $HitParticle
 @onready var sound_effect: AudioStreamPlayer2D = $SoundEffect
+@onready var blockSpawnBounceSound = preload("uid://cenaw2d14uxhl")
 
 var area: Node2D
 var digZone: Node2D
@@ -24,6 +25,10 @@ func Spawn() -> void:
 	$Sprite2D.scale = Vector2(0, 0)
 	tween.tween_property($Sprite2D, "scale", Vector2(1.5,1.5), 0.2)
 	tween.tween_property($Sprite2D, "scale", Vector2(1.0,1.0), 0.5)
+	sound_effect.stream = blockSpawnBounceSound
+	sound_effect.pitch_scale = randf_range(0.5, .7)
+	sound_effect.volume_db = -20
+	sound_effect.play()
 
 var hovered: bool = false
 func _ready() -> void:
@@ -51,6 +56,7 @@ func _play_sound() -> void:
 	if _Sounds.size() <= 0: return
 	if sound_effect.playing: sound_effect.stop()
 	
+	sound_effect.volume_db = 0
 	var audio = load(_Sounds[randi_range(0, _Sounds.size()-1)])
 	sound_effect.stream = audio
 	sound_effect.pitch_scale = randf_range(0.5, 1)

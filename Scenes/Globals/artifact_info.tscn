@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://r02rhjhfpipn" path="res://Resources/ArtifactRes.gd" id="2_so8hp"]
 [ext_resource type="Texture2D" uid="uid://cvoj6q1lduv5c" path="res://Sprites/Artifacts/DirtPatch_Artifacts.png" id="3_plshh"]
 [ext_resource type="Texture2D" uid="uid://chrevyni1gvsl" path="res://Sprites/Artifacts/Cave_Artifacts.png" id="4_xwjmo"]
+[ext_resource type="Texture2D" uid="uid://bgkipbka1koja" path="res://Sprites/Artifacts/SandDune_Artifacts.png" id="5_r8ex0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwjmo"]
 atlas = ExtResource("3_plshh")
@@ -101,6 +102,66 @@ _Name = "Old_storage_device"
 _Level = "Cave"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_horru"]
+atlas = ExtResource("5_r8ex0")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aojdv"]
+atlas = ExtResource("5_r8ex0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_4kk7u"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_aojdv")
+_ArtifactLevelIcon = SubResource("AtlasTexture_horru")
+_Name = "Old_era_entertainment"
+_Level = "Sand_Dune"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r8ex0"]
+load_path = "res://.godot/imported/SandDune_Artifacts.png-3ca0639ce8e30036a635bc7fbc0cf28a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kk7u"]
+atlas = SubResource("CompressedTexture2D_r8ex0")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0et2t"]
+load_path = "res://.godot/imported/SandDune_Artifacts.png-3ca0639ce8e30036a635bc7fbc0cf28a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6s2o"]
+atlas = SubResource("CompressedTexture2D_0et2t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_svjgp"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_l6s2o")
+_ArtifactLevelIcon = SubResource("AtlasTexture_4kk7u")
+_Name = "Liqiud_container"
+_Level = "Sand_Dune"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0dnrh"]
+load_path = "res://.godot/imported/SandDune_Artifacts.png-3ca0639ce8e30036a635bc7fbc0cf28a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ryop"]
+atlas = SubResource("CompressedTexture2D_0dnrh")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1s01"]
+load_path = "res://.godot/imported/SandDune_Artifacts.png-3ca0639ce8e30036a635bc7fbc0cf28a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rn6o"]
+atlas = SubResource("CompressedTexture2D_n1s01")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_5wbee"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_5rn6o")
+_ArtifactLevelIcon = SubResource("AtlasTexture_2ryop")
+_Name = "Fossil"
+_Level = "Sand_Dune"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
 [node name="ArtifactInfo" type="Node2D" unique_id=75459238]
 script = ExtResource("1_hfmgq")
-Artifacts = Array[ExtResource("2_so8hp")]([SubResource("Resource_plshh"), SubResource("Resource_cj6to"), SubResource("Resource_xkrkd"), SubResource("Resource_8o4l2"), SubResource("Resource_i6joa"), SubResource("Resource_horru")])
+Artifacts = Array[ExtResource("2_so8hp")]([SubResource("Resource_plshh"), SubResource("Resource_cj6to"), SubResource("Resource_xkrkd"), SubResource("Resource_8o4l2"), SubResource("Resource_i6joa"), SubResource("Resource_horru"), SubResource("Resource_4kk7u"), SubResource("Resource_svjgp"), SubResource("Resource_5wbee")])
