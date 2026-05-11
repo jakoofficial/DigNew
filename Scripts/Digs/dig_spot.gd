@@ -24,7 +24,10 @@ func Spawn() -> void:
 	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_BOUNCE)
 	$Sprite2D.scale = Vector2(0, 0)
 	tween.tween_property($Sprite2D, "scale", Vector2(1.5,1.5), 0.2)
-	tween.tween_property($Sprite2D, "scale", Vector2(1.0,1.0), 0.5)
+	_PlaySpawnSound()
+	tween.tween_property($Sprite2D, "scale", Vector2(1.0,1.0), 0.4)
+
+func _PlaySpawnSound():
 	sound_effect.stream = blockSpawnBounceSound
 	sound_effect.pitch_scale = randf_range(0.5, .7)
 	sound_effect.volume_db = -20
