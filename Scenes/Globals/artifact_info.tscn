@@ -2,11 +2,105 @@
 
 [ext_resource type="Script" uid="uid://c2dgt4fa8xr2w" path="res://Scripts/Artifacts/artifact_info.gd" id="1_hfmgq"]
 [ext_resource type="Script" uid="uid://r02rhjhfpipn" path="res://Resources/ArtifactRes.gd" id="2_so8hp"]
+[ext_resource type="Texture2D" uid="uid://cvoj6q1lduv5c" path="res://Sprites/Artifacts/DirtPatch_Artifacts.png" id="3_plshh"]
+[ext_resource type="Texture2D" uid="uid://chrevyni1gvsl" path="res://Sprites/Artifacts/Cave_Artifacts.png" id="4_xwjmo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwjmo"]
+atlas = ExtResource("3_plshh")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8ex0"]
+atlas = ExtResource("3_plshh")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Resource" id="Resource_plshh"]
 script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_r8ex0")
+_ArtifactLevelIcon = SubResource("AtlasTexture_xwjmo")
+_Name = "Spherical_shape"
+_Level = "Dirt_Patch"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8dsp"]
+atlas = ExtResource("3_plshh")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4hop"]
+atlas = ExtResource("3_plshh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_cj6to"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_c4hop")
+_ArtifactLevelIcon = SubResource("AtlasTexture_p8dsp")
+_Name = "Pretty_wrist_thing"
+_Level = "Dirt_Patch"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o4l2"]
+atlas = ExtResource("3_plshh")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71ban"]
+atlas = ExtResource("3_plshh")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_xkrkd"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_71ban")
+_ArtifactLevelIcon = SubResource("AtlasTexture_8o4l2")
+_Name = "Electronic_rectangle"
+_Level = "Dirt_Patch"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkrkd"]
+atlas = ExtResource("4_xwjmo")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj6to"]
+atlas = ExtResource("4_xwjmo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_8o4l2"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_cj6to")
+_ArtifactLevelIcon = SubResource("AtlasTexture_xkrkd")
+_Name = "Scribbled_parchment"
+_Level = "Cave"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixwmt"]
+atlas = ExtResource("4_xwjmo")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1gy3"]
+atlas = ExtResource("4_xwjmo")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_i6joa"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_x1gy3")
+_ArtifactLevelIcon = SubResource("AtlasTexture_ixwmt")
+_Name = "Non-protective_helmet"
+_Level = "Cave"
+metadata/_custom_type_script = "uid://r02rhjhfpipn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6joa"]
+atlas = ExtResource("4_xwjmo")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3d5w"]
+atlas = ExtResource("4_xwjmo")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_horru"]
+script = ExtResource("2_so8hp")
+_ArtifactTexture = SubResource("AtlasTexture_b3d5w")
+_ArtifactLevelIcon = SubResource("AtlasTexture_i6joa")
+_Name = "Old_storage_device"
+_Level = "Cave"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
 [node name="ArtifactInfo" type="Node2D" unique_id=75459238]
 script = ExtResource("1_hfmgq")
-Artifacts = Array[ExtResource("2_so8hp")]([SubResource("Resource_plshh")])
+Artifacts = Array[ExtResource("2_so8hp")]([SubResource("Resource_plshh"), SubResource("Resource_cj6to"), SubResource("Resource_xkrkd"), SubResource("Resource_8o4l2"), SubResource("Resource_i6joa"), SubResource("Resource_horru")])

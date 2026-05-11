@@ -11,10 +11,17 @@ extends VBoxContainer
 @export var Locked: bool = true
 @export var LevelSize: Vector2 = Vector2(3,3)
 
+var level_idx: int = 0
 func _ready() -> void:
 	level_img.texture = LevelTexture
 	level_name.text = LevelName.replace("_", " ")
 	go_dig_btn.connect("pressed", _levelPressed)
+	
+	if GM.Artifacts.has(LevelName):
+		var idx: int = 0
+		for i in GM.Artifacts[LevelName]:
+			level_artifacts.get_children()[idx].texture = ArtifactInfo.get_artifact(i)._ArtifactLevelIcon
+			idx+=1
 	
 	if !GM.LevelSelectDict.has(LevelName):
 		GM.LevelSelectDict[LevelName] = Locked

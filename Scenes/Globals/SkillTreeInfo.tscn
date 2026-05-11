@@ -93,7 +93,6 @@ _Name = "Unlock_Permit_Sand_dune"
 _Cost = 100
 _BaseCost = 100
 _Description = "Gives a permit to dig at the sand dunes"
-_Unlocks = Array[String]([""])
 _UpgradeType = 3
 _LevelTypeUnlock = "Sand_Dune"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
