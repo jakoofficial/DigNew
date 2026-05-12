@@ -15,7 +15,7 @@ func Destroy() -> void:
 	sound_effect.reparent(get_parent())
 	
 	if artifact != "":
-		print(artifact)
+		print(ArtifactInfo.get_artifact(artifact)._Name)
 	
 	call_deferred("queue_free")
 
@@ -30,8 +30,6 @@ func Spawn() -> void:
 	tween.tween_property($Sprite2D, "scale", Vector2(1.5,1.5), 0.2)
 	_PlaySpawnSound()
 	tween.tween_property($Sprite2D, "scale", Vector2(1.0,1.0), 0.4)
-	if artifact != "":
-		print(artifact)
 
 func _PlaySpawnSound():
 	sound_effect.stream = blockSpawnBounceSound

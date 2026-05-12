@@ -101,6 +101,7 @@ func Generate() -> void:
 		artifact_spawn_at = rng.randi_range(0, (GM.ySpots+GM.xSpots))
 	
 	for y in range(GM.ySpots):
+		spawnIdx += 1
 		for x in range(GM.xSpots):
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
@@ -115,7 +116,6 @@ func Generate() -> void:
 			spot.global_position.x = spawnStartX + (x * (spotSize + spacing))+pivot_offset
 			spot.global_position.y = spawnStartY + (y * (spotSize + spacing))+pivot_offset
 			spawnIdx += 1
-		spawnIdx += 1
 	
 	var time: float = 1.0
 	if spots.get_child_count() > 0:
