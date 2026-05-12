@@ -3,7 +3,8 @@ extends Node
 var xSpots: int = 3
 var ySpots: int = 3
 var canFindArtifacts: bool = true
-var artifactChance: int = 0
+var artifactChance: int = 100
+var artifactAmountAllowed: int = 1
 
 var digspotHover: bool = false
 var digReady = false

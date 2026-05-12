@@ -6,13 +6,14 @@ extends Node2D
 @onready var gui: CanvasLayer = $GUI
 
 var vSize: Vector2
-
+var LevelName: String
 var inventory: Dictionary[DigSpot, int]
 
 func _ready() -> void:
 	GM.currDigArea = self
 	GM.digDone = false
 	PS._PStaminaCurr = PS._PStaminaMax
+	LevelName = GM.currDigType
 	gui.ResetUI()
 	inventory.clear()
 	setCursor.connect(setCursorPos)
@@ -53,12 +54,30 @@ func reset_dig() -> void:
 	PS._PStaminaCurr = PS._PStaminaMax
 	inventory.clear()
 	gui.ResetUI()
-	
+	artifactAdded = 0
 	if spots.get_child_count() > 0:
 		for c in spots.get_children():
 			c.reparent(get_tree().root)
 			c.call_deferred("queue_free")
 	Generate()
+
+var artifactAdded: int = 0
+var rng = RandomNumberGenerator.new()
+func set_artifact() -> String:
+	if GM.artifactAmountAllowed <= artifactAdded or GM.artifactChance <= 0: return ""
+	var chance: int = GM.artifactChance
+	var rngSum = rng.randi_range(0, 100)
+	if rngSum > chance: return ""
+	
+	var artifactRng: int = rng.randi_range(0,2)
+	if GM.Artifacts.has(LevelName):
+		var idx: int = 0
+		for i in GM.Artifacts[LevelName]:
+			if idx == artifactRng:
+				artifactAdded+=1
+				return i
+			idx+=1
+	return ""
 
 func Generate() -> void:
 	GM.digReady = false
@@ -73,18 +92,30 @@ func Generate() -> void:
 	# Calculate the starting position to center the grid in the viewport
 	var spawnStartX = (vSize.x - totalWidth) / 2
 	var spawnStartY = (vSize.y - totalHeight) / 2
-
+	
+	var artifact_spawn: String = set_artifact()
+	var artifact_spawn_at: int = 0
+	var spawnIdx: int = 0
+	
+	if artifact_spawn != "":
+		artifact_spawn_at = rng.randi_range(0, (GM.ySpots+GM.xSpots))
+	
 	for y in range(GM.ySpots):
 		for x in range(GM.xSpots):
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
 			spot._Value += PS._PValueBonus
+			if artifact_spawn_at == spawnIdx:
+				spot.artifact = artifact_spawn
+				print(spawnIdx)
 			spots.add_child(spot)
 			spot.digZone = self
 			spot.hide()
 			# Position each spot with spacing
 			spot.global_position.x = spawnStartX + (x * (spotSize + spacing))+pivot_offset
 			spot.global_position.y = spawnStartY + (y * (spotSize + spacing))+pivot_offset
+			spawnIdx += 1
+		spawnIdx += 1
 	
 	var time: float = 1.0
 	if spots.get_child_count() > 0:

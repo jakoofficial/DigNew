@@ -11,6 +11,7 @@ extends Area2D
 @export var _Sounds: Array
 
 var is_hovered: bool = false
+var artifact: String
 
 @abstract
 func Destroy() -> void
