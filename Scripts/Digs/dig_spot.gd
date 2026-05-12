@@ -15,7 +15,8 @@ func Destroy() -> void:
 	sound_effect.reparent(get_parent())
 	
 	if artifact != "":
-		print(ArtifactInfo.get_artifact(artifact)._Name)
+		var a_gotten = ArtifactInfo.get_artifact(artifact)
+		digZone.artifact_gotten._show(a_gotten)
 	
 	call_deferred("queue_free")
 

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chrevyni1gvsl" path="res://Sprites/Artifacts/Cave_Artifacts.png" id="5_1ptw8"]
 [ext_resource type="Texture2D" uid="uid://c1qsdrx2eku1t" path="res://Sprites/Artifacts/Shine.png" id="5_46wwk"]
 [ext_resource type="Script" uid="uid://caushtjj6tsok" path="res://Scripts/Artifacts/artifact_Gotten.gd" id="5_65a8n"]
+[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="8_3sn1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46wwk"]
 atlas = ExtResource("5_1ptw8")
@@ -29,7 +30,6 @@ region_rect = Rect2(128, 128, 64, 64)
 [node name="GUI" parent="." unique_id=909972108 instance=ExtResource("4_3oaxy")]
 
 [node name="Artifact" type="Node2D" parent="." unique_id=1275422435]
-visible = false
 position = Vector2(264, 208)
 script = ExtResource("5_65a8n")
 
@@ -45,3 +45,25 @@ texture = ExtResource("5_46wwk")
 
 [node name="Artifact" type="Sprite2D" parent="Artifact" unique_id=644371754]
 texture = SubResource("AtlasTexture_46wwk")
+
+[node name="artifactInfo" type="RichTextLabel" parent="Artifact" unique_id=2049274471]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = 32.0
+offset_right = 54.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(54.5, 16)
+theme = ExtResource("8_3sn1y")
+bbcode_enabled = true
+text = "[wave]Got Artifact"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1

@@ -4,6 +4,7 @@ extends Node2D
 @onready var dig_spot: Area2D = $DigSpot
 @onready var cursor: Sprite2D = $Cursor
 @onready var gui: CanvasLayer = $GUI
+@onready var artifact_gotten: Node2D = $Artifact
 
 var vSize: Vector2
 var LevelName: String
@@ -95,13 +96,12 @@ func Generate() -> void:
 	
 	var artifact_spawn: String = set_artifact()
 	var artifact_spawn_at: int = 0
-	var spawnIdx: int = 0
+	var spawnIdx: int = 1
 	
 	if artifact_spawn != "":
 		artifact_spawn_at = rng.randi_range(0, (GM.ySpots+GM.xSpots))
 	
 	for y in range(GM.ySpots):
-		spawnIdx += 1
 		for x in range(GM.xSpots):
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
@@ -116,6 +116,7 @@ func Generate() -> void:
 			spot.global_position.x = spawnStartX + (x * (spotSize + spacing))+pivot_offset
 			spot.global_position.y = spawnStartY + (y * (spotSize + spacing))+pivot_offset
 			spawnIdx += 1
+		spawnIdx += 1
 	
 	var time: float = 1.0
 	if spots.get_child_count() > 0:
