@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://x44blywslve4" path="res://Nodes/UI/collected_item.tscn" id="4_ih22j"]
 [ext_resource type="Script" uid="uid://dabtk6fnm2c86" path="res://Scripts/UI/dig_over_panel.gd" id="4_rjj2d"]
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="5_btyvu"]
+[ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="7_v6tgb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hc6dj"]
 atlas = ExtResource("5_btyvu")
@@ -255,3 +256,6 @@ offset_left = -384.0
 offset_top = -448.0
 offset_right = -34.0
 offset_bottom = -398.0
+
+[node name="SettingsMenu" parent="." unique_id=1596568153 instance=ExtResource("7_v6tgb")]
+visible = false

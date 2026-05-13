@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 	
 	if $Node2D/BackParticles.emitting != Settings.settings_dict["particles"]:
 		$Node2D/BackParticles.emitting = Settings.settings_dict["particles"]
+		$Node2D/BackParticles.visible = Settings.settings_dict["particles"]
 
 func addToInv(collected: DigSpot) -> void:
 	for i in inventory.keys():

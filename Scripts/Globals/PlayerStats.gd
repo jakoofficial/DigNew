@@ -45,3 +45,4 @@ func SetValues(data: Dictionary) -> void:
 	ArtifactInfo.Load(data["ArtifactCollection"] as Array[ArtifactRes])
 	SkillTreeInfo.Load((data["Skills"] as Array[SkillRes]))
 	GM.LevelSelectDict = data["LevelSelection"]
+	Settings._Load(data["Settings"] as Dictionary)

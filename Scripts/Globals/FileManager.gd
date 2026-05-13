@@ -17,6 +17,7 @@ func SaveData():
 		"ArtifactCollection": ArtifactInfo.Artifacts_Copy,
 		"Skills": SkillTreeInfo.skillsArrCopy,
 		"LevelSelection": GM.LevelSelectDict,
+		"Settings": Settings.settings_dict,
 	}
 	return dict
 

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://f1no33sjw0a8" path="res://Scripts/SkillTree/skill_tree.gd" id="2_3mp7v"]
 [ext_resource type="PackedScene" uid="uid://3d1ldlg0qltf" path="res://Nodes/SkillTree/skill_node.tscn" id="4_p2c2s"]
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="5_oxtxa"]
+[ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="6_n648w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3ipy"]
 atlas = ExtResource("1_t13jq")
@@ -153,6 +154,8 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("AtlasTexture_n648w")
 stretch_mode = 5
+
+[node name="SettingsMenu" parent="CanvasLayer" unique_id=1596568153 instance=ExtResource("6_n648w")]
 
 [node name="Skills" type="Node2D" parent="." unique_id=1100842298]
 

@@ -83,7 +83,7 @@ func _process(delta: float) -> void:
 			PS._PStaminaCurr -= 1
 			GM.currUI.UpdateUI()
 			_Health -= PS._PStrength
-			hit_particle.emitting = true
+			hit_particle.emitting = Settings.settings_dict["particles"]
 			_play_sound()
 			if _Health <= 0: Destroy()
 			else: _shake()

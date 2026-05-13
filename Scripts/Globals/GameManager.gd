@@ -12,6 +12,7 @@ var digReady = false
 var digDone: bool = false
 var currUI: CanvasLayer
 var currDigArea: Node2D
+var settingsMenu: Control
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
@@ -38,8 +39,14 @@ func _ready() -> void:
 	AM.initAction("R_Click", FKS.NewKey(MOUSE_BUTTON_RIGHT, FKS.InputType.Mouse))
 	AM.initAction("ZoomIn", FKS.NewKey(MOUSE_BUTTON_WHEEL_UP, FKS.InputType.Mouse), FKS.NewKey(KEY_E))
 	AM.initAction("ZoomOut", FKS.NewKey(MOUSE_BUTTON_WHEEL_DOWN, FKS.InputType.Mouse), FKS.NewKey(KEY_Q))
+	AM.initAction("SettingsMenu", FKS.NewKey(KEY_ESCAPE))
 
 func _process(delta: float) -> void:
+	if settingsMenu != null:
+		if FK.JustReleased(AM.action("SettingsMenu")):
+			if settingsMenu.visible != true: settingsMenu._ShowMenu()
+			else: settingsMenu._HideMenu()
+	
 	if PS._PStaminaCurr <= 0 and digDone == false:
 		currUI.dig_over_panel.digdoneText = "No stamina left"
 		digDone = true

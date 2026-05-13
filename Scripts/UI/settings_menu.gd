@@ -1,0 +1,68 @@
+extends Control
+
+@onready var master_volume_slider: HSlider = $Backpiece/Container/S_Master/MasterVolumeSlider
+@onready var music_volume_slider: HSlider = $Backpiece/Container/S_Music/MusicVolumeSlider
+@onready var sound_volume_slider: HSlider = $Backpiece/Container/S_Sound/SoundVolumeSlider
+@onready var particel_check_box: CheckButton = $Backpiece/Container/HBoxContainer/ParticelCheckBox
+
+@onready var cancel_btn: TextureButton = $HBoxContainer/CancelBtn
+@onready var confirm_btn: TextureButton = $HBoxContainer/ConfirmBtn
+@onready var reset_btn: TextureButton = $Backpiece2/ResetBtn
+@onready var confirm_box: Control = $ConfirmBox
+
+func _ready() -> void:
+	GM.settingsMenu = self
+	
+	confirm_btn.connect("pressed", confirm_changes)
+	cancel_btn.connect("pressed", cancel_pressed)
+	reset_btn.connect("pressed", reset_values)
+	_setValuesInMenu()
+	#_HideMenu()
+
+func reset_values() -> void:
+	var canMakeNew = true
+	confirm_box.show()
+	confirm_box._setText("This will reset all settings.\n[font_size:8]Saves automatically after.")
+	canMakeNew = await confirm_box.confirmResult
+	if !canMakeNew: confirm_box.hide(); return
+	Settings._setBaseValues()
+	_setValuesInMenu()
+	FM.SaveGame()
+	confirm_box.hide();
+
+func _setValuesInMenu() -> void:
+	master_volume_slider.value = Settings.settings_dict["master"]
+	music_volume_slider.value = Settings.settings_dict["music"]
+	sound_volume_slider.value = Settings.settings_dict["sound"]
+	particel_check_box.button_pressed = Settings.settings_dict["particles"]
+
+func _ShowMenu() -> void:
+	_setValuesInMenu()
+	show()
+
+func _HideMenu():
+	hide()
+
+func confirm_changes() -> void:
+	var canMakeNew = true
+	confirm_box.show()
+	confirm_box._setText("Save changes made?")
+	canMakeNew = await confirm_box.confirmResult
+	if !canMakeNew: confirm_box.hide(); return
+	confirm_box.hide();
+	
+	Settings.SetValue("master", master_volume_slider.value)
+	SM._set_audio_volume_on_bus(0, "master")
+	Settings.SetValue("music", music_volume_slider.value)
+	SM._set_audio_volume_on_bus(1, "music")
+	Settings.SetValue("sound", sound_volume_slider.value)
+	SM._set_audio_volume_on_bus(2, "sound")
+	
+	Settings.SetValue("particles", particel_check_box.button_pressed)
+	
+	FM.SaveGame()
+	_HideMenu()
+
+func cancel_pressed() -> void:
+	_HideMenu()
+	pass
