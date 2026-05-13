@@ -35,6 +35,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if GM.digspotHover: cursor.show()
 	else: cursor.hide()
+	
+	if $Node2D/BackParticles.emitting != Settings.settings_dict["particles"]:
+		$Node2D/BackParticles.emitting = Settings.settings_dict["particles"]
 
 func addToInv(collected: DigSpot) -> void:
 	for i in inventory.keys():
