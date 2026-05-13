@@ -21,6 +21,12 @@ func ShowPanel() -> void:
 	_setItems()
 
 func _setItems()-> void:
+	for i:ArtifactRes in GM.currDigArea.artifact_inv.keys():
+		var item = collected_item.duplicate()
+		item.Set_Values_Artifact(i)
+		collection.add_child(item)
+		PS._PBalance += item.Get_Value()
+		
 	for i:DigSpot in GM.currDigArea.inventory.keys():
 		var item = collected_item.duplicate()
 		item.Set_Values(i)

@@ -31,6 +31,7 @@ func BaseValues() -> void:
 	for l in GM.LevelSelectDict.keys(): GM.LevelSelectDict[l] = true
 	
 	SkillTreeInfo._Generate()
+	ArtifactInfo._generate()
 
 func SetValues(data: Dictionary) -> void:
 	_PStrength = data["Strength"]
@@ -41,5 +42,6 @@ func SetValues(data: Dictionary) -> void:
 	GM.ySpots = data["MaxSpotsY"]
 	GM.canFindArtifacts = data["ArtifactPermit"]
 	GM.artifactChance = data["ArtifactChance"]
+	ArtifactInfo.Load(data["ArtifactCollection"] as Array[ArtifactRes])
 	SkillTreeInfo.Load((data["Skills"] as Array[SkillRes]))
 	GM.LevelSelectDict = data["LevelSelection"]

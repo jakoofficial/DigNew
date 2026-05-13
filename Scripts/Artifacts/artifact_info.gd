@@ -22,6 +22,16 @@ func _generate() -> void:
 	for i in range(Artifacts_Copy.size()):
 		artifact_dict[Artifacts_Copy[i]._Name] = i
 
+func Collect(a: ArtifactRes) -> void:
+	for i in range(Artifacts_Copy.size()):
+		if Artifacts_Copy[i]._Name == a._Name:
+			Artifacts_Copy[i]._CollectedAmount+=1
+		
+			if !Artifacts_Copy[i]._HasBeenCollected:
+				Artifacts_Copy[i]._HasBeenCollected = true
+			FM.SaveGame()
+
+
 func Load(savedArtifacts: Array[ArtifactRes]) -> void:
 	_generate()
 	Artifacts_Copy = savedArtifacts

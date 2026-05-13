@@ -21,6 +21,10 @@ func _ready() -> void:
 		var idx: int = 0
 		for i in GM.Artifacts[LevelName]:
 			level_artifacts.get_children()[idx].texture = ArtifactInfo.get_artifact(i)._ArtifactLevelIcon
+			if ArtifactInfo.get_artifact(i)._HasBeenCollected:
+				level_artifacts.get_children()[idx].modulate = Color.WHITE
+			else: 
+				level_artifacts.get_children()[idx].modulate = Color.BLACK
 			idx+=1
 	
 	if !GM.LevelSelectDict.has(LevelName):

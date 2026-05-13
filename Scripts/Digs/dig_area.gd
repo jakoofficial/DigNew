@@ -9,6 +9,7 @@ extends Node2D
 var vSize: Vector2
 var LevelName: String
 var inventory: Dictionary[DigSpot, int]
+var artifact_inv: Dictionary[ArtifactRes, int]
 
 func _ready() -> void:
 	GM.currDigArea = self
@@ -45,6 +46,16 @@ func addToInv(collected: DigSpot) -> void:
 	inventory[newitem] = 1
 	collected = null
 
+func addArtifactToInv(collected: ArtifactRes) -> void:
+	for i in artifact_inv.keys():
+		if i._Name == collected._Name:
+			artifact_inv[i] += 1
+			return
+	var newitem: ArtifactRes
+	newitem = collected.duplicate()
+	artifact_inv[newitem] = 1
+	collected = null
+
 signal setCursor
 func setCursorPos(pos = Vector2.ZERO) -> void:
 	if pos == Vector2.ZERO: pos = Vector2(-500, -500)
@@ -54,6 +65,7 @@ func reset_dig() -> void:
 	GM.digDone = false
 	PS._PStaminaCurr = PS._PStaminaMax
 	inventory.clear()
+	artifact_inv.clear()
 	gui.ResetUI()
 	artifactAdded = 0
 	if spots.get_child_count() > 0:

@@ -17,6 +17,8 @@ func Destroy() -> void:
 	if artifact != "":
 		var a_gotten = ArtifactInfo.get_artifact(artifact)
 		digZone.artifact_gotten._show(a_gotten)
+		ArtifactInfo.Collect(a_gotten)
+		digZone.addArtifactToInv(a_gotten)
 	
 	call_deferred("queue_free")
 

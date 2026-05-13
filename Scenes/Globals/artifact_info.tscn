@@ -19,6 +19,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_r8ex0")
 _ArtifactLevelIcon = SubResource("AtlasTexture_xwjmo")
 _Name = "Spherical_shape"
+_Value = 100
 _Level = "Dirt_Patch"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -35,6 +36,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_c4hop")
 _ArtifactLevelIcon = SubResource("AtlasTexture_p8dsp")
 _Name = "Pretty_wrist_thing"
+_Value = 200
 _Level = "Dirt_Patch"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -51,6 +53,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_71ban")
 _ArtifactLevelIcon = SubResource("AtlasTexture_8o4l2")
 _Name = "Electronic_rectangle"
+_Value = 200
 _Level = "Dirt_Patch"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
