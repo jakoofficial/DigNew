@@ -158,31 +158,31 @@ visible = false
 
 [node name="Skills" type="Node2D" parent="." unique_id=1100842298]
 
-[node name="SkillNode6" parent="Skills" unique_id=436947380 instance=ExtResource("4_p2c2s")]
+[node name="Dirt" parent="Skills" unique_id=436947380 instance=ExtResource("4_p2c2s")]
 position = Vector2(576, 472)
 Skill_Name = "Unlock_Permit_Dirt_Patch"
 
-[node name="SkillNode" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
+[node name="Stamina1" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
 position = Vector2(576, 328)
 Skill_Name = "Stamina+"
 
-[node name="SkillNode2" parent="Skills" unique_id=1942906277 instance=ExtResource("4_p2c2s")]
+[node name="Damage1" parent="Skills" unique_id=1942906277 instance=ExtResource("4_p2c2s")]
 position = Vector2(480, 232)
 Skill_Name = "Damage+"
 
-[node name="SkillNode3" parent="Skills" unique_id=2044594790 instance=ExtResource("4_p2c2s")]
+[node name="Value1" parent="Skills" unique_id=2044594790 instance=ExtResource("4_p2c2s")]
 position = Vector2(672, 232)
 Skill_Name = "Value+"
 
-[node name="SkillNode4" parent="Skills" unique_id=1280238735 instance=ExtResource("4_p2c2s")]
+[node name="Cave" parent="Skills" unique_id=1280238735 instance=ExtResource("4_p2c2s")]
 position = Vector2(768, 320)
 Skill_Name = "Unlock_Permit_Cave"
 
-[node name="SkillNode5" parent="Skills" unique_id=1447626037 instance=ExtResource("4_p2c2s")]
+[node name="Sand_Dune" parent="Skills" unique_id=1447626037 instance=ExtResource("4_p2c2s")]
 position = Vector2(384, 320)
 Skill_Name = "Unlock_Permit_Sand_dune"
 
-[node name="SkillNode7" parent="Skills" unique_id=953171877 instance=ExtResource("4_p2c2s")]
+[node name="Lucky_Finds" parent="Skills" unique_id=953171877 instance=ExtResource("4_p2c2s")]
 position = Vector2(768, 432)
 Skill_Name = "Lucky_Finds"
 

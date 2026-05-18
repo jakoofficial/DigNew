@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="5_11r63"]
 [ext_resource type="Texture2D" uid="uid://brtbswukp41il" path="res://Sprites/LevelSelect/StoneLevel.png" id="6_ojto8"]
 [ext_resource type="Texture2D" uid="uid://ccx3pej81wy7g" path="res://Sprites/LevelSelect/SandLevel.png" id="6_yee8s"]
+[ext_resource type="Texture2D" uid="uid://dc8vkeerercew" path="res://Sprites/LevelSelect/WitchyWoods.png" id="7_11r63"]
 [ext_resource type="Texture2D" uid="uid://biv8id35iw67a" path="res://Sprites/LevelSelect/AbandonFactoryLevel.png" id="7_yee8s"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="9_11r63"]
 
@@ -101,11 +102,12 @@ LevelName = "Factory"
 GoToLevel = 2
 LevelTexture = ExtResource("7_yee8s")
 
-[node name="Level5" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
+[node name="Woods" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
 layout_mode = 2
-LevelName = "null"
-GoToLevel = 1
-LevelTexture = ExtResource("5_11r63")
+LevelName = "Witchy_Woods"
+GoToLevel = 2
+LevelTexture = ExtResource("7_11r63")
+LevelSize = Vector2(6, 6)
 
 [node name="Level6" parent="LevelContainer" unique_id=354505411 instance=ExtResource("3_ojto8")]
 layout_mode = 2
