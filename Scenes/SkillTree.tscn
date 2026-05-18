@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ca5dr1rl2t1tw"]
 
 [ext_resource type="Script" uid="uid://bjbuuyeisv321" path="res://Scripts/SkillTree/TreeScene.gd" id="1_alcsc"]
-[ext_resource type="Theme" uid="uid://e5uj1uvlt6aq" path="res://Themes/UI.tres" id="1_o3ipy"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_t13jq"]
 [ext_resource type="Script" uid="uid://f1no33sjw0a8" path="res://Scripts/SkillTree/skill_tree.gd" id="2_3mp7v"]
 [ext_resource type="PackedScene" uid="uid://3d1ldlg0qltf" path="res://Nodes/SkillTree/skill_node.tscn" id="4_p2c2s"]
@@ -40,7 +39,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme = ExtResource("1_o3ipy")
 
 [node name="GoDigBtn" type="TextureButton" parent="CanvasLayer/Skilltree" unique_id=777619085]
 custom_minimum_size = Vector2(125, 50)
@@ -156,6 +154,7 @@ texture = SubResource("AtlasTexture_n648w")
 stretch_mode = 5
 
 [node name="SettingsMenu" parent="CanvasLayer" unique_id=1596568153 instance=ExtResource("6_n648w")]
+visible = false
 
 [node name="Skills" type="Node2D" parent="." unique_id=1100842298]
 
