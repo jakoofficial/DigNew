@@ -101,6 +101,8 @@ layout_mode = 2
 LevelName = "Factory"
 GoToLevel = 2
 LevelTexture = ExtResource("7_yee8s")
+Locked = false
+LevelSize = Vector2(5, 5)
 
 [node name="Woods" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
 layout_mode = 2

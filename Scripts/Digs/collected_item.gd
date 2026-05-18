@@ -2,12 +2,12 @@ extends HBoxContainer
 
 func Set_Values(item: DigSpot) -> void:
 	$ItemTexture.texture = item._Texture
-	$ItemName.text = str("%s (%s)" % [item._Name, GM.currDigArea.inventory.get(item)])
+	$ItemName.text = str("%s (%s)" % [item._Name.replace("_", " "), GM.currDigArea.inventory.get(item)])
 	$Value.text = str("%s" % [(item._Value*GM.currDigArea.inventory.get(item))])
 
 func Set_Values_Artifact(item: ArtifactRes) -> void:
 	$ItemTexture.texture = item._ArtifactLevelIcon
-	$ItemName.text = str("%s (%s)" % [item._Name, GM.currDigArea.artifact_inv.get(item)])
+	$ItemName.text = str("%s (%s)" % [item._Name.replace("_", " "), GM.currDigArea.artifact_inv.get(item)])
 	$Value.text = str("%s" % [(item._Value*GM.currDigArea.artifact_inv.get(item))])
 
 func Get_Value() -> int:

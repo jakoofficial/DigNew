@@ -34,7 +34,7 @@ var Artifacts: Dictionary = {
 	"Dirt_Patch":["Spherical_shape", "Pretty_wrist_thing", "Electronic_rectangle"],
 	"Cave":["Scribbled_parchment", "Non-protective_helmet", "Old_storage_device"],
 	"Sand_Dune":["Old_era_entertainment", "Liqiud_container", "Fossil"],
-	"Factory":["Old_era_entertainment", "Liqiud_container", "Fossil"],
+	"Factory":["Primitive_electronic_component", "Small_gear", "Wrench"],
 	"Witchy_Woods":["Old_era_entertainment", "Liqiud_container", "Fossil"],
 }
 
