@@ -182,6 +182,14 @@ Skill_Name = "Unlock_Permit_Cave"
 position = Vector2(384, 320)
 Skill_Name = "Unlock_Permit_Sand_dune"
 
+[node name="Factory" parent="Skills" unique_id=1371000442 instance=ExtResource("4_p2c2s")]
+position = Vector2(384, 432)
+Skill_Name = "Unlock_Permit_Abandon_Factory"
+
+[node name="Woods" parent="Skills" unique_id=785906266 instance=ExtResource("4_p2c2s")]
+position = Vector2(576, 128)
+Skill_Name = "Unlock_Permit_Witchy_Woods"
+
 [node name="Lucky_Finds" parent="Skills" unique_id=953171877 instance=ExtResource("4_p2c2s")]
 position = Vector2(768, 432)
 Skill_Name = "Lucky_Finds"

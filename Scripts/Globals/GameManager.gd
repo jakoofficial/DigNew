@@ -20,7 +20,8 @@ var digspotTypes: Dictionary = {
 	"Cave":["Stone", 1, 4, 2],
 	"Sand_Dune":["Sand", 2, 12, 4],
 	"Factory":["Iron", 3, 20, 8],
-	"Witchy_Woods": ["Wood", 4, 30, 14]
+	"Witchy_Woods": ["Wood", 4, 30, 14],
+	"Cloud_Station": ["Cloud", 5, 50, 20],
 }
 var digSounds: Dictionary = {
 	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
@@ -28,6 +29,7 @@ var digSounds: Dictionary = {
 	"Sand": ["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"],
 	"Iron": ["res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_03.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_06.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"],
 	"Wood": ["res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_03.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_06.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_10.wav"],
+	"Cloud": ["res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_03.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_06.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_10.wav"],
 }
 
 var Artifacts: Dictionary = {
@@ -36,6 +38,7 @@ var Artifacts: Dictionary = {
 	"Sand_Dune":["Old_era_entertainment", "Liqiud_container", "Fossil"],
 	"Factory":["Primitive_electronic_component", "Small_gear", "Wrench"],
 	"Witchy_Woods":["Old_era_entertainment", "Liqiud_container", "Fossil"],
+	"Cloud_Station":["Old_era_entertainment", "Liqiud_container", "Fossil"],
 }
 
 func _ready() -> void:

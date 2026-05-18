@@ -101,7 +101,6 @@ layout_mode = 2
 LevelName = "Factory"
 GoToLevel = 2
 LevelTexture = ExtResource("7_yee8s")
-Locked = false
 LevelSize = Vector2(5, 5)
 
 [node name="Woods" parent="LevelContainer" unique_id=71895151 instance=ExtResource("3_ojto8")]
@@ -109,14 +108,15 @@ layout_mode = 2
 LevelName = "Witchy_Woods"
 GoToLevel = 2
 LevelTexture = ExtResource("7_11r63")
-Locked = false
 LevelSize = Vector2(6, 6)
 
-[node name="Level6" parent="LevelContainer" unique_id=354505411 instance=ExtResource("3_ojto8")]
+[node name="Cloud" parent="LevelContainer" unique_id=354505411 instance=ExtResource("3_ojto8")]
 layout_mode = 2
-LevelName = "null"
-GoToLevel = 1
+LevelName = "Cloud_Station"
+GoToLevel = 2
 LevelTexture = ExtResource("5_11r63")
+Locked = false
+LevelSize = Vector2(7, 7)
 
 [node name="SettingsMenu" parent="." unique_id=1596568153 instance=ExtResource("9_11r63")]
 visible = false

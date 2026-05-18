@@ -40,6 +40,7 @@ func _hide():
 	hide()
 
 func _process(delta: float) -> void:
+	if GM.digDone: hide(); return
 	if visible:
 		shine_big.rotation_degrees += 0.5
 		shine_small.rotation_degrees -= 1
