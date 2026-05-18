@@ -210,7 +210,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Backpiece/Container" unique_id=303038765]
-visible = false
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Backpiece/Container/HBoxContainer2" unique_id=690253458]
@@ -227,6 +226,7 @@ vertical_alignment = 1
 [node name="FontCheckBox" type="CheckButton" parent="Backpiece/Container/HBoxContainer2" unique_id=2092209602]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+disabled = true
 button_pressed = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1780670187]
