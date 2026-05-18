@@ -208,6 +208,7 @@ vertical_alignment = 1
 [node name="ParticelCheckBox" type="CheckButton" parent="Backpiece/Container/HBoxContainer" unique_id=1968785495]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Backpiece/Container" unique_id=303038765]
 layout_mode = 2
