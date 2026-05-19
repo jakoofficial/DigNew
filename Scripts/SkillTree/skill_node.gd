@@ -16,7 +16,10 @@ func _ready() -> void:
 	skill_icon.texture = skill_res._Icon
 	skill_res._Cost = skill_res._BaseCost
 
+var tween: Tween
 func _on_mouse_entered() -> void:
+	
+	
 	hovered = true
 
 func _on_mouse_exited() -> void:
@@ -65,6 +68,7 @@ func _process(delta: float) -> void:
 			$Sprite2D.frame = 3
 		hover_info.show()
 		hover_info._setInfo()
+		
 	
 	FK.JustPressed(AM.action("L_Click")) #Remove when fixed
 	if hovered and FK.JustPressed(AM.action("L_Click")):

@@ -122,3 +122,11 @@ LevelSize = Vector2(7, 7)
 [node name="SettingsMenu" parent="." unique_id=1596568153 instance=ExtResource("9_11r63")]
 visible = false
 layout_mode = 1
+
+[node name="Backdrop" type="Sprite2D" parent="." unique_id=1016345976]
+modulate = Color(0.36862746, 0.36862746, 0.36862746, 0.7529412)
+z_index = -2
+scale = Vector2(9, 6.125)
+texture = ExtResource("5_11r63")
+centered = false
+metadata/_edit_lock_ = true

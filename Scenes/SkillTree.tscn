@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3d1ldlg0qltf" path="res://Nodes/SkillTree/skill_node.tscn" id="4_p2c2s"]
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="5_oxtxa"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="6_n648w"]
+[ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="7_n648w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3ipy"]
 atlas = ExtResource("1_t13jq")
@@ -199,3 +200,11 @@ position = Vector2(-192, -128)
 anchor_mode = 0
 zoom = Vector2(0.75, 0.75)
 process_callback = 0
+
+[node name="Backdrop" type="Sprite2D" parent="." unique_id=1781804655]
+modulate = Color(0.36862746, 0.36862746, 0.36862746, 0.7529412)
+z_index = -2
+position = Vector2(-2456, -1311.9999)
+scale = Vector2(47.375, 26.624998)
+texture = ExtResource("7_n648w")
+centered = false

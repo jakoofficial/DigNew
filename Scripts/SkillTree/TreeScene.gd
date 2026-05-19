@@ -16,7 +16,6 @@ func _input(event: InputEvent) -> void:
 	if FK.Pressed(AM.action("R_Click")) and event is InputEventMouseMotion:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 		tree_cam.global_position -= (event as InputEventMouseMotion).relative
-		print("oressed")
 	else:
 		lastPos = Vector2.ZERO
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -26,9 +25,7 @@ func _process(delta: float) -> void:
 		if tree_cam.zoom < zoomMax:
 			tree_cam.zoom += Vector2(zoomAmount, zoomAmount)
 		else: tree_cam.zoom = zoomMax
-		print("In")
 	elif FK.JustPressed(AM.action("ZoomOut")):
 		if tree_cam.zoom > zoomMin:
 			tree_cam.zoom -= Vector2(zoomAmount, zoomAmount)
 		else: tree_cam.zoom = zoomMin
-		print("Out")
