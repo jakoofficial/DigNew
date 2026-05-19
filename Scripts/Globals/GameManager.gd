@@ -21,7 +21,7 @@ var digspotTypes: Dictionary = {
 	"Sand_Dune":["Sand", 2, 12, 4],
 	"Factory":["Iron", 3, 20, 8],
 	"Witchy_Woods": ["Wood", 4, 30, 14],
-	"Cloud_Station": ["Cloud", 5, 50, 20],
+	"Cloud_Station": ["Cloud", 5, 2, 20],
 }
 var digSounds: Dictionary = {
 	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
@@ -37,8 +37,8 @@ var Artifacts: Dictionary = {
 	"Cave":["Scribbled_parchment", "Non-protective_helmet", "Old_storage_device"],
 	"Sand_Dune":["Old_era_entertainment", "Liqiud_container", "Fossil"],
 	"Factory":["Primitive_electronic_component", "Small_gear", "Wrench"],
-	"Witchy_Woods":["Old_era_entertainment", "Liqiud_container", "Fossil"],
-	"Cloud_Station":["Old_era_entertainment", "Liqiud_container", "Fossil"],
+	"Witchy_Woods":["Cauldron", "Wand_like_stick", "Pointy_hat"],
+	"Cloud_Station":["Rain_droplet", "Chunk_o'_Cloud", "Bottled_thunder"],
 }
 
 func _ready() -> void:
