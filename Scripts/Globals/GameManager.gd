@@ -29,7 +29,7 @@ var digSounds: Dictionary = {
 	"Sand": ["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"],
 	"Iron": ["res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_03.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_06.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"],
 	"Wood": ["res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_03.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_06.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_10.wav"],
-	"Cloud": ["res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_03.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_06.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_10.wav"],
+	"Cloud": ["res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_04.wav", "res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_08.wav", "res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_10.wav"],
 }
 
 var Artifacts: Dictionary = {
