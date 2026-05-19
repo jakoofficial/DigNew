@@ -76,7 +76,7 @@ func _play_sound() -> void:
 var canPress: bool = true
 func _process(delta: float) -> void:
 	if !GM.digReady: return
-	if hovered:
+	if hovered and !GM.digDone:
 		if FK.JustReleased(AM.action("L_Click")): canPress = true
 		if canPress and PS._PStaminaCurr > 0 and FK.JustPressed(AM.action("L_Click")):
 			canPress = false
