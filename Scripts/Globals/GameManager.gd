@@ -21,7 +21,7 @@ var digspotTypes: Dictionary = {
 	"Sand_Dune":["Sand", 2, 12, 4],
 	"Factory":["Iron", 3, 20, 8],
 	"Witchy_Woods": ["Wood", 4, 30, 14],
-	"Cloud_Station": ["Cloud", 5, 2, 20],
+	"Cloud_Station": ["Cloud", 5, 40, 20],
 }
 var digSounds: Dictionary = {
 	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
