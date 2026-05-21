@@ -116,7 +116,6 @@ layout_mode = 2
 LevelName = "Cloud_Station"
 GoToLevel = 2
 LevelTexture = ExtResource("8_tk2dh")
-Locked = false
 LevelSize = Vector2(7, 7)
 
 [node name="SettingsMenu" parent="." unique_id=1596568153 instance=ExtResource("9_11r63")]

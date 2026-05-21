@@ -2,8 +2,9 @@ extends Node
 
 var xSpots: int = 3
 var ySpots: int = 3
-var canFindArtifacts: bool = true
+var canFindArtifacts: bool = false
 var artifactChance: int = 100
+var artifactBonusPercent: float = 1.0
 var artifactAmountAllowed: int = 1
 
 var digspotHover: bool = false
@@ -21,7 +22,7 @@ var digspotTypes: Dictionary = {
 	"Sand_Dune":["Sand", 2, 12, 4],
 	"Factory":["Iron", 3, 20, 8],
 	"Witchy_Woods": ["Wood", 4, 30, 14],
-	"Cloud_Station": ["Cloud", 5, 40, 20],
+	"Cloud_Station": ["Cloud", 5, 46, 20],
 }
 var digSounds: Dictionary = {
 	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
@@ -67,8 +68,8 @@ enum Scenes {
 	MAINMENU
 }
 
-func load_scene(scene: Scenes) -> void:
-	SceneManager.change_scene_to_file(_select_scene(scene), {}, 1.0)
+func load_scene(scene: Scenes, minTime: float = 0.25) -> void:
+	SceneManager.change_scene_to_file(_select_scene(scene), {}, minTime)
 	pass
 
 func _select_scene(scene: Scenes) -> String:

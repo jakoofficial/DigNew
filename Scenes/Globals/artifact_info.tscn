@@ -22,7 +22,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_r8ex0")
 _ArtifactLevelIcon = SubResource("AtlasTexture_xwjmo")
 _Name = "Spherical_shape"
-_Value = 100
+_Value = 5
 _Level = "Dirt_Patch"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -39,7 +39,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_c4hop")
 _ArtifactLevelIcon = SubResource("AtlasTexture_p8dsp")
 _Name = "Pretty_wrist_thing"
-_Value = 200
+_Value = 10
 _Level = "Dirt_Patch"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -56,7 +56,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_71ban")
 _ArtifactLevelIcon = SubResource("AtlasTexture_8o4l2")
 _Name = "Electronic_rectangle"
-_Value = 200
+_Value = 8
 _Level = "Dirt_Patch"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -73,6 +73,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_cj6to")
 _ArtifactLevelIcon = SubResource("AtlasTexture_xkrkd")
 _Name = "Scribbled_parchment"
+_Value = 12
 _Level = "Cave"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -89,6 +90,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_x1gy3")
 _ArtifactLevelIcon = SubResource("AtlasTexture_ixwmt")
 _Name = "Non-protective_helmet"
+_Value = 10
 _Level = "Cave"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -105,6 +107,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_b3d5w")
 _ArtifactLevelIcon = SubResource("AtlasTexture_i6joa")
 _Name = "Old_storage_device"
+_Value = 18
 _Level = "Cave"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -121,6 +124,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_aojdv")
 _ArtifactLevelIcon = SubResource("AtlasTexture_horru")
 _Name = "Old_era_entertainment"
+_Value = 22
 _Level = "Sand_Dune"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -143,6 +147,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_l6s2o")
 _ArtifactLevelIcon = SubResource("AtlasTexture_4kk7u")
 _Name = "Liqiud_container"
+_Value = 15
 _Level = "Sand_Dune"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -165,6 +170,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_5rn6o")
 _ArtifactLevelIcon = SubResource("AtlasTexture_2ryop")
 _Name = "Fossil"
+_Value = 28
 _Level = "Sand_Dune"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -184,6 +190,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_svjgp")
 _ArtifactLevelIcon = SubResource("AtlasTexture_0et2t")
 _Name = "Primitive_electronic_component"
+_Value = 30
 _Level = "Factory"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -206,6 +213,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_n1s01")
 _ArtifactLevelIcon = SubResource("AtlasTexture_0dnrh")
 _Name = "Small_gear"
+_Value = 34
 _Level = "Factory"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -228,6 +236,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_lhtq8")
 _ArtifactLevelIcon = SubResource("AtlasTexture_5wbee")
 _Name = "Wrench"
+_Value = 38
 _Level = "Factory"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -247,6 +256,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_4vi78")
 _ArtifactLevelIcon = SubResource("AtlasTexture_xh0pu")
 _Name = "Cauldron"
+_Value = 50
 _Level = "Witchy_Woods"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -269,6 +279,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_o8f1m")
 _ArtifactLevelIcon = SubResource("AtlasTexture_m4tr1")
 _Name = "Wand_like_stick"
+_Value = 75
 _Level = "Witchy_Woods"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -291,6 +302,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_fr1t7")
 _ArtifactLevelIcon = SubResource("AtlasTexture_2jiqa")
 _Name = "Pointy_hat"
+_Value = 60
 _Level = "Witchy_Woods"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -307,6 +319,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_kwkxw")
 _ArtifactLevelIcon = SubResource("AtlasTexture_ydb72")
 _Name = "Rain_droplet"
+_Value = 100
 _Level = "Cloud_Station"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -329,6 +342,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_gpwg7")
 _ArtifactLevelIcon = SubResource("AtlasTexture_flenb")
 _Name = "Chunk_o'_Cloud"
+_Value = 120
 _Level = "Cloud_Station"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 
@@ -351,6 +365,7 @@ script = ExtResource("2_so8hp")
 _ArtifactTexture = SubResource("AtlasTexture_jalqg")
 _ArtifactLevelIcon = SubResource("AtlasTexture_7u03v")
 _Name = "Bottled_thunder"
+_Value = 135
 _Level = "Cloud_Station"
 metadata/_custom_type_script = "uid://r02rhjhfpipn"
 

@@ -14,7 +14,7 @@ extends Resource
 @export var _UnlockRequirementAmount: int = 1
 @export var _Finished: bool = false
 @export var _UpgradeType:TYPE = 0
-@export var _UpgradeAmount: int = 1
+@export var _UpgradeAmount: float = 1
 ## Only used if Upgrade Type is set to LevelType
 @export var _LevelTypeUnlock: String = ""
 
@@ -23,5 +23,6 @@ enum TYPE {
 	Strength,
 	ValueBonus,
 	LevelType,
-	ArtifactChance
+	ArtifactChance,
+	ArtifactValue
 }

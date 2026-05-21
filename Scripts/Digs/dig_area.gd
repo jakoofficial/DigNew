@@ -36,6 +36,9 @@ func _process(delta: float) -> void:
 	if GM.digspotHover: cursor.show()
 	else: cursor.hide()
 	
+	if GM.digReady and spots.get_child_count() <= 0:
+		gui._EndDigPressed()
+	
 	if $Node2D/BackParticles.emitting != Settings.settings_dict["particles"]:
 		$Node2D/BackParticles.emitting = Settings.settings_dict["particles"]
 		$Node2D/BackParticles.visible = Settings.settings_dict["particles"]
@@ -67,6 +70,7 @@ func setCursorPos(pos = Vector2.ZERO) -> void:
 
 func reset_dig() -> void:
 	GM.digDone = false
+	GM.digReady = false
 	PS._PStaminaCurr = PS._PStaminaMax
 	inventory.clear()
 	artifact_inv.clear()
@@ -81,6 +85,7 @@ func reset_dig() -> void:
 var artifactAdded: int = 0
 var rng = RandomNumberGenerator.new()
 func set_artifact() -> String:
+	print(artifactAdded)
 	if GM.artifactAmountAllowed <= artifactAdded or GM.artifactChance <= 0: return ""
 	var chance: int = GM.artifactChance
 	var rngSum = rng.randi_range(0, 100)

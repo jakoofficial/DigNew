@@ -45,4 +45,4 @@ func _levelPressed() -> void:
 		GM.currDigType = LevelName
 		GM.xSpots = LevelSize.x
 		GM.ySpots = LevelSize.y
-		GM.load_scene(GoToLevel)
+		GM.load_scene(GoToLevel, 1.0)
