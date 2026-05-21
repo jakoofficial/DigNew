@@ -10,12 +10,12 @@ var _PValueBonus: int = 0
 
 func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: String = "") -> void:
 	match upgrade:
-		SkillRes.TYPE.Stamina: _PStaminaMax += amount
-		SkillRes.TYPE.Strength: _PStrength += amount
-		SkillRes.TYPE.ValueBonus: _PValueBonus += amount
-		SkillRes.TYPE.LevelType: GM.LevelSelectDict[leveltypeunlock] = false
-		SkillRes.TYPE.ArtifactChance: GM.artifactChance += amount; GM.canFindArtifacts = true
-		SkillRes.TYPE.ArtifactValue: GM.artifactBonusPercent += amount
+		SkillRes.TYPE.Stamina: 			_PStaminaMax += amount
+		SkillRes.TYPE.Strength: 		_PStrength += amount
+		SkillRes.TYPE.ValueBonus: 		_PValueBonus += amount
+		SkillRes.TYPE.LevelType: 		GM.LevelSelectDict[leveltypeunlock] = false
+		SkillRes.TYPE.ArtifactChance: 	GM.artifactChance += amount; GM.canFindArtifacts = true
+		SkillRes.TYPE.ArtifactValue: 	GM.artifactBonusPercent += amount
 	pass
 
 func BaseValues() -> void:
@@ -36,16 +36,16 @@ func BaseValues() -> void:
 	ArtifactInfo._generate()
 
 func SetValues(data: Dictionary) -> void:
-	_PStrength = data["Strength"]
-	_PStaminaMax = data["StaminaMax"]
-	_PBalance = data["Balance"]
-	_PValueBonus = data["ValueBonus"]
-	GM.xSpots = data["MaxSpotsX"]
-	GM.ySpots = data["MaxSpotsY"]
-	GM.canFindArtifacts = data["ArtifactPermit"]
-	GM.artifactChance = data["ArtifactChance"]
+	_PStrength 				= data["Strength"]
+	_PStaminaMax 			= data["StaminaMax"]
+	_PBalance 				= data["Balance"]
+	_PValueBonus 			= data["ValueBonus"]
+	GM.xSpots 				= data["MaxSpotsX"]
+	GM.ySpots 				= data["MaxSpotsY"]
+	GM.canFindArtifacts 	= data["ArtifactPermit"]
+	GM.artifactChance 		= data["ArtifactChance"]
 	GM.artifactBonusPercent = data["ArtifactBonusPercent"]
-	ArtifactInfo.Load(data["ArtifactCollection"] as Array[ArtifactRes])
-	SkillTreeInfo.Load((data["Skills"] as Array[SkillRes]))
-	GM.LevelSelectDict = data["LevelSelection"]
-	Settings._Load(data["Settings"] as Dictionary)
+	GM.LevelSelectDict 		= data["LevelSelection"]
+	ArtifactInfo.Load(		data["ArtifactCollection"] as Array[ArtifactRes])
+	SkillTreeInfo.Load(		data["Skills"] as Array[SkillRes])
+	Settings._Load(			data["Settings"] as Dictionary)

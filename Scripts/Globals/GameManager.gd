@@ -19,28 +19,28 @@ var Game_Version: String = "Dev-Build: b0.1"
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
-	"Dirt_Patch":["Dirt", 0, 2, 1],
-	"Cave":["Stone", 1, 4, 2],
-	"Sand_Dune":["Sand", 2, 12, 4],
-	"Factory":["Iron", 3, 20, 8],
-	"Witchy_Woods": ["Wood", 4, 30, 14],
-	"Cloud_Station": ["Cloud", 5, 46, 20],
+	"Dirt_Patch":		["Dirt", 0, 2, 1], #Name, Frame, HP, Value
+	"Cave":				["Stone", 1, 4, 2],
+	"Sand_Dune":		["Sand", 2, 12, 5],
+	"Factory":			["Iron", 3, 20, 8],
+	"Witchy_Woods": 	["Wood", 4, 40, 15],
+	"Cloud_Station": 	["Cloud", 5, 60, 20],
 }
 var digSounds: Dictionary = {
-	"Dirt":["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
-	"Stone":["res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_04.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_07.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_10.wav"],
-	"Sand": ["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"],
-	"Iron": ["res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_03.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_06.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"],
-	"Wood": ["res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_03.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_06.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_10.wav"],
-	"Cloud": ["res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_04.wav", "res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_08.wav", "res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_10.wav"],
+	"Dirt":		["res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_01.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_04.wav", "res://Sounds/Dirt/TomWinandySFX - FS_dirt_jump_10.wav"],
+	"Stone":	["res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_04.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_07.wav", "res://Sounds/Cave/TomWinandySFX - FS_concrete_jump_10.wav"],
+	"Sand": 	["res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_03.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_06.wav", "res://Sounds/SandDune/TomWinandySFX - FS_sand_jump_09.wav"],
+	"Iron": 	["res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_03.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_06.wav", "res://Sounds/AbandonFactory/TomWinandySFX - FS_metal_jump_10.wav"],
+	"Wood": 	["res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_03.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_06.wav", "res://Sounds/WitchyWoods/TomWinandySFX - FS_wood_jump_10.wav"],
+	"Cloud": 	["res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_04.wav", "res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_08.wav", "res://Sounds/CloudStation/TomWinandySFX - FS_snow_jump_10.wav"],
 }
 
 var Artifacts: Dictionary = {
-	"Dirt_Patch":["Spherical_shape", "Pretty_wrist_thing", "Electronic_rectangle"],
-	"Cave":["Scribbled_parchment", "Non-protective_helmet", "Old_storage_device"],
-	"Sand_Dune":["Old_era_entertainment", "Liqiud_container", "Fossil"],
-	"Factory":["Primitive_electronic_component", "Small_gear", "Wrench"],
-	"Witchy_Woods":["Cauldron", "Wand_like_stick", "Pointy_hat"],
+	"Dirt_Patch":	["Spherical_shape", "Pretty_wrist_thing", "Electronic_rectangle"],
+	"Cave":			["Scribbled_parchment", "Non-protective_helmet", "Old_storage_device"],
+	"Sand_Dune":	["Old_era_entertainment", "Liqiud_container", "Fossil"],
+	"Factory":		["Primitive_electronic_component", "Small_gear", "Wrench"],
+	"Witchy_Woods":	["Cauldron", "Wand_like_stick", "Pointy_hat"],
 	"Cloud_Station":["Rain_droplet", "Chunk_o'_Cloud", "Bottled_thunder"],
 }
 
