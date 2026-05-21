@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_853f1"]
 [ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://smaebv2kbcos" path="res://Scripts/UI/credits.gd" id="4_df05h"]
-[ext_resource type="PackedScene" uid="uid://lxwjqqp8u2ok" path="res://Nodes/UI/Credit_Item.tscn" id="5_8um5k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
 atlas = ExtResource("2_853f1")
@@ -20,6 +19,11 @@ region = Rect2(128, 73, 116, 33)
 
 [sub_resource type="SystemFont" id="SystemFont_8saeu"]
 font_names = PackedStringArray("Ubuntu")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ghw46"]
+color = Color(0.56581026, 0.32505164, 0.22208834, 1)
+grow_begin = -50.0
+grow_end = -50.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8um5k"]
 atlas = ExtResource("2_853f1")
@@ -66,8 +70,6 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 [node name="StartGame" type="TextureButton" parent="VBoxContainer" unique_id=1015994404]
 custom_minimum_size = Vector2(125, 50)
 layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../Resume")
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
@@ -95,8 +97,6 @@ vertical_alignment = 1
 [node name="ContinueGame" type="TextureButton" parent="VBoxContainer" unique_id=643484627]
 custom_minimum_size = Vector2(155, 50)
 layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../Resume")
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
@@ -124,8 +124,6 @@ vertical_alignment = 1
 [node name="Credits" type="TextureButton" parent="VBoxContainer" unique_id=1306869888]
 custom_minimum_size = Vector2(155, 50)
 layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../Resume")
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
@@ -153,8 +151,6 @@ vertical_alignment = 1
 [node name="QuitGame" type="TextureButton" parent="VBoxContainer" unique_id=2007772645]
 custom_minimum_size = Vector2(155, 50)
 layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../Resume")
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
@@ -283,6 +279,18 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CreditsControl/CreditsPanel/RichTextLabel" unique_id=1945001369]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_ghw46")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CreditsControl/CreditsPanel" unique_id=1913927567]
 layout_mode = 1
 anchors_preset = 15
@@ -294,9 +302,6 @@ offset_right = -8.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CreditSoundEffects" parent="CreditsControl/CreditsPanel/VBoxContainer" unique_id=126242711 instance=ExtResource("5_8um5k")]
-layout_mode = 2
 
 [node name="CloseCredits" type="TextureButton" parent="CreditsControl/CreditsPanel" unique_id=1359872718]
 custom_minimum_size = Vector2(125, 50)
@@ -315,8 +320,6 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../Resume")
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_8um5k")
