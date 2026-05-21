@@ -13,6 +13,7 @@ config_version=5
 config/name="DigMouse"
 run/main_scene="uid://wblo8bpw00rk"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://ch1ly6he14dfj"
 config/icon="res://Sprites/icon.svg"
 
 [audio]
