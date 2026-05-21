@@ -4,6 +4,10 @@ extends Control
 @onready var quit_game: TextureButton = $VBoxContainer/QuitGame
 @onready var confirm_box: Control = $ConfirmBox
 @onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var game_version: RichTextLabel = $GameVersion
+@onready var credits_control: Control = $CreditsControl
+@onready var credits: TextureButton = $VBoxContainer/Credits
+@onready var close_credits: TextureButton = $CreditsControl/CreditsPanel/CloseCredits
 
 func _ready() -> void:
 	FM.LoadGame()
@@ -13,6 +17,14 @@ func _ready() -> void:
 	continue_game.connect("pressed", _ContinueGame)
 	continue_game.disabled = !FM.CheckSaveGame()
 	quit_game.connect("pressed", _QuitGame)
+	game_version.text = GM.Game_Version
+	credits_control.hide()
+	credits.connect("pressed", _OpenCredits)
+	close_credits.connect("pressed", _CloseCredits)
+
+func _process(delta: float) -> void:
+	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):
+		_CloseCredits()
 
 func _NewGame() -> void:
 	var canMakeNew = true
@@ -29,6 +41,12 @@ func _NewGame() -> void:
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
 	GM.load_scene(GM.Scenes.SKILLTREE)
+
+func _OpenCredits() -> void:
+	credits_control.show()
+
+func _CloseCredits() -> void:
+	credits_control.hide()
 
 func _QuitGame() -> void:
 	var quit = true

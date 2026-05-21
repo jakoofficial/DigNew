@@ -2,8 +2,8 @@ extends Node
 
 var settings_dict: Dictionary[String, Variant] = {
 	"master": 0.0, # max: 0 min: -20
-	"music": -0.0, # max: 0 min: -20
-	"sound": -0.0, # max: 0 min: -20
+	"music": -10.0, # max: 0 min: -20
+	"sound": -10.0, # max: 0 min: -20
 	"particles": true,
 	"font": FONTS.PIXELATED,
 }

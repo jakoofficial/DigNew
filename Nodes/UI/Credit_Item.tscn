@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://lxwjqqp8u2ok"]
+
+[node name="CreditItem" type="HBoxContainer" unique_id=126242711]
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=302780837]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "asdasdad"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="What" type="RichTextLabel" parent="." unique_id=57868587]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "asdasdad"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
