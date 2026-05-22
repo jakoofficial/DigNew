@@ -21,7 +21,11 @@ func _ready() -> void:
 	credits_control.hide()
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
-	if !BGMusic.playing:
+	if BGMusic.playing and BGMusic.curAudio != BGMusic.AUDIO.MainMenu:
+		BGMusic.fadeOver = false
+		BGMusic.soundLevel = -50
+		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
+	elif !BGMusic.playing:
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
 
 func _process(delta: float) -> void:
