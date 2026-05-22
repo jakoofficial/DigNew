@@ -50,8 +50,12 @@ func _ready() -> void:
 	AM.initAction("ZoomIn", FKS.NewKey(MOUSE_BUTTON_WHEEL_UP, FKS.InputType.Mouse), FKS.NewKey(KEY_E))
 	AM.initAction("ZoomOut", FKS.NewKey(MOUSE_BUTTON_WHEEL_DOWN, FKS.InputType.Mouse), FKS.NewKey(KEY_Q))
 	AM.initAction("SettingsMenu", FKS.NewKey(KEY_ESCAPE))
+	AM.initAction("Dev_Money", FKS.NewKey(KEY_KP_0))
 
 func _process(delta: float) -> void:
+	if FK.JustPressed(AM.action("Dev_Money")):
+		PS._PBalance += 1000
+	
 	if settingsMenu != null:
 		if FK.JustReleased(AM.action("SettingsMenu")):
 			if settingsMenu.visible != true: settingsMenu._ShowMenu()

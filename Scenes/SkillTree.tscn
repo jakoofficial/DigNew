@@ -180,7 +180,7 @@ position = Vector2(800, -96)
 Skill_Name = "More_Value"
 
 [node name="Value4" parent="Skills" unique_id=554579280 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, -512)
+position = Vector2(576, -768)
 Skill_Name = "Price_Gouging"
 
 [node name="Damage1" parent="Skills" unique_id=1244363427 instance=ExtResource("4_p2c2s")]
@@ -210,6 +210,10 @@ Skill_Name = "Stamina++"
 [node name="Stamina3" parent="Skills" unique_id=1375539907 instance=ExtResource("4_p2c2s")]
 position = Vector2(352, -96)
 Skill_Name = "Even_More_Stamina"
+
+[node name="Stamina4" parent="Skills" unique_id=1227217820 instance=ExtResource("4_p2c2s")]
+position = Vector2(576, -512)
+Skill_Name = "Stam-stamina"
 
 [node name="ArtChance1" parent="Skills" unique_id=151831212 instance=ExtResource("4_p2c2s")]
 position = Vector2(352, 352)

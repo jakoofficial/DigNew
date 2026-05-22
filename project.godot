@@ -39,7 +39,6 @@ SM="*uid://yec4457d3s13"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
