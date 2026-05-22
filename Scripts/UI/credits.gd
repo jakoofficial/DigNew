@@ -1,5 +1,5 @@
 extends Control
-@onready var v_box_container: VBoxContainer = $CreditsPanel/VBoxContainer
+@onready var v_box_container: VBoxContainer = $CreditsPanel/ScrollContainer/VBoxContainer
 
 const CREDIT_ITEM = preload("uid://lxwjqqp8u2ok")
 
