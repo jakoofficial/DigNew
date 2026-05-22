@@ -2,6 +2,7 @@ extends Area2D
 @onready var hover_info: Control = $HoverInfo
 @export var Skill_Name: String = ""
 @onready var skill_icon: Sprite2D = $SkillIcon
+@onready var click_sound: AudioStreamPlayer2D = $ClickSound
 
 var skill_res: SkillRes
 
@@ -30,6 +31,9 @@ func _on_mouse_exited() -> void:
 func _Activate() -> void:
 	if skill_res._LevelCurr == skill_res._LevelMaxAmount: return
 	if PS._PBalance >= skill_res._Cost:
+		if !click_sound.playing: click_sound.stop()
+		click_sound.pitch_scale = randf_range(0.75, 1.0)
+		click_sound.play()
 		PS._PBalance -= skill_res._Cost
 		skill_res._LevelCurr += 1
 		PS.Apply_Upgrade(skill_res._UpgradeType, skill_res._UpgradeAmount, skill_res._LevelTypeUnlock)

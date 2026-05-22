@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="2_qnjwq"]
 [ext_resource type="Script" uid="uid://donlpi7re6fah" path="res://Scripts/SkillTree/hover_info.gd" id="4_5wfxj"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="4_p5o0h"]
+[ext_resource type="AudioStream" uid="uid://co5giwqylyvur" path="res://Sounds/SkillClick.wav" id="6_c5x03"]
 [ext_resource type="Script" uid="uid://b2u78l3dco5by" path="res://Scripts/SkillTree/drawing_skill_node.gd" id="6_qnjwq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_el3if"]
@@ -123,3 +124,7 @@ vertical_alignment = 1
 [node name="Drawing" type="Node2D" parent="." unique_id=1434421454]
 z_index = -1
 script = ExtResource("6_qnjwq")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="." unique_id=360361358]
+stream = ExtResource("6_c5x03")
+volume_db = -15.0

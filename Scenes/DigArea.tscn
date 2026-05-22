@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chrevyni1gvsl" path="res://Sprites/Artifacts/Cave_Artifacts.png" id="5_1ptw8"]
 [ext_resource type="Texture2D" uid="uid://c1qsdrx2eku1t" path="res://Sprites/Artifacts/Shine.png" id="5_46wwk"]
 [ext_resource type="Script" uid="uid://caushtjj6tsok" path="res://Scripts/Artifacts/artifact_Gotten.gd" id="5_65a8n"]
+[ext_resource type="AudioStream" uid="uid://cdwtae6buxuig" path="res://Sounds/ArtifactFound.wav" id="8_75r8p"]
 [ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="9_75r8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46wwk"]
@@ -70,6 +71,11 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
+
+[node name="ArtifactSound" type="AudioStreamPlayer2D" parent="Artifact" unique_id=1641315135]
+stream = ExtResource("8_75r8p")
+volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=528243057]
 z_index = -2

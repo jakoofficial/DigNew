@@ -4,6 +4,7 @@ extends Node2D
 @onready var shine_small: Sprite2D = $ShineSmall
 @onready var artifact: Sprite2D = $Artifact
 @onready var artifact_info: RichTextLabel = $artifactInfo
+@onready var artifact_sound: AudioStreamPlayer2D = $ArtifactSound
 
 var tween: Tween
 func _ready() -> void:
@@ -17,6 +18,9 @@ func _show(a: ArtifactRes) -> void:
 	artifact.texture = a._ArtifactTexture
 	artifact_info.text = str("[wave]%s" % a._Name.replace("_", " "))
 	show()
+	if GM.digDone or artifact_sound.playing: artifact_sound.stop()
+	else: artifact_sound.play()
+	
 	if tween: tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_BACK)
 	tween.tween_property(artifact, "scale", Vector2(1.5,1.5), 0.5)
