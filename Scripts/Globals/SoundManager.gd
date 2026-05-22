@@ -15,5 +15,5 @@ func _set_audio_volume_on_bus(bus:int, setting:String):
 		_mute_bus(bus, true)
 		BGMusic.stream_paused = true
 
-func _mute_bus(bus: int = 0, enabled: bool = true):
+func _mute_bus(bus: int, enabled: bool = true):
 	AudioServer.set_bus_mute(bus, enabled)

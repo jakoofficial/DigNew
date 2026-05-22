@@ -15,7 +15,7 @@ var currUI: CanvasLayer
 var currDigArea: Node2D
 var settingsMenu: Control
 
-var Game_Version: String = "Dev-Build: b0.1"
+var Game_Version: String = "Dev-Build: b0.2"
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
