@@ -41,9 +41,11 @@ func reset_values() -> void:
 func _setValuesInMenu() -> void:
 	master_volume_slider.value = Settings.settings_dict["master"]
 	music_volume_slider.value = Settings.settings_dict["music"]
+	BGMusic.loadedLevel = Settings.settings_dict["music"]
 	sound_volume_slider.value = Settings.settings_dict["sound"]
 	particel_check_box.button_pressed = Settings.settings_dict["particles"]
 	font_check_box.button_pressed = true if Settings.settings_dict["font"] == Settings.FONTS.PIXELATED else false
+	SetAudio()
 
 func _ShowMenu() -> void:
 	_setValuesInMenu()
@@ -51,6 +53,14 @@ func _ShowMenu() -> void:
 
 func _HideMenu():
 	hide()
+
+func SetAudio() -> void:
+	Settings.SetValue("master", master_volume_slider.value)
+	SM._set_audio_volume_on_bus(0, "master")
+	Settings.SetValue("music", music_volume_slider.value)
+	SM._set_audio_volume_on_bus(1, "music")
+	Settings.SetValue("sound", sound_volume_slider.value)
+	SM._set_audio_volume_on_bus(2, "sound")
 
 func confirm_changes() -> void:
 	var canMakeNew = true
@@ -60,12 +70,7 @@ func confirm_changes() -> void:
 	if !canMakeNew: confirm_box.hide(); return
 	confirm_box.hide();
 	
-	Settings.SetValue("master", master_volume_slider.value)
-	SM._set_audio_volume_on_bus(0, "master")
-	Settings.SetValue("music", music_volume_slider.value)
-	SM._set_audio_volume_on_bus(1, "music")
-	Settings.SetValue("sound", sound_volume_slider.value)
-	SM._set_audio_volume_on_bus(2, "sound")
+	SetAudio()
 	
 	Settings.SetValue("particles", particel_check_box.button_pressed)
 	

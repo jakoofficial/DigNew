@@ -9,7 +9,8 @@ func _ready() -> void:
 	menu_btn.connect("pressed", _GoToMenu)
 	
 	if BGMusic.playing and BGMusic.curAudio == BGMusic.AUDIO.MainMenu:
-		BGMusic.fade(true, Settings.settings_dict["music"])
+		BGMusic.fadeOver = false
+		BGMusic.soundLevel = -50
 		BGMusic._play_BG_Music(BGMusic.AUDIO.Level1)
 
 func _process(delta: float) -> void:

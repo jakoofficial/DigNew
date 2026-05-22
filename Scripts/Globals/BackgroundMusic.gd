@@ -34,22 +34,12 @@ func SwitchAudio() -> void:
 		_play_BG_Music(AUDIO.Level1 if randi_range(0, 1)==0 else AUDIO.Level2)
 		return
 
-func fade(_fadein: bool = true, level: float = -10):
-	fadein = _fadein
-	fadeOver = false
-	loadedLevel = level
-	started = true
-
 var fadeOver: bool = false
-var fadein: bool = true
 func _process(delta: float) -> void:
-	if fadein and !fadeOver and started and soundLevel < loadedLevel:
+	if !fadeOver and started and soundLevel < loadedLevel:
 		soundLevel+=delta * 10
-		volume_db = soundLevel
+	volume_db = soundLevel - 10
 		#print(soundLevel)
-	elif !fadein and !fadeOver and started and soundLevel > loadedLevel:
-		soundLevel-=delta * 10
-		volume_db = soundLevel
 	if soundLevel >= loadedLevel: fadeOver = true
 
 func _stop_BG_Music() -> void:
