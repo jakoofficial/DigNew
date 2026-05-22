@@ -7,6 +7,10 @@ extends CanvasLayer
 func _ready() -> void:
 	go_dig_btn.connect("pressed", _GoDig)
 	menu_btn.connect("pressed", _GoToMenu)
+	
+	if BGMusic.playing and BGMusic.curAudio == BGMusic.AUDIO.MainMenu:
+		BGMusic.fade(true, Settings.settings_dict["music"])
+		BGMusic._play_BG_Music(BGMusic.AUDIO.Level1)
 
 func _process(delta: float) -> void:
 	if player_balance.text != str(PS._PBalance):

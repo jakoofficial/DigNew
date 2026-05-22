@@ -31,6 +31,11 @@ func _Load(settingsValues: Dictionary) -> void:
 		for v in settingsValues.keys():
 			if k == v: 
 				SetValue(k, settingsValues[v])
+				if k == "music":
+					print(settings_dict["music"])
+					BGMusic.loadedLevel = settings_dict["music"]
+					BGMusic.fadeOver = false
+					BGMusic.started = true
 				break
 
 func ChangeFont(fontChange: FONTS):
