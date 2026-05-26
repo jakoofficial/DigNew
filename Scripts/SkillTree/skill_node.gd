@@ -4,6 +4,7 @@ extends Area2D
 @onready var skill_icon: Sprite2D = $SkillIcon
 @onready var click_sound: AudioStreamPlayer2D = $ClickSound
 
+var currPar: Node2D
 var skill_res: SkillRes
 
 var hovered: bool = false
@@ -16,6 +17,8 @@ func _ready() -> void:
 	skill_res = (SkillTreeInfo as STI).GetSkill(Skill_Name)
 	skill_icon.texture = skill_res._Icon
 	skill_res._Cost = skill_res._BaseCost
+	currPar = $"../.."
+	print(currPar)
 
 var tween: Tween
 func _on_mouse_entered() -> void:
@@ -41,6 +44,7 @@ func _Activate() -> void:
 			skill_res._Finished = true
 		skill_res._Cost = ceil(skill_res._BaseCost * pow(skill_res._Multiplier,skill_res._LevelCurr))
 		hover_info._setInfo()
+		currPar.setStats()
 		FM.SaveGame()
 	pass
 

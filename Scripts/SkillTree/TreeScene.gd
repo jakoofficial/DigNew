@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tree_cam: Camera2D = $TreeCam
+@onready var stats: Control = $CanvasLayer/Stats
 
 @export var zoomAmount: float = 0.25
 @export var zoomMax: Vector2 = Vector2(1.25, 1.25)
@@ -10,7 +11,6 @@ func _ready() -> void:
 	tree_cam.zoom = Vector2(0.75,0.75)
 	FM.SaveGame()
 
-
 var lastPos: Vector2
 func _input(event: InputEvent) -> void:
 	if FK.Pressed(AM.action("R_Click")) and event is InputEventMouseMotion:
@@ -19,6 +19,9 @@ func _input(event: InputEvent) -> void:
 	else:
 		lastPos = Vector2.ZERO
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func setStats() -> void:
+	stats.SetStat()
 
 func _process(delta: float) -> void:
 	if FK.JustPressed(AM.action("ZoomIn")):
