@@ -6,11 +6,10 @@ enum AUDIO {
 	Level2,
 } 
 var curAudio: AUDIO
-
 var file
 func _play_BG_Music(audio:AUDIO) -> void:
 	curAudio = audio
-	print(curAudio)
+	#print(curAudio)
 	
 	match curAudio:
 		AUDIO.MainMenu: file = preload("res://Sounds/BGMusic/MAIN_THEME_DREAMY_DASH_LOOP A.wav")
@@ -22,11 +21,11 @@ func _play_BG_Music(audio:AUDIO) -> void:
 	started = true
 
 var started: bool = false
-var soundLevel: float = -50
-var loadedLevel: float = -20
+var soundLevel: float = 0
+var loadedLevel: float = 0.5
 func _ready() -> void:
-	volume_db = soundLevel
-	stop()
+	volume_db = linear_to_db(soundLevel)
+	#loadedLevel = Settings.settings_dict["music"]
 	finished.connect(SwitchAudio)
 
 func SwitchAudio() -> void:
@@ -34,13 +33,52 @@ func SwitchAudio() -> void:
 		_play_BG_Music(AUDIO.Level1 if randi_range(0, 1)==0 else AUDIO.Level2)
 		return
 
-var fadeOver: bool = false
+
+var time: float = 0.0
+var timeMax: float = 5.0
+
+enum FADE {
+	None,
+	In,
+	Out,
+	InOut,
+	OutIn,
+}
+
+func FadeIn(delta:float) -> bool:
+	time += delta
+	var newDB = ((time-0.0)/(timeMax-0.0))*(loadedLevel-0.0)+0.0
+	if newDB >= timeMax: volume_db = linear_to_db(loadedLevel); return true
+	volume_db = linear_to_db(newDB)
+	
+	return false
+
+func FadeOut(delta:float) -> bool:
+	time += delta
+	var newDB = ((time-0.0)/(timeMax-0.0))*(0.0-loadedLevel)+loadedLevel
+	if newDB <= 0.0: volume_db = linear_to_db(0); return true
+	volume_db = linear_to_db(newDB)
+	
+	return false
+
+var Fade: FADE = FADE.In
 func _process(delta: float) -> void:
-	if !fadeOver and started and soundLevel < loadedLevel:
-		soundLevel+=delta * 10
-	volume_db = soundLevel - 10
-		#print(soundLevel)
-	if soundLevel >= loadedLevel: fadeOver = true
+	match Fade:
+		FADE.None: return
+		FADE.In:
+			if FadeIn(delta): time = 0; Fade = FADE.None
+		FADE.Out:
+			if FadeOut(delta): time = 0; Fade = FADE.None
+		FADE.InOut:
+			if FadeIn(delta): time = 0; Fade = FADE.Out
+		FADE.OutIn:
+			if FadeOut(delta): time = 0; Fade = FADE.In
+			
+	#if !fadeOver and started and soundLevel < loadedLevel:
+		#soundLevel+=delta
+	#volume_db = soundLevel
+		##print(soundLevel)
+	#if soundLevel >= loadedLevel: fadeOver = true
 
 func _stop_BG_Music() -> void:
 	stop()

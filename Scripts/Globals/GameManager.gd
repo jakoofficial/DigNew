@@ -16,6 +16,7 @@ var currDigArea: Node2D
 var settingsMenu: Control
 
 var Game_Version: String = "Dev-Build: b0.2"
+var _delta: float
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
@@ -53,6 +54,7 @@ func _ready() -> void:
 	AM.initAction("Dev_Money", FKS.NewKey(KEY_KP_0))
 
 func _process(delta: float) -> void:
+	_delta = delta
 	if FK.JustPressed(AM.action("Dev_Money")):
 		PS._PBalance += 1000
 	
