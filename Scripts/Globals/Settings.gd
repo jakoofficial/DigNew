@@ -2,7 +2,7 @@ extends Node
 
 var settings_dict: Dictionary[String, Variant] = {
 	"master": 1.0, # max: 0 min: -20
-	"music": .5, # max: 0 min: -20
+	"music": .25, # max: 0 min: -20
 	"sound": .5, # max: 0 min: -20
 	"particles": true,
 	"font": FONTS.PIXELATED,
@@ -14,7 +14,7 @@ enum FONTS {
 
 func _setBaseValues():
 	settings_dict["master"] = 1.0
-	settings_dict["music"] = 0.5
+	settings_dict["music"] = 0.25
 	settings_dict["sound"] = 0.5
 	settings_dict["particles"] = true
 	settings_dict["font"] = FONTS.PIXELATED

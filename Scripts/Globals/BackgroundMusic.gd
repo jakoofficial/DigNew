@@ -22,7 +22,7 @@ func _play_BG_Music(audio:AUDIO) -> void:
 
 var started: bool = false
 var soundLevel: float = 0
-var loadedLevel: float = 0.5
+var loadedLevel: float = 0.25
 func _ready() -> void:
 	volume_db = linear_to_db(soundLevel)
 	finished.connect(SwitchAudio)
