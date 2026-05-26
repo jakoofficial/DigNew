@@ -36,8 +36,10 @@ func _process(delta: float) -> void:
 	if GM.digspotHover: cursor.show()
 	else: cursor.hide()
 	
-	if GM.digReady and spots.get_child_count() <= 0:
-		gui._EndDigPressed()
+	##GM.digReady and 
+	#if spotsLeft <= 0:
+		#GM.digDone = true
+		#gui._EndDigPressed()
 	
 	if $Node2D/BackParticles.emitting != Settings.settings_dict["particles"]:
 		$Node2D/BackParticles.emitting = Settings.settings_dict["particles"]
@@ -85,7 +87,6 @@ func reset_dig() -> void:
 var artifactAdded: int = 0
 var rng = RandomNumberGenerator.new()
 func set_artifact() -> String:
-	print(artifactAdded)
 	if GM.artifactAmountAllowed <= artifactAdded or GM.artifactChance <= 0: return ""
 	var chance: int = GM.artifactChance
 	var rngSum = rng.randi_range(0, 100)
@@ -129,8 +130,8 @@ func Generate() -> void:
 			spot._Value += PS._PValueBonus
 			if artifact_spawn_at == spawnIdx:
 				spot.artifact = artifact_spawn
-				print(spawnIdx)
 			spots.add_child(spot)
+			GM.digSpotsLeft+=1
 			spot.digZone = self
 			spot.hide()
 			# Position each spot with spacing

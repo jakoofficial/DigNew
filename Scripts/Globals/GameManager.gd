@@ -17,6 +17,7 @@ var settingsMenu: Control
 
 var Game_Version: String = "Dev-Build: b0.2"
 var _delta: float
+var digSpotsLeft: int = 0
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
@@ -66,6 +67,10 @@ func _process(delta: float) -> void:
 	if PS._PStaminaCurr <= 0 and digDone == false:
 		currUI.dig_over_panel.digdoneText = "No stamina left"
 		digDone = true
+	if digSpotsLeft <= 0 and digReady == true:
+		currUI.dig_over_panel.digdoneText = "Dig over"
+		digDone = true
+		digReady = false
 
 var LevelSelectDict: Dictionary[String, bool]
 

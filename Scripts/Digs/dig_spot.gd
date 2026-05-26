@@ -20,6 +20,7 @@ func Destroy() -> void:
 		ArtifactInfo.Collect(a_gotten)
 		digZone.addArtifactToInv(a_gotten)
 	
+	GM.digSpotsLeft -= 1
 	call_deferred("queue_free")
 
 func GiveValue() -> void:

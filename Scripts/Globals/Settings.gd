@@ -58,4 +58,3 @@ func ChangeFont(fontChange: FONTS):
 
 	# Apply the theme to the root of your scene
 	get_tree().root.set_theme(theme)
-	#print(theme.default_font)

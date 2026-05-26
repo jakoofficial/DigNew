@@ -18,7 +18,6 @@ func _ready() -> void:
 	skill_icon.texture = skill_res._Icon
 	skill_res._Cost = skill_res._BaseCost
 	currPar = $"../.."
-	print(currPar)
 
 var tween: Tween
 func _on_mouse_entered() -> void:
