@@ -21,13 +21,19 @@ func _ready() -> void:
 	credits_control.hide()
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
+	SetMusic()
+
+func SetMusic():
 	if BGMusic.playing and BGMusic.curAudio != BGMusic.AUDIO.MainMenu:
+		BGMusic.timeMax = 2.0
 		BGMusic.Fade = BGMusic.FADE.OutIn
+		await BGMusic.FadeFinished
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
 	elif !BGMusic.playing:
+		BGMusic.timeMax = 5.0
 		BGMusic.Fade = BGMusic.FADE.In
-		print(BGMusic.Fade)
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
+		await BGMusic.FadeFinished
 
 func _process(delta: float) -> void:
 	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):

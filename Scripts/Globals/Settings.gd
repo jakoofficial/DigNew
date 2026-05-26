@@ -32,7 +32,6 @@ func _Load(settingsValues: Dictionary) -> void:
 			if k == v: 
 				SetValue(k, settingsValues[v])
 				if k == "music":
-					print(settings_dict["music"])
 					BGMusic.loadedLevel = settings_dict["music"]
 				break
 

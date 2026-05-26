@@ -9,8 +9,3 @@ func _ready() -> void:
 
 func _set_audio_volume_on_bus(bus:int, setting:String):
 	AudioServer.set_bus_volume_db(bus, linear_to_db(Settings.settings_dict[setting]))
-	#_mute_bus(bus, false)
-	BGMusic.stream_paused = false
-
-func _mute_bus(bus: int, enabled: bool = true):
-	AudioServer.set_bus_mute(bus, enabled)

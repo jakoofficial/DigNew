@@ -7,9 +7,12 @@ extends CanvasLayer
 func _ready() -> void:
 	go_dig_btn.connect("pressed", _GoDig)
 	menu_btn.connect("pressed", _GoToMenu)
-	
+	SetMusic()
+
+func SetMusic():
 	if BGMusic.playing and BGMusic.curAudio == BGMusic.AUDIO.MainMenu:
 		BGMusic.Fade = BGMusic.FADE.OutIn
+		await BGMusic.FadeFinished
 		BGMusic._play_BG_Music(BGMusic.AUDIO.Level1)
 
 func _process(delta: float) -> void:
