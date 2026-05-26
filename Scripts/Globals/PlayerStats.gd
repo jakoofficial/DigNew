@@ -7,6 +7,7 @@ var _PStaminaMax: int = 4
 
 var _PBalance: int = 100
 var _PValueBonus: int = 0
+var _PDigGridAmount: int = 1
 
 func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: String = "") -> void:
 	match upgrade:
@@ -24,6 +25,7 @@ func BaseValues() -> void:
 	_PStaminaMax 			= 4
 	_PBalance 				= 0
 	_PValueBonus 			= 0
+	_PDigGridAmount			= 2
 	GM.xSpots 				= 3
 	GM.ySpots 				= 3
 	GM.canFindArtifacts 	= false
@@ -40,6 +42,7 @@ func SetValues(data: Dictionary) -> void:
 	_PStaminaMax 			= data["StaminaMax"]
 	_PBalance 				= data["Balance"]
 	_PValueBonus 			= data["ValueBonus"]
+	_PDigGridAmount			= data["DigGridAmount"]
 	GM.xSpots 				= data["MaxSpotsX"]
 	GM.ySpots 				= data["MaxSpotsY"]
 	GM.canFindArtifacts 	= data["ArtifactPermit"]

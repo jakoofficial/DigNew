@@ -10,6 +10,7 @@ func SaveData():
 		"Balance": PS._PBalance,
 		"Strength": PS._PStrength,
 		"ValueBonus": PS._PValueBonus,
+		"DigGridAmount": PS._PDigGridAmount,
 		"MaxSpotsX": GM.xSpots,
 		"MaxSpotsY": GM.ySpots,
 		"ArtifactPermit": GM.canFindArtifacts,
