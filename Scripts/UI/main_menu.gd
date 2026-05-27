@@ -8,6 +8,7 @@ extends Control
 @onready var credits_control: Control = $CreditsControl
 @onready var credits: TextureButton = $VBoxContainer/Credits
 @onready var close_credits: TextureButton = $CreditsControl/CreditsPanel/CloseCredits
+@onready var intro: Control = $Intro
 
 func _ready() -> void:
 	FM.LoadGame()
@@ -21,7 +22,12 @@ func _ready() -> void:
 	credits_control.hide()
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
-	SetMusic()
+	if GM._IntroPlayed:
+		intro.hide()
+		SetMusic()
+	else:
+		intro.show()
+		intro.play_intro()
 
 func SetMusic():
 	if BGMusic.playing and BGMusic.curAudio != BGMusic.AUDIO.MainMenu:
@@ -36,8 +42,11 @@ func SetMusic():
 		await BGMusic.FadeFinished
 
 func _process(delta: float) -> void:
+	if !GM._IntroPlayed: return
 	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):
 		_CloseCredits()
+	if FK.JustPressed(AM.action("SettingsMenu")):
+		print("asd")
 
 func _NewGame() -> void:
 	var canMakeNew = true

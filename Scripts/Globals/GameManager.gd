@@ -20,6 +20,8 @@ var Game_Version: String = "Dev-Build: b0.3 (270526)"
 var _delta: float
 var digSpotsLeft: int = 0
 
+var _IntroPlayed: bool = false
+
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
 	"Dirt_Patch":		["Dirt", 0, 2, 1], #Name, Frame, HP, Value
@@ -54,6 +56,7 @@ func _ready() -> void:
 	AM.initAction("ZoomOut", FKS.NewKey(MOUSE_BUTTON_WHEEL_DOWN, FKS.InputType.Mouse), FKS.NewKey(KEY_Q))
 	AM.initAction("SettingsMenu", FKS.NewKey(KEY_ESCAPE))
 	AM.initAction("Dev_Money", FKS.NewKey(KEY_KP_0))
+	AM.initAction("SkipIntro", FKS.NewKey(KEY_ESCAPE), FKS.NewKey(KEY_ENTER), FKS.NewKey(KEY_SPACE))
 
 func _process(delta: float) -> void:
 	_delta = delta

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_853f1"]
 [ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://smaebv2kbcos" path="res://Scripts/UI/credits.gd" id="4_df05h"]
+[ext_resource type="PackedScene" uid="uid://bpmso20hkvbh7" path="res://Nodes/UI/intro.tscn" id="5_df05h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
 atlas = ExtResource("2_853f1")
@@ -351,3 +352,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Intro" parent="." unique_id=1164700956 instance=ExtResource("5_df05h")]
+visible = false
+layout_mode = 1
