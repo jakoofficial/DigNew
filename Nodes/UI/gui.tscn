@@ -25,6 +25,11 @@ region = Rect2(128, 73, 116, 33)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjj2d"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi8j6"]
+atlas = ExtResource("5_btyvu")
+region = Rect2(2, 8, 28, 22)
+margin = Rect2(0, 2, 0, 2)
+
 [node name="GUI" type="CanvasLayer" unique_id=909972108]
 script = ExtResource("1_abalt")
 
@@ -122,11 +127,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Line"
 
-[node name="BalanceContainer" type="HBoxContainer" parent="Control/DigOverPanel/VBoxContainer2" unique_id=2083583705]
+[node name="BalanceContainer" type="HBoxContainer" parent="Control/DigOverPanel/VBoxContainer2" unique_id=452159123]
 layout_mode = 2
 alignment = 1
 
-[node name="TotalBalance" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2/BalanceContainer" unique_id=487647153]
+[node name="TotalBalance" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2/BalanceContainer" unique_id=2030226356]
 clip_contents = false
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
@@ -140,7 +145,7 @@ autowrap_trim_flags = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/DigOverPanel/VBoxContainer2/BalanceContainer" unique_id=931454544]
+[node name="TextureRect" type="TextureRect" parent="Control/DigOverPanel/VBoxContainer2/BalanceContainer" unique_id=2043896460]
 layout_mode = 2
 texture = SubResource("AtlasTexture_hc6dj")
 stretch_mode = 5
@@ -211,6 +216,39 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RedigCost" type="HBoxContainer" parent="Control/DigOverPanel/VBoxContainer2/HBoxContainer/DigAgainBtn" unique_id=2083583705]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.5
+offset_top = -12.0
+offset_right = 59.5
+offset_bottom = 5.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="EntryFee" type="RichTextLabel" parent="Control/DigOverPanel/VBoxContainer2/HBoxContainer/DigAgainBtn/RedigCost" unique_id=487647153]
+clip_contents = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "asdasda"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/DigOverPanel/VBoxContainer2/HBoxContainer/DigAgainBtn/RedigCost" unique_id=931454544]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_gi8j6")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="EndDigBtn" type="TextureButton" parent="Control" unique_id=1040406868]
 custom_minimum_size = Vector2(125, 50)

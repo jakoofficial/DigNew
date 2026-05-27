@@ -6,6 +6,7 @@ extends NinePatchRect
 @onready var collected_item: HBoxContainer = $"../../CollectedItem"
 @onready var total_balance: RichTextLabel = $VBoxContainer2/BalanceContainer/TotalBalance
 @onready var dig_over_text: RichTextLabel = $VBoxContainer2/VBoxContainer/DigOverText
+@onready var entry_fee: RichTextLabel = $VBoxContainer2/HBoxContainer/DigAgainBtn/RedigCost/EntryFee
 
 var digdoneText: String
 
@@ -19,6 +20,7 @@ func ShowPanel() -> void:
 	scale = Vector2(0,0)
 	_scale_tween()
 	_setItems()
+	entry_fee.text = str("%s" % GM.currLevelDigFee)
 	
 	if PS._PBalance < GM.currLevelDigFee: dig_again_btn.disabled = true
 	else: dig_again_btn.disabled = false
