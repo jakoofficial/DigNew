@@ -1,7 +1,7 @@
 extends CanvasLayer
 @onready var go_dig_btn: TextureButton = $Skilltree/GoDigBtn
 @onready var skills: Node2D = $"../Skills"
-@onready var player_balance: RichTextLabel = $Skilltree/HBoxContainer/PlayerBalance
+@onready var player_balance: RichTextLabel = $Skilltree/PlayerBalanceContainer/HBoxContainer/PlayerBalance
 @onready var menu_btn: TextureButton = $Skilltree/MenuBtn
 
 func _ready() -> void:

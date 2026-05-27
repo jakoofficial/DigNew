@@ -128,17 +128,40 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Skilltree" unique_id=338692522]
+[node name="PlayerBalanceContainer" type="NinePatchRect" parent="CanvasLayer/Skilltree" unique_id=118143599]
+z_index = 1
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 8.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = -8.0
+offset_right = 104.0
 offset_bottom = 48.0
 grow_horizontal = 2
+pivot_offset = Vector2(192, 192)
+texture = ExtResource("1_t13jq")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Skilltree/PlayerBalanceContainer" unique_id=338692522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="PlayerBalance" type="RichTextLabel" parent="CanvasLayer/Skilltree/HBoxContainer" unique_id=863670007]
+[node name="PlayerBalance" type="RichTextLabel" parent="CanvasLayer/Skilltree/PlayerBalanceContainer/HBoxContainer" unique_id=863670007]
 clip_contents = false
 layout_mode = 2
 bbcode_enabled = true
@@ -149,7 +172,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Skilltree/HBoxContainer" unique_id=278324212]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Skilltree/PlayerBalanceContainer/HBoxContainer" unique_id=278324212]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("AtlasTexture_n648w")

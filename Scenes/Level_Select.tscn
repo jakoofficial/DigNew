@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://biv8id35iw67a" path="res://Sprites/LevelSelect/AbandonFactoryLevel.png" id="7_yee8s"]
 [ext_resource type="Texture2D" uid="uid://btdrtyk2c17wv" path="res://Sprites/LevelSelect/CloudStation.png" id="8_tk2dh"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="9_11r63"]
+[ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="11_qfjjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojto8"]
 atlas = ExtResource("3_6283k")
@@ -22,6 +23,11 @@ region = Rect2(128, 35, 116, 37)
 [sub_resource type="AtlasTexture" id="AtlasTexture_11r63"]
 atlas = ExtResource("3_6283k")
 region = Rect2(128, 73, 116, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05uof"]
+atlas = ExtResource("11_qfjjy")
+region = Rect2(0, 0, 32, 32)
+margin = Rect2(0, -2, 0, 0)
 
 [node name="LevelSelect" type="Control" unique_id=700572385]
 layout_mode = 3
@@ -89,7 +95,7 @@ LevelName = "Cave"
 GoToLevel = 2
 LevelTexture = ExtResource("6_ojto8")
 LevelSize = Vector2(4, 4)
-levelEntryFee = 10
+levelEntryFee = 30
 
 [node name="SandDune" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
 layout_mode = 2
@@ -130,3 +136,51 @@ scale = Vector2(9, 6.125)
 texture = ExtResource("5_11r63")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="PlayerBalance" type="NinePatchRect" parent="." unique_id=1595010505]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = -8.0
+offset_right = 104.0
+offset_bottom = 48.0
+grow_horizontal = 2
+pivot_offset = Vector2(192, 192)
+texture = ExtResource("3_6283k")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerBalance" unique_id=538344405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BalanceLabel" type="RichTextLabel" parent="PlayerBalance/HBoxContainer" unique_id=92733308]
+clip_contents = false
+layout_mode = 2
+text = "999999"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Coin" type="TextureRect" parent="PlayerBalance/HBoxContainer" unique_id=699677161]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_05uof")
+expand_mode = 1
+stretch_mode = 5
