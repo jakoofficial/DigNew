@@ -58,4 +58,5 @@ func _levelPressed() -> void:
 		GM.currDigType = LevelName
 		GM.xSpots = LevelSize.x
 		GM.ySpots = LevelSize.y
+		GM.currLevelDigFee = levelEntryFee
 		GM.load_scene(GoToLevel, 1.0)

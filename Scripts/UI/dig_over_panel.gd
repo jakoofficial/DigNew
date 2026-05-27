@@ -19,6 +19,9 @@ func ShowPanel() -> void:
 	scale = Vector2(0,0)
 	_scale_tween()
 	_setItems()
+	
+	if PS._PBalance < GM.currLevelDigFee: dig_again_btn.disabled = true
+	else: dig_again_btn.disabled = false
 
 func _setItems()-> void:
 	for i:ArtifactRes in GM.currDigArea.artifact_inv.keys():
@@ -40,6 +43,7 @@ func _GoToSkills() -> void:
 func _ReDig() -> void:
 	HidePanel()
 	FM.SaveGame()
+	PS._PBalance -= GM.currLevelDigFee
 	GM.currDigArea.reset_dig()
 	if collection.get_child_count() > 0:
 		for i in collection.get_children():
