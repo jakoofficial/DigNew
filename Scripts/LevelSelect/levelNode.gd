@@ -16,6 +16,7 @@ extends VBoxContainer
 
 var level_idx: int = 0
 func _ready() -> void:
+	entry_cost_back_piece.hide()
 	level_img.texture = LevelTexture
 	level_name.text = LevelName.replace("_", " ")
 	go_dig_btn.connect("pressed", _levelPressed)
@@ -35,7 +36,10 @@ func _ready() -> void:
 		level_img.modulate.a = 1
 		locked.hide()
 		entry_cost_back_piece.show()
-		go_dig_btn.disabled = false
+		if PS._PBalance < levelEntryFee:
+			go_dig_btn.disabled = true
+		else:
+			go_dig_btn.disabled = false
 		if GM.canFindArtifacts and GM.artifactChance > 0:
 			level_artifacts.show()
 		else: level_artifacts.hide()
@@ -48,6 +52,8 @@ func _ready() -> void:
 
 func _levelPressed() -> void:
 	if !GM.LevelSelectDict[LevelName]:
+		if PS._PBalance < levelEntryFee: return
+		
 		GM.currDigType = LevelName
 		GM.xSpots = LevelSize.x
 		GM.ySpots = LevelSize.y

@@ -73,6 +73,7 @@ func setCursorPos(pos = Vector2.ZERO) -> void:
 func reset_dig() -> void:
 	GM.digDone = false
 	GM.digReady = false
+	GM.digSpotsLeft = 0
 	PS._PStaminaCurr = PS._PStaminaMax
 	inventory.clear()
 	artifact_inv.clear()
@@ -104,6 +105,7 @@ func set_artifact() -> String:
 
 func Generate() -> void:
 	GM.digReady = false
+	GM.digSpotsLeft = 0
 	var spacing = 2       # Spacing between spots
 	var spotSize = 64     # Size of each spot (64x64)
 	var pivot_offset = spotSize / 2 # Offset of the size of the spot
