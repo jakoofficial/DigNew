@@ -4,18 +4,22 @@ extends VBoxContainer
 @onready var go_dig_btn: TextureButton = $GoDigBtn
 @onready var locked: Node2D = $Locked
 @onready var level_artifacts: HBoxContainer = $Node2D/LevelArtifacts
+@onready var entry_cost_back_piece: NinePatchRect = $Node2D/EntryCostBackPiece
+@onready var entry_cost_label: RichTextLabel = $Node2D/EntryCostBackPiece/HBoxContainer/EntryCostLabel
 
 @export var LevelName: String = "Level"
 @export var GoToLevel: GM.Scenes
 @export var LevelTexture: Texture
 @export var Locked: bool = true
 @export var LevelSize: Vector2 = Vector2(3,3)
+@export var levelEntryFee: int = 0
 
 var level_idx: int = 0
 func _ready() -> void:
 	level_img.texture = LevelTexture
 	level_name.text = LevelName.replace("_", " ")
 	go_dig_btn.connect("pressed", _levelPressed)
+	entry_cost_label.text = str("%s" % levelEntryFee)
 	
 	if GM.Artifacts.has(LevelName):
 		var idx: int = 0
@@ -30,6 +34,7 @@ func _ready() -> void:
 	if !GM.LevelSelectDict[LevelName]:
 		level_img.modulate.a = 1
 		locked.hide()
+		entry_cost_back_piece.show()
 		go_dig_btn.disabled = false
 		if GM.canFindArtifacts and GM.artifactChance > 0:
 			level_artifacts.show()
@@ -37,6 +42,7 @@ func _ready() -> void:
 	else:
 		level_img.modulate.a = 0.5
 		locked.show()
+		entry_cost_back_piece.hide()
 		go_dig_btn.disabled = true
 		level_artifacts.hide()
 

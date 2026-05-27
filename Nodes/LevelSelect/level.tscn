@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dtjl83nmu7ll" path="res://Sprites/LevelSelect/DirtLevel.png" id="2_0qfhr"]
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_08thy"]
 [ext_resource type="Texture2D" uid="uid://dum8xkc7xq1kl" path="res://Sprites/Icons/Backpack.svg" id="4_0qfhr"]
+[ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="4_ajsg0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sqnl"]
 atlas = ExtResource("2_08thy")
@@ -24,6 +25,11 @@ region = Rect2(1, 82, 114, 70)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qfhr"]
 atlas = ExtResource("2_08thy")
 region = Rect2(131, 2, 110, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hkqr"]
+atlas = ExtResource("4_ajsg0")
+region = Rect2(0, 0, 32, 32)
+margin = Rect2(0, -2, 0, 0)
 
 [node name="Level" type="VBoxContainer" unique_id=645813811]
 custom_minimum_size = Vector2(288, 254)
@@ -156,6 +162,56 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+
+[node name="EntryCostBackPiece" type="NinePatchRect" parent="Node2D" unique_id=236480208]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 120.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(192, 192)
+texture = ExtResource("2_08thy")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2D/EntryCostBackPiece" unique_id=684209174]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EntryCostLabel" type="RichTextLabel" parent="Node2D/EntryCostBackPiece/HBoxContainer" unique_id=1489230789]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "999999"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Node2D/EntryCostBackPiece/HBoxContainer" unique_id=1096631998]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3hkqr")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="LevelArtifacts" type="HBoxContainer" parent="Node2D" unique_id=1738985838]
 custom_minimum_size = Vector2(224, 30)

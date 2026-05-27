@@ -89,6 +89,7 @@ LevelName = "Cave"
 GoToLevel = 2
 LevelTexture = ExtResource("6_ojto8")
 LevelSize = Vector2(4, 4)
+levelEntryFee = 10
 
 [node name="SandDune" parent="LevelContainer" unique_id=187436779 instance=ExtResource("3_ojto8")]
 layout_mode = 2
