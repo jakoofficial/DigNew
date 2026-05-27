@@ -54,6 +54,7 @@ func _levelPressed() -> void:
 	if !GM.LevelSelectDict[LevelName]:
 		if PS._PBalance < levelEntryFee: return
 		
+		PS._PBalance -= levelEntryFee
 		GM.currDigType = LevelName
 		GM.xSpots = LevelSize.x
 		GM.ySpots = LevelSize.y
