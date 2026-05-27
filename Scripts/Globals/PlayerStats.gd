@@ -8,6 +8,7 @@ var _PStaminaMax: int = 4
 var _PBalance: int = 100
 var _PValueBonus: int = 0
 var _PDigGridAmount: int = 1
+var _last_time_played: Dictionary
 
 func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: String = "") -> void:
 	match upgrade:

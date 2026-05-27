@@ -57,6 +57,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8um5k")
+metadata/_edit_lock_ = true
+
+[node name="LastPlayedLabel" type="RichTextLabel" parent="." unique_id=548460019]
+clip_contents = false
+layout_mode = 0
+offset_left = 672.0
+offset_top = 280.0
+offset_right = 896.0
+offset_bottom = 320.0
+text = "Day last played"
+autowrap_mode = 0
+vertical_alignment = 1
 
 [node name="ConfirmBox" parent="." unique_id=1259830081 instance=ExtResource("3_8saeu")]
 visible = false

@@ -9,9 +9,10 @@ extends Control
 @onready var credits: TextureButton = $VBoxContainer/Credits
 @onready var close_credits: TextureButton = $CreditsControl/CreditsPanel/CloseCredits
 @onready var intro: Control = $Intro
+@onready var last_played_label: RichTextLabel = $LastPlayedLabel
 
 func _ready() -> void:
-	FM.LoadGame()
+	var data: Dictionary = FM.LoadGame()
 	v_box_container.show()
 	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn", LoadingScreen.Type.DEFAULT)
 	start_game.connect("pressed", _NewGame)
@@ -22,6 +23,14 @@ func _ready() -> void:
 	credits_control.hide()
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
+	
+	if data.has("LastPlayed"):
+		PS._last_time_played	= data["LastPlayed"] as Dictionary
+		last_played_label.show()
+		last_played_label.text = str("%s-%s-%s %s:%s" % [PS._last_time_played.get("day"), PS._last_time_played.get("month"), PS._last_time_played.get("year"),PS._last_time_played.get("hour"), PS._last_time_played.get("minute")])
+	else:
+		last_played_label.hide()
+	
 	if GM._IntroPlayed:
 		intro.hide()
 		SetMusic()
