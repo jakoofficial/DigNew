@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://x44blywslve4" path="res://Nodes/UI/collected_item.tscn" id="4_ih22j"]
 [ext_resource type="Script" uid="uid://dabtk6fnm2c86" path="res://Scripts/UI/dig_over_panel.gd" id="4_rjj2d"]
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="5_btyvu"]
+[ext_resource type="Script" uid="uid://j5k8wjd6g60n" path="res://Scripts/UI/settings_btn.gd" id="7_hc6dj"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="7_v6tgb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hc6dj"]
@@ -29,6 +30,10 @@ region = Rect2(128, 73, 116, 33)
 atlas = ExtResource("5_btyvu")
 region = Rect2(2, 8, 28, 22)
 margin = Rect2(0, 2, 0, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgfw1"]
+atlas = ExtResource("3_hcnna")
+region = Rect2(2, 34, 16, 16)
 
 [node name="GUI" type="CanvasLayer" unique_id=909972108]
 script = ExtResource("1_abalt")
@@ -306,3 +311,42 @@ offset_bottom = -398.0
 
 [node name="SettingsMenu" parent="." unique_id=1596568153 instance=ExtResource("7_v6tgb")]
 visible = false
+
+[node name="SettingsBtn" type="TextureButton" parent="." unique_id=1530281191]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 56.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_wgfw1")
+texture_pressed = SubResource("AtlasTexture_wgfw1")
+texture_hover = SubResource("AtlasTexture_wgfw1")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_hc6dj")
+
+[node name="SettingBack" type="NinePatchRect" parent="SettingsBtn" unique_id=870288096]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(192, 192)
+texture = ExtResource("3_hcnna")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16

@@ -50,8 +50,12 @@ func SetMusic():
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
 		await BGMusic.FadeFinished
 
+var musicStarted: bool = false
 func _process(delta: float) -> void:
 	if !GM._IntroPlayed: return
+	elif GM._IntroPlayed and !musicStarted and !BGMusic.playing:
+		SetMusic()
+		musicStarted = true
 	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):
 		_CloseCredits()
 

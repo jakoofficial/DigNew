@@ -11,6 +11,8 @@ extends Control
 @onready var reset_btn: TextureButton = $Backpiece2/ResetBtn
 @onready var confirm_box: Control = $ConfirmBox
 
+var hasChanges: int = 0
+
 func _ready() -> void:
 	GM.settingsMenu = self
 	
@@ -45,39 +47,50 @@ func _setValuesInMenu() -> void:
 	sound_volume_slider.value = Settings.settings_dict["sound"]
 	particel_check_box.button_pressed = Settings.settings_dict["particles"]
 	font_check_box.button_pressed = true if Settings.settings_dict["font"] == Settings.FONTS.PIXELATED else false
-	SetAudio()
+	SetSettings()
 
 func _ShowMenu() -> void:
 	_setValuesInMenu()
 	show()
 
 func _HideMenu():
+	hasChanges = 0
 	hide()
 
-func SetAudio() -> void:
+func checkForChange(setting: String, sliderValue: Variant) -> void:
+	if Settings.settings_dict.has(setting):
+		if Settings.settings_dict[setting] != sliderValue:
+			hasChanges += 1
+
+func SetSettings() -> void:
 	Settings.SetValue("master", master_volume_slider.value)
 	SM._set_audio_volume_on_bus(0, "master")
 	Settings.SetValue("music", music_volume_slider.value)
 	SM._set_audio_volume_on_bus(1, "music")
 	Settings.SetValue("sound", sound_volume_slider.value)
 	SM._set_audio_volume_on_bus(2, "sound")
+	Settings.SetValue("particles", particel_check_box.button_pressed)
 
 func confirm_changes() -> void:
-	var canMakeNew = true
-	confirm_box.show()
-	confirm_box._setText("Save changes made?")
-	canMakeNew = await confirm_box.confirmResult
-	if !canMakeNew: confirm_box.hide(); return
-	confirm_box.hide();
+	hasChanges = 0
+	checkForChange("master", master_volume_slider.value)
+	checkForChange("music", music_volume_slider.value)
+	checkForChange("sound", sound_volume_slider.value)
+	checkForChange("particles", particel_check_box.button_pressed)
 	
-	SetAudio()
+	if hasChanges > 0:
+		var canMakeNew = true
+		confirm_box.show()
+		confirm_box._setText("Save changes made?")
+		canMakeNew = await confirm_box.confirmResult
+		if !canMakeNew: confirm_box.hide(); return
+		confirm_box.hide();
+		#var fontChoice = Settings.FONTS.PIXELATED if font_check_box.button_pressed else Settings.FONTS.SYSTEM
+		#Settings.ChangeFont(fontChoice)
+		
+		SetSettings()
+		FM.SaveGame()
 	
-	Settings.SetValue("particles", particel_check_box.button_pressed)
-	
-	#var fontChoice = Settings.FONTS.PIXELATED if font_check_box.button_pressed else Settings.FONTS.SYSTEM
-	#Settings.ChangeFont(fontChoice)
-	
-	FM.SaveGame()
 	_HideMenu()
 
 func cancel_pressed() -> void:

@@ -1,12 +1,12 @@
 extends NinePatchRect
 
-@onready var return_btn: TextureButton = $VBoxContainer2/HBoxContainer/ReturnBtn
 @onready var dig_again_btn: TextureButton = $VBoxContainer2/HBoxContainer/DigAgainBtn
 @onready var collection: VBoxContainer = $VBoxContainer2/VBoxContainer/ScrollContainer/Collection
 @onready var collected_item: HBoxContainer = $"../../CollectedItem"
 @onready var total_balance: RichTextLabel = $VBoxContainer2/BalanceContainer/TotalBalance
 @onready var dig_over_text: RichTextLabel = $VBoxContainer2/VBoxContainer/DigOverText
 @onready var entry_fee: RichTextLabel = $VBoxContainer2/HBoxContainer/DigAgainBtn/RedigCost/EntryFee
+@onready var return_btn: TextureButton = $VBoxContainer2/HBoxContainer/ReturnBtn
 
 var digdoneText: String
 
