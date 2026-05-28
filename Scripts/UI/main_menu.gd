@@ -27,7 +27,7 @@ func _ready() -> void:
 	if data.has("LastPlayed"):
 		PS._last_time_played	= data["LastPlayed"] as Dictionary
 		last_played_label.show()
-		last_played_label.text = str("%s-%s-%s %s:%s" % [PS._last_time_played.get("day"), PS._last_time_played.get("month"), PS._last_time_played.get("year"),PS._last_time_played.get("hour"), PS._last_time_played.get("minute")])
+		last_played_label.text = str("%02d-%02d-%s %02d:%02d" % [PS._last_time_played.get("day"), PS._last_time_played.get("month"), PS._last_time_played.get("year"),PS._last_time_played.get("hour"), PS._last_time_played.get("minute")])
 	else:
 		last_played_label.hide()
 	
