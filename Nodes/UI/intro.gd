@@ -1,6 +1,10 @@
 extends Control
 
+#func _ready() -> void:
+	#$AnimationPlayer.animation_finished.connect(_introOver)
+
 func _introOver() -> void:
+	print("over")
 	GM._IntroPlayed = true
 	$AnimationPlayer.stop()
 	hide()

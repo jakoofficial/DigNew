@@ -27,6 +27,21 @@ func _ready() -> void:
 	volume_db = linear_to_db(soundLevel)
 	finished.connect(SwitchAudio)
 
+func SetMusic():
+	if playing and curAudio != AUDIO.MainMenu:
+		timeMax = 2.0
+		Fade = FADE.OutIn
+		await FadeFinished
+		_play_BG_Music(AUDIO.MainMenu)
+	elif !playing:
+		timeMax = 5.0
+		Fade = FADE.In
+		_play_BG_Music(AUDIO.MainMenu)
+		await FadeFinished
+
+var musicStarted: bool = false
+
+
 func SwitchAudio() -> void:
 	if (curAudio == AUDIO.Level1 or curAudio == AUDIO.Level2):
 		_play_BG_Music(AUDIO.Level1 if randi_range(0, 1)==0 else AUDIO.Level2)
@@ -60,11 +75,11 @@ func FadeOut(delta:float, halfTime: bool = false) -> bool:
 	
 	return false
 
-var Fade: FADE = FADE.In
+var Fade: FADE = FADE.None
 signal FadeFinished
 func _process(delta: float) -> void:
 	match Fade:
-		FADE.None: return
+		FADE.None: pass
 		FADE.In:
 			if FadeIn(delta): time = 0; Fade = FADE.None; FadeFinished.emit();
 		FADE.Out:
@@ -73,6 +88,12 @@ func _process(delta: float) -> void:
 			if FadeIn(delta, true): time = 0; FadeFinished.emit(); Fade = FADE.Out
 		FADE.OutIn:
 			if FadeOut(delta, true): time = 0; FadeFinished.emit(); Fade = FADE.In
+
+	if GM._IntroPlayed and !musicStarted and !playing:
+		#Fade = FADE.In
+		print("asd")
+		SetMusic()
+		musicStarted = true
 
 func _stop_BG_Music() -> void:
 	stop()

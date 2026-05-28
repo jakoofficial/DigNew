@@ -35,29 +35,20 @@ func _ready() -> void:
 	
 	if GM._IntroPlayed:
 		intro.hide()
-		SetMusic()
+		#BGMusic.SetMusic()
 	else:
 		intro.show()
 		intro.play_intro()
 
-func SetMusic():
-	if BGMusic.playing and BGMusic.curAudio != BGMusic.AUDIO.MainMenu:
-		BGMusic.timeMax = 2.0
+
+func _process(delta: float) -> void:
+	if !GM._IntroPlayed: return
+	elif GM._IntroPlayed and BGMusic.playing and BGMusic.curAudio != BGMusic.AUDIO.MainMenu:
 		BGMusic.Fade = BGMusic.FADE.OutIn
 		await BGMusic.FadeFinished
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
-	elif !BGMusic.playing:
-		BGMusic.timeMax = 5.0
-		BGMusic.Fade = BGMusic.FADE.In
-		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
-		await BGMusic.FadeFinished
-
-var musicStarted: bool = false
-func _process(delta: float) -> void:
-	if !GM._IntroPlayed: return
-	elif GM._IntroPlayed and !musicStarted and !BGMusic.playing:
-		SetMusic()
-		musicStarted = true
+		#BGMusic.SetMusic()
+		#BGMusic.musicStarted = true
 	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):
 		_CloseCredits()
 
