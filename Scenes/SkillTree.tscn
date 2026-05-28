@@ -445,8 +445,8 @@ patch_margin_bottom = 16
 position = Vector2(576, 472)
 Skill_Name = "Unlock_Dirt_Patch"
 
-[node name="Dirt2" parent="Skills" unique_id=600086387 instance=ExtResource("4_p2c2s")]
-position = Vector2(784, 504)
+[node name="Discount1" parent="Skills" unique_id=600086387 instance=ExtResource("4_p2c2s")]
+position = Vector2(896, 160)
 Skill_Name = "Entry_Discount"
 
 [node name="Stamina1" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
@@ -474,7 +474,7 @@ position = Vector2(416, 224)
 Skill_Name = "Damage+"
 
 [node name="Damage2" parent="Skills" unique_id=746236354 instance=ExtResource("4_p2c2s")]
-position = Vector2(256, 64)
+position = Vector2(256, 16)
 Skill_Name = "Damage++"
 
 [node name="Damage3" parent="Skills" unique_id=1278225006 instance=ExtResource("4_p2c2s")]
@@ -514,7 +514,7 @@ position = Vector2(320, -576)
 Skill_Name = "Luck_Be_Lucky"
 
 [node name="ArtValue1" parent="Skills" unique_id=2039637425 instance=ExtResource("4_p2c2s")]
-position = Vector2(896, 64)
+position = Vector2(896, 16)
 Skill_Name = "Artifact_Value"
 
 [node name="ArtValue2" parent="Skills" unique_id=1968832674 instance=ExtResource("4_p2c2s")]
