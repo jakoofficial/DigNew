@@ -54,8 +54,6 @@ func _process(delta: float) -> void:
 	if !GM._IntroPlayed: return
 	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):
 		_CloseCredits()
-	if FK.JustPressed(AM.action("SettingsMenu")):
-		print("asd")
 
 func _NewGame() -> void:
 	var canMakeNew = true

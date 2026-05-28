@@ -44,6 +44,10 @@ func _process(delta: float) -> void:
 	if $Node2D/BackParticles.emitting != Settings.settings_dict["particles"]:
 		$Node2D/BackParticles.emitting = Settings.settings_dict["particles"]
 		$Node2D/BackParticles.visible = Settings.settings_dict["particles"]
+	
+	if FK.JustPressed(AM.action("DigOver")) and !GM.digDone and GM.digReady:
+		GM.currUI.dig_over_panel.digdoneText = "Dig ended"
+		GM.digDone = true
 
 func addToInv(collected: DigSpot) -> void:
 	for i in inventory.keys():

@@ -54,7 +54,7 @@ func _ready() -> void:
 	AM.initAction("R_Click", FKS.NewKey(MOUSE_BUTTON_RIGHT, FKS.InputType.Mouse))
 	AM.initAction("ZoomIn", FKS.NewKey(MOUSE_BUTTON_WHEEL_UP, FKS.InputType.Mouse), FKS.NewKey(KEY_E))
 	AM.initAction("ZoomOut", FKS.NewKey(MOUSE_BUTTON_WHEEL_DOWN, FKS.InputType.Mouse), FKS.NewKey(KEY_Q))
-	AM.initAction("SettingsMenu", FKS.NewKey(KEY_ESCAPE))
+	AM.initAction("DigOver", FKS.NewKey(KEY_ESCAPE))
 	AM.initAction("Dev_Money", FKS.NewKey(KEY_KP_0))
 	AM.initAction("SkipIntro", FKS.NewKey(KEY_ESCAPE), FKS.NewKey(KEY_ENTER), FKS.NewKey(KEY_SPACE))
 
@@ -63,10 +63,10 @@ func _process(delta: float) -> void:
 	if FK.JustPressed(AM.action("Dev_Money")):
 		PS._PBalance += 1000
 	
-	if settingsMenu != null:
-		if FK.JustReleased(AM.action("SettingsMenu")):
-			if settingsMenu.visible != true: settingsMenu._ShowMenu()
-			else: settingsMenu._HideMenu()
+	#if settingsMenu != null:
+		#if FK.JustReleased(AM.action("DigOver")):
+			#if settingsMenu.visible:
+				#settingsMenu._HideMenu()
 	
 	if PS._PStaminaCurr <= 0 and digDone == false:
 		currUI.dig_over_panel.digdoneText = "No stamina left"
