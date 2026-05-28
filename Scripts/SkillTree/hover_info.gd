@@ -12,8 +12,8 @@ func _ready() -> void:
 
 func _setInfo() -> void:
 	var res: SkillRes = skill_node.skill_res
-	var typeValueCurr: int
-	var typeValueNew: int
+	var typeValueCurr: float
+	var typeValueNew: float
 	var textToWrite: String = ""
 	
 	upgrade_name.text = str("%s (%s/%s)" % [res._Name.replace("_", " "), res._LevelCurr, res._LevelMaxAmount])
@@ -25,17 +25,29 @@ func _setInfo() -> void:
 			res.TYPE.Stamina:
 				typeValueCurr = PS._PStaminaMax
 				typeValueNew = (PS._PStaminaMax + res._UpgradeAmount)
-				textToWrite = str("%s > %s" % [typeValueCurr, typeValueNew])
+				textToWrite = str("%s > %s" % [int(typeValueCurr), int(typeValueNew)])
 			res.TYPE.Strength:
 				typeValueCurr = PS._PStrength
 				typeValueNew = (PS._PStrength + res._UpgradeAmount)
-				textToWrite = str("%s > %s" % [typeValueCurr, typeValueNew])
+				textToWrite = str("%s > %s" % [int(typeValueCurr), int(typeValueNew)])
 			res.TYPE.ValueBonus:
 				typeValueCurr = PS._PValueBonus
 				typeValueNew = (PS._PValueBonus + res._UpgradeAmount)
-				textToWrite = str("%s > %s" % [typeValueCurr, typeValueNew])
+				textToWrite = str("%s > %s" % [int(typeValueCurr), int(typeValueNew)])
 			res.TYPE.LevelType:
 				textToWrite = ""
+			res.TYPE.ArtifactChance:
+				typeValueCurr = GM.artifactChance
+				typeValueNew = (GM.artifactChance + res._UpgradeAmount)
+				textToWrite = str("%s" % typeValueCurr) + str("% ") + str("> %s" % typeValueNew) + str("%")
+			res.TYPE.ArtifactValue:
+				typeValueCurr = GM.artifactBonusPercent
+				typeValueNew = (GM.artifactBonusPercent + res._UpgradeAmount)
+				textToWrite = str("%s" % typeValueCurr) + str("% ") + str("> %s" % typeValueNew) + str("%")
+			res.TYPE.LevelDiscountValue:
+				typeValueCurr = PS._LevelDiscount
+				typeValueNew = (PS._LevelDiscount + res._UpgradeAmount)
+				textToWrite = str("%s" % typeValueCurr) + str("% ") + str("> %s" % typeValueNew) + str("%")
 		upgrade_change.text = textToWrite
 	else: 
 		upgrade_change.text = str("Maxed")

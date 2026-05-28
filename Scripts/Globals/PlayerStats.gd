@@ -19,7 +19,7 @@ func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: Strin
 		SkillRes.TYPE.LevelType: 			GM.LevelSelectDict[leveltypeunlock] = false
 		SkillRes.TYPE.ArtifactChance: 		GM.artifactChance += amount; GM.canFindArtifacts = true
 		SkillRes.TYPE.ArtifactValue: 		GM.artifactBonusPercent += amount
-		SkillRes.TYPE.LevelDiscountValue:	_LevelDiscount = amount
+		SkillRes.TYPE.LevelDiscountValue:	_LevelDiscount += amount
 	pass
 
 func BaseValues() -> void:
@@ -29,7 +29,7 @@ func BaseValues() -> void:
 	_PBalance 				= 0
 	_PValueBonus 			= 0
 	_PDigGridAmount			= 2
-	_LevelDiscount			= 10
+	_LevelDiscount			= 0
 	GM.xSpots 				= 3
 	GM.ySpots 				= 3
 	GM.canFindArtifacts 	= false

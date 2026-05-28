@@ -13,6 +13,8 @@ extends Control
 
 func _ready() -> void:
 	var data: Dictionary = FM.LoadGame()
+	Settings._Load(data["Settings"] as Dictionary)
+ 
 	v_box_container.show()
 	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn", LoadingScreen.Type.DEFAULT)
 	start_game.connect("pressed", _NewGame)

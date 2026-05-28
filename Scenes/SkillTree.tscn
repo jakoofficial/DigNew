@@ -445,6 +445,10 @@ patch_margin_bottom = 16
 position = Vector2(576, 472)
 Skill_Name = "Unlock_Dirt_Patch"
 
+[node name="Dirt2" parent="Skills" unique_id=600086387 instance=ExtResource("4_p2c2s")]
+position = Vector2(784, 504)
+Skill_Name = "Entry_Discount"
+
 [node name="Stamina1" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
 position = Vector2(576, 328)
 Skill_Name = "Stamina+"

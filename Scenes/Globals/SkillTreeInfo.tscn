@@ -445,6 +445,19 @@ _Unlocks = Array[String](["Artifact_Price_Up", "Luck_Be_Lucky", "Price_Gouging"]
 _UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_duxpp"]
+atlas = ExtResource("3_t88sh")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_sju6y"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_duxpp")
+is_unlocked = true
+_Name = "Entry_Discount"
+_UpgradeType = 6
+_UpgradeAmount = 10.0
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_agp1j"), SubResource("Resource_duxpp"), SubResource("Resource_7rrq4"), SubResource("Resource_vjwbr"), SubResource("Resource_0ma8c"), SubResource("Resource_c0x7h"), SubResource("Resource_fqesj"), SubResource("Resource_bm3ya"), SubResource("Resource_pugjx"), SubResource("Resource_buo1b"), SubResource("Resource_bgxf3"), SubResource("Resource_2n1ec"), SubResource("Resource_ccm4l"), SubResource("Resource_d3xn3"), SubResource("Resource_doopo"), SubResource("Resource_jauxo"), SubResource("Resource_2cplf"), SubResource("Resource_iph2t"), SubResource("Resource_wv7br"), SubResource("Resource_xlbsa")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_agp1j"), SubResource("Resource_duxpp"), SubResource("Resource_7rrq4"), SubResource("Resource_vjwbr"), SubResource("Resource_0ma8c"), SubResource("Resource_c0x7h"), SubResource("Resource_fqesj"), SubResource("Resource_bm3ya"), SubResource("Resource_pugjx"), SubResource("Resource_buo1b"), SubResource("Resource_bgxf3"), SubResource("Resource_2n1ec"), SubResource("Resource_ccm4l"), SubResource("Resource_d3xn3"), SubResource("Resource_doopo"), SubResource("Resource_jauxo"), SubResource("Resource_2cplf"), SubResource("Resource_iph2t"), SubResource("Resource_wv7br"), SubResource("Resource_xlbsa"), SubResource("Resource_sju6y")])
