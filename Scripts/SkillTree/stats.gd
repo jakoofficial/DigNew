@@ -5,6 +5,7 @@ extends Control
 @onready var stamina_value: RichTextLabel = $VBoxContainer/Stamina/Value
 @onready var chance_value: RichTextLabel = $VBoxContainer/ArtifactChance/Value
 @onready var artifact_value: RichTextLabel = $VBoxContainer/ArtifactValue/Value
+@onready var discount_value: RichTextLabel = $VBoxContainer/Discount/Value
 
 func _ready() -> void:
 	SetStat()
@@ -16,3 +17,4 @@ func SetStat() -> void:
 	stamina_value.text = str("%s" % PS._PStaminaMax)
 	chance_value.text = str("%s" % GM.artifactChance) + str("%")
 	artifact_value.text = str("+%s" % GM.artifactBonusPercent) + str("%")
+	discount_value.text = str("-%s" % PS._LevelDiscount) + str("%")

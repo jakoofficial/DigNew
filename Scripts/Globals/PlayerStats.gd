@@ -9,15 +9,17 @@ var _PBalance: int = 100
 var _PValueBonus: int = 0
 var _PDigGridAmount: int = 1
 var _last_time_played: Dictionary
+var _LevelDiscount: int = 0
 
 func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: String = "") -> void:
 	match upgrade:
-		SkillRes.TYPE.Stamina: 			_PStaminaMax += amount
-		SkillRes.TYPE.Strength: 		_PStrength += amount
-		SkillRes.TYPE.ValueBonus: 		_PValueBonus += amount
-		SkillRes.TYPE.LevelType: 		GM.LevelSelectDict[leveltypeunlock] = false
-		SkillRes.TYPE.ArtifactChance: 	GM.artifactChance += amount; GM.canFindArtifacts = true
-		SkillRes.TYPE.ArtifactValue: 	GM.artifactBonusPercent += amount
+		SkillRes.TYPE.Stamina: 				_PStaminaMax += amount
+		SkillRes.TYPE.Strength: 			_PStrength += amount
+		SkillRes.TYPE.ValueBonus: 			_PValueBonus += amount
+		SkillRes.TYPE.LevelType: 			GM.LevelSelectDict[leveltypeunlock] = false
+		SkillRes.TYPE.ArtifactChance: 		GM.artifactChance += amount; GM.canFindArtifacts = true
+		SkillRes.TYPE.ArtifactValue: 		GM.artifactBonusPercent += amount
+		SkillRes.TYPE.LevelDiscountValue:	_LevelDiscount = amount
 	pass
 
 func BaseValues() -> void:
@@ -27,6 +29,7 @@ func BaseValues() -> void:
 	_PBalance 				= 0
 	_PValueBonus 			= 0
 	_PDigGridAmount			= 2
+	_LevelDiscount			= 10
 	GM.xSpots 				= 3
 	GM.ySpots 				= 3
 	GM.canFindArtifacts 	= false
@@ -44,6 +47,7 @@ func SetValues(data: Dictionary) -> void:
 	_PBalance 				= data["Balance"]
 	_PValueBonus 			= data["ValueBonus"]
 	_PDigGridAmount			= data["DigGridAmount"]
+	_LevelDiscount			= data["LevelDiscountValue"]
 	GM.xSpots 				= data["MaxSpotsX"]
 	GM.ySpots 				= data["MaxSpotsY"]
 	GM.canFindArtifacts 	= data["ArtifactPermit"]

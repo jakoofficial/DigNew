@@ -24,5 +24,6 @@ enum TYPE {
 	ValueBonus,
 	LevelType,
 	ArtifactChance,
-	ArtifactValue
+	ArtifactValue,
+	LevelDiscountValue,
 }

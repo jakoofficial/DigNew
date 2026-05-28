@@ -14,12 +14,15 @@ extends VBoxContainer
 @export var LevelSize: Vector2 = Vector2(3,3)
 @export var levelEntryFee: int = 0
 
+var levelDiscount: int = 0
+
 var level_idx: int = 0
 func _ready() -> void:
 	entry_cost_back_piece.hide()
 	level_img.texture = LevelTexture
 	level_name.text = LevelName.replace("_", " ")
 	go_dig_btn.connect("pressed", _levelPressed)
+	levelEntryFee = SetDiscount()
 	entry_cost_label.text = str("%s" % levelEntryFee)
 	
 	if GM.Artifacts.has(LevelName):
@@ -49,6 +52,10 @@ func _ready() -> void:
 		entry_cost_back_piece.hide()
 		go_dig_btn.disabled = true
 		level_artifacts.hide()
+
+func SetDiscount() -> int:
+	var perc: float = float(PS._LevelDiscount)/100.0
+	return levelEntryFee - roundi(levelEntryFee * perc)
 
 func _levelPressed() -> void:
 	if !GM.LevelSelectDict[LevelName]:

@@ -21,6 +21,7 @@ func SaveData():
 		"Skills": SkillTreeInfo.skillsArrCopy,
 		"LevelSelection": GM.LevelSelectDict,
 		"Settings": Settings.settings_dict,
+		"LevelDiscountValue": PS._LevelDiscount,
 	}
 	return dict
 
