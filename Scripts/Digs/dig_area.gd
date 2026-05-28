@@ -119,19 +119,23 @@ func Generate() -> void:
 	var spawnStartY = (vSize.y - totalHeight) / 2
 	
 	var artifact_spawn: String = set_artifact()
-	var artifact_spawn_at: int = 0
+	var artifact_spawn_at_spot: DigSpot
 	var spawnIdx: int = 1
 	
-	if artifact_spawn != "":
-		artifact_spawn_at = rng.randi_range(0, (GM.ySpots+GM.xSpots))
+	#if artifact_spawn != "":
+		##rng.randi_range(0, (GM.ySpots+GM.xSpots))
+		#
+		#
+		#var rand_spawn: int = rng.randi_range(0, (GM.ySpots+GM.xSpots))
+		#artifact_spawn_at = rand_spawn
 	
 	for y in range(GM.ySpots):
 		for x in range(GM.xSpots):
 			var spot: DigSpot = dig_spot.duplicate()
 			spot.area = self
 			spot._Value += PS._PValueBonus
-			if artifact_spawn_at == spawnIdx:
-				spot.artifact = artifact_spawn
+			#if artifact_spawn_at == spawnIdx:
+				#spot.artifact = artifact_spawn
 			spots.add_child(spot)
 			GM.digSpotsLeft+=1
 			spot.digZone = self
@@ -142,6 +146,23 @@ func Generate() -> void:
 			spawnIdx += 1
 		spawnIdx += 1
 	
+	if artifact_spawn != "":
+		#rng.randi_range(0, (GM.ySpots+GM.xSpots))
+		var rand_spawn: int = rng.randi_range(0, (GM.ySpots+GM.xSpots))
+		var spotsArr: Array = spots.get_children()
+		spotsArr.shuffle()
+		artifact_spawn_at_spot = spotsArr[rand_spawn]
+		
+		if artifact_spawn_at_spot != null:
+			artifact_spawn_at_spot.artifact = artifact_spawn
+			spotsArr.clear()
+		
+		#Clean up PLS
+		#for i in spots.get_children().size():
+			#if spots.get_children()[i].artifact != "":
+				#print(i)
+				#break
+		
 	var time: float = 1.0
 	if spots.get_child_count() > 0:
 		for c in spots.get_children():
