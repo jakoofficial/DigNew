@@ -544,9 +544,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/line_separation = -8
 bbcode_enabled = true
-text = "asdad,
-asdsad"
-autowrap_mode = 0
 autowrap_trim_flags = 0
 
 [node name="Intro" parent="." unique_id=1164700956 instance=ExtResource("5_df05h")]

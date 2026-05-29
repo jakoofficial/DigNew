@@ -6,11 +6,11 @@ extends NinePatchRect
 var patchTitle = """[font_size=16][center]Patch Notes[/center][/font_size]
 [font_size=6][center]%s[/center][/font_size]""" % [GM.Game_Version]
 
-var patchAdded = """[font_size=14]Added[/font_size]
-[table=2]
-[cell expand][left]Family[/left][/cell][cell][right]Makarov[/right][/cell]
-[cell expand][left]TypeWeapon[/left][/cell][cell][right]Pistol[/right][/cell]
-[/table]
+var patchAdded = """
+This set of patches are for a early build of the game as development of the project still is udnerway.
+
+Something
+	hellow
 """
 var patchFixes = """[font_size=14]Fixes[/font_size]"""
 
