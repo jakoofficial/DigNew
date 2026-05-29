@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 		#BGMusic.SetMusic()
 		#BGMusic.musicStarted = true
 	
-	if GM.settingsMenu.visible or credits_control.visible or confirm_box.visible:
+	if patch_notes_box.visible or GM.settingsMenu.visible or credits_control.visible or confirm_box.visible:
 		patch_notes.disabled = true
 	else:
 		patch_notes.disabled = false
