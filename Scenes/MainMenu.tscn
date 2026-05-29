@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://smaebv2kbcos" path="res://Scripts/UI/credits.gd" id="4_df05h"]
 [ext_resource type="PackedScene" uid="uid://bpmso20hkvbh7" path="res://Nodes/UI/intro.tscn" id="5_df05h"]
+[ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="6_xim88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
 atlas = ExtResource("2_853f1")
@@ -63,9 +64,9 @@ metadata/_edit_lock_ = true
 clip_contents = false
 layout_mode = 0
 offset_left = 672.0
-offset_top = 280.0
+offset_top = 248.0
 offset_right = 896.0
-offset_bottom = 320.0
+offset_bottom = 296.0
 text = "Day last played"
 autowrap_mode = 0
 vertical_alignment = 1
@@ -140,6 +141,33 @@ grow_vertical = 2
 mouse_filter = 1
 bbcode_enabled = true
 text = "Continue"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsBtn" type="TextureButton" parent="VBoxContainer" unique_id=1574708411]
+custom_minimum_size = Vector2(155, 50)
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_8saeu")
+texture_hover = SubResource("AtlasTexture_ghw46")
+texture_disabled = SubResource("AtlasTexture_df05h")
+texture_focused = SubResource("AtlasTexture_ghw46")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/SettingsBtn" unique_id=663644286]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Settings"
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -375,6 +403,10 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SettingsMenu" parent="." unique_id=1596568153 instance=ExtResource("6_xim88")]
+visible = false
+layout_mode = 1
 
 [node name="Intro" parent="." unique_id=1164700956 instance=ExtResource("5_df05h")]
 visible = false

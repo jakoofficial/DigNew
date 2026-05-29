@@ -10,6 +10,7 @@ extends Control
 @onready var close_credits: TextureButton = $CreditsControl/CreditsPanel/CloseCredits
 @onready var intro: Control = $Intro
 @onready var last_played_label: RichTextLabel = $LastPlayedLabel
+@onready var settings_btn: TextureButton = $VBoxContainer/SettingsBtn
 
 func _ready() -> void:
 	var data: Dictionary = FM.LoadGame()
@@ -25,6 +26,7 @@ func _ready() -> void:
 	credits_control.hide()
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
+	settings_btn.connect("pressed", showMenu)
 	
 	if data.has("LastPlayed"):
 		PS._last_time_played	= data["LastPlayed"] as Dictionary
@@ -40,6 +42,11 @@ func _ready() -> void:
 		intro.show()
 		intro.play_intro()
 
+func showMenu() -> void:
+	if GM.settingsMenu != null and GM.settingsMenu.visible != true:
+		GM.settingsMenu._ShowMenu()
+	elif GM.settingsMenu.visible:
+		GM.settingsMenu.confirm_changes()
 
 func _process(delta: float) -> void:
 	if !GM._IntroPlayed: return
@@ -49,7 +56,11 @@ func _process(delta: float) -> void:
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
 		#BGMusic.SetMusic()
 		#BGMusic.musicStarted = true
-	if credits_control.visible and FK.JustPressed(AM.action("SettingsMenu")):
+	
+	if GM.settingsMenu.visible and FK.JustPressed(AM.action("DigOver")):
+		GM.settingsMenu.confirm_changes()
+	
+	if !GM.settingsMenu.visible and credits_control.visible and FK.JustPressed(AM.action("DigOver")):
 		_CloseCredits()
 
 func _NewGame() -> void:
