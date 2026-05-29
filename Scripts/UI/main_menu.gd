@@ -11,6 +11,8 @@ extends Control
 @onready var intro: Control = $Intro
 @onready var last_played_label: RichTextLabel = $LastPlayedLabel
 @onready var settings_btn: TextureButton = $VBoxContainer/SettingsBtn
+@onready var patch_notes: TextureButton = $PatchNotes
+@onready var patch_notes_box: NinePatchRect = $PatchNotesBox
 
 func _ready() -> void:
 	var data: Dictionary = FM.LoadGame()
@@ -27,6 +29,7 @@ func _ready() -> void:
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
 	settings_btn.connect("pressed", showMenu)
+	patch_notes.connect("pressed", OpenPatchNotes)
 	
 	if data.has("LastPlayed"):
 		PS._last_time_played	= data["LastPlayed"] as Dictionary
@@ -41,6 +44,10 @@ func _ready() -> void:
 	else:
 		intro.show()
 		intro.play_intro()
+
+func OpenPatchNotes() -> void:
+	patch_notes_box.show()
+	pass
 
 func showMenu() -> void:
 	if GM.settingsMenu != null and GM.settingsMenu.visible != true:
@@ -57,10 +64,18 @@ func _process(delta: float) -> void:
 		#BGMusic.SetMusic()
 		#BGMusic.musicStarted = true
 	
+	if GM.settingsMenu.visible or credits_control.visible or confirm_box.visible:
+		patch_notes.disabled = true
+	else:
+		patch_notes.disabled = false
+	
+	if patch_notes_box.visible and FK.JustPressed(AM.action("DigOver")):
+		patch_notes_box.close()
+	
 	if GM.settingsMenu.visible and FK.JustPressed(AM.action("DigOver")):
 		GM.settingsMenu.confirm_changes()
 	
-	if !GM.settingsMenu.visible and credits_control.visible and FK.JustPressed(AM.action("DigOver")):
+	if credits_control.visible and FK.JustPressed(AM.action("DigOver")):
 		_CloseCredits()
 
 func _NewGame() -> void:

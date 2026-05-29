@@ -34,6 +34,7 @@ atlas = ExtResource("1_02p27")
 region = Rect2(128, 73, 116, 33)
 
 [node name="SettingsMenu" type="Control" unique_id=1596568153]
+z_index = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Backpiece" type="NinePatchRect" parent="." unique_id=1269310548]
 layout_mode = 1
