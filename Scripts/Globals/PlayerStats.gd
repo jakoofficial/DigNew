@@ -5,7 +5,7 @@ var _PStrength: int = 1
 var _PStaminaCurr: int = 4
 var _PStaminaMax: int = 4
 
-var _PBalance: int = 100
+var _PBalance: int = 0
 var _PValueBonus: int = 0
 var _PDigGridAmount: int = 1
 var _last_time_played: Dictionary

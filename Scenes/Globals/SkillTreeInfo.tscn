@@ -18,9 +18,99 @@ is_unlocked = true
 _Name = "Unlock_Dirt_Patch"
 _BaseCost = 0
 _Description = "Grants the permit to dig at a dirt patch."
-_Unlocks = Array[String](["Stamina+"])
+_Unlocks = Array[String](["Unlock_Cave", "Damage+", "Value+", "Entry_Discount", "Stamina+", "Artifact_Value", "Lucky_Finds"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Dirt_Patch"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sju6y"]
+load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kin6r"]
+atlas = SubResource("CompressedTexture2D_sju6y")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_7rrq4"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_kin6r")
+_Name = "Unlock_Cave"
+_BaseCost = 150
+_Description = "Grants the permit to dig at a cave."
+_Unlocks = Array[String](["Unlock_Sand_Dune"])
+_UpgradeType = 3
+_LevelTypeUnlock = "Cave"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nyn0i"]
+load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi4re"]
+atlas = SubResource("CompressedTexture2D_nyn0i")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_buo1b"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_hi4re")
+_Name = "Unlock_Sand_Dune"
+_BaseCost = 300
+_Description = "Grants the permit to dig at the sand dunes."
+_Unlocks = Array[String](["Unlock_Abandon_Factory"])
+_UpgradeType = 3
+_LevelTypeUnlock = "Sand_Dune"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_771t5"]
+load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gqcf"]
+atlas = SubResource("CompressedTexture2D_771t5")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_bgxf3"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_6gqcf")
+_Name = "Unlock_Abandon_Factory"
+_BaseCost = 600
+_Description = "Grants the permit to dig at the abandon factory."
+_Unlocks = Array[String](["Unlock_Witchy_Woods"])
+_UpgradeType = 3
+_LevelTypeUnlock = "Factory"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xf1ws"]
+load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh5kt"]
+atlas = SubResource("CompressedTexture2D_xf1ws")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_ccm4l"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_gh5kt")
+_Name = "Unlock_Witchy_Woods"
+_BaseCost = 1000
+_Description = "Grants the permit to dig in the witchy woods."
+_Unlocks = Array[String](["Unlock_Cloud_Station"])
+_UpgradeType = 3
+_LevelTypeUnlock = "Witchy_Woods"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7oe1"]
+load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mui2"]
+atlas = SubResource("CompressedTexture2D_y7oe1")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="Resource" id="Resource_d3xn3"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_2mui2")
+_Name = "Unlock_Cloud_Station"
+_BaseCost = 2500
+_Description = "Grants the permit to dig at the cloud station."
+_Unlocks = Array[String](["Unlock_Dirt_Patch"])
+_UpgradeType = 3
+_LevelTypeUnlock = "Cloud_Station"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0sfq"]
@@ -105,24 +195,6 @@ _Multiplier = 1.7
 _Description = "Adds +2% chance for artifacts"
 _UpgradeType = 4
 _UpgradeAmount = 2.0
-metadata/_custom_type_script = "uid://d4hkstn8p728s"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sju6y"]
-load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kin6r"]
-atlas = SubResource("CompressedTexture2D_sju6y")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="Resource" id="Resource_7rrq4"]
-script = ExtResource("2_lqdd7")
-_Icon = SubResource("AtlasTexture_kin6r")
-_Name = "Unlock_Cave"
-_BaseCost = 150
-_Description = "Grants the permit to dig at a cave."
-_Unlocks = Array[String](["Value++", "More_Luck"])
-_UpgradeType = 3
-_LevelTypeUnlock = "Cave"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_24u8o"]
@@ -243,42 +315,6 @@ _Unlocks = Array[String](["Unlock_Sand_Dune"])
 _UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nyn0i"]
-load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hi4re"]
-atlas = SubResource("CompressedTexture2D_nyn0i")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="Resource" id="Resource_buo1b"]
-script = ExtResource("2_lqdd7")
-_Icon = SubResource("AtlasTexture_hi4re")
-_Name = "Unlock_Sand_Dune"
-_BaseCost = 300
-_Description = "Grants the permit to dig at the sand dunes."
-_Unlocks = Array[String](["Unlock_Abandon_Factory", "So_Much_Damage"])
-_UpgradeType = 3
-_LevelTypeUnlock = "Sand_Dune"
-metadata/_custom_type_script = "uid://d4hkstn8p728s"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_771t5"]
-load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gqcf"]
-atlas = SubResource("CompressedTexture2D_771t5")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="Resource" id="Resource_bgxf3"]
-script = ExtResource("2_lqdd7")
-_Icon = SubResource("AtlasTexture_6gqcf")
-_Name = "Unlock_Abandon_Factory"
-_BaseCost = 600
-_Description = "Grants the permit to dig at the abandon factory."
-_Unlocks = Array[String](["More_Value", "Even_More_Stamina"])
-_UpgradeType = 3
-_LevelTypeUnlock = "Factory"
-metadata/_custom_type_script = "uid://d4hkstn8p728s"
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hxn4a"]
 load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
 
@@ -298,42 +334,6 @@ _Unlocks = Array[String](["Unlock_Witchy_Woods", "Unlock_Cloud_Station", "Stam-s
 _UnlockRequirementAmount = 2
 _UpgradeType = 1
 _UpgradeAmount = 4.0
-metadata/_custom_type_script = "uid://d4hkstn8p728s"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xf1ws"]
-load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gh5kt"]
-atlas = SubResource("CompressedTexture2D_xf1ws")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="Resource" id="Resource_ccm4l"]
-script = ExtResource("2_lqdd7")
-_Icon = SubResource("AtlasTexture_gh5kt")
-_Name = "Unlock_Witchy_Woods"
-_BaseCost = 1000
-_Description = "Grants the permit to dig in the witchy woods."
-_Unlocks = Array[String](["Damage_Damage_Damage"])
-_UpgradeType = 3
-_LevelTypeUnlock = "Witchy_Woods"
-metadata/_custom_type_script = "uid://d4hkstn8p728s"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7oe1"]
-load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2mui2"]
-atlas = SubResource("CompressedTexture2D_y7oe1")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="Resource" id="Resource_d3xn3"]
-script = ExtResource("2_lqdd7")
-_Icon = SubResource("AtlasTexture_2mui2")
-_Name = "Unlock_Cloud_Station"
-_BaseCost = 2500
-_Description = "Grants the permit to dig at the cloud station."
-_Unlocks = Array[String](["Too_Much_Damage"])
-_UpgradeType = 3
-_LevelTypeUnlock = "Cloud_Station"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ab7aw"]
@@ -462,4 +462,4 @@ metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_agp1j"), SubResource("Resource_duxpp"), SubResource("Resource_7rrq4"), SubResource("Resource_vjwbr"), SubResource("Resource_0ma8c"), SubResource("Resource_c0x7h"), SubResource("Resource_fqesj"), SubResource("Resource_bm3ya"), SubResource("Resource_pugjx"), SubResource("Resource_buo1b"), SubResource("Resource_bgxf3"), SubResource("Resource_2n1ec"), SubResource("Resource_ccm4l"), SubResource("Resource_d3xn3"), SubResource("Resource_doopo"), SubResource("Resource_jauxo"), SubResource("Resource_2cplf"), SubResource("Resource_iph2t"), SubResource("Resource_wv7br"), SubResource("Resource_xlbsa"), SubResource("Resource_sju6y")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_7rrq4"), SubResource("Resource_buo1b"), SubResource("Resource_bgxf3"), SubResource("Resource_ccm4l"), SubResource("Resource_d3xn3"), SubResource("Resource_t88sh"), SubResource("Resource_lqdd7"), SubResource("Resource_d4r5k"), SubResource("Resource_agp1j"), SubResource("Resource_duxpp"), SubResource("Resource_vjwbr"), SubResource("Resource_0ma8c"), SubResource("Resource_c0x7h"), SubResource("Resource_fqesj"), SubResource("Resource_bm3ya"), SubResource("Resource_pugjx"), SubResource("Resource_2n1ec"), SubResource("Resource_doopo"), SubResource("Resource_jauxo"), SubResource("Resource_2cplf"), SubResource("Resource_iph2t"), SubResource("Resource_wv7br"), SubResource("Resource_xlbsa"), SubResource("Resource_sju6y")])

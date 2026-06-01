@@ -1,8 +1,9 @@
 extends Area2D
 @onready var hover_info: Control = $HoverInfo
-@export var Skill_Name: String = ""
 @onready var skill_icon: Sprite2D = $SkillIcon
 @onready var click_sound: AudioStreamPlayer2D = $ClickSound
+
+@export var Skill_Name: String = ""
 
 var currPar: Node2D
 var skill_res: SkillRes
@@ -17,7 +18,7 @@ func _ready() -> void:
 	skill_res = (SkillTreeInfo as STI).GetSkill(Skill_Name)
 	skill_icon.texture = skill_res._Icon
 	skill_res._Cost = skill_res._BaseCost
-	currPar = $"../.."
+	currPar = $"../../.."
 
 var tween: Tween
 func _on_mouse_entered() -> void:

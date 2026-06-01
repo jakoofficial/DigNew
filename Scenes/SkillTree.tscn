@@ -46,6 +46,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="GoDigBtn" type="TextureButton" parent="CanvasLayer/Skilltree" unique_id=777619085]
 custom_minimum_size = Vector2(125, 50)
@@ -441,105 +442,72 @@ patch_margin_bottom = 16
 
 [node name="Skills" type="Node2D" parent="." unique_id=1100842298]
 
-[node name="Dirt" parent="Skills" unique_id=436947380 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, 472)
+[node name="Levels" type="Node2D" parent="Skills" unique_id=337645962]
+
+[node name="Dirt" parent="Skills/Levels" unique_id=1266126637 instance=ExtResource("4_p2c2s")]
+position = Vector2(576, 384)
 Skill_Name = "Unlock_Dirt_Patch"
 
-[node name="Discount1" parent="Skills" unique_id=600086387 instance=ExtResource("4_p2c2s")]
-position = Vector2(896, 160)
-Skill_Name = "Entry_Discount"
-
-[node name="Stamina1" parent="Skills" unique_id=495638960 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, 328)
-Skill_Name = "Stamina+"
-
-[node name="Value1" parent="Skills" unique_id=567964453 instance=ExtResource("4_p2c2s")]
-position = Vector2(736, 224)
-Skill_Name = "Value+"
-
-[node name="Value2" parent="Skills" unique_id=965543659 instance=ExtResource("4_p2c2s")]
-position = Vector2(416, 64)
-Skill_Name = "Value++"
-
-[node name="Value3" parent="Skills" unique_id=599373650 instance=ExtResource("4_p2c2s")]
-position = Vector2(800, -96)
-Skill_Name = "More_Value"
-
-[node name="Value4" parent="Skills" unique_id=554579280 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, -640)
-Skill_Name = "Price_Gouging"
-
-[node name="Damage1" parent="Skills" unique_id=1244363427 instance=ExtResource("4_p2c2s")]
-position = Vector2(416, 224)
-Skill_Name = "Damage+"
-
-[node name="Damage2" parent="Skills" unique_id=746236354 instance=ExtResource("4_p2c2s")]
-position = Vector2(256, 16)
-Skill_Name = "Damage++"
-
-[node name="Damage3" parent="Skills" unique_id=1278225006 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, -352)
-Skill_Name = "So_Much_Damage"
-
-[node name="Damage4" parent="Skills" unique_id=811596960 instance=ExtResource("4_p2c2s")]
-position = Vector2(256, -344)
-Skill_Name = "Damage_Damage_Damage"
-
-[node name="Damage5" parent="Skills" unique_id=1744870871 instance=ExtResource("4_p2c2s")]
-position = Vector2(896, -344)
-Skill_Name = "Too_Much_Damage"
-
-[node name="Stamina2" parent="Skills" unique_id=469547497 instance=ExtResource("4_p2c2s")]
-position = Vector2(800, 352)
-Skill_Name = "Stamina++"
-
-[node name="Stamina3" parent="Skills" unique_id=1375539907 instance=ExtResource("4_p2c2s")]
-position = Vector2(352, -96)
-Skill_Name = "Even_More_Stamina"
-
-[node name="Stamina4" parent="Skills" unique_id=1227217820 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, -512)
-Skill_Name = "Stam-stamina"
-
-[node name="ArtChance1" parent="Skills" unique_id=151831212 instance=ExtResource("4_p2c2s")]
-position = Vector2(352, 352)
-Skill_Name = "Lucky_Finds"
-
-[node name="ArtChance2" parent="Skills" unique_id=1979022776 instance=ExtResource("4_p2c2s")]
-position = Vector2(736, 64)
-Skill_Name = "More_Luck"
-
-[node name="ArtChance3" parent="Skills" unique_id=1096380986 instance=ExtResource("4_p2c2s")]
-position = Vector2(320, -576)
-Skill_Name = "Luck_Be_Lucky"
-
-[node name="ArtValue1" parent="Skills" unique_id=2039637425 instance=ExtResource("4_p2c2s")]
-position = Vector2(896, 16)
-Skill_Name = "Artifact_Value"
-
-[node name="ArtValue2" parent="Skills" unique_id=1968832674 instance=ExtResource("4_p2c2s")]
-position = Vector2(832, -576)
-Skill_Name = "Artifact_Price_Up"
-
-[node name="Cave" parent="Skills" unique_id=1623885492 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, 160)
+[node name="Cave" parent="Skills/Levels" unique_id=1623885492 instance=ExtResource("4_p2c2s")]
+position = Vector2(448, 512)
 Skill_Name = "Unlock_Cave"
 
-[node name="Factory" parent="Skills" unique_id=754581406 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, -32)
+[node name="Factory" parent="Skills/Levels" unique_id=754581406 instance=ExtResource("4_p2c2s")]
+position = Vector2(576, 768)
 Skill_Name = "Unlock_Abandon_Factory"
 
-[node name="SandDune" parent="Skills" unique_id=1811542510 instance=ExtResource("4_p2c2s")]
-position = Vector2(576, -224)
+[node name="SandDune" parent="Skills/Levels" unique_id=1811542510 instance=ExtResource("4_p2c2s")]
+position = Vector2(448, 672)
 Skill_Name = "Unlock_Sand_Dune"
 
-[node name="Cloud" parent="Skills" unique_id=674974723 instance=ExtResource("4_p2c2s")]
-position = Vector2(736, -416)
+[node name="Cloud" parent="Skills/Levels" unique_id=674974723 instance=ExtResource("4_p2c2s")]
+position = Vector2(704, 512)
 Skill_Name = "Unlock_Cloud_Station"
 
-[node name="Witch" parent="Skills" unique_id=502912198 instance=ExtResource("4_p2c2s")]
-position = Vector2(416, -416)
+[node name="Witch" parent="Skills/Levels" unique_id=502912198 instance=ExtResource("4_p2c2s")]
+position = Vector2(704, 672)
 Skill_Name = "Unlock_Witchy_Woods"
+
+[node name="Damage" type="Node2D" parent="Skills" unique_id=1641190716]
+
+[node name="Damage+" parent="Skills/Damage" unique_id=436947380 instance=ExtResource("4_p2c2s")]
+position = Vector2(128, 192)
+Skill_Name = "Damage+"
+
+[node name="BlockValue" type="Node2D" parent="Skills" unique_id=6276977]
+position = Vector2(192, 0)
+
+[node name="Value+" parent="Skills/BlockValue" unique_id=1067299642 instance=ExtResource("4_p2c2s")]
+position = Vector2(128, 192)
+Skill_Name = "Value+"
+
+[node name="Discount" type="Node2D" parent="Skills" unique_id=613909587]
+position = Vector2(384, 0)
+
+[node name="Entry_Discount" parent="Skills/Discount" unique_id=1618671340 instance=ExtResource("4_p2c2s")]
+position = Vector2(128, 192)
+Skill_Name = "Entry_Discount"
+
+[node name="Stamina" type="Node2D" parent="Skills" unique_id=375092113]
+position = Vector2(512, 0)
+
+[node name="Stamina+" parent="Skills/Stamina" unique_id=69022764 instance=ExtResource("4_p2c2s")]
+position = Vector2(128, 192)
+Skill_Name = "Stamina+"
+
+[node name="ArtifactValue" type="Node2D" parent="Skills" unique_id=303959852]
+position = Vector2(704, 0)
+
+[node name="Artifact_Value" parent="Skills/ArtifactValue" unique_id=613116925 instance=ExtResource("4_p2c2s")]
+position = Vector2(128, 192)
+Skill_Name = "Artifact_Value"
+
+[node name="ArtifactChance" type="Node2D" parent="Skills" unique_id=191836436]
+position = Vector2(896, 0)
+
+[node name="Lucky_Finds" parent="Skills/ArtifactChance" unique_id=1518078822 instance=ExtResource("4_p2c2s")]
+position = Vector2(128, 192)
+Skill_Name = "Lucky_Finds"
 
 [node name="TreeCam" type="Camera2D" parent="." unique_id=936225933]
 position = Vector2(-192, -128)
