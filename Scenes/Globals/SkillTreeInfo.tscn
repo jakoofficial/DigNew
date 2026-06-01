@@ -52,7 +52,7 @@ region = Rect2(64, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_hi4re")
 _Name = "Unlock_Sand_Dune"
-_BaseCost = 300
+_BaseCost = 500
 _Description = "Grants the permit to dig at the sand dunes."
 _Unlocks = Array[String](["Unlock_Abandon_Factory"])
 _UpgradeType = 3
@@ -70,7 +70,7 @@ region = Rect2(64, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_6gqcf")
 _Name = "Unlock_Abandon_Factory"
-_BaseCost = 600
+_BaseCost = 800
 _Description = "Grants the permit to dig at the abandon factory."
 _Unlocks = Array[String](["Unlock_Witchy_Woods"])
 _UpgradeType = 3
@@ -88,7 +88,7 @@ region = Rect2(64, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_gh5kt")
 _Name = "Unlock_Witchy_Woods"
-_BaseCost = 1000
+_BaseCost = 1250
 _Description = "Grants the permit to dig in the witchy woods."
 _Unlocks = Array[String](["Unlock_Cloud_Station"])
 _UpgradeType = 3
@@ -121,7 +121,12 @@ region = Rect2(64, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_t88sh")
 _Name = "Damage+"
+_BaseCost = 12
+_Multiplier = 1.7
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Damage++"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 1
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dd215"]
@@ -135,7 +140,13 @@ region = Rect2(64, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_d4r5k")
 _Name = "Damage++"
+_BaseCost = 76
+_Multiplier = 1.7
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["So_Much_Damage"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 1
+_UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrwyg"]
@@ -149,7 +160,13 @@ region = Rect2(64, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_xlbsa")
 _Name = "So_Much_Damage"
+_BaseCost = 633
+_Multiplier = 1.65
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["Damage_Damage_Damage"])
+_UnlockRequirementAmount = 3
+_UpgradeType = 1
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kin6r"]
@@ -163,7 +180,13 @@ region = Rect2(64, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_7rrq4")
 _Name = "Damage_Damage_Damage"
+_BaseCost = 5978
+_Multiplier = 1.25
+_LevelMaxAmount = 4
 _Unlocks = Array[String](["Too_Much_Damage"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 1
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x0sfq"]
@@ -177,6 +200,11 @@ region = Rect2(64, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_dd215")
 _Name = "Too_Much_Damage"
+_BaseCost = 29540
+_Multiplier = 1.7
+_LevelMaxAmount = 4
+_UpgradeType = 1
+_UpgradeAmount = 6.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0sfq"]
@@ -187,7 +215,12 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_x0sfq")
 _Name = "Value+"
+_BaseCost = 10
+_Multiplier = 2.25
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Value++"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d4r5k"]
@@ -201,7 +234,12 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_qrwyg")
 _Name = "Value++"
+_BaseCost = 96
+_Multiplier = 2.25
+_LevelMaxAmount = 4
 _Unlocks = Array[String](["More_Value"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_duxpp"]
@@ -215,7 +253,11 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_sju6y")
 _Name = "More_Value"
+_BaseCost = 2893
+_Multiplier = 2.25
 _Unlocks = Array[String](["Sunday_Pricing"])
+_UpgradeType = 2
+_UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rrq4"]
@@ -229,7 +271,12 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_24u8o")
 _Name = "Sunday_Pricing"
+_BaseCost = 13020
+_Multiplier = 2.25
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Price_Gouging"])
+_UpgradeType = 2
+_UpgradeAmount = 3.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vjwbr"]
@@ -243,6 +290,10 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_1hpub")
 _Name = "Price_Gouging"
+_BaseCost = 95209
+_Multiplier = 2.25
+_UpgradeType = 2
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_duxpp"]
@@ -253,7 +304,11 @@ region = Rect2(128, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_duxpp")
 _Name = "Cheaper_Entry"
+_BaseCost = 115
+_Multiplier = 1.9
 _Unlocks = Array[String](["Basic_Membership"])
+_UpgradeType = 6
+_UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_24u8o"]
@@ -267,7 +322,11 @@ region = Rect2(128, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_1vkwv")
 _Name = "Basic_Membership"
+_BaseCost = 438
+_Multiplier = 1.9
 _Unlocks = Array[String](["Plastic_Member"])
+_UpgradeType = 6
+_UpgradeAmount = 8.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1hpub"]
@@ -281,7 +340,11 @@ region = Rect2(128, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_0c3h4")
 _Name = "Plastic_Member"
+_BaseCost = 1666
+_Multiplier = 1.9
 _Unlocks = Array[String](["Silver_Contributor"])
+_UpgradeType = 6
+_UpgradeAmount = 10.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_agp1j"]
@@ -295,7 +358,11 @@ region = Rect2(128, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_vjwbr")
 _Name = "Silver_Contributor"
+_BaseCost = 6332
+_Multiplier = 1.9
 _Unlocks = Array[String](["Top_Benefits"])
+_UpgradeType = 6
+_UpgradeAmount = 15.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0c3h4"]
@@ -309,6 +376,10 @@ region = Rect2(128, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_0ma8c")
 _Name = "Top_Benefits"
+_BaseCost = 24062
+_Multiplier = 1.9
+_UpgradeType = 6
+_UpgradeAmount = 20.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xlbsa"]
@@ -322,7 +393,11 @@ region = Rect2(0, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_ojil3")
 _Name = "Stamina+"
+_BaseCost = 5
+_Multiplier = 1.85
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Stamina++"])
+_UnlockRequirementAmount = 2
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0x7h"]
@@ -336,7 +411,11 @@ region = Rect2(0, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_5ubf5")
 _Name = "Stamina++"
+_BaseCost = 37
+_Multiplier = 1.85
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["Even_More_Stamina"])
+_UnlockRequirementAmount = 3
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fqesj"]
@@ -350,7 +429,12 @@ region = Rect2(0, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_me1cn")
 _Name = "Even_More_Stamina"
+_BaseCost = 441
+_Multiplier = 1.85
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["Stam-Stamina"])
+_UnlockRequirementAmount = 2
+_UpgradeAmount = 3.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bm3ya"]
@@ -364,7 +448,12 @@ region = Rect2(0, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_dr6hf")
 _Name = "Stam-Stamina"
+_BaseCost = 4425
+_Multiplier = 1.85
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["Keep_It_Up"])
+_UnlockRequirementAmount = 3
+_UpgradeAmount = 3.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pugjx"]
@@ -378,6 +467,10 @@ region = Rect2(0, 0, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_nyn0i")
 _Name = "Keep_It_Up"
+_BaseCost = 52577
+_Multiplier = 1.85
+_LevelMaxAmount = 4
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_buo1b"]
@@ -391,7 +484,11 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_771t5")
 _Name = "High_Grade"
+_BaseCost = 150
+_Multiplier = 2.1
 _Unlocks = Array[String](["Extra_Extra"])
+_UpgradeType = 5
+_UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgxf3"]
@@ -405,7 +502,13 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_hxn4a")
 _Name = "Extra_Extra"
+_BaseCost = 630
+_Multiplier = 2.1
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["Extra_Dusty"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 5
+_UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2n1ec"]
@@ -419,7 +522,13 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_xf1ws")
 _Name = "Extra_Dusty"
+_BaseCost = 8481
+_Multiplier = 2.1
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Someones_Best"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 5
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ccm4l"]
@@ -433,7 +542,12 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_y7oe1")
 _Name = "Someones_Best"
+_BaseCost = 73023
+_Multiplier = 2.1
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Premium_Trash"])
+_UnlockRequirementAmount = 2
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d3xn3"]
@@ -447,6 +561,10 @@ region = Rect2(0, 64, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_ab7aw")
 _Name = "Premium_Trash"
+_BaseCost = 628729
+_Multiplier = 2.1
+_UpgradeType = 5
+_UpgradeAmount = 6.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_doopo"]
@@ -460,7 +578,11 @@ region = Rect2(0, 128, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_mho67")
 _Name = "Lucky_Finds"
+_BaseCost = 100
+_Multiplier = 1.85
 _Unlocks = Array[String](["Lucky_Coin"])
+_UpgradeType = 4
+_UpgradeAmount = 2.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jauxo"]
@@ -474,7 +596,13 @@ region = Rect2(0, 128, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_o830w")
 _Name = "Lucky_Coin"
+_BaseCost = 370
+_Multiplier = 1.85
+_LevelMaxAmount = 3
 _Unlocks = Array[String](["7_Years_Of_Luck"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 4
+_UpgradeAmount = 4.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2cplf"]
@@ -488,7 +616,13 @@ region = Rect2(0, 128, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_g3b4b")
 _Name = "7_Years_Of_Luck"
+_BaseCost = 3712
+_Multiplier = 1.85
+_LevelMaxAmount = 2
 _Unlocks = Array[String](["Luck_Be_Lucky"])
+_UnlockRequirementAmount = 2
+_UpgradeType = 4
+_UpgradeAmount = 5.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iph2t"]
@@ -502,7 +636,13 @@ region = Rect2(0, 128, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_asy6a")
 _Name = "Luck_Be_Lucky"
+_BaseCost = 26440
+_Multiplier = 1.85
+_LevelMaxAmount = 4
 _Unlocks = Array[String](["Four_Leafed"])
+_UnlockRequirementAmount = 4
+_UpgradeType = 4
+_UpgradeAmount = 5.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wv7br"]
@@ -516,6 +656,10 @@ region = Rect2(0, 128, 64, 64)
 script = ExtResource("2_lqdd7")
 _Icon = SubResource("AtlasTexture_y0pqs")
 _Name = "Four_Leafed"
+_BaseCost = 505362
+_Multiplier = 1.85
+_UpgradeType = 4
+_UpgradeAmount = 6.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
