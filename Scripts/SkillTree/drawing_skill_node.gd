@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var par: Area2D = $".."
-
 func _process(delta: float) -> void:
 	queue_redraw()
 

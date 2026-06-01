@@ -474,6 +474,22 @@ Skill_Name = "Unlock_Witchy_Woods"
 position = Vector2(128, 192)
 Skill_Name = "Damage+"
 
+[node name="Damage++" parent="Skills/Damage" unique_id=1646789420 instance=ExtResource("4_p2c2s")]
+position = Vector2(64, 64)
+Skill_Name = "Damage++"
+
+[node name="SoMuchDamage" parent="Skills/Damage" unique_id=1191070048 instance=ExtResource("4_p2c2s")]
+position = Vector2(0, -64)
+Skill_Name = "So_Much_Damage"
+
+[node name="DamageDamageDamage" parent="Skills/Damage" unique_id=1585135776 instance=ExtResource("4_p2c2s")]
+position = Vector2(-64, -192)
+Skill_Name = "Damage_Damage_Damage"
+
+[node name="TooMuchDamage" parent="Skills/Damage" unique_id=926398002 instance=ExtResource("4_p2c2s")]
+position = Vector2(0, -320)
+Skill_Name = "Too_Much_Damage"
+
 [node name="BlockValue" type="Node2D" parent="Skills" unique_id=6276977]
 position = Vector2(192, 0)
 
@@ -481,12 +497,44 @@ position = Vector2(192, 0)
 position = Vector2(128, 192)
 Skill_Name = "Value+"
 
+[node name="Value++" parent="Skills/BlockValue" unique_id=382102960 instance=ExtResource("4_p2c2s")]
+position = Vector2(64, 64)
+Skill_Name = "Value++"
+
+[node name="MoreValue" parent="Skills/BlockValue" unique_id=963429529 instance=ExtResource("4_p2c2s")]
+position = Vector2(0, -64)
+Skill_Name = "More_Value"
+
+[node name="SundayPricing" parent="Skills/BlockValue" unique_id=2105526372 instance=ExtResource("4_p2c2s")]
+position = Vector2(-64, -192)
+Skill_Name = "Sunday_Pricing"
+
+[node name="PriceGouging" parent="Skills/BlockValue" unique_id=916472581 instance=ExtResource("4_p2c2s")]
+position = Vector2(0, -320)
+Skill_Name = "Price_Gouging"
+
 [node name="Discount" type="Node2D" parent="Skills" unique_id=613909587]
 position = Vector2(384, 0)
 
-[node name="Entry_Discount" parent="Skills/Discount" unique_id=1618671340 instance=ExtResource("4_p2c2s")]
+[node name="Cheaper_Entry" parent="Skills/Discount" unique_id=1618671340 instance=ExtResource("4_p2c2s")]
 position = Vector2(128, 192)
-Skill_Name = "Entry_Discount"
+Skill_Name = "Cheaper_Entry"
+
+[node name="Basic_Membership" parent="Skills/Discount" unique_id=652578673 instance=ExtResource("4_p2c2s")]
+position = Vector2(64, 64)
+Skill_Name = "Basic_Membership"
+
+[node name="Plastic_Member" parent="Skills/Discount" unique_id=1202237442 instance=ExtResource("4_p2c2s")]
+position = Vector2(0, -64)
+Skill_Name = "Plastic_Member"
+
+[node name="Silver_Contributor" parent="Skills/Discount" unique_id=136103975 instance=ExtResource("4_p2c2s")]
+position = Vector2(-64, -192)
+Skill_Name = "Silver_Contributor"
+
+[node name="Top_Benefits" parent="Skills/Discount" unique_id=2095697880 instance=ExtResource("4_p2c2s")]
+position = Vector2(0, -320)
+Skill_Name = "Top_Benefits"
 
 [node name="Stamina" type="Node2D" parent="Skills" unique_id=375092113]
 position = Vector2(512, 0)
@@ -495,12 +543,44 @@ position = Vector2(512, 0)
 position = Vector2(128, 192)
 Skill_Name = "Stamina+"
 
+[node name="Stamina++" parent="Skills/Stamina" unique_id=1352210032 instance=ExtResource("4_p2c2s")]
+position = Vector2(192, 64)
+Skill_Name = "Stamina++"
+
+[node name="EvenMoreStamina" parent="Skills/Stamina" unique_id=1712476854 instance=ExtResource("4_p2c2s")]
+position = Vector2(256, -64)
+Skill_Name = "Even_More_Stamina"
+
+[node name="StamStamina" parent="Skills/Stamina" unique_id=2138030902 instance=ExtResource("4_p2c2s")]
+position = Vector2(320, -192)
+Skill_Name = "Stam-Stamina"
+
+[node name="KeepItUp" parent="Skills/Stamina" unique_id=1888372864 instance=ExtResource("4_p2c2s")]
+position = Vector2(256, -320)
+Skill_Name = "Keep_It_Up"
+
 [node name="ArtifactValue" type="Node2D" parent="Skills" unique_id=303959852]
 position = Vector2(704, 0)
 
-[node name="Artifact_Value" parent="Skills/ArtifactValue" unique_id=613116925 instance=ExtResource("4_p2c2s")]
+[node name="HighGrade" parent="Skills/ArtifactValue" unique_id=613116925 instance=ExtResource("4_p2c2s")]
 position = Vector2(128, 192)
-Skill_Name = "Artifact_Value"
+Skill_Name = "High_Grade"
+
+[node name="ExtraExtra" parent="Skills/ArtifactValue" unique_id=1640729474 instance=ExtResource("4_p2c2s")]
+position = Vector2(192, 64)
+Skill_Name = "Extra_Extra"
+
+[node name="ExtraDusty" parent="Skills/ArtifactValue" unique_id=959482038 instance=ExtResource("4_p2c2s")]
+position = Vector2(256, -64)
+Skill_Name = "Extra_Dusty"
+
+[node name="SomeonesBest" parent="Skills/ArtifactValue" unique_id=1945984777 instance=ExtResource("4_p2c2s")]
+position = Vector2(320, -192)
+Skill_Name = "Someones_Best"
+
+[node name="PremiumTrash" parent="Skills/ArtifactValue" unique_id=1707961733 instance=ExtResource("4_p2c2s")]
+position = Vector2(256, -320)
+Skill_Name = "Premium_Trash"
 
 [node name="ArtifactChance" type="Node2D" parent="Skills" unique_id=191836436]
 position = Vector2(896, 0)
@@ -508,6 +588,22 @@ position = Vector2(896, 0)
 [node name="Lucky_Finds" parent="Skills/ArtifactChance" unique_id=1518078822 instance=ExtResource("4_p2c2s")]
 position = Vector2(128, 192)
 Skill_Name = "Lucky_Finds"
+
+[node name="Lucky_Coin" parent="Skills/ArtifactChance" unique_id=1823477228 instance=ExtResource("4_p2c2s")]
+position = Vector2(192, 64)
+Skill_Name = "Lucky_Coin"
+
+[node name="7YearsOfLuck" parent="Skills/ArtifactChance" unique_id=894718135 instance=ExtResource("4_p2c2s")]
+position = Vector2(256, -64)
+Skill_Name = "7_Years_Of_Luck"
+
+[node name="LuckBeLucky" parent="Skills/ArtifactChance" unique_id=1687580121 instance=ExtResource("4_p2c2s")]
+position = Vector2(320, -192)
+Skill_Name = "Luck_Be_Lucky"
+
+[node name="FourLeafed" parent="Skills/ArtifactChance" unique_id=849613295 instance=ExtResource("4_p2c2s")]
+position = Vector2(256, -320)
+Skill_Name = "Four_Leafed"
 
 [node name="TreeCam" type="Camera2D" parent="." unique_id=936225933]
 position = Vector2(-192, -128)
