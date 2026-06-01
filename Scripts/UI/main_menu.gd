@@ -45,6 +45,7 @@ func _ready() -> void:
 		intro.play_intro()
 
 func OpenPatchNotes() -> void:
+	OS.shell_open("https://github.com/jakoofficial/DigNew/discussions/2")
 	pass
 
 func showMenu() -> void:

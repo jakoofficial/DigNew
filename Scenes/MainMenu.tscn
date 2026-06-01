@@ -413,7 +413,6 @@ visible = false
 layout_mode = 1
 
 [node name="PatchNotes" type="TextureButton" parent="." unique_id=1148882503]
-visible = false
 custom_minimum_size = Vector2(155, 50)
 layout_mode = 0
 offset_left = 74.5
