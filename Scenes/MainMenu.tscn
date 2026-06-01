@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://smaebv2kbcos" path="res://Scripts/UI/credits.gd" id="4_df05h"]
 [ext_resource type="PackedScene" uid="uid://bpmso20hkvbh7" path="res://Nodes/UI/intro.tscn" id="5_df05h"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="6_xim88"]
-[ext_resource type="Script" uid="uid://c7fw8hj1rvixo" path="res://Scripts/UI/patch_notes_box.gd" id="7_koqhg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
 atlas = ExtResource("2_853f1")
@@ -458,93 +457,6 @@ grow_horizontal = 2
 mouse_filter = 2
 texture = SubResource("AtlasTexture_cmrfp")
 stretch_mode = 4
-
-[node name="PatchNotesBox" type="NinePatchRect" parent="." unique_id=1581082318]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -196.0
-offset_right = 192.0
-offset_bottom = 196.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("2_853f1")
-region_rect = Rect2(0, 0, 32, 32)
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-script = ExtResource("7_koqhg")
-
-[node name="ClosePatches" type="TextureButton" parent="PatchNotesBox" unique_id=1049569791]
-custom_minimum_size = Vector2(125, 50)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -62.5
-offset_top = -16.0
-offset_right = 62.5
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-size_flags_vertical = 8
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = SubResource("AtlasTexture_8um5k")
-texture_hover = SubResource("AtlasTexture_xim88")
-texture_disabled = SubResource("AtlasTexture_koqhg")
-texture_focused = SubResource("AtlasTexture_xim88")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PatchNotesBox/ClosePatches" unique_id=1875120014]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "Back"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PatchNotesBox" unique_id=1563204642]
-clip_contents = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 0
-
-[node name="PatchNotesLabel" type="RichTextLabel" parent="PatchNotesBox/ScrollContainer" unique_id=1986688490]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/line_separation = -8
-bbcode_enabled = true
-autowrap_trim_flags = 0
 
 [node name="Intro" parent="." unique_id=1164700956 instance=ExtResource("5_df05h")]
 visible = false

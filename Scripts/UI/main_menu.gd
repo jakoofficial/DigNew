@@ -12,7 +12,6 @@ extends Control
 @onready var last_played_label: RichTextLabel = $LastPlayedLabel
 @onready var settings_btn: TextureButton = $VBoxContainer/SettingsBtn
 @onready var patch_notes: TextureButton = $PatchNotes
-@onready var patch_notes_box: NinePatchRect = $PatchNotesBox
 
 func _ready() -> void:
 	var data: Dictionary = FM.LoadGame()
@@ -46,7 +45,6 @@ func _ready() -> void:
 		intro.play_intro()
 
 func OpenPatchNotes() -> void:
-	patch_notes_box.show()
 	pass
 
 func showMenu() -> void:
@@ -63,14 +61,6 @@ func _process(delta: float) -> void:
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
 		#BGMusic.SetMusic()
 		#BGMusic.musicStarted = true
-	
-	if patch_notes_box.visible or GM.settingsMenu.visible or credits_control.visible or confirm_box.visible:
-		patch_notes.disabled = true
-	else:
-		patch_notes.disabled = false
-	
-	if patch_notes_box.visible and FK.JustPressed(AM.action("DigOver")):
-		patch_notes_box.close()
 	
 	if GM.settingsMenu.visible and FK.JustPressed(AM.action("DigOver")):
 		GM.settingsMenu.confirm_changes()

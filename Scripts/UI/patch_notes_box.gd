@@ -4,7 +4,7 @@ extends NinePatchRect
 @onready var patch_notes_label: RichTextLabel = $ScrollContainer/PatchNotesLabel
 
 var patchTitle = """[font_size=16][center]Patch Notes[/center][/font_size]
-[font_size=6][center]%s[/center][/font_size]""" % [GM.Game_Version]
+[font_size=12][center]%s[/center][/font_size]""" % [GM.Game_Version]
 
 var patchAdded = """
 This set of patches are for a early build of the game as development of the project still is udnerway.
