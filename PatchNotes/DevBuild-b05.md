@@ -17,6 +17,7 @@ This does mean a new save would be needed as older saves will not be compatable 
 
 ## Known issues
 - Music can sometimes be muted after having it muted and then turned on again. Currently fixed by going to main menu or skill tree.
+- Artifact values havent been updated but will be in the next version
 
 ## Feedback
 Experience any issues while playing? please let me know in a way that allows me to see it and add it to the list of possible issues.
