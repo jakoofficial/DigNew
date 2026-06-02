@@ -9,7 +9,7 @@ var confirmOnly: bool = false
 
 func _ready() -> void:
 	_setText()
-	
+	resetButtons()
 	cancel.connect("pressed", cancel_confirmation)
 	confirm.connect("pressed", confirm_confirmation)
 

@@ -90,8 +90,6 @@ func _process(delta: float) -> void:
 			if FadeOut(delta, true): time = 0; FadeFinished.emit(); Fade = FADE.In
 
 	if GM._IntroPlayed and !musicStarted and !playing:
-		#Fade = FADE.In
-		print("asd")
 		SetMusic()
 		musicStarted = true
 

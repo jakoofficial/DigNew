@@ -17,7 +17,7 @@ func _ready() -> void:
 	var data = FM.LoadGame()
 	if data != null:
 		Settings._Load(data["Settings"] as Dictionary)
-	if data.has("GameVersion") and data["GameVersion"] != GM.Game_Version:
+	if data!= null and data.has("GameVersion") and data["GameVersion"] != GM.Game_Version:
 		var canMakeNew = true
 		v_box_container.hide()
 		confirm_box.showSpecial("Understood")
@@ -47,7 +47,6 @@ func _ready() -> void:
 	
 	if GM._IntroPlayed:
 		intro.hide()
-		#BGMusic.SetMusic()
 	else:
 		intro.show()
 		intro.play_intro()
@@ -68,8 +67,6 @@ func _process(delta: float) -> void:
 		BGMusic.Fade = BGMusic.FADE.OutIn
 		await BGMusic.FadeFinished
 		BGMusic._play_BG_Music(BGMusic.AUDIO.MainMenu)
-		#BGMusic.SetMusic()
-		#BGMusic.musicStarted = true
 	
 	if GM.settingsMenu.visible and FK.JustPressed(AM.action("DigOver")):
 		GM.settingsMenu.confirm_changes()
