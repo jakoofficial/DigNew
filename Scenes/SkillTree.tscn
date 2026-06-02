@@ -475,29 +475,53 @@ patch_margin_bottom = 16
 position = Vector2(576, 384)
 Skill_Name = "Unlock_Dirt_Patch"
 
+[node name="DirtMaster" parent="Skills/Levels" unique_id=436947380 instance=ExtResource("4_p2c2s")]
+position = Vector2(576, 488)
+Skill_Name = "Dirt_Master_Upgrade"
+
 [node name="Cave" parent="Skills/Levels" unique_id=1623885492 instance=ExtResource("4_p2c2s")]
 position = Vector2(448, 512)
 Skill_Name = "Unlock_Cave"
+
+[node name="CaveMaster" parent="Skills/Levels" unique_id=887178988 instance=ExtResource("4_p2c2s")]
+position = Vector2(320, 512)
+Skill_Name = "Cave_Master_Upgrade"
 
 [node name="Factory" parent="Skills/Levels" unique_id=754581406 instance=ExtResource("4_p2c2s")]
 position = Vector2(576, 768)
 Skill_Name = "Unlock_Abandon_Factory"
 
+[node name="FactoryMaster" parent="Skills/Levels" unique_id=489199392 instance=ExtResource("4_p2c2s")]
+position = Vector2(576, 872)
+Skill_Name = "Factory_Master_Upgrade"
+
 [node name="SandDune" parent="Skills/Levels" unique_id=1811542510 instance=ExtResource("4_p2c2s")]
 position = Vector2(448, 672)
 Skill_Name = "Unlock_Sand_Dune"
 
-[node name="Cloud" parent="Skills/Levels" unique_id=674974723 instance=ExtResource("4_p2c2s")]
-position = Vector2(704, 512)
-Skill_Name = "Unlock_Cloud_Station"
+[node name="SandDuneMaster" parent="Skills/Levels" unique_id=8484833 instance=ExtResource("4_p2c2s")]
+position = Vector2(320, 672)
+Skill_Name = "SandDune_Master_Upgrade"
 
 [node name="Witch" parent="Skills/Levels" unique_id=502912198 instance=ExtResource("4_p2c2s")]
 position = Vector2(704, 672)
 Skill_Name = "Unlock_Witchy_Woods"
 
+[node name="WitchMaster" parent="Skills/Levels" unique_id=177800974 instance=ExtResource("4_p2c2s")]
+position = Vector2(832, 672)
+Skill_Name = "Witchy_Master_Upgrade"
+
+[node name="Cloud" parent="Skills/Levels" unique_id=674974723 instance=ExtResource("4_p2c2s")]
+position = Vector2(704, 512)
+Skill_Name = "Unlock_Cloud_Station"
+
+[node name="CloudMaster" parent="Skills/Levels" unique_id=1117509196 instance=ExtResource("4_p2c2s")]
+position = Vector2(832, 512)
+Skill_Name = "Cloud_Master_Upgrade"
+
 [node name="Damage" type="Node2D" parent="Skills" unique_id=1641190716]
 
-[node name="Damage+" parent="Skills/Damage" unique_id=436947380 instance=ExtResource("4_p2c2s")]
+[node name="Damage+" parent="Skills/Damage" unique_id=2087499112 instance=ExtResource("4_p2c2s")]
 position = Vector2(128, 192)
 Skill_Name = "Damage+"
 

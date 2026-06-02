@@ -19,6 +19,14 @@ func _ready() -> void:
 	skill_icon.texture = skill_res._Icon
 	skill_res._Cost = skill_res._BaseCost
 	currPar = $"../../.."
+	
+	if skill_res._Mastery_Skill:
+		print("mas")
+		if GM.levelMastery.has(skill_res._Mastery_level) and GM.levelMastery[skill_res._Mastery_level]:
+			print("unlocked")
+			skill_res.is_unlocked = true
+		else:
+			skill_res.is_unlocked = false
 
 var tween: Tween
 func _on_mouse_entered() -> void:
@@ -33,6 +41,8 @@ func _on_mouse_exited() -> void:
 
 func _Activate() -> void:
 	if skill_res._LevelCurr == skill_res._LevelMaxAmount: return
+	if skill_res._Mastery_Skill and !GM.levelMastery.has(skill_res._Mastery_level): return
+	
 	if PS._PBalance >= skill_res._Cost:
 		if !click_sound.playing: click_sound.stop()
 		click_sound.pitch_scale = randf_range(0.75, 1.0)
@@ -50,6 +60,7 @@ func _Activate() -> void:
 
 func _process(delta: float) -> void:
 	queue_redraw()
+	
 	if !skill_res.is_unlocked: hide(); return
 	else: show()
 	
@@ -60,7 +71,8 @@ func _process(delta: float) -> void:
 		$HoverInfo/HoverPanel/VBoxContainer/HBoxContainer/TextureRect.hide()
 	
 	if !skill_res._Finished and !hovered:
-		if PS._PBalance < skill_res._Cost: $Sprite2D.frame = 5
+		if PS._PBalance < skill_res._Cost or (skill_res._Mastery_Skill and !GM.levelMastery.has(skill_res._Mastery_level)): 
+			$Sprite2D.frame = 5
 		else: $Sprite2D.frame = 4
 	
 	if skill_res._UnlockRequirementAmount <= skill_res._LevelCurr:

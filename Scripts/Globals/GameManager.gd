@@ -23,6 +23,8 @@ var digSpotsLeft: int = 0
 var _IntroPlayed: bool = false
 var LoadedGame: bool = false
 
+var levelMastery: Dictionary[String, bool]
+
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
 	"Dirt_Patch":		["Dirt", 0, 2, 1], #Name, Frame, HP, Value

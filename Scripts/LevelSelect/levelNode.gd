@@ -6,6 +6,7 @@ extends VBoxContainer
 @onready var level_artifacts: HBoxContainer = $Node2D/LevelArtifacts
 @onready var entry_cost_back_piece: NinePatchRect = $Node2D/EntryCostBackPiece
 @onready var entry_cost_label: RichTextLabel = $Node2D/EntryCostBackPiece/HBoxContainer/EntryCostLabel
+@onready var collector_icon: TextureRect = $Node2D/CollectorIcon
 
 @export var LevelName: String = "Level"
 @export var GoToLevel: GM.Scenes
@@ -17,6 +18,7 @@ extends VBoxContainer
 var levelDiscount: int = 0
 
 var level_idx: int = 0
+var artifactCollectedCount = 0
 func _ready() -> void:
 	entry_cost_back_piece.hide()
 	level_img.texture = LevelTexture
@@ -29,9 +31,15 @@ func _ready() -> void:
 		var idx: int = 0
 		for i in GM.Artifacts[LevelName]:
 			level_artifacts.get_children()[idx].texture = ArtifactInfo.get_artifact(i)._ArtifactLevelIcon
-			if ArtifactInfo.get_artifact(i)._HasBeenCollected: level_artifacts.get_children()[idx].modulate = Color.WHITE
+			if ArtifactInfo.get_artifact(i)._HasBeenCollected: 
+				level_artifacts.get_children()[idx].modulate = Color.WHITE
+				artifactCollectedCount += 1
 			else: level_artifacts.get_children()[idx].modulate = Color.BLACK
 			idx+=1
+	
+	if artifactCollectedCount >= 3:
+		collector_icon.show()
+	else: collector_icon.hide()
 	
 	if !GM.LevelSelectDict.has(LevelName):
 		GM.LevelSelectDict[LevelName] = Locked

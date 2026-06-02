@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="2_08thy"]
 [ext_resource type="Texture2D" uid="uid://dum8xkc7xq1kl" path="res://Sprites/Icons/Backpack.svg" id="4_0qfhr"]
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="4_ajsg0"]
+[ext_resource type="Texture2D" uid="uid://bxplorf3offu1" path="res://Sprites/Artifacts/CollectorIcons.png" id="6_3hkqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sqnl"]
 atlas = ExtResource("2_08thy")
@@ -30,6 +31,10 @@ region = Rect2(131, 2, 110, 31)
 atlas = ExtResource("4_ajsg0")
 region = Rect2(0, 0, 32, 32)
 margin = Rect2(0, -2, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajsg0"]
+atlas = ExtResource("6_3hkqr")
+region = Rect2(48, 0, 48, 46)
 
 [node name="Level" type="VBoxContainer" unique_id=645813811]
 custom_minimum_size = Vector2(288, 254)
@@ -252,4 +257,17 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("4_0qfhr")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="CollectorIcon" type="TextureRect" parent="Node2D" unique_id=1053083684]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_top = 3.0
+offset_right = 288.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ajsg0")
 stretch_mode = 5

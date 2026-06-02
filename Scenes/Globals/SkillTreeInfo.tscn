@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bo4lo8h5nnynw" path="res://Scripts/Globals/skill_tree_info.gd" id="1_5xx86"]
 [ext_resource type="Script" uid="uid://d4hkstn8p728s" path="res://Resources/SkillRes.gd" id="2_lqdd7"]
 [ext_resource type="Texture2D" uid="uid://bwxinb84t45a" path="res://Sprites/Icons/Skill_Icons.png" id="3_t88sh"]
+[ext_resource type="Texture2D" uid="uid://bxplorf3offu1" path="res://Sprites/Artifacts/CollectorIcons.png" id="4_x0sfq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t88sh"]
 load_path = "res://.godot/imported/Skill_Icons.png-ccc43a276fa5d40a532f6295c4f3078f.ctex"
@@ -18,7 +19,7 @@ is_unlocked = true
 _Name = "Unlock_Dirt_Patch"
 _BaseCost = 0
 _Description = "Grants the permit to dig at a dirt patch."
-_Unlocks = Array[String](["Unlock_Cave", "Damage+", "Value+", "Cheaper_Entry", "Stamina+", "High_Grade", "Lucky_Finds"])
+_Unlocks = Array[String](["Unlock_Cave", "Damage+", "Value+", "Cheaper_Entry", "Stamina+", "High_Grade", "Lucky_Finds", "Dirt_Master_Upgrade"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Dirt_Patch"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -36,7 +37,7 @@ _Icon = SubResource("AtlasTexture_kin6r")
 _Name = "Unlock_Cave"
 _BaseCost = 150
 _Description = "Grants the permit to dig at a cave."
-_Unlocks = Array[String](["Unlock_Sand_Dune"])
+_Unlocks = Array[String](["Unlock_Sand_Dune", "Cave_Master_Upgrade"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Cave"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -54,7 +55,7 @@ _Icon = SubResource("AtlasTexture_hi4re")
 _Name = "Unlock_Sand_Dune"
 _BaseCost = 500
 _Description = "Grants the permit to dig at the sand dunes."
-_Unlocks = Array[String](["Unlock_Abandon_Factory"])
+_Unlocks = Array[String](["Unlock_Abandon_Factory", "SandDune_Master_Upgrade"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Sand_Dune"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -72,7 +73,7 @@ _Icon = SubResource("AtlasTexture_6gqcf")
 _Name = "Unlock_Abandon_Factory"
 _BaseCost = 800
 _Description = "Grants the permit to dig at the abandon factory."
-_Unlocks = Array[String](["Unlock_Witchy_Woods"])
+_Unlocks = Array[String](["Unlock_Witchy_Woods", "Factory_Master_Upgrade"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Factory"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -90,7 +91,7 @@ _Icon = SubResource("AtlasTexture_gh5kt")
 _Name = "Unlock_Witchy_Woods"
 _BaseCost = 1250
 _Description = "Grants the permit to dig in the witchy woods."
-_Unlocks = Array[String](["Unlock_Cloud_Station"])
+_Unlocks = Array[String](["Unlock_Cloud_Station", "Witchy_Master_Upgrade"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Witchy_Woods"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -108,7 +109,7 @@ _Icon = SubResource("AtlasTexture_2mui2")
 _Name = "Unlock_Cloud_Station"
 _BaseCost = 2500
 _Description = "Grants the permit to dig at the cloud station."
-_Unlocks = Array[String](["Unlock_Dirt_Patch"])
+_Unlocks = Array[String](["Unlock_Dirt_Patch", "Cloud_Master_Upgrade"])
 _UpgradeType = 3
 _LevelTypeUnlock = "Cloud_Station"
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
@@ -662,6 +663,116 @@ _UpgradeType = 4
 _UpgradeAmount = 6.0
 metadata/_custom_type_script = "uid://d4hkstn8p728s"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_egbu5"]
+atlas = ExtResource("4_x0sfq")
+region = Rect2(48, 0, 48, 46)
+
+[sub_resource type="Resource" id="Resource_c0x7h"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_egbu5")
+_Name = "Dirt_Master_Upgrade"
+_BaseCost = 0
+_Description = "Mastering the level adds a +20 bonus to all blocks gathered."
+_UpgradeType = 2
+_UpgradeAmount = 20.0
+_Mastery_Skill = true
+_Mastery_level = "Dirt_Patch"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1vkwv"]
+load_path = "res://.godot/imported/CollectorIcons.png-5f4e6486489d572b7e5eb3ac4bdb9865.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0x7h"]
+atlas = SubResource("CompressedTexture2D_1vkwv")
+region = Rect2(48, 0, 48, 46)
+
+[sub_resource type="Resource" id="Resource_5ubf5"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_c0x7h")
+_Name = "Cave_Master_Upgrade"
+_BaseCost = 0
+_Description = "Mastering the level adds +10 damage to all blocks."
+_UpgradeType = 1
+_UpgradeAmount = 10.0
+_Mastery_Skill = true
+_Mastery_level = "Cave"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ojil3"]
+load_path = "res://.godot/imported/CollectorIcons.png-5f4e6486489d572b7e5eb3ac4bdb9865.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqesj"]
+atlas = SubResource("CompressedTexture2D_ojil3")
+region = Rect2(48, 0, 48, 46)
+
+[sub_resource type="Resource" id="Resource_me1cn"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_fqesj")
+_Name = "Factory_Master_Upgrade"
+_BaseCost = 0
+_Description = "Mastering the level adds a 10% discount too the entry fee"
+_UpgradeType = 6
+_UpgradeAmount = 10.0
+_Mastery_Skill = true
+_Mastery_level = "Sand_Dune"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ma8c"]
+load_path = "res://.godot/imported/CollectorIcons.png-5f4e6486489d572b7e5eb3ac4bdb9865.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf5v0"]
+atlas = SubResource("CompressedTexture2D_0ma8c")
+region = Rect2(48, 0, 48, 46)
+
+[sub_resource type="Resource" id="Resource_fqesj"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_nf5v0")
+_Name = "SandDune_Master_Upgrade"
+_BaseCost = 0
+_Description = "Mastering the level adds +8 stamina."
+_UpgradeAmount = 8.0
+_Mastery_Skill = true
+_Mastery_level = "Factory"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_egbu5"]
+load_path = "res://.godot/imported/CollectorIcons.png-5f4e6486489d572b7e5eb3ac4bdb9865.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e504"]
+atlas = SubResource("CompressedTexture2D_egbu5")
+region = Rect2(48, 0, 48, 46)
+
+[sub_resource type="Resource" id="Resource_bm3ya"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_6e504")
+_Name = "Witchy_Master_Upgrade"
+_BaseCost = 0
+_Description = "Mastering the level adds a +15% artifact finding chance."
+_UpgradeType = 4
+_UpgradeAmount = 15.0
+_Mastery_Skill = true
+_Mastery_level = "Witchy_Woods"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ubf5"]
+load_path = "res://.godot/imported/CollectorIcons.png-5f4e6486489d572b7e5eb3ac4bdb9865.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm3ya"]
+atlas = SubResource("CompressedTexture2D_5ubf5")
+region = Rect2(48, 0, 48, 46)
+
+[sub_resource type="Resource" id="Resource_dr6hf"]
+script = ExtResource("2_lqdd7")
+_Icon = SubResource("AtlasTexture_bm3ya")
+_Name = "Cloud_Master_Upgrade"
+_BaseCost = 0
+_Description = "Mastering the level adds a +10% bonus to all artifacts found."
+_UpgradeType = 5
+_UpgradeAmount = 10.0
+_Mastery_Skill = true
+_Mastery_level = "Cloud_Station"
+metadata/_custom_type_script = "uid://d4hkstn8p728s"
+
 [node name="SkillTreeInfo" type="Node2D" unique_id=924719629]
 script = ExtResource("1_5xx86")
-Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_7rrq4"), SubResource("Resource_buo1b"), SubResource("Resource_bgxf3"), SubResource("Resource_ccm4l"), SubResource("Resource_d3xn3"), SubResource("Resource_x0sfq"), SubResource("Resource_agp1j"), SubResource("Resource_duxpp"), SubResource("Resource_24u8o"), SubResource("Resource_d4r5k"), SubResource("Resource_dd215"), SubResource("Resource_xlbsa"), SubResource("Resource_kin6r"), SubResource("Resource_1vkwv"), SubResource("Resource_0c3h4"), SubResource("Resource_sju6y"), SubResource("Resource_vjwbr"), SubResource("Resource_0ma8c"), SubResource("Resource_1hpub"), SubResource("Resource_ojil3"), SubResource("Resource_egbu5"), SubResource("Resource_nf5v0"), SubResource("Resource_6e504"), SubResource("Resource_x3w7v"), SubResource("Resource_hi4re"), SubResource("Resource_6gqcf"), SubResource("Resource_x1p5f"), SubResource("Resource_gh5kt"), SubResource("Resource_2mui2"), SubResource("Resource_62irt"), SubResource("Resource_77x34"), SubResource("Resource_2nqhh"), SubResource("Resource_qju34"), SubResource("Resource_itux1"), SubResource("Resource_kshmf")])
+Skills = Array[ExtResource("2_lqdd7")]([SubResource("Resource_qrwyg"), SubResource("Resource_7rrq4"), SubResource("Resource_buo1b"), SubResource("Resource_bgxf3"), SubResource("Resource_ccm4l"), SubResource("Resource_d3xn3"), SubResource("Resource_x0sfq"), SubResource("Resource_agp1j"), SubResource("Resource_duxpp"), SubResource("Resource_24u8o"), SubResource("Resource_d4r5k"), SubResource("Resource_dd215"), SubResource("Resource_xlbsa"), SubResource("Resource_kin6r"), SubResource("Resource_1vkwv"), SubResource("Resource_0c3h4"), SubResource("Resource_sju6y"), SubResource("Resource_vjwbr"), SubResource("Resource_0ma8c"), SubResource("Resource_1hpub"), SubResource("Resource_ojil3"), SubResource("Resource_egbu5"), SubResource("Resource_nf5v0"), SubResource("Resource_6e504"), SubResource("Resource_x3w7v"), SubResource("Resource_hi4re"), SubResource("Resource_6gqcf"), SubResource("Resource_x1p5f"), SubResource("Resource_gh5kt"), SubResource("Resource_2mui2"), SubResource("Resource_62irt"), SubResource("Resource_77x34"), SubResource("Resource_2nqhh"), SubResource("Resource_qju34"), SubResource("Resource_itux1"), SubResource("Resource_kshmf"), SubResource("Resource_c0x7h"), SubResource("Resource_5ubf5"), SubResource("Resource_me1cn"), SubResource("Resource_fqesj"), SubResource("Resource_bm3ya"), SubResource("Resource_dr6hf")])

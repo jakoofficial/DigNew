@@ -29,6 +29,11 @@ func Collect(a: ArtifactRes) -> void:
 		
 			if !Artifacts_Copy[i]._HasBeenCollected:
 				Artifacts_Copy[i]._HasBeenCollected = true
+				var AllCollected: bool = true
+				for j in GM.Artifacts[a._Level]:
+					if !ArtifactInfo.get_artifact(j)._HasBeenCollected: AllCollected = false
+				if AllCollected and !GM.levelMastery.has(a._Level):
+					GM.levelMastery[a._Level] = true
 			FM.SaveGame()
 
 

@@ -18,6 +18,10 @@ extends Resource
 ## Only used if Upgrade Type is set to LevelType
 @export var _LevelTypeUnlock: String = ""
 
+@export_group("Mastery")
+@export var _Mastery_Skill: bool = false
+@export var _Mastery_level: String = ""
+
 enum TYPE {
 	Stamina,
 	Strength,

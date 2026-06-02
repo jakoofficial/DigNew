@@ -40,9 +40,9 @@ func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: Strin
 	pass
 
 func BaseValues() -> void:
-	_PStrength 				= 1
-	_PStaminaCurr 			= 4
-	_PStaminaMax 			= 4
+	_PStrength 				= 10
+	_PStaminaCurr 			= 40
+	_PStaminaMax 			= 40
 	_PBalance 				= 0
 	_PValueBonus 			= 0
 	_PDigGridAmount			= 2
@@ -50,8 +50,8 @@ func BaseValues() -> void:
 	timePassed 				= 0.0
 	GM.xSpots 				= 3
 	GM.ySpots 				= 3
-	GM.canFindArtifacts 	= false
-	GM.artifactChance 		= 0
+	GM.canFindArtifacts 	= true
+	GM.artifactChance 		= 100
 	GM.artifactBonusPercent = 1.0
 	
 	for l in GM.LevelSelectDict.keys(): GM.LevelSelectDict[l] = true
