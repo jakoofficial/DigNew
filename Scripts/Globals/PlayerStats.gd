@@ -40,9 +40,9 @@ func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: Strin
 	pass
 
 func BaseValues() -> void:
-	_PStrength 				= 10
-	_PStaminaCurr 			= 40
-	_PStaminaMax 			= 40
+	_PStrength 				= 1
+	_PStaminaCurr 			= 4
+	_PStaminaMax 			= 4
 	_PBalance 				= 0
 	_PValueBonus 			= 0
 	_PDigGridAmount			= 2
