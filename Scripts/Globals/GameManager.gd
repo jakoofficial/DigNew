@@ -16,11 +16,12 @@ var currDigArea: Node2D
 var settingsMenu: Control
 var currLevelDigFee: int = 0
 
-var Game_Version: String = "Dev-Build: b0.5 (010626)"
+var Game_Version: String = "Dev-Build: b0.5 (020626)"
 var _delta: float
 var digSpotsLeft: int = 0
 
 var _IntroPlayed: bool = false
+var LoadedGame: bool = false
 
 var currDigType: String = "Dirt"
 var digspotTypes: Dictionary = {
@@ -58,15 +59,11 @@ func _ready() -> void:
 	AM.initAction("Dev_Money", FKS.NewKey(KEY_KP_0))
 	AM.initAction("SkipIntro", FKS.NewKey(KEY_ESCAPE), FKS.NewKey(KEY_ENTER), FKS.NewKey(KEY_SPACE))
 
+
 func _process(delta: float) -> void:
 	_delta = delta
 	if FK.JustPressed(AM.action("Dev_Money")):
 		PS._PBalance += 1000
-	
-	#if settingsMenu != null:
-		#if FK.JustReleased(AM.action("DigOver")):
-			#if settingsMenu.visible:
-				#settingsMenu._HideMenu()
 	
 	if PS._PStaminaCurr <= 0 and digDone == false:
 		currUI.dig_over_panel.digdoneText = "No stamina left"

@@ -6,6 +6,7 @@ extends Control
 @onready var chance_value: RichTextLabel = $VBoxContainer/ArtifactChance/Value
 @onready var artifact_value: RichTextLabel = $VBoxContainer/ArtifactValue/Value
 @onready var discount_value: RichTextLabel = $VBoxContainer/Discount/Value
+@onready var time_played_value: RichTextLabel = $VBoxContainer/TimePlayed/Value
 
 func _ready() -> void:
 	SetStat()
@@ -18,3 +19,7 @@ func SetStat() -> void:
 	chance_value.text = str("%s" % GM.artifactChance) + str("%")
 	artifact_value.text = str("+%s" % GM.artifactBonusPercent) + str("%")
 	discount_value.text = str("-%s" % PS._LevelDiscount) + str("%")
+
+func _process(delta: float) -> void:
+	if time_played_value.text != PS._PlayedTime:
+		time_played_value.text = PS._PlayedTime

@@ -80,10 +80,12 @@ func _NewGame() -> void:
 	if !canMakeNew: v_box_container.show(); return
 	FM.NewGameFile()
 	
+	GM.LoadedGame = true
 	GM.load_scene(GM.Scenes.SKILLTREE)
 
 func _ContinueGame() -> void:
 	PS.SetValues(FM.LoadGame())
+	GM.LoadedGame = true
 	GM.load_scene(GM.Scenes.SKILLTREE)
 
 func _OpenCredits() -> void:

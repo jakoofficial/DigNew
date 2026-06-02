@@ -22,6 +22,7 @@ func SaveData():
 		"LevelSelection": GM.LevelSelectDict,
 		"Settings": Settings.settings_dict,
 		"LevelDiscountValue": PS._LevelDiscount,
+		"TimePassed": PS.timePassed,
 	}
 	return dict
 

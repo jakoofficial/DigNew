@@ -11,6 +11,23 @@ var _PDigGridAmount: int = 1
 var _last_time_played: Dictionary
 var _LevelDiscount: int = 0
 
+#Time played
+var _PlayedTime: String = "00:00:00" # HH:MM:SS
+var seconds: float = 0
+var minutes: int = 0
+var hours: int = 0
+var timePassed: float = 0.0
+
+func _process(delta: float) -> void:
+	if GM.LoadedGame:
+		timePassed += delta
+		
+		seconds = int(timePassed)%60
+		minutes = int(timePassed/60)%60
+		hours = timePassed/3600
+		
+		_PlayedTime = str("%02d:%02d:%02d" % [hours, minutes, seconds])
+
 func Apply_Upgrade(upgrade: SkillRes.TYPE, amount: float, leveltypeunlock: String = "") -> void:
 	match upgrade:
 		SkillRes.TYPE.Stamina: 				_PStaminaMax += amount
@@ -30,6 +47,7 @@ func BaseValues() -> void:
 	_PValueBonus 			= 0
 	_PDigGridAmount			= 2
 	_LevelDiscount			= 0
+	timePassed 				= 0.0
 	GM.xSpots 				= 3
 	GM.ySpots 				= 3
 	GM.canFindArtifacts 	= false
@@ -48,6 +66,7 @@ func SetValues(data: Dictionary) -> void:
 	_PValueBonus 			= data["ValueBonus"]
 	_PDigGridAmount			= data["DigGridAmount"]
 	_LevelDiscount			= data["LevelDiscountValue"]
+	timePassed				= data["TimePassed"]
 	GM.xSpots 				= data["MaxSpotsX"]
 	GM.ySpots 				= data["MaxSpotsY"]
 	GM.canFindArtifacts 	= data["ArtifactPermit"]
