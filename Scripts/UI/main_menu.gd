@@ -14,8 +14,9 @@ extends Control
 @onready var patch_notes: TextureButton = $PatchNotes
 
 func _ready() -> void:
-	var data: Dictionary = FM.LoadGame()
-	Settings._Load(data["Settings"] as Dictionary)
+	var data = FM.LoadGame()
+	if data != null:
+		Settings._Load(data["Settings"] as Dictionary)
  
 	v_box_container.show()
 	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn", LoadingScreen.Type.DEFAULT)
@@ -30,7 +31,7 @@ func _ready() -> void:
 	settings_btn.connect("pressed", showMenu)
 	patch_notes.connect("pressed", OpenPatchNotes)
 	
-	if data.has("LastPlayed"):
+	if data != null and data.has("LastPlayed"):
 		PS._last_time_played	= data["LastPlayed"] as Dictionary
 		last_played_label.show()
 		last_played_label.text = str("%02d-%02d-%s %02d:%02d" % [PS._last_time_played.get("day"), PS._last_time_played.get("month"), PS._last_time_played.get("year"),PS._last_time_played.get("hour"), PS._last_time_played.get("minute")])
