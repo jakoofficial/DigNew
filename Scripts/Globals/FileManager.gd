@@ -6,6 +6,7 @@ var CurrSaveFile = null
 func SaveData():
 	var dict = {
 		"filename": "DigSave.save",
+		"GameVersion": GM.Game_Version,
 		"LastPlayed": Time.get_datetime_dict_from_system(),
 		"StaminaMax": PS._PStaminaMax,
 		"Balance": PS._PBalance,

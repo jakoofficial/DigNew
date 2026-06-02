@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8k6jks6y5l2" path="res://Sprites/Gui.png" id="1_0mkpp"]
 [ext_resource type="Texture2D" uid="uid://b4n5jr12li31" path="res://Sprites/Colour palette/Taile Gamougg 96.png" id="1_1ckjn"]
 [ext_resource type="Script" uid="uid://dudtor05usj0h" path="res://Scripts/UI/confirm_box.gd" id="1_6g8y7"]
+[ext_resource type="FontFile" uid="uid://ct5gopphwohoe" path="res://Themes/Font/Roboto-VariableFont_wdth,wght.ttf" id="4_m7jqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6g8y7"]
 atlas = ExtResource("1_1ckjn")
@@ -77,6 +78,7 @@ alignment = 1
 metadata/_edit_group_ = true
 
 [node name="Cancel" type="TextureButton" parent="NinePatchRect/HBoxContainer" unique_id=728719747]
+visible = false
 custom_minimum_size = Vector2(125, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -96,6 +98,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_m7jqb")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "Cancel"
 scroll_active = false
@@ -123,6 +127,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_m7jqb")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "Confirm"
 scroll_active = false
@@ -143,7 +149,8 @@ offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/normal_font_size = 10
+theme_override_fonts/normal_font = ExtResource("4_m7jqb")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "asdadadasadaasda dadadada"
 scroll_active = false

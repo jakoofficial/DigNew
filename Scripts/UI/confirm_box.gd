@@ -5,11 +5,24 @@ extends Control
 
 var prev_btn: TextureButton
 
+var confirmOnly: bool = false
+
 func _ready() -> void:
 	_setText()
 	
 	cancel.connect("pressed", cancel_confirmation)
 	confirm.connect("pressed", confirm_confirmation)
+
+func showSpecial(btnText: String = "Confirm") -> void:
+	cancel.hide()
+	cancel.disabled = true
+	confirm.get_child(0).text = str(btnText)
+	show()
+
+func resetButtons():
+	cancel.show()
+	cancel.disabled = false
+	confirm.get_child(0).text = str("Confirm")
 
 func _setText(t: String = "TBD"):
 	text_box.text = t

@@ -17,7 +17,14 @@ func _ready() -> void:
 	var data = FM.LoadGame()
 	if data != null:
 		Settings._Load(data["Settings"] as Dictionary)
- 
+	if data.has("GameVersion") and data["GameVersion"] != GM.Game_Version:
+		var canMakeNew = true
+		v_box_container.hide()
+		confirm_box.showSpecial("Understood")
+		confirm_box._setText("[font_size=14]A save file have been found that might not work with this version of the game.\n\nA new save is recommended")
+		canMakeNew = await confirm_box.confirmResult
+	
+	confirm_box.resetButtons()
 	v_box_container.show()
 	SceneManager.set_loading_screen("res://Scenes/Loading/my_load.tscn", LoadingScreen.Type.DEFAULT)
 	start_game.connect("pressed", _NewGame)
@@ -75,7 +82,7 @@ func _NewGame() -> void:
 	if FM.CheckSaveGame():
 		v_box_container.hide()
 		confirm_box.show()
-		confirm_box._setText("This will permanently delete the already existing savefile.")
+		confirm_box._setText("This will permanently delete the already existing save file.")
 		canMakeNew = await confirm_box.confirmResult
 	if !canMakeNew: v_box_container.show(); return
 	FM.NewGameFile()

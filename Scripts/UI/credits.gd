@@ -13,7 +13,8 @@ var credits: Dictionary[String, Array] = {
 	"BoldByte": [
 		"Programmer: Jacob (Jay)",
 		"Art: Jacob (Jay)"],
-	"Game Engine": ["Godot v4.6"]
+	"Game Engine": ["Godot v4.6"],
+	"Fonts": ["Pixelated", "Roboto"]
 }
 
 func _ready() -> void:
