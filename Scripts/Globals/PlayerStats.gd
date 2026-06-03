@@ -50,8 +50,8 @@ func BaseValues() -> void:
 	timePassed 				= 0.0
 	GM.xSpots 				= 3
 	GM.ySpots 				= 3
-	GM.canFindArtifacts 	= true
-	GM.artifactChance 		= 100
+	GM.canFindArtifacts 	= false
+	GM.artifactChance 		= 0
 	GM.artifactBonusPercent = 1.0
 	
 	for l in GM.LevelSelectDict.keys(): GM.LevelSelectDict[l] = true

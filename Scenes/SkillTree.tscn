@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="5_oxtxa"]
 [ext_resource type="Script" uid="uid://cjq3wy3ulyaw3" path="res://Scripts/SkillTree/stats.gd" id="6_h226r"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="6_n648w"]
+[ext_resource type="FontFile" uid="uid://b166dqji8afx3" path="res://Themes/Font/Pixeled.ttf" id="7_dxbeb"]
 [ext_resource type="Script" uid="uid://j5k8wjd6g60n" path="res://Scripts/UI/settings_btn.gd" id="7_jf1u3"]
 [ext_resource type="Texture2D" uid="uid://bl7ptj3xsospl" path="res://Sprites/Backdrop.png" id="7_n648w"]
+[ext_resource type="FontFile" uid="uid://ct5gopphwohoe" path="res://Themes/Font/Roboto-VariableFont_wdth,wght.ttf" id="8_n6sc0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3ipy"]
 atlas = ExtResource("1_t13jq")
@@ -25,6 +27,10 @@ region = Rect2(128, 73, 116, 33)
 [sub_resource type="AtlasTexture" id="AtlasTexture_n648w"]
 atlas = ExtResource("5_oxtxa")
 region = Rect2(2, 8, 28, 22)
+
+[sub_resource type="FontVariation" id="FontVariation_ckayu"]
+fallbacks = Array[Font]([ExtResource("8_n6sc0")])
+base_font = ExtResource("7_dxbeb")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlyut"]
 atlas = ExtResource("1_t13jq")
@@ -212,9 +218,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -168.0
-offset_top = 476.0
+offset_top = 452.0
 offset_right = -8.0
-offset_bottom = 732.0
+offset_bottom = 708.0
 grow_horizontal = 0
 script = ExtResource("6_h226r")
 
@@ -350,6 +356,7 @@ vertical_alignment = 1
 [node name="ArtifactChance" type="HBoxContainer" parent="CanvasLayer/Stats/VBoxContainer" unique_id=1463755673]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Stats/VBoxContainer/ArtifactChance" unique_id=1731192264]
 clip_contents = false
@@ -367,7 +374,7 @@ clip_contents = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 7
-text = "0%"
+text = "0"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -377,6 +384,7 @@ vertical_alignment = 1
 [node name="ArtifactValue" type="HBoxContainer" parent="CanvasLayer/Stats/VBoxContainer" unique_id=1064759148]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Stats/VBoxContainer/ArtifactValue" unique_id=802924750]
 clip_contents = false
@@ -393,8 +401,9 @@ vertical_alignment = 1
 clip_contents = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_ckayu")
 theme_override_font_sizes/normal_font_size = 7
-text = "+0%"
+text = "+0"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -404,6 +413,7 @@ vertical_alignment = 1
 [node name="Discount" type="HBoxContainer" parent="CanvasLayer/Stats/VBoxContainer" unique_id=1316730413]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Stats/VBoxContainer/Discount" unique_id=1566329656]
 clip_contents = false
@@ -420,8 +430,9 @@ vertical_alignment = 1
 clip_contents = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_ckayu")
 theme_override_font_sizes/normal_font_size = 7
-text = "+0%"
+text = "+0"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

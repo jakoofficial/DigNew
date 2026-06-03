@@ -39,15 +39,15 @@ func _setInfo() -> void:
 			res.TYPE.ArtifactChance:
 				typeValueCurr = GM.artifactChance
 				typeValueNew = (GM.artifactChance + res._UpgradeAmount)
-				textToWrite = str("%s" % typeValueCurr) + str("% ") + str("> %s" % typeValueNew) + str("%")
+				textToWrite = str("%s" % typeValueCurr) + str("> %s" % typeValueNew) 
 			res.TYPE.ArtifactValue:
 				typeValueCurr = GM.artifactBonusPercent
 				typeValueNew = (GM.artifactBonusPercent + res._UpgradeAmount)
-				textToWrite = str("%s" % typeValueCurr) + str("% ") + str("> %s" % typeValueNew) + str("%")
+				textToWrite = str("%s" % typeValueCurr) + str("> %s" % typeValueNew)
 			res.TYPE.LevelDiscountValue:
 				typeValueCurr = PS._LevelDiscount
 				typeValueNew = (PS._LevelDiscount + res._UpgradeAmount)
-				textToWrite = str("%s" % typeValueCurr) + str("% ") + str("> %s" % typeValueNew) + str("%")
+				textToWrite = str("%s" % typeValueCurr) + str("> %s" % typeValueNew)
 		upgrade_change.text = textToWrite
 	else: 
 		upgrade_change.text = str("Maxed")

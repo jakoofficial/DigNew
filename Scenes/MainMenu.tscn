@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://smaebv2kbcos" path="res://Scripts/UI/credits.gd" id="4_df05h"]
 [ext_resource type="PackedScene" uid="uid://bpmso20hkvbh7" path="res://Nodes/UI/intro.tscn" id="5_df05h"]
+[ext_resource type="FontFile" uid="uid://ct5gopphwohoe" path="res://Themes/Font/Roboto-VariableFont_wdth,wght.ttf" id="5_koqhg"]
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="6_xim88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
@@ -19,9 +20,6 @@ region = Rect2(128, 35, 116, 37)
 [sub_resource type="AtlasTexture" id="AtlasTexture_df05h"]
 atlas = ExtResource("2_853f1")
 region = Rect2(128, 73, 116, 33)
-
-[sub_resource type="SystemFont" id="SystemFont_8saeu"]
-font_names = PackedStringArray("Ubuntu")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ghw46"]
 color = Color(0.56581026, 0.32505164, 0.22208834, 1)
@@ -271,7 +269,7 @@ offset_top = 600.0
 offset_right = -8.0
 offset_bottom = 640.0
 grow_horizontal = 2
-theme_override_fonts/normal_font = SubResource("SystemFont_8saeu")
+theme_override_fonts/normal_font = ExtResource("5_koqhg")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "© 2026 BoldByte"
@@ -413,6 +411,7 @@ visible = false
 layout_mode = 1
 
 [node name="PatchNotes" type="TextureButton" parent="." unique_id=1148882503]
+visible = false
 custom_minimum_size = Vector2(155, 50)
 layout_mode = 0
 offset_left = 74.5

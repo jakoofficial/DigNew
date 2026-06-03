@@ -31,12 +31,13 @@ func _ready() -> void:
 	continue_game.connect("pressed", _ContinueGame)
 	continue_game.disabled = !FM.CheckSaveGame()
 	quit_game.connect("pressed", _QuitGame)
-	game_version.text = GM.Game_Version
 	credits_control.hide()
 	credits.connect("pressed", _OpenCredits)
 	close_credits.connect("pressed", _CloseCredits)
 	settings_btn.connect("pressed", showMenu)
 	patch_notes.connect("pressed", OpenPatchNotes)
+	
+	game_version.text = str("%s %s" % [GM.Export_Version, GM.Game_Version])
 	
 	if data != null and data.has("LastPlayed"):
 		PS._last_time_played	= data["LastPlayed"] as Dictionary

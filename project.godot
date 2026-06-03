@@ -16,7 +16,7 @@ run/main_scene="uid://wblo8bpw00rk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/use_filter=false
-config/icon="res://Sprites/icon.svg"
+config/icon="res://Sprites/Icons/Logo.svg"
 
 [audio]
 

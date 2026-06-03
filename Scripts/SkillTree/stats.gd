@@ -16,9 +16,9 @@ func SetStat() -> void:
 	block_value.text = str("+%s" % PS._PValueBonus)
 	damage_value.text = str("%s" % PS._PStrength)
 	stamina_value.text = str("%s" % PS._PStaminaMax)
-	chance_value.text = str("%s" % GM.artifactChance) + str("%")
-	artifact_value.text = str("+%s" % GM.artifactBonusPercent) + str("%")
-	discount_value.text = str("-%s" % PS._LevelDiscount) + str("%")
+	chance_value.text = str("%s" % GM.artifactChance)
+	artifact_value.text = str("+%s" % GM.artifactBonusPercent)
+	discount_value.text = str("-%s" % PS._LevelDiscount)
 
 func _process(delta: float) -> void:
 	if time_played_value.text != PS._PlayedTime:
