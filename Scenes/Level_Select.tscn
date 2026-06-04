@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://doplo4r2vdi0n" path="res://Nodes/UI/settings_menu.tscn" id="9_11r63"]
 [ext_resource type="Texture2D" uid="uid://b5b1v4vgqvkfj" path="res://Sprites/Icons/Icons.png" id="11_qfjjy"]
 [ext_resource type="Script" uid="uid://j5k8wjd6g60n" path="res://Scripts/UI/settings_btn.gd" id="12_05uof"]
+[ext_resource type="PackedScene" uid="uid://bk46exhp8wagj" path="res://Nodes/UI/ConfirmBox.tscn" id="13_ar7rg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojto8"]
 atlas = ExtResource("3_6283k")
@@ -279,3 +280,7 @@ bbcode_enabled = true
 text = "? ? ?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ConfirmBox" parent="." unique_id=1259830081 instance=ExtResource("13_ar7rg")]
+visible = false
+layout_mode = 1

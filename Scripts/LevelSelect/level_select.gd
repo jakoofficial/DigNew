@@ -3,6 +3,7 @@ extends Control
 @onready var back: TextureButton = $Back
 @onready var balance_label: RichTextLabel = $PlayerBalance/HBoxContainer/BalanceLabel
 @onready var end_btn: TextureButton = $EndBtn
+@onready var confirm_box: Control = $ConfirmBox
 
 var allCollected: bool = true
 func _ready() -> void:
@@ -13,7 +14,7 @@ func _ready() -> void:
 	for i:ArtifactRes in ArtifactInfo.Artifacts_Copy:
 		if !i._HasBeenCollected: allCollected = false; break
 	
-	if !allCollected:
+	if allCollected:
 		end_btn.disabled = true
 		$EndBtn/BG.self_modulate = Color.from_rgba8(82, 82, 82, 255)
 		$EndBtn/BG/EndBtnText.text = str("? ? ?")
@@ -24,4 +25,15 @@ func _ready() -> void:
 
 
 func end_btn_pressed() -> void:
+	var canMakeNew = true
+	confirm_box.show()
+	confirm_box._setText("This will end the game\nContinue?")
+	canMakeNew = await confirm_box.confirmResult
+	if !canMakeNew: return
+	
+	BGMusic.Fade = BGMusic.FADE.OutIn
+	await BGMusic.FadeFinished
+	BGMusic._play_BG_Music(BGMusic.AUDIO.End)
+	
+	GM.load_scene(GM.Scenes.END)
 	pass

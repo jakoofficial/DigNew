@@ -4,6 +4,7 @@ enum AUDIO {
 	MainMenu,
 	Level1,
 	Level2,
+	End,
 } 
 var curAudio: AUDIO
 var file
@@ -15,6 +16,7 @@ func _play_BG_Music(audio:AUDIO) -> void:
 		AUDIO.MainMenu: file = preload("res://Sounds/BGMusic/MAIN_THEME_DREAMY_DASH_LOOP A.wav")
 		AUDIO.Level1: file = preload("res://Sounds/BGMusic/Levels/FIRST_STEPS_THEME_LOOP_A.wav")
 		AUDIO.Level2: file = preload("res://Sounds/BGMusic/Levels/FIRST_STEPS_THEME_LOOP_B.wav")
+		AUDIO.End: file = preload("res://Sounds/Music/END_CREDITS_TRACK.wav")
 	
 	stream = file
 	play()

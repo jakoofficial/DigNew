@@ -82,7 +82,8 @@ enum Scenes {
 	SKILLTREE,
 	LEVELSELECT,
 	DIGAREA,
-	MAINMENU
+	MAINMENU,
+	END
 }
 
 func load_scene(scene: Scenes, minTime: float = 0.25) -> void:
@@ -99,4 +100,6 @@ func _select_scene(scene: Scenes) -> String:
 			return "res://Scenes/Level_Select.tscn"
 		Scenes.DIGAREA:
 			return "res://Scenes/DigArea.tscn"
+		Scenes.END:
+			return "res://Scenes/End.tscn"
 	return "No scene found!"

@@ -7,7 +7,7 @@ var artistName: String
 var artTitle: String
 
 var credits: Dictionary[String, Array] = {
-	"GameDev Market - Music": ["Main Theme Dreamy Dash loop A", "First Steps Theme Loop A-B"],
+	"GameDev Market - Music": ["Main Theme Dreamy Dash loop A", "First Steps Theme Loop A-B", "End Credits Track"],
 	"Sound Effects": ["TomWinandySFX", "Quiz & Puzzle Musical SFX (GameDev Market)"],
 	"Scene Manager Addon": ["mcanton"],
 	"BoldByte": [
