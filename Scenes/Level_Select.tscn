@@ -283,4 +283,5 @@ vertical_alignment = 1
 
 [node name="ConfirmBox" parent="." unique_id=1259830081 instance=ExtResource("13_ar7rg")]
 visible = false
+z_index = 2
 layout_mode = 1

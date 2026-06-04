@@ -43,13 +43,13 @@ func _ready() -> void:
 var finished: bool = false
 var fadeBegan: bool = false
 func _process(delta: float) -> void:
-	if FK.JustPressed(AM.action("DigOver")) and !finished:
+	if FK.JustPressed(AM.action("SkipIntro")) and !finished:
 		for i in cred:
 			i.modulate.a8 = 255
 		thanks.modulate.a8 = 255
 		back.modulate.a8 = 255
 		finished = true
-	elif music.get_playback_position() >= (music.stream.get_length()-music10percLeft) or (!fadeBegan and FK.JustPressed(AM.action("DigOver")) and finished):
+	if music.get_playback_position() >= (music.stream.get_length()-music10percLeft) or (!fadeBegan and FK.JustPressed(AM.action("SkipIntro")) and finished):
 		fadeBegan = true
 	
 	if fadeBegan and $Fade.modulate.a8 < 255: 

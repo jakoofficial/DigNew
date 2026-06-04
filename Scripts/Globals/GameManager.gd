@@ -16,7 +16,7 @@ var currDigArea: Node2D
 var settingsMenu: Control
 var currLevelDigFee: int = 0
 
-var Game_Version: String = "v1.0.3 (040626)"
+var Game_Version: String = "v1.0.4 (040626)"
 var Export_Version: String = "Web"
 var _delta: float
 var digSpotsLeft: int = 0

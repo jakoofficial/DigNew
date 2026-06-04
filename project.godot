@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Stellar_Dig"
-config/version="1.0.3"
+config/version="1.0.4"
 run/main_scene="uid://wblo8bpw00rk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false
