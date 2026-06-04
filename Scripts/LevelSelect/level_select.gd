@@ -14,7 +14,7 @@ func _ready() -> void:
 	for i:ArtifactRes in ArtifactInfo.Artifacts_Copy:
 		if !i._HasBeenCollected: allCollected = false; break
 	
-	if allCollected:
+	if !allCollected:
 		end_btn.disabled = true
 		$EndBtn/BG.self_modulate = Color.from_rgba8(82, 82, 82, 255)
 		$EndBtn/BG/EndBtnText.text = str("? ? ?")
@@ -27,7 +27,7 @@ func _ready() -> void:
 func end_btn_pressed() -> void:
 	var canMakeNew = true
 	confirm_box.show()
-	confirm_box._setText("This will end the game\nContinue?")
+	confirm_box._setText("This will end the game.\nYou will be able to continue this save.\n\nContinue?")
 	canMakeNew = await confirm_box.confirmResult
 	if !canMakeNew: return
 	

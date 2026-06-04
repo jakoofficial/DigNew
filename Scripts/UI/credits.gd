@@ -11,8 +11,8 @@ var credits: Dictionary[String, Array] = {
 	"Sound Effects": ["TomWinandySFX", "Quiz & Puzzle Musical SFX (GameDev Market)"],
 	"Scene Manager Addon": ["mcanton"],
 	"BoldByte": [
-		"Programmer: Jacob (Jay)",
-		"Art: Jacob (Jay)"],
+		"Programmer: Jay",
+		"Art: Jay"],
 	"Game Engine": ["Godot v4.6"],
 	"Fonts": ["Pixelated", "Roboto"]
 }

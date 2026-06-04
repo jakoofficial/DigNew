@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ciuj754o5boun" path="res://Scripts/LevelSelect/endScreen.gd" id="1_67ibq"]
 [ext_resource type="Texture2D" uid="uid://cawc1oovde8v4" path="res://Sprites/Icons/Loading_Screen.svg" id="1_pw64i"]
+[ext_resource type="FontFile" uid="uid://ct5gopphwohoe" path="res://Themes/Font/Roboto-VariableFont_wdth,wght.ttf" id="3_70j8v"]
+[ext_resource type="Texture2D" uid="uid://bt55x2rpqipor" path="res://Sprites/Intro/BoldByteLogo_White.svg" id="4_03b8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67ibq"]
 atlas = ExtResource("1_pw64i")
@@ -16,8 +18,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_67ibq")
 
+[node name="Fade" type="TextureRect" parent="." unique_id=135378767]
+modulate = Color(0, 0, 0, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_67ibq")
+
+[node name="Back" type="RichTextLabel" parent="." unique_id=716071991]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -120.0
+offset_right = 288.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_70j8v")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Press \"Escape\" to go back"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=320530812]
 modulate = Color(0.05490196, 0.05490196, 0.05490196, 1)
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,3 +92,34 @@ custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 dragging_enabled = false
 dragger_visibility = 2
+
+[node name="Thanks" type="VBoxContainer" parent="." unique_id=2017839783]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ThanksLabel" type="RichTextLabel" parent="Thanks" unique_id=1672712701]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_70j8v")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Thanks for playing
+[font_size=25]from
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Thanks" unique_id=1526871101]
+layout_mode = 2
+texture = ExtResource("4_03b8h")
+stretch_mode = 5
